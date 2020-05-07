@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: May 06, 2020 at 07:06 AM
+-- Generation Time: May 06, 2020 at 07:10 PM
 -- Server version: 5.7.26
 -- PHP Version: 7.2.18
 
@@ -75,6 +75,19 @@ INSERT INTO `assignments` (`user_id`, `assign_id`, `assign_name`, `ink_color`, `
 (6, 27, 'bhavyaharia100@gmail.comSpeech.pdf', 'Blue', '2020-04-28 13:43:43', '2020-05-05', 6, 0, 0, 0, 0),
 (6, 32, 'bhavyaharia100@gmail.comTE_BE-Comp_Engg_CBCGS_Syllabus.pdf', 'Black', '2020-04-28 14:42:02', '2020-05-05', 894, 0, 0, 0, 0),
 (6, 33, 'bhavyaharia100@gmail.comTE_BE-Comp_Engg_CBCGS_Syllabus.pdf', 'Blue', '2020-04-28 14:42:30', '2020-05-05', 894, 0, 0, 0, 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `newsletter`
+--
+
+DROP TABLE IF EXISTS `newsletter`;
+CREATE TABLE IF NOT EXISTS `newsletter` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `email` varchar(512) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
