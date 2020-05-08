@@ -1,4 +1,12 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html> -->
+<?php
+  session_start();
+  if(isset($_SESSION['u_id'])) {
+    //User is logged in
+    header("Location: index.php");
+    exit();
+  }
+?>
 <html lang="en">
   <head>
     <title>Blue Pen</title>
@@ -89,15 +97,61 @@
 
     <!-- nav end -->
 
-
     <!-- form start -->
     
     <br><br><br><br>
     <div class="site-section bg-image2 overlay" id="contact-section" style="background-image: url('images/hero_1.jpg');">
       <div class="container">
+
+      <?php
+    //Error Handling
+    // $_SERVER['HTTP_HOST'] gives http://localhost
+    // $_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'] givees http://localhost/admissions.php?error EvWatcher
+      $url = "http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
+      if (strpos($url, "signup=empty") !== false) {
+        echo '<div class="col-md-4 offset-md-4 col-sm-4 offset-sm-4 text-center alert alert-danger" role="alert">
+                Fill out all the fields!
+              </div>';
+      } elseif (strpos($url, "signup=invalid")!== false) {
+        echo '<div class="col-md-4 offset-md-4 col-sm-4 offset-sm-4 text-center alert alert-danger lastname" role="alert">
+                Invalid Characters in Name
+              </div>';
+      } elseif (strpos($url, "signup=email")!== false) {
+        echo '<div class="col-md-4 offset-md-4 col-sm-4 offset-sm-4 text-center alert alert-danger lastname" role="alert">
+                Invalid Email
+              </div>';
+      } elseif (strpos($url, "signup=taken")!== false) {
+        echo '<div class="col-md-4 offset-md-4 col-sm-4 offset-sm-4 text-center alert alert-danger lastname" role="alert">
+                User already exists
+              </div>';
+      } elseif (strpos($url, "signup=contact")!== false) {
+        echo '<div class="col-md-4 offset-md-4 col-sm-4 offset-sm-4 text-center alert alert-danger lastname" role="alert">
+                Invalid Phone no
+              </div>';
+      } elseif (strpos($url, "signup=sample")!== false) {
+        echo '<div class="col-md-4 offset-md-4 col-sm-4 offset-sm-4 text-center alert alert-danger lastname" role="alert">
+                Invalid Sample
+              </div>';
+      } elseif (strpos($url, "signup=fileinvalid")!== false) {
+        echo '<div class="col-md-4 offset-md-4 col-sm-4 offset-sm-4 text-center alert alert-danger lastname" role="alert">
+                Invalid File Type
+              </div>';
+      } elseif (strpos($url, "signup=address")!== false) {
+        echo '<div class="col-md-4 offset-md-4 col-sm-4 offset-sm-4 text-center alert alert-danger lastname" role="alert">
+                Address too long (max. 70)
+              </div>';
+      } elseif (strpos($url, "signup=success")!== false) {
+        // Wait for 5 seconds and then redirect user to index page
+        header("refresh:2; url=index.php");
+        echo '<div class="col-md-4 offset-md-4 col-sm-4 offset-sm-4 text-center alert alert-success">You are registered as a writer, we will be contacting you soon...</div>';
+      }
+      //Focus on ip tag and add div container
+
+    ?>
+
         <div class="row mb-5">
           <div class="col-12 text-center">
-            <h2 class="section-title mb-3 text-white">Register As Writer</h2>
+            <h2 class="section-title mb-1 text-white">Register As Writer</h2>
           </div>
         </div>
         <div class="row justify-content-center">
@@ -105,45 +159,69 @@
 
             
 
-            <form action="#" class="p-5 bg-white">
+            <form action="includes/registerwriter.inc.php" class="p-5 bg-white" method="POST" enctype="multipart/form-data">
               
               <h2 class="h4 text-black mb-5">Registration Form</h2> 
 
               <div class="row form-group">
                 <div class="col-md-6 mb-3 mb-md-0">
                   <label class="text-black" for="fname">First Name</label>
-                  <input type="text" id="fname" class="form-control rounded-0" placeholder="Enter Your First Name">
+                  <?php
+                if(isset($_SESSION['formFilled']))
+                  echo'<input type="text" name="fname" class="form-control rounded-0" value="'.$_SESSION['firstname'].'" placeholder="Enter Your First Name" required>';
+                else
+                  echo'<input type="text" name="fname" class="form-control rounded-0" placeholder="Enter Your First Name" required>';
+                ?>
+                  <!-- <input type="text" id="fname" class="form-control rounded-0" placeholder="Enter Your First Name" required> -->
                 </div>
                 
                 <div class="col-md-6">
                   <label class="text-black" for="lname">Last Name</label>
-                  <input type="text" id="lname" class="form-control rounded-0" placeholder="Enter Your Last Name">
+                  <?php
+                if(isset($_SESSION['formFilled']))
+                  echo'<input type="text" name="lname" class="form-control rounded-0" value="'.$_SESSION['lastname'].'" placeholder="Enter Your Last Name" required>';
+                else
+                  echo'<input type="text" name="lname" class="form-control rounded-0" placeholder="Enter Your Last Name" required>';
+                ?>
+                  <!-- <input type="text" id="lname" class="form-control rounded-0" placeholder="Enter Your Last Name" required> -->
                 </div>
               </div>
               
               <div class="row form-group">  
                 <div class="col-md-12">
                   <label class="text-black" for="email">Email</label> 
-                  <input type="email" id="email" class="form-control rounded-0" placeholder="Enter Your Email">
+                  <?php
+                if(isset($_SESSION['formFilled']))
+                  echo'<input type="email" name="email" class="form-control rounded-0" value="'.$_SESSION['email'].'" placeholder="Enter Your Email" required>';
+                else
+                  echo'<input type="email" name="email" class="form-control rounded-0" placeholder="Enter Your Email" required>';
+                ?>
+                  <!-- <input type="email" id="email" class="form-control rounded-0" placeholder="Enter Your Email" required> -->
                 </div>
               </div>
 
               <div class="col-md-6 row form-group">
                 <label class="text-black" for="number">Mobile Number</label>
-                <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" class="form-control rounded-0" placeholder="Enter Your Mobile Number">
+                <?php
+                if(isset($_SESSION['formFilled']))
+                  echo'<input type="tel" id="phone" name="phone"  value="'.$_SESSION['contact'].'" class="form-control rounded-0" placeholder="Enter Your Mobile Number" required>';
+                else
+                  echo'<input type="tel" id="phone" name="phone"  class="form-control rounded-0" placeholder="Enter Your Mobile Number" required>';
+                ?>
+                <!-- <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" class="form-control rounded-0" placeholder="Enter Your Mobile Number" required> -->
               </div>
 
               <div class="row form-group">
                 <div class="col-md-12">
                   <label class="text-black" for="address">Address</label> 
-                  <textarea name="Address" id="address" cols="30" rows="5" class="form-control rounded-0" placeholder="Enter Your Address"></textarea>
+                  <textarea  name="address" cols="30" rows="5" class="form-control rounded-0" placeholder="Enter Your Address" required></textarea>
                 </div>
               </div>
-              <div class="row form-group col-md-12"><label class="text-black">Upload Handwriting Sample</label> <input type="file" id="myFile" name="filename" class="form-control rounded-0"></div>
+              <div class="row form-group col-md-12"><label class="text-black">Upload Handwriting Sample</label> <input class="form-control rounded-0" type="file" name="sample" required></div>
 
               <div class="row form-group">
                 <div class="col-md-12">
-                  <input type="submit" value="Register" class="btn btn-primary mr-2 mb-2">
+                  <input type="submit" name="submit" value="Register" class="btn btn-primary mr-2 mb-2">
                   <input type="reset" class="btn btn-primary mr-2 mb-2">
                 </div>
               </div>
@@ -164,7 +242,7 @@
 
     <div class="footer py-5 text-center">
       <div class="container">
-        <div class="row mb-5">
+        <div class="row mb-2">
           <div class="col-12">
             <p class="mb-0">
               <a href="#" class="p-3"><span class="icon-facebook"></span></a>

@@ -7,10 +7,10 @@ if (isset($_POST['submit']))
 {
 
     #Treat user input as text and not as code
-    $firstname = mysqli_real_escape_string($conn, $_POST['firstname']);
-    $lastname = mysqli_real_escape_string($conn, $_POST['lastname']);
+    $firstname = mysqli_real_escape_string($conn, $_POST['fname']);
+    $lastname = mysqli_real_escape_string($conn, $_POST['lname']);
     $email = mysqli_real_escape_string($conn, $_POST['email']);
-    $contact = mysqli_real_escape_string($conn, $_POST['contact']);
+    $contact = mysqli_real_escape_string($conn, $_POST['phone']);
     $address = mysqli_real_escape_string($conn, $_POST['address']);
     $sample=mysqli_real_escape_string($conn, $_FILES["sample"]["name"]);
     
@@ -21,8 +21,6 @@ if (isset($_POST['submit']))
     $_SESSION['lastname'] = $lastname;
     $_SESSION['email'] = $email;
     $_SESSION['contact'] = $contact;
-    $_SESSION['address'] = $address;
-
 
     $FileType = strtolower(pathinfo($sample,PATHINFO_EXTENSION));
     var_dump($FileType);
@@ -116,6 +114,13 @@ if (isset($_POST['submit']))
                     $sql = "INSERT INTO writer (firstname, lastname, email, mobile, address, file) VALUES ('$firstname', '$lastname', '$email', '$contact', '$address', '$filename');";
                     mysqli_query($conn, $sql) or die(mysqli_error($conn));
                     // Now redirect the user
+                    $_SESSION['formFilled'] = FALSE;
+                    unset($_SESSION['firstname']);
+                    unset($_SESSION['lastname']);
+                    unset($_SESSION['email']);
+                    unset($_SESSION['contact']);
+                    
+
                     header("Location: ../registerwriter.php?signup=success");
                     exit();
                 }
