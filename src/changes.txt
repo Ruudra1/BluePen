@@ -1,0 +1,1 @@
+bootstrap modal z-index value changed from 1050 to 2000 to make it appear over navbar in mobile view. To change ctrl+shift+f z-index:2000
