@@ -33,6 +33,12 @@
     <link rel="stylesheet" href="css/aos.css">
 
     <link rel="stylesheet" href="css/style.css">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     
   </head>
 
@@ -152,7 +158,7 @@
 
         <div class="row mb-5">
           <div class="col-12 text-center">
-            <h2 class="section-title mb-1 text-white">Register As Writer</h2>
+            <h2 class="section-title mb-1 text-white">Registeration Form</h2>
           </div>
         </div>
         <div class="row justify-content-center">
@@ -162,7 +168,38 @@
 
             <form action="includes/registerwriter.inc.php" class="p-5 bg-white" method="POST" enctype="multipart/form-data">
               
-              <h2 class="h4 text-black mb-5">Registration Form</h2> 
+            <div class="container">
+              <!-- <h2>Dynamic Pills</h2> -->
+        
+              <ul class="nav nav-pills">
+                <li class="active"><a data-toggle="pill" href="#home">Writer</a></li>
+                <li><a data-toggle="pill" href="#menu1">Type Writer</a></li>
+                <li><a data-toggle="pill" href="#menu2">Content Writer</a></li>
+                <!-- <li><a data-toggle="pill" href="#menu3">Menu 3</a></li> -->
+              </ul>
+              
+              <div class="tab-content">
+                <div id="home" class="tab-pane fade in active">
+                  <h3>Writer</h3>
+                  <p>put seperate forms for assignment writer, typewriter, content writer<br> Put writer form here</p>
+                </div>
+                <div id="menu1" class="tab-pane fade">
+                  <h3>Type Writer</h3>
+                  <p>put seperate forms for assignment writer, typewriter, content writer<br> Put Type Writer form here</p>
+                </div>
+                <div id="menu2" class="tab-pane fade">
+                  <h3>Content Writer</h3>
+                  <p>put seperate forms for assignment writer, typewriter, content writer<br> Put Content Writer form here</p>
+                </div>
+                <div id="menu3" class="tab-pane fade">
+                  <h3>Menu 3</h3>
+                  <p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+                </div>
+              </div>
+            </div>
+
+              <!-- <h2 class="h4 text-black mb-5">Add tabs for register as writer, typewriter, contentwriter</h2>  -->
+              <h2 class="h4 text-black mb-5">Registration as writer</h2> 
 
               <div class="row form-group">
                 <div class="col-md-6 mb-3 mb-md-0">
