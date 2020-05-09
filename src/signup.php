@@ -140,7 +140,7 @@
               </div>';
       } elseif (strpos($url, "signup=success")!== false) {
         // Wait for 5 seconds and then redirect user to login page
-        header("refresh:2; url=login.php");
+        header("refresh:2; url=index.php");
         echo '<div class="col-md-4 offset-md-4 col-sm-4 offset-sm-4 text-center alert alert-success">Account created successfully...</div>';
       }
       //Focus on ip tag and add div container
