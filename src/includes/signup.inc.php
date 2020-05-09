@@ -1,5 +1,4 @@
 <?php
-
 session_start();
 include_once 'connect.inc.php';
 
@@ -24,11 +23,7 @@ if (isset($_POST['submit'])) {
     $_SESSION['college'] = $college;
     $_SESSION['email'] = $email;
     $_SESSION['contact'] = $contact;
-    $_SESSION['pass'] = $pass;
-    $_SESSION['address'] = $address;
-    
-
-
+  
     // Form Validation / Error Handlers
     // Check for empty fields
     if(empty($firstname) || empty($lastname)  || empty($college) || empty($email) || empty($pass) || empty($repass) || empty($address)) {
@@ -44,15 +39,15 @@ if (isset($_POST['submit'])) {
         exit();
     } else if(strlen($pass) < 8){
         //Check if password is valid
-        header("Location: ../register.php?signup=len");
+        header("Location: ../signup.php?signup=len");
         exit();
     } else if($contact <=10000000 || $contact >= 99999999999) {
         //Check if phone is valid
-        header("Location: ../register.php?signup=contact");
+        header("Location: ../signup.php?signup=contact");
         exit();
     } else if(strlen($address) > 500) {
         //Check if address is valid
-        header("Location: ../register.php?signup=address");
+        header("Location: ../signup.php?signup=address");
         exit();
     } else {
 
@@ -64,6 +59,7 @@ if (isset($_POST['submit'])) {
         $result = mysqli_query($conn, $sql);
         $resultCheck = mysqli_num_rows($result);
         if($resultCheck > 0) {
+            unset($_SESSION['email']);
             header("Location: ../signup.php?signup=taken");
             exit();
         } else if(strcmp($pass,$repass) !== 0) {
@@ -79,12 +75,18 @@ if (isset($_POST['submit'])) {
                         VALUES ('$firstname', '$lastname', '$college', '$email', '$hashedPass', '$contact', '$address');";
                 mysqli_query($conn, $sql) or die(mysqli_error($conn));
                 // Now redirect the user
+                $_SESSION['formFilled'] = FALSE;
+                unset($_SESSION['firstname']);
+                unset($_SESSION['lastname']);
+                unset($_SESSION['college']);
+                unset($_SESSION['email']);
+                unset($_SESSION['contact']);
                 header("Location: ../signup.php?signup=success");
                 exit();
         }
     }
 } else {
   // If someone just loads the url without submitting data
-  header("Location: ../register.php");
-  exit();
+//   header("Location: ../signup.php");
+//   exit();
 }
