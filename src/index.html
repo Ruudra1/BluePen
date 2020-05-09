@@ -62,26 +62,31 @@
 
               <ul class="site-menu main-menu js-clone-nav mr-auto d-none d-lg-block ml-0 pl-0">
                 <li><a href="index.html" class="nav-link">Home</a></li>
-                <li><a href="#features-section" class="nav-link">Features</a></li>
-                <li class="has-children">
-                  <a href="works.html" class="nav-link">How it works</a>
-                  <ul class="dropdown arrow-top">
-                    <li><a href="#our-team-section" class="nav-link">Our Team</a></li>
-                    <li class="has-children">
-                      <a href="#">More Links</a>
-                      <ul class="dropdown">
-                        <li><a href="#">Menu One</a></li>
-                        <li><a href="#">Menu Two</a></li>
-                        <li><a href="#">Menu Three</a></li>
-                      </ul>
-                    </li>
-                  </ul>
-                </li>
+                <!-- <li><a href="#features-section" class="nav-link">Features</a></li> -->
+                <!-- <li class="has-children"> -->
+                  <li><a href="works.html" class="nav-link">How it works</a></li>
+                  <!-- <ul class="dropdown arrow-top"> -->
+                    <!-- <li><a href="#our-team-section" class="nav-link">Our Team</a></li> -->
+                    <!-- <li class="has-children"> -->
+                      <!-- <a href="#">More Links</a> -->
+                      <!-- <ul class="dropdown"> -->
+                        <!-- <li><a href="#">Menu One</a></li> -->
+                        <!-- <li><a href="#">Menu Two</a></li> -->
+                        <!-- <li><a href="#">Menu Three</a></li> -->
+                      <!-- </ul> -->
+                    <!-- </li> -->
+                  <!-- </ul> -->
+                <!-- </li> -->
                 <!-- <li><a href="#testimonials-section" class="nav-link">Testimonials</a></li> -->
                 <li><a href="blog/blog.html" class="nav-link">Blog</a></li>
                 <li><a href="contact.html" class="nav-link">Contact</a></li>
+                <li><a href="#" class="nav-link">Upload Assignment</a></li>
+                <li data-toggle="modal" data-target="#signupmodal">Sign Up</li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <!-- <li><a href="signup.php" class="nav-link">Sign Up</a></li> -->
+                <li data-toggle="modal" data-target="#loginmodal">Login</li>
+                <!-- <li><a href="login.php" class="nav-link">Login</a></li> -->
                 <!-- <li><a href="registeraswriter.html" class="nav-link">Register as Writer</a></li> -->
-                <li data-toggle="modal" data-target="#exampleModal">Register as Writer</li>
+                <li data-toggle="modal" data-target="#writermodal">Register as Writer</li>
 
                   
 
@@ -99,8 +104,8 @@
     
     <!--nav end-->
 
-    <!-- Modal -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <!-- Writer Modal -->
+    <div class="modal fade" id="writermodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
@@ -120,6 +125,53 @@
         </div>
       </div>
     </div>
+    <!-- Writer modal ends -->
+
+    <!-- Signup Modal -->
+    <div class="modal fade" id="signupmodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Sign Up</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <button type="button" class="btn btn-secondary">Google Signup button here</button>
+            <button type="button" class="btn btn-primary"><a href="signup.php">Sign Up using email</a></button>
+          </div>
+          <div class="modal-footer">
+            <!-- <button type="button" class="btn btn-secondary">Google Signup button here</button> -->
+            <!-- <button type="button" class="btn btn-primary"><a href="registeraswriter.html">Sign Up using email</a></button> -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Signup modal ends -->
+
+    <!-- Login Modal -->
+    <div class="modal fade" id="loginmodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Login</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <button type="button" class="btn btn-secondary">Google Signup button here</button>
+            <button type="button" class="btn btn-primary"><a href="login.php">Sign Up using email</a></button>
+          </div>
+          <div class="modal-footer">
+            <!-- <button type="button" class="btn btn-secondary">Google Signup button here</button> -->
+            <!-- <button type="button" class="btn btn-primary"><a href="registeraswriter.html">Sign Up using email</a></button> -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Login modal ends -->
 
 
     <!-- <div class="site-blocks-cover" style="overflow: hidden;">
