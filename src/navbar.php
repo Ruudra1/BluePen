@@ -107,13 +107,14 @@ init_e
                 <li><a href="blog/blog.html" class="nav-link">Blog</a></li>
                 <li><a href="contact.html" class="nav-link">Contact</a></li>
                 <li><a href="#" class="nav-link">Upload Assignment</a></li>
-                <!-- <li data-toggle="modal" data-target="#signupmodal">Sign Up</li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
-                <li><a href="signup.php" class="nav-link">Sign Up</a></li>
+                <li data-toggle="modal" data-target="#signupmodal">Sign Up</li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <!-- <li><a href="signup.php" class="nav-link">Sign Up</a></li> -->
                 <!-- <li data-toggle="modal" data-target="#loginmodal">Login</li> -->
                 <?php
                
                 if($_SESSION['first']==NULL){
-                echo '<li><a href="login.php" class="nav-link">Login</a></li>';
+                // echo '<li><a href="login.php" class="nav-link">Login</a></li>';
+                echo '<li data-toggle="modal" data-target="#loginmodal">Login</li>';
                 }
                 else{
                     echo '<div class="dropdown">
@@ -155,8 +156,9 @@ init_e
                 //         </li>';
                 
                 ?>
-                <li><a href="registeraswriter.html" class="nav-link">Register as Writer</a></li>
-                <!-- <li data-toggle="modal" data-target="#writermodal">Register as Writer</li> -->
+                &nbsp;&nbsp;&nbsp;&nbsp;
+                <!-- <li><a href="registeraswriter.html" class="nav-link">Register as Writer</a></li> -->
+                <li data-toggle="modal" data-target="#writermodal">Register as Writer</li>
 
                   
 
