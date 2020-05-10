@@ -17,21 +17,21 @@ include "navbar.php";
           <img class="d-block w-100" src="images/1.jpg" alt="First slide">
           <div class="carousel-caption  d-md-block">
             <h1>Sample Title</h1>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid voluptatum aperiam pariatur commodi ex, quod a labore cum tempora! Sint tempora est hic neque aspernatur odit ratione aliquam laboriosam incidunt.</p>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid voluptatum aperiam pariatur commodi  </p>
           </div>
         </div>
         <div class="carousel-item">
           <img class="d-block w-100" src="images/1.jpg" alt="Second slide">
           <div class="carousel-caption  d-md-block">
             <h1>Sample Title</h1>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio quam assumenda, cupiditate, reprehenderit in fugit dolore quis eveniet, quas soluta ipsam libero repudiandae amet deleniti sit obcaecati dicta! Similique, a.</p>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio quam assumenda, cupiditate,</p>
           </div>
         </div>
         <div class="carousel-item">
           <img class="d-block w-100" src="images/1.jpg" alt="Third slide">
           <div class="carousel-caption  d-md-block">
             <h1>Sample Title</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam, nam odit? Mollitia omnis tenetur assumenda blanditiis et quo quibusdam provident, corporis illum asperiores ex minus numquam commodi aliquam expedita nihil.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam, nam odit? Mollitia omni</p>
           </div>
         </div>
       </div>
@@ -400,19 +400,21 @@ include "navbar.php";
 
     <!--testimonial end-->
 
-
+<br><br>
 <form>
   <div class="col-12 text-center">
   <div class="container">
     <h2 class="section-title mb-3">Subscribe to our Newsletter</h2>
     <p>Lorem ipsum text about why you should subscribe to our newsletter blabla. Lorem ipsum text about why you should subscribe to our newsletter blabla.</p>
   </div>
+  <br>
 
   <div class="container" style="background-color:white">
-    <input type="text" placeholder="Email address" name="mail" required>
+    <input  style="color:gray;" type="text" placeholder=" Email Address" name="mail" required>
     <label>
       <input type="checkbox" checked="checked" name="subscribe"> Daily Newsletter
     </label>
+    <br><br>
   </div>
   <div class="container">
     <input type="submit" value="Subscribe" class="btn btn-primary">
