@@ -5,7 +5,7 @@ error_reporting(0);
 init_e  
 ?>
 <!DOCTYPE html>
-<style>
+<!-- <style>
 .dropdown {
   position: relative;
   display: inline-block;
@@ -24,7 +24,7 @@ init_e
 .dropdown:hover .dropdown-content {
   display: block;
 }
-</style>
+</style> -->
 <html lang="en">
   <head>
     <title>Bluepen &mdash; Write Assignments</title>
@@ -76,18 +76,18 @@ init_e
    <!--nav -->
     <header class="site-navbar py-4 js-sticky-header site-navbar-target" role="banner">
 
-      <!-- <div class="container"> -->
+      <div class="container">
         <div class="row align-items-center">
           
-          <div class="col-6 col-md-3 col-xl-4  d-block">
-            <h1 class="mb-0 site-logo"><a href="index.html" class="text-black h2 mb-0" style="padding-left:15px;">Blue Pen<span class="text-primary"></span> </a></h1>
+          <div class="col-6 col-md-3 col-xl-3  d-block">
+            <h1 class="mb-0 site-logo"><a href="index.php" class="text-black h2 mb-0" style="padding-left:15px;">Blue Pen<span class="text-primary"></span> </a></h1>
           </div>
 
-          <div class="col-12 col-md-9 col-xl-8 main-menu">
+          <div class="col-12 col-md-9 col-xl-9 main-menu">
             <nav class="site-navigation position-relative text-right" role="navigation">
 
-              <ul class="site-menu main-menu js-clone-nav mr-auto d-none d-lg-block ml-0 pl-0" style="padding-right:15px;">
-                <li><a href="index.html" class="nav-link">Home</a></li>
+              <ul class="site-menu main-menu js-clone-nav mr-auto d-none d-lg-block ml-0 pl-0" style="padding-right:10px;">
+                <li><a href="index.php" class="nav-link">Home</a></li>
                 <!-- <li><a href="#features-section" class="nav-link">Features</a></li> -->
                 <!-- <li class="has-children"> -->
                   <li><a href="works.html" class="nav-link">How it works</a></li>
@@ -107,39 +107,34 @@ init_e
                 <li><a href="new_blog/index.html" class="nav-link">Blog</a></li>
                 <li><a href="contact.html" class="nav-link">Contact</a></li>
                 <li><a href="#" class="nav-link">Upload Assignment</a></li>
-                <li data-toggle="modal" style="color:black;" class="nav-link" data-target="#signupmodal"><a>Sign Up</a></li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <!-- <li><a href="signup.php" class="nav-link">Sign Up</a></li> -->
-                <!-- <li data-toggle="modal" data-target="#loginmodal">Login</li> -->
                 <?php
-            
                 if($_SESSION['first']==NULL){
-                // echo '<li><a href="login.php" class="nav-link">Login</a></li>';
-                echo '<li data-toggle="modal" style="color:black;" class="nav-link" data-target="#loginmodal"><a>Login</a></li>';
+                 echo '<li><a class="nav-link" href="#" data-toggle="modal" target="_blank" data-target="#signupmodal"><span >Sign Up</span></a></li>';
+                 echo '<li><a data-toggle="modal" href="#" style="" class="nav-link" data-target="#loginmodal">Login</a></li>';
                 }
                 else{
-                    echo '<div class="dropdown">
-                    <span>HI , '.$_SESSION['first'].'</span>
-                    ';
-                    if(strcmp($_SESSION['privilege'], "admin")!=0){
-                   echo ' <div class="dropdown-content">
-                    <li><a href="uploadassignment.php">Submit Assignment</a></li>
-                    <li><a href="changepassword.php">Change Password</a></li>
-                    <li><a href="includes/logout.inc.php">Log Out</a></li>
-                    </div>
-                  </div>';}
-                  if(strcmp($_SESSION['privilege'],"admin")==0){
-                    echo '<div class="dropdown-content">
-                    <li>
-                    <a href="viewwriters.php">View Writers</a>
-                  </li>';
-            echo '<li>
-                    <a href="viewclients.php">View Clients</a>
-                  <li>';
-            echo '<li>
-                  <a href="viewjobs.php">View Jobs</a>
-                </li>
-                <li><a href="includes/logout.inc.php">Log Out</a></li>
-                </div>';
+                  if(strcmp($_SESSION['privilege'], "admin")!=0){
+                    echo '<li class="has-children">
+                    <a href="#about-section" class="nav-link"><span>HI , '.$_SESSION['first'].'</span></a>';
+                    
+                   echo '<ul class="dropdown arrow-top">
+                   <li><a data-toggle="modal" data-target="#writermodal" target="_blank" class="nav-link"><span class="text-primary">Register as Writer</span></a></li>
+                   <li><a href="uploadassignment.php" target="_blank" class="nav-link"><span class="text-secondary">Submit Assignment </span></a></li>
+                    <li><a href="changepassword.php" target="_blank" class="nav-link"><span class="text-secondary">Change Password  </span></a></li>
+                    <li><a href="includes/logout.inc.php" target="_blank" class="nav-link"><span class="text-secondary">Log Out </span></a></li>';
+                  }
+                 elseif(strcmp($_SESSION['privilege'],"admin")==0){
+                  echo '<li class="has-children">
+                  <a href="#about-section" class="nav-link"><span>HI , '.$_SESSION['first'].'</span></a>';
+                  
+                 echo '<ul class="dropdown arrow-top">
+                 <li><a href="viewwriters.php" target="_blank" class="nav-link"><span class="text-secondary">View Writers</span></a></li>
+                  <li><a href="viewclients.php" target="_blank" class="nav-link"><span class="text-secondary">View Clients</span></a></li>
+                  <li><a href="viewjobs.php" target="_blank" class="nav-link"><span class="text-secondary">View Jobs</span></a></li>
+                  <li><a href="includes/logout.inc.php" target="_blank" class="nav-link"><span class="text-secondary">Log Out </span></a></li>';
+                  }
+                  else{
+                    echo '<li data-toggle="modal" data-target="#writermodal" style="color:black" class="nav-link"><a>Register as Writer</a></li>';
                   }
             
           }
@@ -156,9 +151,9 @@ init_e
                 //         </li>';
                 
                 ?>
-                &nbsp;&nbsp;&nbsp;&nbsp;
+                <!-- &nbsp;&nbsp;&nbsp;&nbsp; -->
                 <!-- <li><a href="registeraswriter.html" class="nav-link">Register as Writer</a></li> -->
-                <li data-toggle="modal" data-target="#writermodal" style="color:black" class="nav-link"><a>Register as Writer</a></li>
+                <!-- <li data-toggle="modal" data-target="#writermodal" style="color:black" class="nav-link"><a>Register as Writer</a></li> -->
 
                   
 
