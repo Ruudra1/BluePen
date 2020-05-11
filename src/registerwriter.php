@@ -173,24 +173,28 @@
         
               <ul class="nav nav-pills">
                 <li class="active"><a data-toggle="pill" href="#home">Writer</a></li>
-                <li><a data-toggle="pill" href="#menu1">Type Writer</a></li>
+                <!-- <li><a data-toggle="pill" href="#menu1">Type Writer</a></li> -->
                 <li><a data-toggle="pill" href="#menu2">Content Writer</a></li>
                 <!-- <li><a data-toggle="pill" href="#menu3">Menu 3</a></li> -->
               </ul>
               
               <div class="tab-content">
+               
                 <div id="home" class="tab-pane fade in active">
                   <h3>Writer</h3>
                   <p>put seperate forms for assignment writer, typewriter, content writer<br> Put writer form here</p>
                 </div>
+               
                 <div id="menu1" class="tab-pane fade">
                   <h3>Type Writer</h3>
                   <p>put seperate forms for assignment writer, typewriter, content writer<br> Put Type Writer form here</p>
                 </div>
+                
                 <div id="menu2" class="tab-pane fade">
                   <h3>Content Writer</h3>
                   <p>put seperate forms for assignment writer, typewriter, content writer<br> Put Content Writer form here</p>
                 </div>
+               
                 <div id="menu3" class="tab-pane fade">
                   <h3>Menu 3</h3>
                   <p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>

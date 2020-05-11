@@ -106,7 +106,7 @@ init_e
                 <!-- <li><a href="#testimonials-section" class="nav-link">Testimonials</a></li> -->
                 <li><a href="new_blog/index.html" class="nav-link">Blog</a></li>
                 <li><a href="contact.html" class="nav-link">Contact</a></li>
-                <li><a href="#" class="nav-link">Upload Assignment</a></li>
+                <!-- <li><a href="#" class="nav-link">Upload Assignment</a></li> -->
                 <?php
                 if($_SESSION['first']==NULL){
                  echo '<li><a class="nav-link" href="#" data-toggle="modal" target="_blank" data-target="#signupmodal"><span >Sign Up</span></a></li>';
@@ -134,7 +134,7 @@ init_e
                   <li><a href="includes/logout.inc.php" target="_blank" class="nav-link"><span class="text-secondary">Log Out </span></a></li>';
                   }
                   else{
-                    echo '<li data-toggle="modal" data-target="#writermodal" style="color:black" class="nav-link"><a>Register as Writer</a></li>';
+                    // echo '<li data-toggle="modal" data-target="#writermodal" style="color:black" class="nav-link"><a>Register as Writer</a></li>';
                   }
             
           }
@@ -153,7 +153,7 @@ init_e
                 ?>
                 <!-- &nbsp;&nbsp;&nbsp;&nbsp; -->
                 <!-- <li><a href="registeraswriter.html" class="nav-link">Register as Writer</a></li> -->
-                <!-- <li data-toggle="modal" data-target="#writermodal" style="color:black" class="nav-link"><a>Register as Writer</a></li> -->
+                <li data-toggle="modal" data-target="#writermodal" style="color:black" class="nav-link"><a>Register as Writer</a></li>
 
                   
 
