@@ -105,7 +105,7 @@ init_e
                 <!-- </li> -->
                 <!-- <li><a href="#testimonials-section" class="nav-link">Testimonials</a></li> -->
                 <li><a href="new_blog/index.html" class="nav-link">Blog</a></li>
-                <li><a href="contact.html" class="nav-link">Contact</a></li>
+                <li><a href="Contact Dummy.html" class="nav-link">Contact</a></li>
                 <!-- <li><a href="#" class="nav-link">Upload Assignment</a></li> -->
                 <?php
                 if($_SESSION['first']==NULL){
