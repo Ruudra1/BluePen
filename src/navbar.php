@@ -123,7 +123,7 @@ init_e
                    <li><a href="uploadassignment.php" target="_blank" class="nav-link"><span class="text-secondary">Submit Assignment </span></a></li>
                     <li><a href="changepassword.php" target="_blank" class="nav-link"><span class="text-secondary">Change Password  </span></a></li>
                     <li><a href="includes/logout.inc.php" target="_blank" class="nav-link"><span class="text-secondary">Log Out </span></a></li></ul></li>
-                    <li><a data-toggle="modal" data-target="#writermodal" target="_blank" class="nav-link"><span class="">Register as Writer</span></a></li>';
+                    <li><a href="" data-toggle="modal" data-target="#writermodal" target="_blank" class="nav-link"><span class="">Register as Writer</span></a></li>';
                   }
                  elseif(strcmp($_SESSION['privilege'],"admin")==0){
                   echo '<li class="has-children">
