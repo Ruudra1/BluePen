@@ -111,6 +111,7 @@ init_e
                 if($_SESSION['first']==NULL){
                  echo '<li><a class="nav-link" href="#" data-toggle="modal" target="_blank" data-target="#signupmodal"><span >Sign Up</span></a></li>';
                  echo '<li><a data-toggle="modal" href="#" style="" class="nav-link" data-target="#loginmodal">Login</a></li>';
+                 echo '<li data-toggle="modal" data-target="#writermodal" style="color:black" class="nav-link"><a>Register as Writer</a></li>';
                 }
                 else{
                   if(strcmp($_SESSION['privilege'], "admin")!=0){
@@ -118,10 +119,11 @@ init_e
                     <a href="#about-section" class="nav-link"><span>HI , '.$_SESSION['first'].'</span></a>';
                     
                    echo '<ul class="dropdown arrow-top">
-                   <li><a data-toggle="modal" data-target="#writermodal" target="_blank" class="nav-link"><span class="text-primary">Register as Writer</span></a></li>
+                   
                    <li><a href="uploadassignment.php" target="_blank" class="nav-link"><span class="text-secondary">Submit Assignment </span></a></li>
                     <li><a href="changepassword.php" target="_blank" class="nav-link"><span class="text-secondary">Change Password  </span></a></li>
-                    <li><a href="includes/logout.inc.php" target="_blank" class="nav-link"><span class="text-secondary">Log Out </span></a></li>';
+                    <li><a href="includes/logout.inc.php" target="_blank" class="nav-link"><span class="text-secondary">Log Out </span></a></li></ul></li>
+                    <li><a data-toggle="modal" data-target="#writermodal" target="_blank" class="nav-link"><span class="">Register as Writer</span></a></li>';
                   }
                  elseif(strcmp($_SESSION['privilege'],"admin")==0){
                   echo '<li class="has-children">
@@ -133,11 +135,10 @@ init_e
                   <li><a href="viewjobs.php" target="_blank" class="nav-link"><span class="text-secondary">View Jobs</span></a></li>
                   <li><a href="includes/logout.inc.php" target="_blank" class="nav-link"><span class="text-secondary">Log Out </span></a></li>';
                   }
-                  else{
-                    echo '<li data-toggle="modal" data-target="#writermodal" style="color:black" class="nav-link"><a>Register as Writer</a></li>';
-                  }
+                  
             
           }
+
 
 
                 //    echo ' <li class="menu-has-children ">
