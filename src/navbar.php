@@ -2,7 +2,7 @@
 include_once "includes/connect.inc.php";
 session_start();
 error_reporting(0);
-init_e  
+// init_e  
 ?>
 <!DOCTYPE html>
 <!-- <style>
@@ -28,6 +28,7 @@ init_e
 <html lang="en">
   <head>
     <title>Bluepen &mdash; Write Assignments</title>
+    <meta name="google-signin-client_id" content="103240549634-opo6tt4qgpnuq22fkicmdj7il8opogas.apps.googleusercontent.com">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     
@@ -50,6 +51,8 @@ init_e
     <link rel="stylesheet" href="css/aos.css">
 
     <link rel="stylesheet" href="css/style.css">
+
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
     
   </head>
   <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
@@ -185,7 +188,9 @@ init_e
             </button>
           </div>
           <div class="modal-body">
-            <button type="button" class="btn btn-secondary">Google Signup button here</button>
+          <div class="g-signin2" data-onsuccess="onSignIn"></div>
+          <br>
+            <!-- <button type="button" class="btn btn-secondary">Google Signup button here</button> -->
             <button type="button" class="btn btn-primary"><a href="registerwriter.php">Sign Up using email</a></button>
           </div>
           <div class="modal-footer">
@@ -196,6 +201,15 @@ init_e
       </div>
     </div>
     <!-- Writer modal ends -->
+    <script>
+    function onSignIn(googleUser) {
+  var profile = googleUser.getBasicProfile();
+  console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+  console.log('Name: ' + profile.getName());
+  console.log('Image URL: ' + profile.getImageUrl());
+  console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+}
+    </script>
 
     <!-- Signup Modal -->
     <div class="modal fade" id="signupmodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
