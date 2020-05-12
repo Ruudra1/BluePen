@@ -24,12 +24,6 @@
     <link rel="stylesheet" href="css/aos.css">
 
     <link rel="stylesheet" href="css/style.css">
-
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     
   </head>
   <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
@@ -142,44 +136,10 @@
 
             <form action="#" class="p-5 bg-white">
 
-              <div class="container">
-                <!-- <h2>Dynamic Pills</h2> -->
-          
-                <ul class="nav nav-pills">
-                  <li class="active"><a data-toggle="pill" href="#home">Writer</a></li>
-                  <!-- <li><a data-toggle="pill" href="#menu1">Type Writer</a></li> -->
-                  <li><a data-toggle="pill" href="#menu2">Content Writer</a></li>
-                  <!-- <li><a data-toggle="pill" href="#menu3">Menu 3</a></li> -->
-                </ul>
-                
-                <div class="tab-content">
-                 
-                  <div id="home" class="tab-pane fade in active">
-                    <h3>Writer</h3>
-                    <p>put seperate forms for assignment writer, typewriter, content writer<br> Put writer form here</p>
-                  </div>
-                 
-                  <div id="menu1" class="tab-pane fade">
-                    <h3>Type Writer</h3>
-                    <p>put seperate forms for assignment writer, typewriter, content writer<br> Put Type Writer form here</p>
-                  </div>
-                  
-                  <div id="menu2" class="tab-pane fade">
-                    <h3>Content Writer</h3>
-                    <p>put seperate forms for assignment writer, typewriter, content writer<br> Put Content Writer form here</p>
-                  </div>
-                 
-                  <div id="menu3" class="tab-pane fade">
-                    <h3>Menu 3</h3>
-                    <p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
-                  </div>
-                </div>
-              </div>
-
 
               <ul class="nav nav-tabs" >
-                <li class="nav-link active"><a data-toggle="tab" href="#home">Writer</a></li>
-                <li class="nav-link"><a data-toggle="tab" href="#menu1">Content Writer</a></li>
+                <li class="nav-link active"><a data-toggle="tab" href="#home">Hand written</a></li>
+                <li class="nav-link"><a data-toggle="tab" href="#menu1">Content</a></li>
                 <!-- <li class="nav-link"><a data-toggle="tab" href="#menu2">Menu 2</a></li> -->
               </ul>
               
@@ -187,42 +147,27 @@
                 <div id="home" class="tab-pane fade in active">
                 
                   <br><br>
-                  <h2 class="h4 text-black mb-5">Register Here as Writer</h2> 
+                  <h2 class="h4 text-black mb-5">Upload Assignment Here</h2> 
 
-              <div class="row form-group">
-                <div class="col-md-6 mb-3 mb-md-0">
-                  <label class="text-black" for="fname">First Name</label>
-                  <input type="text" id="fname" class="form-control rounded-0">
-                </div>
-                <div class="col-md-6">
-                  <label class="text-black" for="lname">Last Name</label>
-                  <input type="text" id="lname" class="form-control rounded-0">
-                </div>
-              </div>
 
-              <div class="row form-group">
-                
-                <div class="col-md-12">
-                  <label class="text-black" for="email">Email</label> 
-                  <input type="email" id="email" class="form-control rounded-0">
-                </div>
-              </div>
+                  <div class="form-group">
+                    <label for="sel1" style="color: black;">Ink Color</label>
+                    <select class="form-control" id="sel1">
+                      <option>Blue</option>
+                      <option>Black</option>
+                     
+                    </select>
+                  </div>
 
-              <div class="row form-group">
-                
-                <div class="col-md-12">
-                  <label class="text-black" for="subject">Mobile Number</label> 
-                  <input type="subject" id="subject" class="form-control rounded-0">
-                </div>
-              </div>
+                  <label class="text-black" for="message">Delivery Date</label>
+                  <div class="form-group">
+                                      
+                      <input class="form-control" type="date" value="2011-08-19" id="example-date-input">
+                    
+                  </div>
 
-              <div class="row form-group">
-                <div class="col-md-12">
-                  <label class="text-black" for="message">Address</label> 
-                  <textarea name="message" id="message" cols="30" rows="7" class="form-control rounded-0" placeholder="Type your Address here..."></textarea>
-                </div>
-              </div>
-              <label class="text-black" for="message">Upload Handwriting Sample</label><br>
+             
+              <label class="text-black" for="message">Upload Assignment</label><br>
               <div class="input-group">
                
                 <div class="input-group-prepend">
@@ -242,82 +187,45 @@
                   <input type="submit" value="Reset" class="btn btn-primary mr-2 mb-2" style="background-color: gray; border-color: gray;" >
                 </div>
                 <div class="col-md-6">
-                  <input type="submit" value="Register" class="btn btn-primary mr-2 mb-2">
+                  <input type="submit" value="Upload" class="btn btn-primary mr-2 mb-2">
                 </div>
               </div>
                 </div>
                 <div id="menu1" class="tab-pane fade">
                   
                   <br><br>
-                  <h2 class="h4 text-black mb-5">Register Here as Content Writer</h2> 
+                  <h2 class="h4 text-black mb-5">Upload Content Writing Assignment</h2> 
                   
-                  <div class="row form-group">
-                    <div class="col-md-6 mb-3 mb-md-0">
-                      <label class="text-black" for="fname">First Name</label>
-                      <input type="text" id="fname" class="form-control rounded-0">
-                    </div>
-                    <div class="col-md-6">
-                      <label class="text-black" for="lname">Last Name</label>
-                      <input type="text" id="lname" class="form-control rounded-0">
-                    </div>
-                  </div>
-    
-                  <div class="row form-group">
-                    
-                    <div class="col-md-12">
-                      <label class="text-black" for="email">Email</label> 
-                      <input type="email" id="email" class="form-control rounded-0">
-                    </div>
-                  </div>
+                  
     
                   <div class="row form-group">
                     
                   <div class="col-md-12">
-                      <label class="text-black" for="subject">Mobile Number</label> 
+                      <label class="text-black" for="subject">Title</label> 
                       <input type="subject" id="subject" class="form-control rounded-0">
                     </div>
                   </div>
     
                   <div class="row form-group">
                     <div class="col-md-12">
-                      <label class="text-black" for="message">Address</label> 
+                      <label class="text-black" for="message">Description</label> 
                       <textarea name="message" id="message" cols="30" rows="7" class="form-control rounded-0" placeholder="Type your Address here..."></textarea>
                     </div>
                   </div>
-                  <div class="row form-group">
+
+                  <label class="text-black" for="message">Delivery Date</label>
+                  <div class="form-group">
+                                      
+                      <input class="form-control" type="date" value="2011-08-19" id="example-date-input">
                     
-                  <div class="col-md-12">
-                        <label class="text-black" for="subject">Genere</label> 
-                        <input type="subject" id="subject" class="form-control rounded-0">
-                      </div>
                   </div>
-                  <div class="row form-group">
                     
-                    <div class="col-md-12">
-                        <label class="text-black" for="subject">Language</label> 
-                        <input type="subject" id="subject" class="form-control rounded-0" placeholder="Preference 1">
-                      </div>
-                  </div>
-                  <div class="row form-group">
+                  
+                  
                     
-                    <div class="col-md-12">
-                         
-                        <input type="subject" id="subject" class="form-control rounded-0" placeholder="Preference 2">
-                      </div>
+                    
                   </div>
-                  <label class="text-black" for="message">Previously written segments</label><br>
-                  <div class="input-group">
-                   
-                    <div class="input-group-prepend">
-                      <span class="input-group-text" id="inputGroupFileAddon01">Pdf's & Doc's</span>
-                    </div>
-                    <div class="custom-file">
-                      
-                      <input type="file" class="custom-file-input" id="inputGroupFile01"
-                        aria-describedby="inputGroupFileAddon01">
-                      <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
-                    </div>
-                  </div>
+                  
                   <br><br>
     
                   <div class="row form-group">
