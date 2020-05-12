@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: May 12, 2020 at 11:12 AM
+-- Generation Time: May 12, 2020 at 03:36 PM
 -- Server version: 5.7.26
 -- PHP Version: 7.2.18
 
@@ -96,17 +96,19 @@ CREATE TABLE IF NOT EXISTS `blog` (
   `img2` varchar(256) COLLATE utf8mb4_unicode_520_ci NOT NULL,
   `img3` varchar(256) COLLATE utf8mb4_unicode_520_ci NOT NULL,
   `date` date NOT NULL,
+  `imgw` varchar(256) COLLATE utf8mb4_unicode_520_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
 
 --
 -- Dumping data for table `blog`
 --
 
-INSERT INTO `blog` (`id`, `title`, `des`, `tags`, `name`, `des_writer`, `link`, `main`, `img1`, `img2`, `img3`, `date`) VALUES
-(2, 'dsfsdv', 'gff', 'nature;adventure;', 'Garba', 'te377', 'www.jay.com', 'Capture.PNG', 'Capture1.PNG', 'Capture2.PNG', 'Capture4.PNG', '2012-05-20'),
-(3, 'dejyh', 'gff', 'nature;adventure;', 'a', 'te377', 'www.jay.com', 'Capture6.PNG', 'Capture7.PNG', 'Capture8.PNG', 'CaptureDATA.PNG', '2012-05-20'),
-(4, 'dejyh', 'gff', 'nature;adventure;', 'a', 'te377', 'www.jay.com', 'Capture6.PNG', 'Capture7.PNG', 'Capture8.PNG', 'CaptureDATA.PNG', '2012-05-20');
+INSERT INTO `blog` (`id`, `title`, `des`, `tags`, `name`, `des_writer`, `link`, `main`, `img1`, `img2`, `img3`, `date`, `imgw`) VALUES
+(2, 'dsfsdv', 'gff', 'nature;adventure;', 'Garba', 'te377', 'www.jay.com', 'Capture.PNG', 'Capture1.PNG', 'Capture2.PNG', 'Capture4.PNG', '2012-05-20', ''),
+(3, 'dejyh', 'gff', 'nature;adventure;', 'a', 'te377', 'www.jay.com', 'Capture6.PNG', 'Capture7.PNG', 'Capture8.PNG', 'CaptureDATA.PNG', '2012-05-20', ''),
+(4, 'dejyh', 'gff', 'nature;adventure;', 'a', 'te377', 'www.jay.com', 'Capture6.PNG', 'Capture7.PNG', 'Capture8.PNG', 'CaptureDATA.PNG', '2012-05-20', ''),
+(5, 'dsfsdv', 'gff', 'nature;adventure;', 'jay', 'te377', 'http://www.jay.com', 'KEVAL SHAH - TE3 - 68-1.jpg', 'KEVAL SHAH - TE3 - 68-1.png', 'WhatsApp Image 2020-05-05 at 20.01.42.jpeg', 'WhatsApp Image 2020-03-06 at 08.42.12.jpeg', '2020-05-12', 'WhatsApp Image 2020-03-01 at 19.29.18.jpeg');
 
 -- --------------------------------------------------------
 
