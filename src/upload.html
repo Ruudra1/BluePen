@@ -24,6 +24,12 @@
     <link rel="stylesheet" href="css/aos.css">
 
     <link rel="stylesheet" href="css/style.css">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     
   </head>
   <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
@@ -124,11 +130,7 @@
     <br><br><br>
     <div class="site-section bg-image2 overlay" id="contact-section" style="background-image: url('images/img_2.jpg');">
       <div class="container">
-        <!-- <div class="row mb-5">
-          <div class="col-12 text-center">
-            <h2 class="section-title mb-3 text-white">Resgistrations Here</h2>
-          </div>
-        </div> -->
+        
         <div class="row justify-content-center">
           <div class="col-lg-7 mb-5">
 
@@ -136,112 +138,161 @@
 
             <form action="#" class="p-5 bg-white">
 
+              <!-- <div class="container">
+                
+          
+                <ul class="nav nav-pills">
+                  <li class="active"><a data-toggle="pill" href="#home">Writer</a></li>
+                  
+                  <li><a data-toggle="pill" href="#menu2">Content Writer</a></li>
+                 
+                </ul>
+                
+                <div class="tab-content">
+                 
+                  <div id="home" class="tab-pane fade in active">
+                    <h3>Writer</h3>
+                    <p>put seperate forms for assignment writer, typewriter, content writer<br> Put writer form here</p>
 
-              <ul class="nav nav-tabs" >
-                <li class="nav-link active"><a data-toggle="tab" href="#home">Hand written</a></li>
-                <li class="nav-link"><a data-toggle="tab" href="#menu1">Content</a></li>
-                <!-- <li class="nav-link"><a data-toggle="tab" href="#menu2">Menu 2</a></li> -->
+
+                    
+              
+                      
+        
+          
+  
+
+                    
+                  </div>
+                 
+                 
+                  
+                  <div id="menu2" class="tab-pane fade">
+                    <h3>Content Writer</h3>
+                    <p>put seperate forms for assignment writer, typewriter, content writer<br> Put Content Writer form here</p>
+                  </div>
+                 
+                  
+                </div>
+              </div> -->
+
+              <ul class="nav nav-tabs">
+                <li class="active"><a data-toggle="tab" href="#home">Hand-written</a></li>
+                <li><a data-toggle="tab" href="#menu1">Typed</a></li>
+                
               </ul>
               
               <div class="tab-content">
                 <div id="home" class="tab-pane fade in active">
-                
                   <br><br>
-                  <h2 class="h4 text-black mb-5">Upload Assignment Here</h2> 
-
-
-                  <div class="form-group">
-                    <label for="sel1" style="color: black;">Ink Color</label>
-                    <select class="form-control" id="sel1">
-                      <option>Blue</option>
-                      <option>Black</option>
-                     
-                    </select>
-                  </div>
-
-                  <label class="text-black" for="message">Delivery Date</label>
-                  <div class="form-group">
-                                      
-                      <input class="form-control" type="date" value="2011-08-19" id="example-date-input">
-                    
-                  </div>
-
-             
-              <label class="text-black" for="message">Upload Assignment</label><br>
-              <div class="input-group">
-               
-                <div class="input-group-prepend">
-                  <span class="input-group-text" id="inputGroupFileAddon01">Pdf</span>
-                </div>
-                <div class="custom-file">
+                  <h3>Upload Assignment Here</h3>
                   
-                  <input type="file" class="custom-file-input" id="inputGroupFile01"
-                    aria-describedby="inputGroupFileAddon01">
-                  <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+                  <br><br>
+                  
+              
+                     
+      
+                    
+      
+                  <div class="form-group">
+                  <label for="exampleFormControlSelect1">Ink Color</label>
+                  <select class="form-control" id="exampleFormControlSelect1">
+                    <option>Blue</option>
+                    <option>Black</option>
+                    
+                  </select>
                 </div>
-              </div>
-              <br><br>
+                <label for="example-date-input" class=" col-form-label">Delivery Date</label>
+                <div class="form-group row">
+                  
+                  <div class="col-12">
+                    <input class="form-control" type="date" value="2011-08-19" id="example-date-input">
+                  </div>
+                </div>
 
-              <div class="row form-group">
-                <div class="col-md-6">
-                  <input type="submit" value="Reset" class="btn btn-primary mr-2 mb-2" style="background-color: gray; border-color: gray;" >
-                </div>
-                <div class="col-md-6">
-                  <input type="submit" value="Upload" class="btn btn-primary mr-2 mb-2">
-                </div>
-              </div>
+                    <div class="form-group">
+                      <label for="exampleInputFile">Upload assignment</label>
+                      <input type="file" class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp">
+                      <small id="fileHelp" class="form-text text-muted">sample line
+
+                      </small>
+                    </div>
+      
+                    <div class="row form-group">
+                      <div class="col-md-12">
+                        <input type="submit" value="Submit" class="btn btn-primary mr-2 mb-2" value="send">
+                      </div>
+                    </div>
+      
+        
+                  
+
+
                 </div>
                 <div id="menu1" class="tab-pane fade">
                   
-                  <br><br>
-                  <h2 class="h4 text-black mb-5">Upload Content Writing Assignment</h2> 
-                  
-                  
-    
-                  <div class="row form-group">
-                    
-                  <div class="col-md-12">
-                      <label class="text-black" for="subject">Title</label> 
-                      <input type="subject" id="subject" class="form-control rounded-0">
-                    </div>
-                  </div>
-    
-                  <div class="row form-group">
-                    <div class="col-md-12">
-                      <label class="text-black" for="message">Description</label> 
-                      <textarea name="message" id="message" cols="30" rows="7" class="form-control rounded-0" placeholder="Type your Address here..."></textarea>
-                    </div>
-                  </div>
 
-                  <label class="text-black" for="message">Delivery Date</label>
-                  <div class="form-group">
-                                      
-                      <input class="form-control" type="date" value="2011-08-19" id="example-date-input">
-                    
-                  </div>
-                    
-                  
-                  
-                    
-                    
-                  </div>
+                  <br><br>
+                  <h3>Typing Assignments here</h3>
                   
                   <br><br>
-    
-                  <div class="row form-group">
-                    <div class="col-md-6">
-                      <input type="submit" value="Reset" class="btn btn-primary mr-2 mb-2" style="background-color: gray; border-color: gray;" >
+                  
+              
+                     
+      
+                    
+      
+                    
+      
+                    <div class="row form-group">
+                      
+                      <div class="col-md-12">
+                        <label class="text-black" for="subject">Title</label> 
+                        <input type="subject" id="subject" class="form-control rounded-0" name="subject">
+                      </div>
                     </div>
-                    <div class="col-md-6">
-                      <input type="submit" value="Register" class="btn btn-primary mr-2 mb-2">
+      
+                    <div class="row form-group">
+                      <div class="col-md-12">
+                        <label class="text-black" for="message">Description</label> 
+                        <textarea name="message" id="message" cols="30" rows="7" class="form-control rounded-0" placeholder="Leave your message here..."></textarea>
+                      </div>
                     </div>
+
+                    <label for="example-date-input" class=" col-form-label">Delivery Date</label>
+                <div class="form-group row">
+                  
+                  <div class="col-12">
+                    <input class="form-control" type="date" value="2011-08-19" id="example-date-input">
                   </div>
+                </div>
+
+                    
+
+                    
+      
+                    <div class="row form-group">
+                      <div class="col-md-12">
+                        <input type="submit" value="Submit" class="btn btn-primary mr-2 mb-2" value="Submit">
+                      </div>
+                    </div>
+      
+
 
                 </div>
-                <div id="menu2" class="tab-pane fade">
-                  <h3>Menu 2</h3>
-                  <p>Some content in menu 2.</p>
+                
+              </div>
+             
+              
+                   
+                 
+                         
+                       
+    
+                 
+
                 </div>
+                
               </div>
               
               
