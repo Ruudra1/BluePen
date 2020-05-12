@@ -1,7 +1,7 @@
  <?php
  include "../navbar.php";
  include_once "../includes/connect.inc.php";
- $sql="SELECT * FROM blog WHERE id=2";
+ $sql="SELECT * FROM blog WHERE id=5";
  $result = mysqli_query($conn, $sql);
  $row=mysqli_fetch_array($result); 
     // var_dump($row);

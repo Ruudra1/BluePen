@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: May 12, 2020 at 11:12 AM
+-- Generation Time: May 12, 2020 at 12:56 PM
 -- Server version: 5.7.26
 -- PHP Version: 7.2.18
 
@@ -97,7 +97,7 @@ CREATE TABLE IF NOT EXISTS `blog` (
   `img3` varchar(256) COLLATE utf8mb4_unicode_520_ci NOT NULL,
   `date` date NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
 
 --
 -- Dumping data for table `blog`
@@ -106,7 +106,51 @@ CREATE TABLE IF NOT EXISTS `blog` (
 INSERT INTO `blog` (`id`, `title`, `des`, `tags`, `name`, `des_writer`, `link`, `main`, `img1`, `img2`, `img3`, `date`) VALUES
 (2, 'dsfsdv', 'gff', 'nature;adventure;', 'Garba', 'te377', 'www.jay.com', 'Capture.PNG', 'Capture1.PNG', 'Capture2.PNG', 'Capture4.PNG', '2012-05-20'),
 (3, 'dejyh', 'gff', 'nature;adventure;', 'a', 'te377', 'www.jay.com', 'Capture6.PNG', 'Capture7.PNG', 'Capture8.PNG', 'CaptureDATA.PNG', '2012-05-20'),
-(4, 'dejyh', 'gff', 'nature;adventure;', 'a', 'te377', 'www.jay.com', 'Capture6.PNG', 'Capture7.PNG', 'Capture8.PNG', 'CaptureDATA.PNG', '2012-05-20');
+(4, 'dejyh', 'gff', 'nature;adventure;', 'a', 'te377', 'www.jay.com', 'Capture6.PNG', 'Capture7.PNG', 'Capture8.PNG', 'CaptureDATA.PNG', '2012-05-20'),
+(5, 'test', 'test description', 'test; another test; yet test', 'bhavya', 'chaava', 'http://bluepen.co.in/', 'Black Panther.JPG', 'IMG_9752.JPG', 'IMG_9956.JPG', 'Sheeshaa-Iron-Man-Fidget-Hand-SDL151598674-1-8f7a3.jpg', '2020-05-12');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `contentwriter`
+--
+
+DROP TABLE IF EXISTS `contentwriter`;
+CREATE TABLE IF NOT EXISTS `contentwriter` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `firstname` varchar(50) NOT NULL,
+  `lastname` varchar(50) NOT NULL,
+  `mobile` bigint(10) NOT NULL,
+  `email` varchar(256) NOT NULL,
+  `address` varchar(2048) NOT NULL,
+  `genere` varchar(256) NOT NULL,
+  `lang1` varchar(64) NOT NULL,
+  `lang2` varchar(64) NOT NULL,
+  `samples` varchar(8192) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `contentwriting`
+--
+
+DROP TABLE IF EXISTS `contentwriting`;
+CREATE TABLE IF NOT EXISTS `contentwriting` (
+  `user_id` int(11) NOT NULL,
+  `content_id` int(11) NOT NULL AUTO_INCREMENT,
+  `content_title` varchar(128) NOT NULL,
+  `content_desc` varchar(8192) NOT NULL,
+  `submission_datetime` timestamp NOT NULL,
+  `delivery_date` date NOT NULL,
+  `amount` int(11) NOT NULL,
+  `soa_assigned` tinyint(4) NOT NULL,
+  `soa_written` tinyint(4) NOT NULL,
+  `soa_paid` tinyint(4) NOT NULL,
+  `soa_completed` tinyint(4) NOT NULL,
+  PRIMARY KEY (`content_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
