@@ -115,6 +115,12 @@
                   <input class="form-control rounded-0" type="file" name="img3" required>
                 </div>
 
+                <div class="row form-group col-md-12">
+                  <label class="text-black">writer img</label> 
+                  <input class="form-control rounded-0" type="file" name="imgw" required>
+                </div>
+
+
               </div>
               <input type="submit" name="submit" value="submit" class="btn btn-primary mr-2 mb-2">
               <!-- <br><a class="mr-2 mb-2" href="signup.php">Not a member? SignUp</a> -->

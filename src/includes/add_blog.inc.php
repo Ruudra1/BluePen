@@ -18,70 +18,15 @@ if (isset($_POST['submit']))
     $img1=mysqli_real_escape_string($conn, $_FILES["img1"]["name"]);
     $img2=mysqli_real_escape_string($conn, $_FILES["img2"]["name"]);
     $img3=mysqli_real_escape_string($conn, $_FILES["img3"]["name"]);
+    $imgw=mysqli_real_escape_string($conn, $_FILES["imgw"]["name"]);
 
-
-    // Set up session variables so if error occurs user doesn't have to fill entire form
-    // $_SESSION['formFilled'] = true;
-    // $_SESSION['firstname'] = $firstname;
-    // $_SESSION['lastname'] = $lastname;
-    // $_SESSION['email'] = $email;
-    // $_SESSION['contact'] = $contact;
 
     $maintype = strtolower(pathinfo($main,PATHINFO_EXTENSION));
     $imgtype1 = strtolower(pathinfo($img1,PATHINFO_EXTENSION));
     $imgtype2 = strtolower(pathinfo($img2,PATHINFO_EXTENSION));
     $imgtype3 = strtolower(pathinfo($img3,PATHINFO_EXTENSION));
-    // $allowedExts = array("pdf");
-    // var_dump($allowedExts);
-    // $temp = explode(".", $_FILES["sample"]["name"]);
-    // var_dump($temp);
-    // $extension = end($temp);
-    // var_dump($extension);
-// $upload_pdf=$_FILES["pdf_file"]["name"];
-// move_uploaded_file($_FILES["pdf_file"]["tmp_name"],"uploads/pdf/" . $_FILES["pdf_file"]["name"]);
-// $sql=mysqli_query($con,"INSERT INTO `Table Name`(`pdf_file`)VALUES($upload_pdf')");
-// if($sql){
-// 	echo "Data Submit Successful";
-// }
-// else{
-// 	echo "Data Submit Error!!";
-// }
-
-
-    // Form Validation / Error Handlers
-    // Check for empty fields
-    // if(strcmp($allowedExts, $extension))
-    // {
+    $imgtypew = strtolower(pathinfo($imgw,PATHINFO_EXTENSION));
     
-        // if(empty($firstname) || empty($lastname) || empty($email) || empty($address))
-        // {
-        //     header("Location: ../registerwriter.php?signup=empty");
-        //     exit();
-        // }
-        // else if(!preg_match("/^[a-zA-Z]*$/", $firstname) || !preg_match("/^[a-zA-Z]*$/", $lastname))
-        // {
-        //     // Check if input characters are Valid i.e if they only contain a-z and A-Z
-        //     header("Location: ../registerwriter.php?signup=invalid");
-        //     exit();
-        // }
-        // else if (!filter_var($email, FILTER_VALIDATE_EMAIL))
-        // {
-        //     // Check if email is Valid
-        //     header("Location: ../registerwriter.php?signup=email");
-        //     exit();
-        // }
-        // else if($contact <=10000000 || $contact >= 99999999999)
-        // {
-        //     //Check if phone is valid
-        //     header("Location: ../registerwriter.php?signup=contact");
-        //     exit();
-        // }
-        // else if(strlen($address) > 500)
-        // {
-        //     //Check if address is valid
-        //     header("Location: ../registerwriter.php?signup=address");
-        //     exit();
-        // }
         if($maintype != 'jpg' && $maintype != 'jpeg' &&  $maintype != 'png' )
         {
             //Check if file is valid
@@ -114,6 +59,14 @@ if (isset($_POST['submit']))
             exit();
         }
 
+
+        else if($imgtypew != 'jpg' && $imgtypew != 'jpeg' &&  $imgtypew != 'png' )
+        {
+            //Check if file is valid
+            // var_dump($FileType);
+            header("Location: ../add_blog.php?error=imgwinvalid");
+            exit();
+        }
         // else if(!file_exists($_FILES['sample']['tmp_name']) || !is_uploaded_file($_FILES['sample']['tmp_name']))
         // {
         //     //sample file problem
@@ -135,12 +88,19 @@ if (isset($_POST['submit']))
 
             $imgfile3 = $_FILES['img3']['name'];
             $imgtarget3 = "../blog/".basename($imgfile3);
+
+            $imgfilew = $_FILES['imgw']['name'];
+            $imgtargetw = "../blog/".basename($imgfilew);
+
 $error=0;
             if(!move_uploaded_file($_FILES["img1"]["tmp_name"], $imgtarget1))
                { $error=1; }
             if(!move_uploaded_file($_FILES["img2"]["tmp_name"], $imgtarget2))
                { $error=1; }
             if(!move_uploaded_file($_FILES["img3"]["tmp_name"], $imgtarget3))
+               { $error=1; }
+
+               if(!move_uploaded_file($_FILES["imgw"]["tmp_name"], $imgtargetw))
                { $error=1; }
 
             if($error==1)
@@ -157,7 +117,7 @@ $error=0;
               // Insert the user in the db
                 if (move_uploaded_file($_FILES["main"]["tmp_name"], $maintarget) )                
                 {
-                    $sql = "INSERT INTO `blog`(`title`, `des`, `tags`, `name`, `des_writer`, `link`, `main`, `img1`, `img2`, `img3`, `date`) VALUES ('$title','$des','$tags','$name','$abt','$link','$mainfile','$imgfile1','$imgfile2','$imgfile3','$date')";
+                    $sql = "INSERT INTO `blog`(`title`, `des`, `tags`, `name`, `des_writer`, `link`, `main`, `img1`, `img2`, `img3`, `date`,`imgw`) VALUES ('$title','$des','$tags','$name','$abt','$link','$mainfile','$imgfile1','$imgfile2','$imgfile3','$date','$imgfilew')";
                     mysqli_query($conn, $sql) or die(mysqli_error($conn));
                     // Now redirect the user
                     // $_SESSION['formFilled'] = FALSE;
