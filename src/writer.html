@@ -126,7 +126,7 @@
       <div class="container">
         <div class="row mb-5">
           <div class="col-12 text-center">
-            <h2 class="section-title mb-3 text-white">Contact Us</h2>
+            <h2 class="section-title mb-3 text-white">Resgistrations Here</h2>
           </div>
         </div>
         <div class="row justify-content-center">
@@ -135,8 +135,19 @@
             
 
             <form action="#" class="p-5 bg-white">
+
+
+              <ul class="nav nav-tabs" >
+                <li class="nav-link active"><a data-toggle="tab" href="#home">Writer</a></li>
+                <li class="nav-link"><a data-toggle="tab" href="#menu1">Content Writer</a></li>
+                <!-- <li class="nav-link"><a data-toggle="tab" href="#menu2">Menu 2</a></li> -->
+              </ul>
               
-              <h2 class="h4 text-black mb-5">Contact Form</h2> 
+              <div class="tab-content">
+                <div id="home" class="tab-pane fade in active">
+                
+                  <br><br>
+                  <h2 class="h4 text-black mb-5">Register Here as Writer</h2> 
 
               <div class="row form-group">
                 <div class="col-md-6 mb-3 mb-md-0">
@@ -160,26 +171,137 @@
               <div class="row form-group">
                 
                 <div class="col-md-12">
-                  <label class="text-black" for="subject">Subject</label> 
+                  <label class="text-black" for="subject">Mobile Number</label> 
                   <input type="subject" id="subject" class="form-control rounded-0">
                 </div>
               </div>
 
               <div class="row form-group">
                 <div class="col-md-12">
-                  <label class="text-black" for="message">Message</label> 
-                  <textarea name="message" id="message" cols="30" rows="7" class="form-control rounded-0" placeholder="Leave your message here..."></textarea>
+                  <label class="text-black" for="message">Address</label> 
+                  <textarea name="message" id="message" cols="30" rows="7" class="form-control rounded-0" placeholder="Type your Address here..."></textarea>
                 </div>
               </div>
+              <label class="text-black" for="message">Upload Handwriting Sample</label><br>
+              <div class="input-group">
+               
+                <div class="input-group-prepend">
+                  <span class="input-group-text" id="inputGroupFileAddon01">Pdf's & Doc's</span>
+                </div>
+                <div class="custom-file">
+                  
+                  <input type="file" class="custom-file-input" id="inputGroupFile01"
+                    aria-describedby="inputGroupFileAddon01">
+                  <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+                </div>
+              </div>
+              <br><br>
 
               <div class="row form-group">
-                <div class="col-md-12">
-                  <input type="submit" value="Send Message" class="btn btn-primary mr-2 mb-2">
+                <div class="col-md-6">
+                  <input type="submit" value="Reset" class="btn btn-primary mr-2 mb-2" style="background-color: gray; border-color: gray;" >
+                </div>
+                <div class="col-md-6">
+                  <input type="submit" value="Register" class="btn btn-primary mr-2 mb-2">
                 </div>
               </div>
+                </div>
+                <div id="menu1" class="tab-pane fade">
+                  
+                  <br><br>
+                  <h2 class="h4 text-black mb-5">Register Here as Content Writer</h2> 
+                  
+                  <div class="row form-group">
+                    <div class="col-md-6 mb-3 mb-md-0">
+                      <label class="text-black" for="fname">First Name</label>
+                      <input type="text" id="fname" class="form-control rounded-0">
+                    </div>
+                    <div class="col-md-6">
+                      <label class="text-black" for="lname">Last Name</label>
+                      <input type="text" id="lname" class="form-control rounded-0">
+                    </div>
+                  </div>
+    
+                  <div class="row form-group">
+                    
+                    <div class="col-md-12">
+                      <label class="text-black" for="email">Email</label> 
+                      <input type="email" id="email" class="form-control rounded-0">
+                    </div>
+                  </div>
+    
+                  <div class="row form-group">
+                    
+                  <div class="col-md-12">
+                      <label class="text-black" for="subject">Mobile Number</label> 
+                      <input type="subject" id="subject" class="form-control rounded-0">
+                    </div>
+                  </div>
+    
+                  <div class="row form-group">
+                    <div class="col-md-12">
+                      <label class="text-black" for="message">Address</label> 
+                      <textarea name="message" id="message" cols="30" rows="7" class="form-control rounded-0" placeholder="Type your Address here..."></textarea>
+                    </div>
+                  </div>
+                  <div class="row form-group">
+                    
+                  <div class="col-md-12">
+                        <label class="text-black" for="subject">Genere</label> 
+                        <input type="subject" id="subject" class="form-control rounded-0">
+                      </div>
+                  </div>
+                  <div class="row form-group">
+                    
+                    <div class="col-md-12">
+                        <label class="text-black" for="subject">Language</label> 
+                        <input type="subject" id="subject" class="form-control rounded-0" placeholder="Preference 1">
+                      </div>
+                  </div>
+                  <div class="row form-group">
+                    
+                    <div class="col-md-12">
+                         
+                        <input type="subject" id="subject" class="form-control rounded-0" placeholder="Preference 2">
+                      </div>
+                  </div>
+                  <label class="text-black" for="message">Previously written segments</label><br>
+                  <div class="input-group">
+                   
+                    <div class="input-group-prepend">
+                      <span class="input-group-text" id="inputGroupFileAddon01">Pdf's & Doc's</span>
+                    </div>
+                    <div class="custom-file">
+                      
+                      <input type="file" class="custom-file-input" id="inputGroupFile01"
+                        aria-describedby="inputGroupFileAddon01">
+                      <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+                    </div>
+                  </div>
+                  <br><br>
+    
+                  <div class="row form-group">
+                    <div class="col-md-6">
+                      <input type="submit" value="Reset" class="btn btn-primary mr-2 mb-2" style="background-color: gray; border-color: gray;" >
+                    </div>
+                    <div class="col-md-6">
+                      <input type="submit" value="Register" class="btn btn-primary mr-2 mb-2">
+                    </div>
+                  </div>
+
+                </div>
+                <div id="menu2" class="tab-pane fade">
+                  <h3>Menu 2</h3>
+                  <p>Some content in menu 2.</p>
+                </div>
+              </div>
+              
+              
 
   
             </form>
+
+            
           </div>
         
         </div>
@@ -189,6 +311,7 @@
 
     <!--contact end-->
 
+    
 
     <!--footer-->
 
