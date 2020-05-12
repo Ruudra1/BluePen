@@ -134,7 +134,8 @@ include "navbar.php";
               </div>
               <div>
                 <h3>Coming Soon</h3>
-                <p class="description">We'll take care of your projects soon.</p><br>
+                <p>class="description">We'll take care of your projects soon.</p>
+                <br>
 
                 
               </div>

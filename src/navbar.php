@@ -138,9 +138,13 @@ error_reporting(0);
                   <li><a href="viewjobs.php" target="_blank" class="nav-link"><span class="text-secondary">View Jobs</span></a></li>
                   <li><a href="includes/logout.inc.php" target="_blank" class="nav-link"><span class="text-secondary">Log Out </span></a></li>';
                   }
+<<<<<<< HEAD
+                  
+=======
                   else{
                     // echo '<li data-toggle="modal" data-target="#writermodal" style="color:black" class="nav-link"><a>Register as Writer</a></li>';
                   }
+>>>>>>> f785a923c11e9a28dc7ef8e121102014cd094211
             
           }
 
@@ -159,8 +163,12 @@ error_reporting(0);
                 ?>
                 <!-- &nbsp;&nbsp;&nbsp;&nbsp; -->
                 <!-- <li><a href="registeraswriter.html" class="nav-link">Register as Writer</a></li> -->
+<<<<<<< HEAD
+                
+=======
                 <!-- <li data-toggle="modal" data-target="#writermodal" style="color:black" class="nav-link"><a>Register as Writer</a></li> -->
 
+>>>>>>> f785a923c11e9a28dc7ef8e121102014cd094211
                   
 
               </ul>
