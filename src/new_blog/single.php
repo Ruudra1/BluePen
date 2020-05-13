@@ -11,7 +11,7 @@
     <div ><img src="../blog/'.$row['main'].'" style="width:100%;"></div>   
     
     </div>
-    <h1 class="mb-4">'.$row['title'].'</h1>
+    <center><h1 class="mb-4">'.$row['title'].'</h1></center>
     <section class="site-section py-lg">
       <div class="container">
         

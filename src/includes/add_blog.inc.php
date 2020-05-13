@@ -2,6 +2,13 @@
 
 session_start();
 include_once 'connect.inc.php';
+if(isset($_SESSION['privilege'])) {
+    if(strcmp($_SESSION['privilege'], "admin") !== 0) {
+        // User is not an admin
+        header("Location: index.php");
+        exit();
+    }
+  }
 
 if (isset($_POST['submit']))
 {
