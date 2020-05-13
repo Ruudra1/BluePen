@@ -106,7 +106,7 @@ error_reporting(0);
                   <!-- </ul> -->
                 <!-- </li> -->
                 <!-- <li><a href="#testimonials-section" class="nav-link">Testimonials</a></li> -->
-                <li><a href="new_blog/index.html" class="nav-link">Blog</a></li>
+                <li><a href="new_blog/index.php" class="nav-link">Blog</a></li>
                 <li><a href="contactus.html" class="nav-link">Contact</a></li>
                 <!-- <li><a href="#" class="nav-link">Upload Assignment</a></li> -->
                 <?php
@@ -124,7 +124,7 @@ error_reporting(0);
                    
                    <li><a href="upload.php" target="_blank" class="nav-link"><span class="text-secondary">Submit Assignment </span></a></li>
                     <li><a href="changepassword.php" target="_blank" class="nav-link"><span class="text-secondary">Change Password  </span></a></li>
-                    <li><a href="includes/logout.inc.php" target="_blank" class="nav-link"><span class="text-secondary">Log Out </span></a></li></ul></li>
+                    <li><a href="includes/logout.inc.php"  class="nav-link"><span class="text-secondary">Log Out </span></a></li></ul></li>
                     <li><a href="" data-toggle="modal" data-target="#writermodal" target="_blank" class="nav-link"><span class="">Register as Writer</span></a></li>';
                   }
                  elseif(strcmp($_SESSION['privilege'],"admin")==0){
@@ -135,7 +135,8 @@ error_reporting(0);
                  <li><a href="viewwriters.php" target="_blank" class="nav-link"><span class="text-secondary">View Writers</span></a></li>
                   <li><a href="viewclients.php" target="_blank" class="nav-link"><span class="text-secondary">View Clients</span></a></li>
                   <li><a href="viewjobs.php" target="_blank" class="nav-link"><span class="text-secondary">View Jobs</span></a></li>
-                  <li><a href="includes/logout.inc.php" target="_blank" class="nav-link"><span class="text-secondary">Log Out </span></a></li>';
+                  <li><a href="add_blog.php" target="_blank" class="nav-link"><span class="text-secondary">Add Blog</span></a></li>
+                  <li><a href="includes/logout.inc.php" class="nav-link"><span class="text-secondary">Log Out </span></a></li>';
                   }
                   else{
                     // echo '<li data-toggle="modal" data-target="#writermodal" style="color:black" class="nav-link"><a>Register as Writer</a></li>';

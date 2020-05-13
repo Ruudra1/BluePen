@@ -2,6 +2,8 @@
 <?php
 //   session_start();
   include "navbar.php";
+
+
 ?>
 
     
@@ -114,6 +116,12 @@
                   <label class="text-black">image 3</label> 
                   <input class="form-control rounded-0" type="file" name="img3" required>
                 </div>
+
+                <div class="row form-group col-md-12">
+                  <label class="text-black">writer img</label> 
+                  <input class="form-control rounded-0" type="file" name="imgw" required>
+                </div>
+
 
               </div>
               <input type="submit" name="submit" value="submit" class="btn btn-primary mr-2 mb-2">

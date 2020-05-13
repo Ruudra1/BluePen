@@ -1,30 +1,17 @@
  <?php
  include "../navbar.php";
  include_once "../includes/connect.inc.php";
- $sql="SELECT * FROM blog WHERE id=5";
+ $id=$_GET['id'];
+ $sql="SELECT * FROM blog WHERE id=$id";
  $result = mysqli_query($conn, $sql);
  $row=mysqli_fetch_array($result); 
     // var_dump($row);
     
     echo '<div class="site-cover site-cover-sm same-height overlay single-page" >
     <div ><img src="../blog/'.$row['main'].'" style="width:100%;"></div>   
-    <div class="container">
-        <div class="row same-height justify-content-center">
-          <div class="col-md-12 col-lg-10">
-            <div class="post-entry text-center">
-              <!-- <span class="post-category text-white bg-success mb-3">Nature</span> -->
-              <h1 class="mb-4"><a href="#">The AI magically removes moving objects from videos.</a></h1>
-              <div class="post-meta align-items-center text-center">
-                <figure class="author-figure mb-0 mr-3 d-inline-block"><img src="images/person_1.jpg" alt="Image" class="img-fluid"></figure>
-                <span class="d-inline-block mt-1">By Carrol Atkinson</span>
-                <span>&nbsp;-&nbsp; February 10, 2019</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
     
+    </div>
+    <center><h1 class="mb-4">'.$row['title'].'</h1></center>
     <section class="site-section py-lg">
       <div class="container">
         
@@ -42,7 +29,7 @@
                 <img src="../blog/'.$row['img2'].'" alt="Image placeholder" class="img-fluid rounded">
               </div>
               <div class="col-md-6 mb-4">
-                <img src="../blog/'.$row['img2'].'" alt="Image placeholder" class="img-fluid rounded">
+                <img src="../blog/'.$row['img3'].'" alt="Image placeholder" class="img-fluid rounded">
               </div>
             </div>';
             // <p>Quibusdam autem, quas molestias recusandae aperiam molestiae modi qui ipsam vel. Placeat tenetur veritatis tempore quos impedit dicta, error autem, quae sint inventore ipsa quidem. Quo voluptate quisquam reiciendis, minus, animi minima eum officia doloremque repellat eos, odio doloribus cum.</p>
@@ -182,7 +169,7 @@
             <!-- END sidebar-box -->
             <div class="sidebar-box">
               <div class="bio text-center">
-                <img src="../blog/'.$row['img1'].'" alt="Image Placeholder" class="img-fluid mb-5">
+                <img src="../blog/'.$row['imgw'].'" alt="Image Placeholder" class="img-fluid mb-5">
                 <div class="bio-body">
                   <h2>'.$row['name'].'</h2>
                   <p class="mb-4">'.$row['des_writer'].'</p>
@@ -225,7 +212,7 @@ $count=sizeof($tag);
         <div class="row align-items-stretch retro-layout">';
         ?>
           
-          <div class="col-md-5 order-md-2">
+          <!-- <div class="col-md-5 order-md-2">
             <a href="single.html" class="hentry img-1 h-100 gradient" >
               <span class="post-category text-white bg-danger">Travel</span>
               <div class="text">
@@ -233,33 +220,37 @@ $count=sizeof($tag);
                 <span>February 12, 2019</span>
               </div>
             </a>
-          </div>
+          </div> -->
+<?php
+$sql1="SELECT * FROM blog WHERE tags LIKE '%$tag[0]%' OR tags LIKE '%$tag[1]%' ORDER BY id desc";
+$result1 = mysqli_query($conn, $sql1);
+;
+// var_dump($sql1);
+$a=2;
+while($row1=mysqli_fetch_array($result1)){
 
-          <div class="col-md-7">
+if($a==0)
+{
+break;
+}
+  echo '
+
+          <div class="col-md-6">
             
-            <a href="single.html" class="hentry img-2 v-height mb30 gradient" style="background-image: url('images/img_1.jpg');">
+            <a href="single.html" class="hentry img-2 v-height mb30 gradient" >
+            <div ><img src="../blog/'.$row1['main'].'" style="width:100%;"></div>
               <span class="post-category text-white bg-success">Nature</span>
               <div class="text text-sm">
-                <h2>The 20 Biggest Fintech Companies In America 2019</h2>
-                <span>February 12, 2019</span>
+                <h2>'.$row1['title'].'</h2>
+                <span>'.$row1['date'].'</span>
               </div>
-            </a>
+              </div>
+            </a>';
+            $a--;
             
-            <div class="two-col d-block d-md-flex">
-              <a href="single.html" class="hentry v-height img-2 gradient" style="background-image: url('images/img_2.jpg');">
-                <span class="post-category text-white bg-primary">Sports</span>
-                <div class="text text-sm">
-                  <h2>The 20 Biggest Fintech Companies In America 2019</h2>
-                  <span>February 12, 2019</span>
-                </div>
-              </a>
-              <a href="single.html" class="hentry v-height img-2 ml-auto gradient" style="background-image: url('images/img_3.jpg');">
-                <span class="post-category text-white bg-warning">Lifestyle</span>
-                <div class="text text-sm">
-                  <h2>The 20 Biggest Fintech Companies In America 2019</h2>
-                  <span>February 12, 2019</span>
-                </div>
-              </a>
+            }
+            ?>
+            
             </div>  
             
           </div>
@@ -269,6 +260,7 @@ $count=sizeof($tag);
     </div>
 
 
-   <?php
+
+<?php  
    include "../footer.php";
    ?>
