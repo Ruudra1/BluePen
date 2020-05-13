@@ -1,4 +1,14 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html> -->
+<?php
+ob_start();
+  session_start();
+  error_reporting(0);
+  if(!isset($_SESSION['id'])) {
+    //User is logged in
+    header("Location: index.php");
+    exit();
+  }
+?>
 <html lang="en">
   <head>
     <title>imagine &mdash; Onepage Template by Colorlib</title>
@@ -130,13 +140,57 @@
     <br><br><br>
     <div class="site-section bg-image2 overlay" id="contact-section" style="background-image: url('images/img_2.jpg');">
       <div class="container">
+
+      <div class="row justify-content-center">
+      <?php
+    //Error Handling
+    // $_SERVER['HTTP_HOST'] gives http://localhost
+    // $_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'] givees http://localhost/admissions.php?error EvWatcher
+      $url = "http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
+      if (strpos($url, "signup=empty") !== false) {
+        echo '<div class="col-md-4 offset-md-4 col-sm-4 offset-sm-4 container text-center alert alert-danger" role="alert">
+                Fill out all the fields!
+              </div>';
+      } elseif (strpos($url, "signup=fileinvalid")!== false) {
+        echo '<div class="col-md-4 offset-md-4 col-sm-4 offset-sm-4 container text-center alert alert-danger lastname" role="alert">
+                Invalid File
+              </div>';
+      } elseif (strpos($url, "signup=deliverydate")!== false) {
+        echo '<div class="col-md-4 offset-md-4 col-sm-4 offset-sm-4 container text-center alert alert-danger lastname" role="alert">
+                Invalid Date of Delivery
+              </div>';
+      }  elseif (strpos($url, "signup=uploadissue")!== false) {
+        echo '<div class="col-md-4 offset-md-4 col-sm-4 offset-sm-4 container text-center alert alert-danger lastname" role="alert">
+                Uploading Failed !!!
+              </div>';
+      } elseif (strpos($url, "signup=signupload")!== false) {
+        echo '<div class="col-md-4 offset-md-4 col-sm-4 offset-sm-4 container text-center alert alert-danger lastname" role="alert">
+                Invalid File
+              </div>';
+      } elseif (strpos($url, "signup=success")!== false) {
+        // Wait for 5 seconds and then redirect user to login page
+        header("refresh:5; url=index.php");
+        // $id = $_SESSION["id"];
+        // $result= mysqli_query($conn, "SELECT * FROM assignments WHERE user_id=$id ORDER BY assign_id DESC LIMIT 1;");
+        // $row = mysqli_fetch_array($result);
+        // $amount = $row["amount"];
+        // $amount = "SELECT amount FROM assignments WHERE user_id=6 ORDER BY assign_id DESC LIMIT 1";
+        echo '<div class="col-md-4 offset-md-4 col-sm-4 offset-sm-4  container text-center alert alert-success">Assignment Submitted, You will be contacted Soon..</div>';
+      } elseif (strpos($url, "signup=blocked")!== false) {
+        echo '<div class="col-md-4 offset-md-4 col-sm-4 offset-sm-4 container text-center alert alert-danger lastname" role="alert">
+                User is Blocked, Please Contact Us
+              </div>';
+      }
+      //Focus on ip tag and add div container
+
+    ?></div>
         
         <div class="row justify-content-center">
           <div class="col-lg-7 mb-5">
 
             
 
-            <form action="#" class="p-5 bg-white">
+            <form class="p-5 bg-white" method="POST" enctype="multipart/form-data">
 
               <!-- <div class="container">
                 
@@ -155,18 +209,9 @@
                     <p>put seperate forms for assignment writer, typewriter, content writer<br> Put writer form here</p>
 
 
-                    
-              
-                      
-        
-          
-  
-
-                    
                   </div>
                  
                  
-                  
                   <div id="menu2" class="tab-pane fade">
                     <h3>Content Writer</h3>
                     <p>put seperate forms for assignment writer, typewriter, content writer<br> Put Content Writer form here</p>
@@ -190,29 +235,47 @@
                   <br><br>
                   
               
-                     
-      
-                    
-      
                   <div class="form-group">
                   <label for="exampleFormControlSelect1">Ink Color</label>
-                  <select class="form-control" id="exampleFormControlSelect1">
-                    <option>Blue</option>
-                    <option>Black</option>
-                    
-                  </select>
+                    <?php
+                                    error_reporting(0);
+                                    if(isset($_SESSION['formFilled']))
+                                        echo'<select class="form-control" value="'.$_SESSION['ink'].'" name="ink" id="exampleFormControlSelect1">
+                                            <option>Choose an ink color</option>    
+                                            <option>Blue</option>
+                                            <option>Black</option>
+                                        </select>
+                                        </select>';
+                                    else
+                                        echo'<select class="form-control" name="ink" id="exampleFormControlSelect1">
+                                            <option>Choose an ink color</option>
+                                            <option>Blue</option>
+                                            <option>Black</option>
+                                        </select>
+                                        </select>';
+                                ?>
                 </div>
                 <label for="example-date-input" class=" col-form-label">Delivery Date</label>
                 <div class="form-group row">
                   
                   <div class="col-12">
-                    <input class="form-control" type="date" value="2011-08-19" id="example-date-input">
+                    <?php
+                              // error_reporting(0);
+                              $accdate = Date('Y-m-d', strtotime('+3 days'));
+                              $subdate = Date('Y-m-d', strtotime('+12 days'));
+                              // var_dump($accdate);
+                              // var_dump($subdate);
+                              if(isset($_SESSION['formFilled']))
+                                echo'<input type="date" min = "'.$accdate.'" max = "'.$subdate.'" name="deliverydate" class="form-control" value="'.$_SESSION['deliverydate'].'" placeholder="Delivery Date"/>';
+                              else
+                                echo'<input type="date" min = "'.$accdate.'" max = "'.$subdate.'" name="deliverydate" class="form-control" placeholder="Delivey Date"/>';
+                    ?>  
                   </div>
                 </div>
 
                     <div class="form-group">
                       <label for="exampleInputFile">Upload assignment</label>
-                      <input type="file" class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp">
+                      <input type="file" name="assignment" class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp" accept=".pdf">
                       <small id="fileHelp" class="form-text text-muted">In PDF Format Only
 
                       </small>
@@ -220,7 +283,7 @@
       
                     <div class="row form-group">
                       <div class="col-md-12">
-                        <input type="submit" value="Submit" class="btn btn-primary mr-2 mb-2" value="send">
+                        <input type="submit" name="submit1" formaction="includes/uploadassignment.inc.php" value="Submit" class="btn btn-primary mr-2 mb-2" value="send">
                       </div>
                     </div>
       
@@ -237,18 +300,17 @@
                   
                   <br><br>
                   
-              
-                     
-      
-                    
-      
-                    
-      
                     <div class="row form-group">
                       
                       <div class="col-md-12">
-                        <label class="text-black" for="subject">Title</label> 
-                        <input type="subject" id="subject" class="form-control rounded-0" name="subject">
+                        <label class="text-black" for="subject">Title</label>
+                        <?php
+                    if(isset($_SESSION['formFilled1']))
+                                echo'<input type="subject" id="subject" name="title" value="'.$_SESSION['title'].'" placeholder="Title" class="form-control rounded-0" name="subject">';
+                              else
+                                echo'<input type="subject" id="subject" name="title" placeholder="Title" class="form-control rounded-0" name="subject">';
+                    ?> 
+                        
                       </div>
                     </div>
       
@@ -256,24 +318,31 @@
                       <div class="col-md-12">
                         <label class="text-black" for="message">Description</label> 
                         <textarea name="message" id="message" cols="30" rows="7" class="form-control rounded-0" placeholder="Leave your message here..."></textarea>
+                    
                       </div>
                     </div>
-
+                    
                     <label for="example-date-input" class=" col-form-label">Delivery Date</label>
                 <div class="form-group row">
                   
                   <div class="col-12">
-                    <input class="form-control" type="date" value="2011-08-19" id="example-date-input">
+                  <?php
+                              // error_reporting(0);
+                              $accdate = Date('Y-m-d', strtotime('+3 days'));
+                              $subdate = Date('Y-m-d', strtotime('+12 days'));
+                              // var_dump($accdate);
+                              // var_dump($subdate);
+                              if(isset($_SESSION['formFilled1']))
+                                echo'<input type="date" min = "'.$accdate.'" max = "'.$subdate.'" name="deliverydate1" class="form-control" value="'.$_SESSION['deliverydate1'].'" placeholder="Delivery Date"/>';
+                              else
+                                echo'<input type="date" min = "'.$accdate.'" max = "'.$subdate.'" name="deliverydate1" class="form-control" placeholder="Delivey Date"/>';
+                    ?>  
                   </div>
                 </div>
 
-                    
-
-                    
-      
                     <div class="row form-group">
                       <div class="col-md-12">
-                        <input type="submit" value="Submit" class="btn btn-primary mr-2 mb-2" value="Submit">
+                        <input type="submit" name="submit2" formaction="includes/uploadassignment.inc.php"  value="Submit" class="btn btn-primary mr-2 mb-2" value="Submit">
                       </div>
                     </div>
       
@@ -329,11 +398,7 @@
         </div>
         <div class="row">
           <div class="col-md-12">
-            <p class="mb-0">
-            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-            Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart text-danger" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank" >Colorlib</a>
-            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-            </p>
+           
           </div>
         </div>
       </div>
@@ -359,3 +424,4 @@
   
   </body>
 </html>
+<?php  ob_end_flush();  ?>

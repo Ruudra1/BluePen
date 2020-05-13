@@ -210,9 +210,9 @@
                   <label class="text-black" for="fname">First Name</label>
                   <?php
                 if(isset($_SESSION['formFilled']))
-                  echo'<input type="text" name="fname" class="form-control rounded-0" value="'.$_SESSION['firstname'].'" placeholder="Enter Your First Name" required>';
+                  echo'<input type="text" name="firstname" class="form-control rounded-0" value="'.$_SESSION['firstname'].'" placeholder="Enter Your First Name" required>';
                 else
-                  echo'<input type="text" name="fname" class="form-control rounded-0" placeholder="Enter Your First Name" required>';
+                  echo'<input type="text" name="firstname" class="form-control rounded-0" placeholder="Enter Your First Name" required>';
                 ?>
                   <!-- <input type="text" id="fname" class="form-control rounded-0" placeholder="Enter Your First Name" required> -->
                 </div>
@@ -221,9 +221,9 @@
                   <label class="text-black" for="lname">Last Name</label>
                   <?php
                 if(isset($_SESSION['formFilled']))
-                  echo'<input type="text" name="lname" class="form-control rounded-0" value="'.$_SESSION['lastname'].'" placeholder="Enter Your Last Name" required>';
+                  echo'<input type="text" name="lastname" class="form-control rounded-0" value="'.$_SESSION['lastname'].'" placeholder="Enter Your Last Name" required>';
                 else
-                  echo'<input type="text" name="lname" class="form-control rounded-0" placeholder="Enter Your Last Name" required>';
+                  echo'<input type="text" name="lastname" class="form-control rounded-0" placeholder="Enter Your Last Name" required>';
                 ?>
                   <!-- <input type="text" id="lname" class="form-control rounded-0" placeholder="Enter Your Last Name" required> -->
                 </div>

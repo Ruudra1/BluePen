@@ -3,17 +3,16 @@
 session_start();
 include_once 'connect.inc.php';
 
-if (isset($_POST['submit']))
+if (isset($_POST['submit1']))
 {
 
     #Treat user input as text and not as code
-    $firstname = mysqli_real_escape_string($conn, $_POST['fname']);
-    $lastname = mysqli_real_escape_string($conn, $_POST['lname']);
+    $firstname = mysqli_real_escape_string($conn, $_POST['firstname']);
+    $lastname = mysqli_real_escape_string($conn, $_POST['lastname']);
     $email = mysqli_real_escape_string($conn, $_POST['email']);
     $contact = mysqli_real_escape_string($conn, $_POST['phone']);
     $address = mysqli_real_escape_string($conn, $_POST['address']);
     $sample=mysqli_real_escape_string($conn, $_FILES["sample"]["name"]);
-    
 
     // Set up session variables so if error occurs user doesn't have to fill entire form
     $_SESSION['formFilled'] = true;
@@ -48,44 +47,44 @@ if (isset($_POST['submit']))
     
         if(empty($firstname) || empty($lastname) || empty($email) || empty($address))
         {
-            header("Location: ../registerwriter.php?signup=empty");
+            header("Location: ../writer.php?signup=empty");
             exit();
         }
         // else if(!preg_match("/^[a-zA-Z]*$/", $firstname) || !preg_match("/^[a-zA-Z]*$/", $lastname))
         // {
         //     // Check if input characters are Valid i.e if they only contain a-z and A-Z
-        //     header("Location: ../registerwriter.php?signup=invalid");
+        //     header("Location: ../writer.php?signup=invalid");
         //     exit();
         // }
         else if (!filter_var($email, FILTER_VALIDATE_EMAIL))
         {
             // Check if email is Valid
-            header("Location: ../registerwriter.php?signup=email");
+            header("Location: ../writer.php?signup=email");
             exit();
         }
         else if($contact <=10000000 || $contact >= 99999999999)
         {
             //Check if phone is valid
-            header("Location: ../registerwriter.php?signup=contact");
+            header("Location: ../writer.php?signup=contact");
             exit();
         }
         else if(strlen($address) > 500)
         {
             //Check if address is valid
-            header("Location: ../registerwriter.php?signup=address");
+            header("Location: ../writer.php?signup=address");
             exit();
         }
         else if($FileType != 'pdf' && $FileType != 'jpg' && $FileType != 'jpeg' &&  $FileType != 'png' )
         {
             //Check if file is valid
             // var_dump($FileType);
-            header("Location: ../registerwriter.php?signup=fileinvalid");
+            header("Location: ../writer.php?signup=fileinvalid");
             exit();
         }
         else if(!file_exists($_FILES['sample']['tmp_name']) || !is_uploaded_file($_FILES['sample']['tmp_name']))
         {
             //sample file problem
-            header("Location: ../registerwriter.php?signup=sample_upload");
+            header("Location: ../writer.php?signup=sample_upload");
             exit();
         }
         else
@@ -103,7 +102,7 @@ if (isset($_POST['submit']))
             $resultCheck = mysqli_num_rows($result);
             if($resultCheck > 0)
             {
-                header("Location: ../registerwriter.php?signup=taken");
+                header("Location: ../writer.php?signup=taken");
                 exit();
             }
             else
@@ -121,7 +120,7 @@ if (isset($_POST['submit']))
                     unset($_SESSION['contact']);
                     
 
-                    header("Location: ../registerwriter.php?signup=success");
+                    header("Location: ../writer.php?signup=success");
                     exit();
                 }
                 else
@@ -134,13 +133,101 @@ if (isset($_POST['submit']))
     // }
     // else
     // {
-    //     header("Location: ../registerwriter.php?signup=invalidfile");
+    //     header("Location: ../writer.php?signup=invalidfile");
+    //     exit();
+    // }
+}
+elseif (isset($_POST['submit2']))
+{
+
+    #Treat user input as text and not as code
+    $firstname = mysqli_real_escape_string($conn, $_POST['firstname1']);
+    $lastname = mysqli_real_escape_string($conn, $_POST['lastname1']);
+    $email = mysqli_real_escape_string($conn, $_POST['email1']);
+    $contact = mysqli_real_escape_string($conn, $_POST['phone1']);
+    $address = mysqli_real_escape_string($conn, $_POST['address1']);
+    $genere = mysqli_real_escape_string($conn, $_POST['genere']);
+    $pref1 = mysqli_real_escape_string($conn, $_POST['pref1']);
+    $pref2 = mysqli_real_escape_string($conn, $_POST['pref2']);
+    $message = mysqli_real_escape_string($conn, $_POST['message']);
+    
+
+    // Set up session variables so if error occurs user doesn't have to fill entire form
+    $_SESSION['formFilled1'] = true;
+    $_SESSION['firstname1'] = $firstname;
+    $_SESSION['lastname1'] = $lastname;
+    $_SESSION['email1'] = $email;
+    $_SESSION['contact1'] = $contact;
+
+    
+        if(empty($firstname) || empty($lastname) || empty($email) || empty($address) || empty($genere) || empty($pref2) || empty($pref1) || empty($message))
+        {
+            header("Location: ../writer.php?signup=empty");
+            exit();
+        }
+        // else if(!preg_match("/^[a-zA-Z]*$/", $firstname) || !preg_match("/^[a-zA-Z]*$/", $lastname))
+        // {
+        //     // Check if input characters are Valid i.e if they only contain a-z and A-Z
+        //     header("Location: ../writer.php?signup=invalid");
+        //     exit();
+        // }
+        else if (!filter_var($email, FILTER_VALIDATE_EMAIL))
+        {
+            // Check if email is Valid
+            header("Location: ../writer.php?signup=email");
+            exit();
+        }
+        else if($contact <=10000000 || $contact >= 99999999999)
+        {
+            //Check if phone is valid
+            header("Location: ../writer.php?signup=contact");
+            exit();
+        }
+        else if(strlen($address) > 500)
+        {
+            //Check if address is valid
+            header("Location: ../writer.php?signup=address");
+            exit();
+        }
+        else
+        {
+
+            
+            $sql = "SELECT * FROM contentwriter WHERE email='$email';";
+            $result = mysqli_query($conn, $sql);
+            $resultCheck = mysqli_num_rows($result);
+            if($resultCheck > 0)
+            {
+                header("Location: ../writer.php?signup=taken");
+                exit();
+            }
+            else
+            {
+
+                    $sql = "INSERT INTO contentwriter (`firstname`, `lastname`, `mobile`, `email`, `address`, `genere`, `lang1`, `lang2`, `samples`) VALUES ('$firstname', '$lastname', '$contact', '$email', '$address', '$genere', '$pref1', '$pref2', '$message');";
+                    mysqli_query($conn, $sql) or die(mysqli_error($conn));
+                    // Now redirect the user
+                    $_SESSION['formFilled1'] = FALSE;
+                    unset($_SESSION['firstname1']);
+                    unset($_SESSION['lastname1']);
+                    unset($_SESSION['email1']);
+                    unset($_SESSION['contact1']);
+                    
+
+                    header("Location: ../writer.php?signup=success");
+                    exit();
+            }
+        }
+    // }
+    // else
+    // {
+    //     header("Location: ../writer.php?signup=invalidfile");
     //     exit();
     // }
 }
 else 
 {
   // If someone just loads the url without submitting data
-  header("Location: ../registerwriter.php");
+  header("Location: ../writer.php");
   exit();
 }

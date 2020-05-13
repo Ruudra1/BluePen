@@ -113,7 +113,7 @@ error_reporting(0);
                 if($_SESSION['first']==NULL){
                  echo '<li><a class="nav-link" href="#" data-toggle="modal" target="_blank" data-target="#signupmodal"><span >Sign Up</span></a></li>';
                  echo '<li><a data-toggle="modal" href="#" style="" class="nav-link" data-target="#loginmodal">Login</a></li>';
-                 echo '<li data-toggle="modal" data-target="#writermodal" style="color:black" class="nav-link"><a>Register as Writer</a></li>';
+                 echo '<li><a href="" data-toggle="modal" data-target="#writermodal" target="_blank" class="nav-link"><span class="">Register as Writer</span></a></li>';
                 }
                 else{
                   if(strcmp($_SESSION['privilege'], "admin")!=0){
@@ -122,7 +122,7 @@ error_reporting(0);
                     
                    echo '<ul class="dropdown arrow-top">
                    
-                   <li><a href="uploadassignment.php" target="_blank" class="nav-link"><span class="text-secondary">Submit Assignment </span></a></li>
+                   <li><a href="upload.php" target="_blank" class="nav-link"><span class="text-secondary">Submit Assignment </span></a></li>
                     <li><a href="changepassword.php" target="_blank" class="nav-link"><span class="text-secondary">Change Password  </span></a></li>
                     <li><a href="includes/logout.inc.php" target="_blank" class="nav-link"><span class="text-secondary">Log Out </span></a></li></ul></li>
                     <li><a href="" data-toggle="modal" data-target="#writermodal" target="_blank" class="nav-link"><span class="">Register as Writer</span></a></li>';
@@ -189,7 +189,7 @@ error_reporting(0);
           <div class="g-signin2" data-onsuccess="onSignIn"></div>
           <br>
             <!-- <button type="button" class="btn btn-secondary">Google Signup button here</button> -->
-            <button type="button" class="btn btn-primary"><a href="registerwriter.php">Sign Up using email</a></button>
+            <button type="button" class="btn btn-primary"><a href="writer.php">Sign Up using email</a></button>
           </div>
           <div class="modal-footer">
             <!-- <button type="button" class="btn btn-secondary">Google Signup button here</button> -->

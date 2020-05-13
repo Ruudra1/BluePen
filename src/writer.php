@@ -1,7 +1,17 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html> -->
+<?php
+ob_start();
+  session_start();
+  error_reporting(0);
+  if(isset($_SESSION['u_id'])) {
+    //User is logged in
+    header("Location: index.php");
+    exit();
+  }
+?>
 <html lang="en">
   <head>
-    <title>imagine &mdash; Onepage Template by Colorlib</title>
+    <title>BluePen</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     
@@ -128,15 +138,64 @@
 
     <!--contact start-->
     <br><br><br>
+    
     <div class="site-section bg-image2 overlay" id="contact-section" style="background-image: url('images/img_2.jpg');">
       <div class="container">
+
+      
         
         <div class="row justify-content-center">
-          <div class="col-lg-7 mb-5">
+          <?php
+    //Error Handling
+    // $_SERVER['HTTP_HOST'] gives http://localhost
+    // $_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'] givees http://localhost/admissions.php?error EvWatcher
+      $url = "http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
+      if (strpos($url, "signup=empty") !== false) {
+        echo '<div class="col-md-4 offset-md-4 col-sm-4 offset-sm-4 container text-center alert alert-danger" role="alert">
+                Fill out all the fields!
+              </div>';
+      } elseif (strpos($url, "signup=invalid")!== false) {
+        echo '<div class="col-md-4 offset-md-4 col-sm-4 offset-sm-4 container text-center alert alert-danger lastname" role="alert">
+                Invalid Characters in Name
+              </div>';
+      } elseif (strpos($url, "signup=email")!== false) {
+        echo '<div class="col-md-4 offset-md-4 col-sm-4 offset-sm-4 container text-center alert alert-danger lastname" role="alert">
+                Invalid Email
+              </div>';
+      } elseif (strpos($url, "signup=taken")!== false) {
+        echo '<div class="col-md-4 offset-md-4 col-sm-4 offset-sm-4 container text-center alert alert-danger lastname" role="alert">
+                User already exists
+              </div>';
+      } elseif (strpos($url, "signup=contact")!== false) {
+        echo '<div class="col-md-4 offset-md-4 col-sm-4 offset-sm-4 container text-center alert alert-danger lastname" role="alert">
+                Invalid Phone no
+              </div>';
+      } elseif (strpos($url, "signup=sample")!== false) {
+        echo '<div class="col-md-4 offset-md-4 col-sm-4 offset-sm-4 container text-center alert alert-danger lastname" role="alert">
+                Invalid Sample
+              </div>';
+      } elseif (strpos($url, "signup=fileinvalid")!== false) {
+        echo '<div class="col-md-4 offset-md-4 col-sm-4 offset-sm-4 container text-center alert alert-danger lastname" role="alert">
+                Invalid File Type
+              </div>';
+      } elseif (strpos($url, "signup=address")!== false) {
+        echo '<div class="col-md-4 offset-md-4 col-sm-4 offset-sm-4 container text-center alert alert-danger lastname" role="alert">
+                Address too long (max. 70)
+              </div>';
+      } elseif (strpos($url, "signup=success")!== false) {
+        // Wait for 5 seconds and then redirect user to index page
+        header("refresh:3;url=index.php");
+        // exit();
+        echo '<div class="col-md-4 offset-md-4 col-sm-4 offset-sm-4 container text-center alert alert-success">You are registered as a writer, we will be contacting you soon...</div>';
+      }
+      //Focus on ip tag and add div container
 
-            
+    ?></div>
+        
+        <div class="row justify-content-center"> 
+        <div class="col-lg-7 mb-5">
 
-            <form action="#" class="p-5 bg-white">
+            <form class="p-5 bg-white" method="POST" enctype="multipart/form-data">
 
               <!-- <div class="container">
                 
@@ -155,18 +214,9 @@
                     <p>put seperate forms for assignment writer, typewriter, content writer<br> Put writer form here</p>
 
 
-                    
-              
-                      
-        
-          
-  
-
-                    
+                  
                   </div>
                  
-                 
-                  
                   <div id="menu2" class="tab-pane fade">
                     <h3>Content Writer</h3>
                     <p>put seperate forms for assignment writer, typewriter, content writer<br> Put Content Writer form here</p>
@@ -188,18 +238,24 @@
                   <h3>Register as Writer</h3>
                   
                   <br><br>
-                  
-              
-                     
-      
-                    <div class="row form-group">
+                  <div class="row form-group">
                       <div class="col-md-6 mb-3 mb-md-0">
                         <label class="text-black" for="fname">First Name</label>
-                        <input type="text" id="fname" class="form-control rounded-0" name="fname">
+                        <?php
+                if(isset($_SESSION['formFilled']))
+                  echo'<input type="text" id="fname" name="firstname" class="form-control rounded-0" value="'.$_SESSION['firstname'].'" placeholder="Enter Your First Name" >';
+                else
+                  echo'<input type="text" name="firstname" class="form-control rounded-0" placeholder="Enter Your First Name" >';
+                ?>
                       </div>
                       <div class="col-md-6">
                         <label class="text-black" for="lname">Last Name</label>
-                        <input type="text" id="lname" class="form-control rounded-0" name="lname">
+                        <?php
+                if(isset($_SESSION['formFilled']))
+                  echo'<input type="text" id="lname" name="lastname" class="form-control rounded-0" value="'.$_SESSION['lastname'].'" placeholder="Enter Your Last Name" >';
+                else
+                  echo'<input type="text" name="lastname" class="form-control rounded-0" placeholder="Enter Your Last Name" >';
+                ?>
                       </div>
                     </div>
       
@@ -207,7 +263,12 @@
                       
                       <div class="col-md-12">
                         <label class="text-black" for="email">Email</label> 
-                        <input type="email" id="email" class="form-control rounded-0" name="_replyto">
+                        <?php
+                if(isset($_SESSION['formFilled']))
+                  echo'<input type="email" name="email" class="form-control rounded-0" value="'.$_SESSION['email'].'" placeholder="Enter Your Email" >';
+                else
+                  echo'<input type="email" name="email" class="form-control rounded-0" placeholder="Enter Your Email" >';
+                ?>
                       </div>
                     </div>
       
@@ -215,105 +276,123 @@
                       
                       <div class="col-md-12">
                         <label class="text-black" for="subject">Mobile Number</label> 
-                        <input type="subject" id="subject" class="form-control rounded-0" name="subject">
+                        <?php
+                if(isset($_SESSION['formFilled']))
+                  echo'<input type="tel" id="phone" name="phone"  value="'.$_SESSION['contact'].'" class="form-control rounded-0" placeholder="Enter Your Mobile Number" >';
+                else
+                  echo'<input type="tel" id="phone" name="phone"  class="form-control rounded-0" placeholder="Enter Your Mobile Number" >';
+                ?>
                       </div>
                     </div>
       
                     <div class="row form-group">
                       <div class="col-md-12">
                         <label class="text-black" for="message">Address</label> 
-                        <textarea name="message" id="message" cols="30" rows="7" class="form-control rounded-0" placeholder="Leave your message here..."></textarea>
+                        <textarea  name="address" cols="30" rows="5" class="form-control rounded-0" placeholder="Enter Your Address" ></textarea>
                       </div>
                     </div>
 
                     <div class="form-group">
                       <label for="exampleInputFile">Hand Writing Sample</label>
-                      <input type="file" class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp">
-                      <small id="fileHelp" class="form-text text-muted">sample line
-
-                      </small>
+                      <input type="file" class="form-control-file" id="exampleInputFile" name="sample" aria-describedby="fileHelp" >
+                      <small id="fileHelp" class="form-text text-muted">sample line </small>
                     </div>
       
                     <div class="row form-group">
                       <div class="col-md-12">
-                        <input type="submit" value="Submit" class="btn btn-primary mr-2 mb-2" value="send">
+                        <input type="submit" name="submit1" formaction="includes/registerwriter.inc.php" value="Register" class="btn btn-primary mr-2 mb-2" >
+                        <input type="reset" class="btn btn-primary mr-2 mb-2">
                       </div>
                     </div>
       
-        
-                  
-
 
                 </div>
+    </form>
                 <div id="menu1" class="tab-pane fade">
-                  
-
+              
                   <br><br>
                   <h3>Register as Content Writer</h3>
                   
                   <br><br>
                   
-              
-                     
-      
-                    <div class="row form-group">
+                  <div class="row form-group">
                       <div class="col-md-6 mb-3 mb-md-0">
-                        <label class="text-black" for="fname">First Name</label>
-                        <input type="text" id="fname" class="form-control rounded-0" name="fname">
+                        <label class="text-black" >First Name</label>
+                        <?php
+                if(isset($_SESSION['formFilled1']))
+                  echo'<input type="text" name="firstname1" class="form-control rounded-0" value="'.$_SESSION['firstname1'].'" placeholder="Enter Your First Name" >';
+                else
+                  echo'<input type="text" name="firstname1" class="form-control rounded-0" placeholder="Enter Your First Name" >';
+                ?>
                       </div>
                       <div class="col-md-6">
-                        <label class="text-black" for="lname">Last Name</label>
-                        <input type="text" id="lname" class="form-control rounded-0" name="lname">
+                        <label class="text-black" >Last Name</label>
+                        <?php
+                        if(isset($_SESSION['formFilled1']))
+                  echo'<input type="text" name="lastname1" class="form-control rounded-0" value="'.$_SESSION['lastname1'].'" placeholder="Enter Your Last Name" >';
+                else
+                  echo'<input type="text" name="lastname1" class="form-control rounded-0" placeholder="Enter Your Last Name" >';
+                ?>
                       </div>
                     </div>
       
                     <div class="row form-group">
                       
                       <div class="col-md-12">
-                        <label class="text-black" for="email">Email</label> 
-                        <input type="email" id="email" class="form-control rounded-0" name="_replyto">
+                        <label class="text-black" >Email</label> 
+                        <?php
+                if(isset($_SESSION['formFilled1']))
+                  echo'<input type="email" name="email1" class="form-control rounded-0" value="'.$_SESSION['email1'].'" placeholder="Enter Your Email" >';
+                else
+                  echo'<input type="email" name="email1" class="form-control rounded-0" placeholder="Enter Your Email" >';
+                ?>
                       </div>
                     </div>
       
                     <div class="row form-group">
                       
                       <div class="col-md-12">
-                        <label class="text-black" for="subject">Mobile Number</label> 
-                        <input type="subject" id="subject" class="form-control rounded-0" name="subject">
+                        <label class="text-black" >Mobile Number</label> 
+                        <?php
+                if(isset($_SESSION['formFilled1']))
+                  echo'<input type="tel"  name="phone1"  value="'.$_SESSION['contact1'].'" class="form-control rounded-0" placeholder="Enter Your Mobile Number" >';
+                else
+                  echo'<input type="tel"  name="phone1"  class="form-control rounded-0" placeholder="Enter Your Mobile Number" >';
+                ?>
                       </div>
                     </div>
       
                     <div class="row form-group">
                       <div class="col-md-12">
-                        <label class="text-black" for="message">Address</label> 
-                        <textarea name="message" id="message" cols="30" rows="7" class="form-control rounded-0" placeholder="Leave your message here..."></textarea>
+                        <label class="text-black" for="address">Address</label> 
+                        <textarea  name="address1" cols="30" rows="5" class="form-control rounded-0" placeholder="Enter Your Address" ></textarea>
                       </div>
                     </div>
 
                     <div class="row form-group">
                       
                       <div class="col-md-12">
-                        <label class="text-black" for="subject">Genere</label> 
-                        <input type="subject" id="subject" class="form-control rounded-0" name="subject">
+                        <label class="text-black" >Genere</label> 
+                        <input type="subject" name="genere"  class="form-control rounded-0" placeholder="Genere" name="subject" >
                       </div>
                     </div>
 
                     <div class="row form-group">
                       
                       <div class="col-md-12">
-                        <label class="text-black" for="subject">Language</label> 
-                        <input type="subject" id="subject" class="form-control rounded-0" name="subject" placeholder="Preference 1">
+                        <label class="text-black" >Language</label> 
+                        <input type="subject" name="pref1" class="form-control rounded-0" name="subject" placeholder="Preference 1" >
                       </div>
                       <div class="col-md-12">
                         <br>
-                        <input type="subject" id="subject" class="form-control rounded-0" name="subject" placeholder="Preference 2">
+                        <input type="subject" name="pref2"  class="form-control rounded-0" name="subject" placeholder="Preference 2" >
                       </div>
                     </div>
 
                     <div class="row form-group">
                       <div class="col-md-12">
-                        <label class="text-black" for="message">Samples</label> 
-                        <textarea name="message" id="message" cols="30" rows="7" class="form-control rounded-0" placeholder="Leave your message here..."></textarea>
+                        <label class="text-black" >Samples</label> 
+                        <textarea name="message" cols="30" rows="7" class="form-control rounded-0" placeholder="Show us your creativity here..." ></textarea>
                       </div>
                     </div>
 
@@ -327,7 +406,8 @@
       
                     <div class="row form-group">
                       <div class="col-md-12">
-                        <input type="submit" value="Submit" class="btn btn-primary mr-2 mb-2" value="Submit">
+                        <input type="submit" name="submit2"  value="Register" formaction="includes/registerwriter.inc.php" class="btn btn-primary mr-2 mb-2">
+                        <input type="reset" class="btn btn-primary mr-2 mb-2">
                       </div>
                     </div>
       
@@ -336,22 +416,7 @@
                 </div>
                 
               </div>
-             
-              
-                   
-                 
-                         
-                       
-    
-                 
-
-                </div>
-                
-              </div>
-              
-              
-
-  
+            
             </form>
 
             
@@ -413,3 +478,4 @@
   
   </body>
 </html>
+<?php  ob_end_flush();  ?>
