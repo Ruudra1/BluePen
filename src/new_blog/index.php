@@ -105,6 +105,11 @@ echo '
         </div>
         <div class="row">';
         while($row=mysqli_fetch_array($result)){
+
+          $sql1="SELECT * FROM blog_writer WHERE id=".$row['w_id'];
+          $result1 = mysqli_query($conn, $sql1);
+          $row1=mysqli_fetch_array($result1);
+
             $tag=explode(";",$row['tags']);
             if($a==0)
         break;
@@ -117,8 +122,8 @@ echo '
 
               <h2><a href="single.php?id='.$row['id'].'">'.$row['title'].'</a></h2>
               <div class="post-meta align-items-center text-left clearfix">
-                <figure class="author-figure mb-0 mr-3 float-left"><img src="../blog/'.$row['imgw'].'" alt="Image" class="img-fluid"></figure>
-                <span class="d-inline-block mt-1">By <a href="#">Carrol Atkinson</a></span>
+                <figure class="author-figure mb-0 mr-3 float-left"><img src="../blogwriter/'.$row1['img'].'" alt="Image" class="img-fluid"></figure>
+                <span class="d-inline-block mt-1">By <a href="#">'.$row1['name'].'</a></span>
                 <span>&nbsp;-&nbsp; '.$row['date'].'</span>
               </div>
               

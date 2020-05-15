@@ -1,12 +1,50 @@
 <!-- <!DOCTYPE html> -->
 <?php
-//   session_start();
+  // session_start();
   include "navbar.php";
+  $sql = "SELECT * FROM blog_writer ;";
+            $result = mysqli_query($conn, $sql);
+            
 
 
 ?>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+.dropbtn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+}
 
-    
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #ddd;}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+.dropdown:hover .dropbtn {background-color: #3e8e41;}
+</style>
     
     <br><br><br>
     <div class="site-section bg-image2 overlay" id="contact-section" style="background-image: url('images/hero_1.jpg');">
@@ -73,24 +111,20 @@
               	<label class="text-black">Description</label>
               	<input type="text" name="desc" placeholder="description" class="form-control rounded-0" required>
               </div>
-
+              </div>
               <div class="row form-group">
                 <div class="col-md-12">
-              	<label class="text-black">Name of writer</label>
-              	<input type="text" name="name" placeholder="name" class="form-control rounded-0" required>
+              	<label class="text-black">Writers</label>
+              <select input type ="text" name = "writer" <?php echo 'value="'.$_SESSION['writer'].'"'; ?>>
+              <?php
+              while($row=mysqli_fetch_array($result)){
+                echo'<option>
+              '.$row['name'].' 
+              
+                </option>'; } ?>
               </div>
-        
-              <div class="row form-group">
-                <div class="col-md-12">
-              	<label class="text-black">About writer</label>
-              	<input type="text" name="about" placeholder="about" class="form-control rounded-0" required>
               </div>
-
-              <div class="row form-group">
-                <div class="col-md-12">
-              	<label class="text-black">Bio link of writer</label>
-              	<input type="text" name="link" placeholder="link" class="form-control rounded-0" required>
-              </div>
+              
 
               <div class="row form-group">
                 <div class="col-md-12">
@@ -117,10 +151,7 @@
                   <input class="form-control rounded-0" type="file" name="img3" required>
                 </div>
 
-                <div class="row form-group col-md-12">
-                  <label class="text-black">writer img</label> 
-                  <input class="form-control rounded-0" type="file" name="imgw" required>
-                </div>
+                
 
 
               </div>

@@ -4,7 +4,11 @@
  $id=$_GET['id'];
  $sql="SELECT * FROM blog WHERE id=$id";
  $result = mysqli_query($conn, $sql);
- $row=mysqli_fetch_array($result); 
+ $row=mysqli_fetch_array($result);
+ 
+ $sql1="SELECT * FROM blog_writer WHERE id=".$row['w_id'];
+ $result1 = mysqli_query($conn, $sql1);
+ $row1=mysqli_fetch_array($result1);
     // var_dump($row);
     
     echo '<div class="site-cover site-cover-sm same-height overlay single-page" >
@@ -169,11 +173,11 @@
             <!-- END sidebar-box -->
             <div class="sidebar-box">
               <div class="bio text-center">
-                <img src="../blog/'.$row['imgw'].'" alt="Image Placeholder" class="img-fluid mb-5">
+                <img src="../blogwriter/'.$row1['img'].'" alt="Image Placeholder" class="img-fluid mb-5">
                 <div class="bio-body">
-                  <h2>'.$row['name'].'</h2>
-                  <p class="mb-4">'.$row['des_writer'].'</p>
-                  <p><a href="'.$row['link'].'" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm rounded px-4 py-2">Read my bio</a></p>
+                  <h2>'.$row1['name'].'</h2>
+                  <p class="mb-4">'.$row1['des'].'</p>
+                  <p><a href="'.$row1['link'].'" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm rounded px-4 py-2">Read my bio</a></p>
                  
                 </div>
               </div>
@@ -222,12 +226,12 @@ $count=sizeof($tag);
             </a>
           </div> -->
 <?php
-$sql1="SELECT * FROM blog WHERE tags LIKE '%$tag[0]%' OR tags LIKE '%$tag[1]%' ORDER BY id desc";
-$result1 = mysqli_query($conn, $sql1);
+$sql2="SELECT * FROM blog WHERE tags LIKE '%$tag[0]%' OR tags LIKE '%$tag[1]%' ORDER BY id desc";
+$result2 = mysqli_query($conn, $sql1);
 ;
 // var_dump($sql1);
 $a=2;
-while($row1=mysqli_fetch_array($result1)){
+while($row2=mysqli_fetch_array($result2)){
 
 if($a==0)
 {
@@ -238,11 +242,11 @@ break;
           <div class="col-md-6">
             
             <a href="single.html" class="hentry img-2 v-height mb30 gradient" >
-            <div ><img src="../blog/'.$row1['main'].'" style="width:100%;"></div>
+            <div ><img src="../blog/'.$row2['main'].'" style="width:100%;"></div>
               <span class="post-category text-white bg-success">Nature</span>
               <div class="text text-sm">
-                <h2>'.$row1['title'].'</h2>
-                <span>'.$row1['date'].'</span>
+                <h2>'.$row2['title'].'</h2>
+                <span>'.$row2['date'].'</span>
               </div>
               </div>
             </a>';

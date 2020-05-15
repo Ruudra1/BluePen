@@ -2,13 +2,8 @@
 
 session_start();
 include_once 'connect.inc.php';
-if(isset($_SESSION['privilege'])) {
-    if(strcmp($_SESSION['privilege'], "admin") !== 0) {
-        // User is not an admin
-        header("Location: index.php");
-        exit();
-    }
-  }
+// $writer=$_SESSION['writer'];
+
 
 if (isset($_POST['submit']))
 {
@@ -16,23 +11,26 @@ if (isset($_POST['submit']))
     #Treat user input as text and not as code
     $title = mysqli_real_escape_string($conn, $_POST['title']);
     $des = mysqli_real_escape_string($conn, $_POST['desc']);
-    $name = mysqli_real_escape_string($conn, $_POST['name']);
-    $abt = mysqli_real_escape_string($conn, $_POST['about']);
-    $link = mysqli_real_escape_string($conn, $_POST['link']);
+    
     $tags = mysqli_real_escape_string($conn, $_POST['tags']);
-   
+    $writer = mysqli_real_escape_string($conn, $_POST['writer']);
     $main=mysqli_real_escape_string($conn, $_FILES["main"]["name"]);
     $img1=mysqli_real_escape_string($conn, $_FILES["img1"]["name"]);
     $img2=mysqli_real_escape_string($conn, $_FILES["img2"]["name"]);
     $img3=mysqli_real_escape_string($conn, $_FILES["img3"]["name"]);
-    $imgw=mysqli_real_escape_string($conn, $_FILES["imgw"]["name"]);
+    
 
 
     $maintype = strtolower(pathinfo($main,PATHINFO_EXTENSION));
     $imgtype1 = strtolower(pathinfo($img1,PATHINFO_EXTENSION));
     $imgtype2 = strtolower(pathinfo($img2,PATHINFO_EXTENSION));
     $imgtype3 = strtolower(pathinfo($img3,PATHINFO_EXTENSION));
-    $imgtypew = strtolower(pathinfo($imgw,PATHINFO_EXTENSION));
+   
+    $sql = "SELECT * FROM blog_writer WHERE name='$writer'";
+    var_dump($sql);
+            $result = mysqli_query($conn, $sql);
+            $row=mysqli_fetch_array($result);
+            $a=$row['id'];
     
         if($maintype != 'jpg' && $maintype != 'jpeg' &&  $maintype != 'png' )
         {
@@ -67,19 +65,7 @@ if (isset($_POST['submit']))
         }
 
 
-        else if($imgtypew != 'jpg' && $imgtypew != 'jpeg' &&  $imgtypew != 'png' )
-        {
-            //Check if file is valid
-            // var_dump($FileType);
-            header("Location: ../add_blog.php?error=imgwinvalid");
-            exit();
-        }
-        // else if(!file_exists($_FILES['sample']['tmp_name']) || !is_uploaded_file($_FILES['sample']['tmp_name']))
-        // {
-        //     //sample file problem
-        //     header("Location: ../registerwriter.php?signup=sample_upload");
-        //     exit();
-        // }
+        
         else
         {
 
@@ -96,8 +82,7 @@ if (isset($_POST['submit']))
             $imgfile3 = $_FILES['img3']['name'];
             $imgtarget3 = "../blog/".basename($imgfile3);
 
-            $imgfilew = $_FILES['imgw']['name'];
-            $imgtargetw = "../blog/".basename($imgfilew);
+            
 
 $error=0;
             if(!move_uploaded_file($_FILES["img1"]["tmp_name"], $imgtarget1))
@@ -107,8 +92,7 @@ $error=0;
             if(!move_uploaded_file($_FILES["img3"]["tmp_name"], $imgtarget3))
                { $error=1; }
 
-               if(!move_uploaded_file($_FILES["imgw"]["tmp_name"], $imgtargetw))
-               { $error=1; }
+              
 
             if($error==1)
             {
@@ -124,7 +108,7 @@ $error=0;
               // Insert the user in the db
                 if (move_uploaded_file($_FILES["main"]["tmp_name"], $maintarget) )                
                 {
-                    $sql = "INSERT INTO `blog`(`title`, `des`, `tags`, `name`, `des_writer`, `link`, `main`, `img1`, `img2`, `img3`, `date`,`imgw`) VALUES ('$title','$des','$tags','$name','$abt','$link','$mainfile','$imgfile1','$imgfile2','$imgfile3','$date','$imgfilew')";
+                    $sql = "INSERT INTO `blog`(w_id,`title`, `des`, `tags`, `main`, `img1`, `img2`, `img3`, `date`) VALUES ($a,'$title','$des','$tags','$mainfile','$imgfile1','$imgfile2','$imgfile3','$date')";
                     mysqli_query($conn, $sql) or die(mysqli_error($conn));
                     // Now redirect the user
                     // $_SESSION['formFilled'] = FALSE;
@@ -139,8 +123,8 @@ $error=0;
                 }
                 else
                 {
-                    // header("Location: ../add_blog.php?error=sampleupload");
-                    // exit();
+                    header("Location: ../add_blog.php?error=sampleupload");
+                    exit();
                 }
             
         }
