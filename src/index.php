@@ -3,6 +3,16 @@
 <?php
 include_once "includes/connect.inc.php";
 include "navbar.php";
+$url = "http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
+if (strpos($url, "error=seccess") !== false) {
+  echo '<div class="col-md-4 offset-md-4 col-sm-4 offset-sm-4 text-center alert alert-danger" role="alert">
+          Added successfully
+        </div>';
+} elseif (strpos($url, "error=error") !== false) {
+  echo '<div class="col-md-4 offset-md-4 col-sm-4 offset-sm-4 text-center alert alert-success" role="alert">
+          Could not add please try later
+        </div>';
+} 
 ?>
     <!--crousal --->
     <br><br><br><br>
@@ -402,14 +412,14 @@ include "navbar.php";
     <!--testimonial end-->
 
 <br><br>
-<form>
+<form action="includes/newsletter.inc.php" method="POST" class="p-5 bg-white">
   <div class="col-12 text-center">
   <div class="container">
     <h2 class="section-title mb-3">Subscribe to our Newsletter</h2>
     <p>Lorem ipsum text about why you should subscribe to our newsletter blabla. Lorem ipsum text about why you should subscribe to our newsletter blabla.</p>
   </div>
   <br>
-
+  
   <div class="container" style="background-color:white">
     <input  style="color:gray;" type="text" placeholder=" Email Address" name="mail" required>
     <label>
@@ -418,7 +428,7 @@ include "navbar.php";
     <br><br>
   </div>
   <div class="container">
-    <input type="submit" value="Subscribe" class="btn btn-primary">
+    <input type="submit" value="submit" name="submit" class="btn btn-primary">
   </div>
 </form>
 </div>

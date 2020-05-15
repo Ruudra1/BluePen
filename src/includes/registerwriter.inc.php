@@ -119,6 +119,8 @@ if (isset($_POST['submit1']))
                     unset($_SESSION['email']);
                     unset($_SESSION['contact']);
                     
+                    $sql1 = "INSERT INTO `newsletter`(`email`) VALUES ('$email')";
+    mysqli_query($conn, $sql1) or die(mysqli_error($conn));
 
                     header("Location: ../writer.php?signup=success");
                     exit();
