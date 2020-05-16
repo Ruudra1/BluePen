@@ -1,5 +1,5 @@
 
-
+<link rel="icon" type="image/png" href="icons/favicon.ico"/>
 <?php
 include_once "includes/connect.inc.php";
 include "navbar.php";
@@ -413,25 +413,31 @@ if (strpos($url, "error=seccess") !== false) {
 
 <br><br>
 <form action="includes/newsletter.inc.php" method="POST" class="p-5 bg-white">
-  <div class="col-12 text-center">
-  <div class="container">
-    <h2 class="section-title mb-3">Subscribe to our Newsletter</h2>
-    <p>Lorem ipsum text about why you should subscribe to our newsletter blabla. Lorem ipsum text about why you should subscribe to our newsletter blabla.</p>
-  </div>
-  <br>
-  
-  <div class="container" style="background-color:white">
-    <input  style="color:gray;" type="text" placeholder=" Email Address" name="mail" required>
-    <label>
-      <input type="checkbox" checked="checked" name="subscribe"> Daily Newsletter
-    </label>
-    <br><br>
-  </div>
-  <div class="container">
-    <input type="submit" value="submit" name="submit" class="btn btn-primary">
-  </div>
-</form>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+<section class="subscribe-area pb-50 pt-70">
+<div class="container">
+	<div class="row">
+
+					<div class="col-md-4">
+						<div class="subscribe-text mb-15">
+							<span>Subscribe to our</span>
+							<h2>NEWSLETTER</h2>
+						</div>
+					</div>
+					<div class="col-md-8">
+						<div class="subscribe-wrapper subscribe2-wrapper mb-15">
+							<div class="subscribe-form">
+								<form action="#">
+									<input placeholder="enter your email address" type="email">
+									<button>subscribe <i class="fas fa-long-arrow-alt-right"></i></button>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+
 </div>
+</section>
     <!--blog start-->
 
     <div class="site-section" id="blog-section">
