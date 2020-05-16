@@ -1,5 +1,5 @@
 
-
+<link rel="icon" type="image/png" href="icons/favicon.ico"/>
 <?php
 include_once "includes/connect.inc.php";
 include "navbar.php";

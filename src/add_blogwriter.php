@@ -1,4 +1,5 @@
 <!-- <!DOCTYPE html> -->
+<link rel="icon" type="image/png" href="icons/favicon.ico"/>
 <?php
 //   session_start();
   include "navbar.php";
