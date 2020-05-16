@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: May 15, 2020 at 04:05 PM
+-- Generation Time: May 16, 2020 at 07:16 AM
 -- Server version: 5.7.26
 -- PHP Version: 7.2.18
 
@@ -137,6 +137,30 @@ INSERT INTO `blog_writer` (`id`, `name`, `des`, `img`, `link`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `comments`
+--
+
+DROP TABLE IF EXISTS `comments`;
+CREATE TABLE IF NOT EXISTS `comments` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `comments` varchar(2048) COLLATE utf8mb4_unicode_520_ci NOT NULL,
+  `blog_id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `date` date NOT NULL,
+  `reply_id` int(11) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
+
+--
+-- Dumping data for table `comments`
+--
+
+INSERT INTO `comments` (`id`, `comments`, `blog_id`, `user_id`, `date`, `reply_id`) VALUES
+(1, 'a', 7, 4, '2020-05-15', 0);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `newsletter`
 --
 
@@ -145,7 +169,32 @@ CREATE TABLE IF NOT EXISTS `newsletter` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `email` varchar(512) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `newsletter`
+--
+
+INSERT INTO `newsletter` (`id`, `email`) VALUES
+(1, 'jay@test.com'),
+(2, 'karan2000apatil@gmail.com'),
+(3, 'jayvora1499@gmail.com');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `reply`
+--
+
+DROP TABLE IF EXISTS `reply`;
+CREATE TABLE IF NOT EXISTS `reply` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `comment_id` int(11) NOT NULL,
+  `date` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `img` varchar(256) COLLATE utf8mb4_unicode_520_ci NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
 
 -- --------------------------------------------------------
 
@@ -187,7 +236,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   `address` varchar(512) NOT NULL,
   `password` varchar(256) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `users`
@@ -197,7 +246,8 @@ INSERT INTO `users` (`id`, `firstname`, `lastname`, `college`, `email`, `mobile`
 (1, 'testfirstname', 'testlastname', '', 'test@gmail.com', 9876543210, 'testaddress', ''),
 (6, 'Bhavya', 'Haria', 'SAKEC', 'bhavyaharia100@gmail.com', 9619305482, 'B-42,B-002, Dayanand Society, Opp. Lifeline Hospital, Gokuldham, Goregaon (East)', '$2y$10$IhDxlZxQRKExV5p4zZGu9ulLROzAvynEB/dRl.n.iXy18LimuYbyO'),
 (4, 'admin', 'admin', '', 'admin@bluepen.com', 9619305482, 'blue pen', '$2y$10$hG4e9Zpp/Pu6pvM64cpIGutZZKnXEDWWbgcLl9TVipBsl4Buq0BaK'),
-(5, 'abc', 'xyz', 'sakec', 'tes@gmail.com', 9619305488, 'sdkdjfsiusu', '$2y$10$Qjn7hzkoDzmxtzUOJgE2IOV2N8sgIQ98ZJRvbijqHc7b0kOezmbdK');
+(5, 'abc', 'xyz', 'sakec', 'tes@gmail.com', 9619305488, 'sdkdjfsiusu', '$2y$10$Qjn7hzkoDzmxtzUOJgE2IOV2N8sgIQ98ZJRvbijqHc7b0kOezmbdK'),
+(7, 'tony', 'jazz', 'sa', 'jayvora1499@gmail.com', 9699466288, 'malad', '$2y$10$E5u9Rmid.lOCN4aSo0JgreeMtlNbsGZ8TVLqOKhc9L.f4X4XPXfpS');
 
 -- --------------------------------------------------------
 
@@ -215,14 +265,15 @@ CREATE TABLE IF NOT EXISTS `writer` (
   `file` text NOT NULL,
   `address` varchar(2048) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=16 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=17 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `writer`
 --
 
 INSERT INTO `writer` (`id`, `firstname`, `lastname`, `mobile`, `email`, `file`, `address`) VALUES
-(15, 'Bhavya', 'Haria', 9619305482, 'bhavyaharia100@gmail.com', 'bhavyaharia100@gmail.comSpeech.pdf', 'address');
+(15, 'Bhavya', 'Haria', 9619305482, 'bhavyaharia100@gmail.com', 'bhavyaharia100@gmail.comSpeech.pdf', 'address'),
+(16, 'karan', 'patil', 8169157715, 'karan2000apatil@gmail.com', 'karan2000apatil@gmail.comWhatsApp Image 2020-05-13 at 15.44.29.jpeg', 'B/115,SURYAKUND CHS MAHAPURUSH MANDIR MARG\r\nMAZGAON');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

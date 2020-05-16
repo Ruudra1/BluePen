@@ -130,27 +130,37 @@
                   </div>
                 </li>
               </ul>
-              <!-- END comment-list -->
-              
+              <i class="fa fa-thumbs-up fa-3x" aria-hidden="true" ></i>
+              <h2>1</h2>
+              <i class="fa fa-thumbs-down fa-3x" style="margin-left=5%;" aria-hidden="true"></i>
+              <!-- END comment-list -->';?>
+             
+              <form  <?php echo 'action="../includes/comment.inc.php?id='.$id.'" method="POST" class="p-5 bg-white">
               <div class="comment-form-wrap pt-5">
                 <h3 class="mb-5">Leave a comment</h3>
                 <form action="#" class="p-5 bg-light">
                   <div class="form-group">
-                    <label for="name">Name *</label>
-                    <input type="text" class="form-control" id="name">
+                    
+                    <input type="text" class="form-control" id="name" placeholder="'.$_SESSION['first'].'">
                   </div>
                   <div class="form-group">
-                    <label for="email">Email *</label>
-                    <input type="email" class="form-control" id="email">
+                   
+                    <input type="email" class="form-control" id="email" placeholder="'.$_SESSION['email'].'">
                   </div>
                   
 
                   <div class="form-group">
                     <label for="message">Message</label>
-                    <textarea name="" id="message" cols="30" rows="10" class="form-control"></textarea>
+                    <textarea name="comment" id="message" cols="30" rows="10" class="form-control"></textarea>
                   </div>
-                  <div class="form-group">
-                    <input type="submit" value="Post Comment" class="btn btn-primary">
+                  <div class="form-group">';
+                  if($_SESSION['id']){
+                   echo' <input type="submit" value="submit" name="submit" class="btn btn-primary">
+                  ';}
+                  else{
+                    echo "Login to comment";
+                  }
+                  echo'
                   </div>
 
                 </form>
