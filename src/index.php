@@ -58,6 +58,7 @@ if (strpos($url, "error=seccess") !== false) {
 
   <!--counters start-->
   <br><br><br>
+  <div class="container">
   <div class="row mb-5 justify-content-center text-center"  data-aos="fade-up">
           <div class="col-7 text-center  mb-5">
             <h2 class="section-title">Facts</h2>
@@ -69,7 +70,7 @@ if (strpos($url, "error=seccess") !== false) {
 	        <div class="col">
 	        <div class="counter">
       
-      <h1 class="timer count-title count-number" data-to="19" data-speed="3500" style="color:#2555a6"></h1>
+      <h1 class="timer count-title count-number" data-to="20" data-speed="3500" style="color:#2555a6"></h1>
        <p class="count-text ">Your Age</p>
     </div>
 	        </div>
@@ -95,7 +96,7 @@ if (strpos($url, "error=seccess") !== false) {
               </div>
          </div>
 
-
+</div>
     <!--services start-->
     <br><br>
     <div class="site-section" id="features-section">
