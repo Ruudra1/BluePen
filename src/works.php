@@ -178,14 +178,14 @@
             <div class="author-box" data-aos="fade-right">
               <div class="d-flex mb-4">
                 <div class="mr-3">
-                  <img src="images/person_1.jpg" alt="Image" class="img-fluid rounded-circle">
+                  <img src="images/kp.jpg" alt="Image" class="img-fluid rounded-circle">
                 </div>
                 <div class="mr-auto text-black">
                   <strong class="font-weight-bold mb-0">Krutik Patel</strong> <br>
                 
                 </div>
               </div>
-              <blockquote>&ldquo;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus vitae ipsa asperiores inventore aperiam iure?&rdquo;</blockquote>
+              <blockquote>&ldquo;Upload it and get delivery in just 3 days&rdquo;</blockquote>
             </div>
           </div>
         </div>

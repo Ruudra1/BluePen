@@ -342,7 +342,8 @@ if (strpos($url, "error=seccess") !== false) {
         <div class="col-md-6 allign-center">
         <form class="form-inline mr-auto">
             <input class="form-control col-md-8" type="text" placeholder="Enter email" aria-label="Search"> <br>
-            <input type="submit" value="Submit" class="btn btn-primary mr-2 mb-2" style="background-color:white; color:#2555a6 " value="Subscribe">
+            <input type="submit" value="Submit" class="btn btn-primary mr-2 mb-2" style="background-color:white; color: gray;" value="Subscribe">
+            
         </form>
         </div>
 
