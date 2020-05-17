@@ -26,22 +26,22 @@ if (strpos($url, "error=seccess") !== false) {
         <div class="carousel-item active">
           <img class="d-block w-100" src="images/1.jpg" alt="First slide">
           <div class="carousel-caption  d-md-block">
-            <h1>Sample Title</h1>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid voluptatum aperiam pariatur commodi  </p>
+            <!-- <h1>Sample Title</h1>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid voluptatum aperiam pariatur commodi  </p> -->
           </div>
         </div>
         <div class="carousel-item">
           <img class="d-block w-100" src="images/1.jpg" alt="Second slide">
           <div class="carousel-caption  d-md-block">
-            <h1>Sample Title</h1>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio quam assumenda, cupiditate,</p>
+            <!-- <h1>Sample Title</h1>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio quam assumenda, cupiditate,</p> -->
           </div>
         </div>
         <div class="carousel-item">
           <img class="d-block w-100" src="images/1.jpg" alt="Third slide">
           <div class="carousel-caption  d-md-block">
-            <h1>Sample Title</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam, nam odit? Mollitia omni</p>
+            <!-- <h1>Sample Title</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam, nam odit? Mollitia omni</p> -->
           </div>
         </div>
       </div>
