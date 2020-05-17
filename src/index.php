@@ -450,8 +450,8 @@ if (strpos($url, "error=seccess") !== false) {
 						<div class="subscribe-wrapper subscribe2-wrapper mb-15">
 							<div class="subscribe-form">
 								<form action="#">
-									<input placeholder="enter your email address" type="email">
-									<button>subscribe <i class="fas fa-long-arrow-alt-right"></i></button>
+									<input placeholder="enter your email address" name="email" type="email">
+									<button name="submit" value="submit">subscribe <i class="fas fa-long-arrow-alt-right"></i></button>
 								</form>
 							</div>
 						</div>
