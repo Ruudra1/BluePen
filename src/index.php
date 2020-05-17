@@ -26,22 +26,22 @@ if (strpos($url, "error=seccess") !== false) {
         <div class="carousel-item active">
           <img class="d-block w-100" src="images/1.jpg" alt="First slide">
           <div class="carousel-caption  d-md-block">
-            <h1>Sample Title</h1>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid voluptatum aperiam pariatur commodi  </p>
+            <!-- <h1>Sample Title</h1>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid voluptatum aperiam pariatur commodi  </p> -->
           </div>
         </div>
         <div class="carousel-item">
           <img class="d-block w-100" src="images/1.jpg" alt="Second slide">
           <div class="carousel-caption  d-md-block">
-            <h1>Sample Title</h1>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio quam assumenda, cupiditate,</p>
+            <!-- <h1>Sample Title</h1>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio quam assumenda, cupiditate,</p> -->
           </div>
         </div>
         <div class="carousel-item">
           <img class="d-block w-100" src="images/1.jpg" alt="Third slide">
           <div class="carousel-caption  d-md-block">
-            <h1>Sample Title</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam, nam odit? Mollitia omni</p>
+            <!-- <h1>Sample Title</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam, nam odit? Mollitia omni</p> -->
           </div>
         </div>
       </div>
@@ -56,8 +56,49 @@ if (strpos($url, "error=seccess") !== false) {
     </div>
     <!--crousal end-->
 
+  <!--counters start-->
+  <br><br><br>
+  <div class="container">
+  <div class="row mb-5 justify-content-center text-center"  data-aos="fade-up">
+          <div class="col-7 text-center  mb-5">
+            <h2 class="section-title">Facts</h2>
+            <p class="lead">Did you ever thought of these</p>
+          </div>
+        </div>
+    
+		<div class="row text-center">
+	        <div class="col">
+	        <div class="counter">
+      
+      <h1 class="timer count-title count-number" data-to="20" data-speed="3500" style="color:#2555a6"></h1>
+       <p class="count-text ">Your Age</p>
+    </div>
+	        </div>
+              <div class="col">
+               <div class="counter">
+     
+      <h1 class="timer count-title count-number" data-to="1000" data-speed="3500" style="color:#2555a6"></h1>
+      <p class="count-text ">Stress level</p>
+    </div>
+              </div>
+              <div class="col">
+                  <div class="counter">
+      
+      <h1 class="timer count-title count-number" data-to="8750" data-speed="3500" style="color:#2555a6"></h1>
+      <p class="count-text ">Hours per year</p>
+    </div></div>
+              <div class="col">
+              <div class="counter">
+     
+      <h1 class="timer count-title count-number" data-to="200" data-speed="3500" style="color:#2555a6"></h1>
+      <p class="count-text ">Hours spent in assignments</p>
+    </div>
+              </div>
+         </div>
 
+</div>
     <!--services start-->
+    <br><br>
     <div class="site-section" id="features-section">
       <div class="container">
         <div class="row mb-5 justify-content-center text-center"  data-aos="fade-up">
@@ -330,6 +371,29 @@ if (strpos($url, "error=seccess") !== false) {
     <!--team end-->
 
 
+<section>
+
+ <div class="jumbotron jumbotron-fluid" style="background-color:#2555a6">
+  <div class="container">
+    <div class="row">
+    
+        <div class="col-md-6">
+            <h1 style="color:white" class="center">Subscribe to our newsletter</h1>
+        </div>
+        <div class="col-md-6 allign-center">
+        <form class="form-inline mr-auto">
+            <input class="form-control col-md-8" type="text" placeholder="Enter email" aria-label="Search"> <br>
+            <input type="submit" value="Submit" class="btn btn-primary mr-2 mb-2" style="background-color:white; color: gray;" value="Subscribe">
+            
+        </form>
+        </div>
+
+    </div>
+    
+  </div>
+ </div>
+
+</section>
 
 
 
@@ -411,11 +475,11 @@ if (strpos($url, "error=seccess") !== false) {
 
     <!--testimonial end-->
 
-<br><br>
-<form action="includes/newsletter.inc.php" method="POST" class="p-5 bg-white">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
-<section class="subscribe-area pb-50 pt-70">
-<div class="container">
+
+
+  <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous"> -->
+<!-- <section class="subscribe-area pb-50 pt-70">
+
 	<div class="row">
 
 					<div class="col-md-4">
@@ -428,17 +492,17 @@ if (strpos($url, "error=seccess") !== false) {
 						<div class="subscribe-wrapper subscribe2-wrapper mb-15">
 							<div class="subscribe-form">
 								<form action="#">
-									<input placeholder="enter your email address" type="email">
-									<button>subscribe <i class="fas fa-long-arrow-alt-right"></i></button>
+									<input placeholder="enter your email address" name="email" type="email">
+									<button name="submit" value="submit">subscribe <i class="fas fa-long-arrow-alt-right"></i></button>
 								</form>
 							</div>
 						</div>
 					</div>
 				</div>
 
-</div>
-</section>
-    <!--blog start-->
+</section> -->
+
+    <!--blog start
 
     <div class="site-section" id="blog-section">
       <div class="container">
