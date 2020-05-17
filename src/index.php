@@ -438,7 +438,7 @@ if (strpos($url, "error=seccess") !== false) {
 
 </div>
 </section>
-    <!--blog start-->
+    <!--blog start
 
     <div class="site-section" id="blog-section">
       <div class="container">
