@@ -330,6 +330,26 @@ if (strpos($url, "error=seccess") !== false) {
     <!--team end-->
 
 
+<section>
+
+ <div class="jumbotron jumbotron-fluid" style="background-color:#2555a6">
+  <div class="container">
+    <div class="row">
+    
+        <div class="col-md-4">
+            <h3 class="display-4" style="color:white">Subscribe to our <br>Newsletter</h3>
+        </div>
+        <div class="col-md-6">
+                  <input placeholder="enter your email address" type="email">
+									<button>Subscribe </button>
+        </div>
+
+    </div>
+    
+  </div>
+ </div>
+
+</section>
 
 
 
@@ -411,11 +431,11 @@ if (strpos($url, "error=seccess") !== false) {
 
     <!--testimonial end-->
 
-<br><br>
-<form action="includes/newsletter.inc.php" method="POST" class="p-5 bg-white">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
-<section class="subscribe-area pb-50 pt-70">
-<div class="container">
+
+
+  <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous"> -->
+<!-- <section class="subscribe-area pb-50 pt-70">
+
 	<div class="row">
 
 					<div class="col-md-4">
@@ -436,8 +456,8 @@ if (strpos($url, "error=seccess") !== false) {
 					</div>
 				</div>
 
-</div>
-</section>
+</section> -->
+
     <!--blog start
 
     <div class="site-section" id="blog-section">
