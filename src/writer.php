@@ -3,11 +3,11 @@
 ob_start();
   session_start();
   error_reporting(0);
-  if(isset($_SESSION['u_id'])) {
-    //User is logged in
-    header("Location: index.php");
-    exit();
-  }
+  // if(isset($_SESSION['u_id'])) {
+  //   //User is logged in
+  //   header("Location: index.php");
+  //   exit();
+  // }
 ?>
 <html lang="en">
   <head>

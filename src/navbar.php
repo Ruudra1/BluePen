@@ -113,7 +113,7 @@ error_reporting(0);
                 if($_SESSION['first']==NULL){
                   echo '<li><a href="signup.php" class="nav-link">Sign Up</a></li>';
                   echo '<li><a href="login.php" class="nav-link">Login</a></li>';
-                  echo '<li><a href="registerwriter.php" class="nav-link">Register as Writer</a></li>';
+                  echo '<li><a href="writer.php" class="nav-link">Register as Writer</a></li>';
                 //  echo '<li><a class="nav-link" href="#" data-toggle="modal" target="_blank" data-target="#signupmodal"><span >Sign Up</span></a></li>';
                 //  echo '<li><a data-toggle="modal" href="#" style="" class="nav-link" data-target="#loginmodal">Login</a></li>';
                 //  echo '<li><a href="" data-toggle="modal" data-target="#writermodal" target="_blank" class="nav-link"><span class="">Register as Writer</span></a></li>';
