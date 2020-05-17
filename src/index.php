@@ -336,12 +336,14 @@ if (strpos($url, "error=seccess") !== false) {
   <div class="container">
     <div class="row">
     
-        <div class="col-md-4">
-            <h3 class="display-4" style="color:white">Subscribe to our <br>Newsletter</h3>
-        </div>
         <div class="col-md-6">
-                  <input placeholder="enter your email address" type="email">
-									<button>Subscribe </button>
+            <h1 style="color:white" class="center">Subscribe to our newsletter</h1>
+        </div>
+        <div class="col-md-6 allign-center">
+        <form class="form-inline mr-auto">
+            <input class="form-control col-md-8" type="text" placeholder="Enter email" aria-label="Search"> <br>
+            <input type="submit" value="Submit" class="btn btn-primary mr-2 mb-2" style="background-color:white; color:#2555a6 " value="Subscribe">
+        </form>
         </div>
 
     </div>
