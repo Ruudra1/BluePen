@@ -56,8 +56,48 @@ if (strpos($url, "error=seccess") !== false) {
     </div>
     <!--crousal end-->
 
+  <!--counters start-->
+  <br><br><br>
+  <div class="row mb-5 justify-content-center text-center"  data-aos="fade-up">
+          <div class="col-7 text-center  mb-5">
+            <h2 class="section-title">Facts</h2>
+            <p class="lead">Did you ever thought of these</p>
+          </div>
+        </div>
+    
+		<div class="row text-center">
+	        <div class="col">
+	        <div class="counter">
+      
+      <h1 class="timer count-title count-number" data-to="19" data-speed="3500" style="color:#2555a6"></h1>
+       <p class="count-text ">Your Age</p>
+    </div>
+	        </div>
+              <div class="col">
+               <div class="counter">
+     
+      <h1 class="timer count-title count-number" data-to="1000" data-speed="3500" style="color:#2555a6"></h1>
+      <p class="count-text ">Stress level</p>
+    </div>
+              </div>
+              <div class="col">
+                  <div class="counter">
+      
+      <h1 class="timer count-title count-number" data-to="8750" data-speed="3500" style="color:#2555a6"></h1>
+      <p class="count-text ">Hours per year</p>
+    </div></div>
+              <div class="col">
+              <div class="counter">
+     
+      <h1 class="timer count-title count-number" data-to="200" data-speed="3500" style="color:#2555a6"></h1>
+      <p class="count-text ">Hours spent in assignments</p>
+    </div>
+              </div>
+         </div>
+
 
     <!--services start-->
+    <br><br>
     <div class="site-section" id="features-section">
       <div class="container">
         <div class="row mb-5 justify-content-center text-center"  data-aos="fade-up">

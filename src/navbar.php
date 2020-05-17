@@ -82,7 +82,8 @@ error_reporting(0);
         <div class="row align-items-center">
           
           <div class="col-6 col-md-3 col-xl-3  d-block">
-            <h1 class="mb-0 site-logo"><a href="index.php" class="text-black h2 mb-0" style="padding-left:15px;">Blue Pen<span class="text-primary"></span> </a></h1>
+            <!-- <h1 class="mb-0 site-logo"><a href="index.php" class="text-black h2 mb-0" style="padding-left:15px;">Blue Pen<span class="text-primary"></span> </a></h1> -->
+           <img src="images/logo.png" class="img-fluid" style="width:70%" style="height:70%">
           </div>
 
           <div class="col-12 col-md-9 col-xl-9 main-menu">
