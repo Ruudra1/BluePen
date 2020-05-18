@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.5
+-- version 4.9.0.1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1:3306
--- Generation Time: May 16, 2020 at 07:16 AM
--- Server version: 5.7.26
--- PHP Version: 7.2.18
+-- Host: 127.0.0.1
+-- Generation Time: May 18, 2020 at 05:07 AM
+-- Server version: 10.4.6-MariaDB
+-- PHP Version: 7.3.8
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -28,21 +28,19 @@ SET time_zone = "+00:00";
 -- Table structure for table `assignments`
 --
 
-DROP TABLE IF EXISTS `assignments`;
-CREATE TABLE IF NOT EXISTS `assignments` (
+CREATE TABLE `assignments` (
   `user_id` int(11) NOT NULL,
-  `assign_id` int(11) NOT NULL AUTO_INCREMENT,
+  `assign_id` int(11) NOT NULL,
   `assign_name` text NOT NULL,
   `ink_color` varchar(5) NOT NULL,
-  `submission_datetime` timestamp NOT NULL,
+  `submission_datetime` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `delivery_date` date NOT NULL,
   `amount` int(11) NOT NULL,
-  `soa_assigned` tinyint(1) DEFAULT '0',
-  `soa_written` tinyint(1) DEFAULT '0',
-  `soa_paid` tinyint(1) DEFAULT '0',
-  `soa_completed` tinyint(1) DEFAULT '0',
-  PRIMARY KEY (`assign_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=34 DEFAULT CHARSET=utf8;
+  `soa_assigned` tinyint(1) DEFAULT 0,
+  `soa_written` tinyint(1) DEFAULT 0,
+  `soa_paid` tinyint(1) DEFAULT 0,
+  `soa_completed` tinyint(1) DEFAULT 0
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `assignments`
@@ -82,9 +80,8 @@ INSERT INTO `assignments` (`user_id`, `assign_id`, `assign_name`, `ink_color`, `
 -- Table structure for table `blog`
 --
 
-DROP TABLE IF EXISTS `blog`;
-CREATE TABLE IF NOT EXISTS `blog` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `blog` (
+  `id` int(11) NOT NULL,
   `title` varchar(256) COLLATE utf8mb4_unicode_520_ci NOT NULL,
   `des` text COLLATE utf8mb4_unicode_520_ci NOT NULL,
   `tags` varchar(1024) COLLATE utf8mb4_unicode_520_ci NOT NULL,
@@ -93,9 +90,8 @@ CREATE TABLE IF NOT EXISTS `blog` (
   `img2` varchar(256) COLLATE utf8mb4_unicode_520_ci NOT NULL,
   `img3` varchar(256) COLLATE utf8mb4_unicode_520_ci NOT NULL,
   `date` date NOT NULL,
-  `w_id` int(11) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
+  `w_id` int(11) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
 
 --
 -- Dumping data for table `blog`
@@ -116,15 +112,13 @@ INSERT INTO `blog` (`id`, `title`, `des`, `tags`, `main`, `img1`, `img2`, `img3`
 -- Table structure for table `blog_writer`
 --
 
-DROP TABLE IF EXISTS `blog_writer`;
-CREATE TABLE IF NOT EXISTS `blog_writer` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `blog_writer` (
+  `id` int(11) NOT NULL,
   `name` varchar(256) COLLATE utf8mb4_unicode_520_ci NOT NULL,
   `des` varchar(2048) COLLATE utf8mb4_unicode_520_ci NOT NULL,
   `img` varchar(256) COLLATE utf8mb4_unicode_520_ci NOT NULL,
-  `link` varchar(2048) COLLATE utf8mb4_unicode_520_ci NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
+  `link` varchar(2048) COLLATE utf8mb4_unicode_520_ci NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
 
 --
 -- Dumping data for table `blog_writer`
@@ -140,16 +134,14 @@ INSERT INTO `blog_writer` (`id`, `name`, `des`, `img`, `link`) VALUES
 -- Table structure for table `comments`
 --
 
-DROP TABLE IF EXISTS `comments`;
-CREATE TABLE IF NOT EXISTS `comments` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `comments` (
+  `id` int(11) NOT NULL,
   `comments` varchar(2048) COLLATE utf8mb4_unicode_520_ci NOT NULL,
   `blog_id` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
   `date` date NOT NULL,
-  `reply_id` int(11) NOT NULL DEFAULT '0',
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
+  `reply_id` int(11) NOT NULL DEFAULT 0
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
 
 --
 -- Dumping data for table `comments`
@@ -161,15 +153,73 @@ INSERT INTO `comments` (`id`, `comments`, `blog_id`, `user_id`, `date`, `reply_i
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `contentwriter`
+--
+
+CREATE TABLE `contentwriter` (
+  `id` int(11) NOT NULL,
+  `firstname` varchar(50) NOT NULL,
+  `lastname` varchar(50) NOT NULL,
+  `mobile` bigint(10) NOT NULL,
+  `email` varchar(256) NOT NULL,
+  `address` varchar(2048) NOT NULL,
+  `genere` varchar(256) NOT NULL,
+  `lang1` varchar(64) NOT NULL,
+  `lang2` varchar(64) NOT NULL,
+  `samples` varchar(8192) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `contentwriter`
+--
+
+INSERT INTO `contentwriter` (`id`, `firstname`, `lastname`, `mobile`, `email`, `address`, `genere`, `lang1`, `lang2`, `samples`) VALUES
+(1, 'kaushik', 'gami', 9930284423, 'kaushikgami14@gmail.com', '502,XANADU-C,PRATHEMESH COMPEX,VEERA DESAI RD', 'wffeeu7', 'oiuytre', 'lkj', 'VEERA DESAI RD'),
+(2, 'kaushik', 'gami', 9930284423, 'kaushikgami1456@gmail.com', '502,XANADU-C,PRATHEMESH COMPLEX\r\nVEERA DESAI RD', 'wffeeu7', 'oiuytre', 'lkj', '502,XANADU-C,PRATHEMESH COMPLEX\r\nVEERA DESAI RD'),
+(3, 'jay', 'gami', 9930284423, 'kaushikgami14221@gmail.com', 'VEERA DESAI RD', 'wffeeu7', 'oiuytre', 'lkj', '502,XANADU-C,PRATHEMESH COMPLEX\r\nVEERA DESAI RD'),
+(4, 'kaushik', 'gami', 7977381017, 'kaushikgami148@gmail.com', 'Mahavir Education Trust Chowk\r\nW.T Patil Marg', 'wffeeu7', 'oiuytre', 'lkj', '502,XANADU-C,PRATHEMESH COMPLEX\r\nVEERA DESAI RD');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `contentwriting`
+--
+
+CREATE TABLE `contentwriting` (
+  `user_id` int(11) NOT NULL,
+  `content_id` int(11) NOT NULL,
+  `content_title` varchar(128) NOT NULL,
+  `content_desc` varchar(8192) NOT NULL,
+  `submission_datetime` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `delivery_date` date NOT NULL,
+  `amount` int(11) NOT NULL,
+  `soa_assigned` tinyint(4) NOT NULL,
+  `soa_written` tinyint(4) NOT NULL,
+  `soa_paid` tinyint(4) NOT NULL,
+  `soa_completed` tinyint(4) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `contentwriting`
+--
+
+INSERT INTO `contentwriting` (`user_id`, `content_id`, `content_title`, `content_desc`, `submission_datetime`, `delivery_date`, `amount`, `soa_assigned`, `soa_written`, `soa_paid`, `soa_completed`) VALUES
+(7, 1, 'jwcdbsdb', 'hsqoef', '2020-05-13 09:54:02', '2020-05-16', 0, 0, 0, 0, 0),
+(7, 2, 'jwcdbsdb', 'juguiusw', '2020-05-13 09:57:19', '2020-05-16', 0, 0, 0, 0, 0),
+(7, 3, 'jwcdbsdb', 'kSCNADC;', '2020-05-16 15:22:01', '2020-05-19', 0, 0, 0, 0, 0),
+(7, 4, 'jwcdbsdb', 'FSDCVS', '2020-05-16 15:26:20', '2020-05-19', 0, 0, 0, 0, 0),
+(7, 5, 'jwcdbsdb', 'xffxc', '2020-05-18 03:05:42', '2020-05-21', 0, 0, 0, 0, 0);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `newsletter`
 --
 
-DROP TABLE IF EXISTS `newsletter`;
-CREATE TABLE IF NOT EXISTS `newsletter` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `email` varchar(512) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+CREATE TABLE `newsletter` (
+  `id` int(11) NOT NULL,
+  `email` varchar(512) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `newsletter`
@@ -186,14 +236,12 @@ INSERT INTO `newsletter` (`id`, `email`) VALUES
 -- Table structure for table `reply`
 --
 
-DROP TABLE IF EXISTS `reply`;
-CREATE TABLE IF NOT EXISTS `reply` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `reply` (
+  `id` int(11) NOT NULL,
   `comment_id` int(11) NOT NULL,
   `date` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
-  `img` varchar(256) COLLATE utf8mb4_unicode_520_ci NOT NULL,
-  PRIMARY KEY (`id`)
+  `img` varchar(256) COLLATE utf8mb4_unicode_520_ci NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
 
 -- --------------------------------------------------------
@@ -202,12 +250,11 @@ CREATE TABLE IF NOT EXISTS `reply` (
 -- Table structure for table `tests`
 --
 
-DROP TABLE IF EXISTS `tests`;
-CREATE TABLE IF NOT EXISTS `tests` (
+CREATE TABLE `tests` (
   `u_id` int(11) NOT NULL,
   `assign_name` text NOT NULL,
   `ink_color` varchar(5) NOT NULL,
-  `timestamp` timestamp NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `deliverydate` date NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
@@ -225,18 +272,16 @@ INSERT INTO `tests` (`u_id`, `assign_name`, `ink_color`, `timestamp`, `deliveryd
 -- Table structure for table `users`
 --
 
-DROP TABLE IF EXISTS `users`;
-CREATE TABLE IF NOT EXISTS `users` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `users` (
+  `id` int(11) NOT NULL,
   `firstname` varchar(50) NOT NULL,
   `lastname` varchar(50) NOT NULL,
   `college` varchar(128) NOT NULL,
   `email` varchar(256) NOT NULL,
   `mobile` bigint(10) NOT NULL,
   `address` varchar(512) NOT NULL,
-  `password` varchar(256) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+  `password` varchar(256) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `users`
@@ -255,17 +300,15 @@ INSERT INTO `users` (`id`, `firstname`, `lastname`, `college`, `email`, `mobile`
 -- Table structure for table `writer`
 --
 
-DROP TABLE IF EXISTS `writer`;
-CREATE TABLE IF NOT EXISTS `writer` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `writer` (
+  `id` int(11) NOT NULL,
   `firstname` varchar(50) NOT NULL,
   `lastname` varchar(50) NOT NULL,
   `mobile` bigint(10) NOT NULL,
   `email` varchar(256) NOT NULL,
   `file` text NOT NULL,
-  `address` varchar(2048) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=17 DEFAULT CHARSET=utf8;
+  `address` varchar(2048) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `writer`
@@ -274,6 +317,134 @@ CREATE TABLE IF NOT EXISTS `writer` (
 INSERT INTO `writer` (`id`, `firstname`, `lastname`, `mobile`, `email`, `file`, `address`) VALUES
 (15, 'Bhavya', 'Haria', 9619305482, 'bhavyaharia100@gmail.com', 'bhavyaharia100@gmail.comSpeech.pdf', 'address'),
 (16, 'karan', 'patil', 8169157715, 'karan2000apatil@gmail.com', 'karan2000apatil@gmail.comWhatsApp Image 2020-05-13 at 15.44.29.jpeg', 'B/115,SURYAKUND CHS MAHAPURUSH MANDIR MARG\r\nMAZGAON');
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `assignments`
+--
+ALTER TABLE `assignments`
+  ADD PRIMARY KEY (`assign_id`);
+
+--
+-- Indexes for table `blog`
+--
+ALTER TABLE `blog`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `blog_writer`
+--
+ALTER TABLE `blog_writer`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `comments`
+--
+ALTER TABLE `comments`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `contentwriter`
+--
+ALTER TABLE `contentwriter`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `contentwriting`
+--
+ALTER TABLE `contentwriting`
+  ADD PRIMARY KEY (`content_id`);
+
+--
+-- Indexes for table `newsletter`
+--
+ALTER TABLE `newsletter`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `reply`
+--
+ALTER TABLE `reply`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `users`
+--
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `writer`
+--
+ALTER TABLE `writer`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `assignments`
+--
+ALTER TABLE `assignments`
+  MODIFY `assign_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
+
+--
+-- AUTO_INCREMENT for table `blog`
+--
+ALTER TABLE `blog`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
+-- AUTO_INCREMENT for table `blog_writer`
+--
+ALTER TABLE `blog_writer`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `comments`
+--
+ALTER TABLE `comments`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `contentwriter`
+--
+ALTER TABLE `contentwriter`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT for table `contentwriting`
+--
+ALTER TABLE `contentwriting`
+  MODIFY `content_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT for table `newsletter`
+--
+ALTER TABLE `newsletter`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `reply`
+--
+ALTER TABLE `reply`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `users`
+--
+ALTER TABLE `users`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
+-- AUTO_INCREMENT for table `writer`
+--
+ALTER TABLE `writer`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
