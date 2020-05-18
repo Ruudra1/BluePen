@@ -185,7 +185,7 @@ if (strpos($url, "error=seccess") !== false) {
               </div>
               <div>
                 <h3>Coming Soon</h3>
-                <p>class="description">We'll take care of your projects soon.</p>
+                <p class="description">We'll take care of your projects soon.</p>
                 <br>
 
                 

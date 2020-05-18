@@ -122,18 +122,18 @@ error_reporting(0);
                 else{
                   if(strcmp($_SESSION['privilege'], "admin")!=0){
                     echo '<li class="has-children">
-                    <a href="#about-section" class="nav-link"><span>HI , '.$_SESSION['first'].'</span></a>';
+                    <a href="#about-section" class="nav-link"><span>Hi , '.$_SESSION['first'].'</span></a>';
                     
                    echo '<ul class="dropdown arrow-top">
                    
                    <li><a href="upload.php" target="_blank" class="nav-link"><span class="text-secondary">Submit Assignment </span></a></li>
                     <li><a href="changepassword.php" target="_blank" class="nav-link"><span class="text-secondary">Change Password  </span></a></li>
                     <li><a href="includes/logout.inc.php"  class="nav-link"><span class="text-secondary">Log Out </span></a></li></ul></li>
-                    <li><a href="" data-toggle="modal" data-target="#writermodal" target="_blank" class="nav-link"><span class="">Register as Writer</span></a></li>';
+                    <li><a href="writer.php" class="nav-link">Register as Writer</a></li>';
                   }
                  elseif(strcmp($_SESSION['privilege'],"admin")==0){
                   echo '<li class="has-children">
-                  <a href="#about-section" class="nav-link"><span>HI , '.$_SESSION['first'].'</span></a>';
+                  <a href="#about-section" class="nav-link"><span>Hi , '.$_SESSION['first'].'</span></a>';
                   
                  echo '<ul class="dropdown arrow-top">
                  <li><a href="viewwriters.php" target="_blank" class="nav-link"><span class="text-secondary">View Writers</span></a></li>
@@ -142,9 +142,9 @@ error_reporting(0);
                   <li><a href="add_blog.php" target="_blank" class="nav-link"><span class="text-secondary">Add Blog</span></a></li>
                   <li><a href="includes/logout.inc.php" class="nav-link"><span class="text-secondary">Log Out </span></a></li>';
                   }
-                  else{
+                  // else{
                     // echo '<li data-toggle="modal" data-target="#writermodal" style="color:black" class="nav-link"><a>Register as Writer</a></li>';
-                  }
+                  // }
             
           }
 
