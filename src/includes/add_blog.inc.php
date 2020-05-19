@@ -5,7 +5,8 @@ include_once 'connect.inc.php';
 // $writer=$_SESSION['writer'];
 
 
-
+if (isset($_POST['submit']))
+{
 
     #Treat user input as text and not as code
     $title = mysqli_real_escape_string($conn, $_POST['title']);
@@ -147,9 +148,9 @@ $error=0;
                 }
             
         }
-    // }
-    // else
-    // {
-    //     header("Location: ../registerwriter.php?signup=invalidfile");
-    //     exit();
-    // }
+    }
+    else
+    {
+        header("Location: ../registerwriter.php");
+        exit();
+    }

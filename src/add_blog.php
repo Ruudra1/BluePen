@@ -109,10 +109,39 @@
 
               <div class="row form-group">
                 <div class="col-md-12">
-              	<label class="text-black">Description</label>
-              	<input type="text" name="desc" placeholder="description" class="form-control rounded-0" required>
+              	<label class="text-black">Description 1</label>
+              	<input type="text" name="desc1" placeholder="description" class="form-control rounded-0" required>
               </div>
               </div>
+
+              <div class="row form-group">
+                <div class="col-md-12">
+              	<label class="text-black">Description 2</label>
+              	<input type="text" name="desc2" placeholder="description" class="form-control rounded-0" required>
+              </div>
+              </div>
+
+              <div class="row form-group">
+                <div class="col-md-12">
+              	<label class="text-black">Description 3</label>
+              	<input type="text" name="desc3" placeholder="description" class="form-control rounded-0" required>
+              </div>
+              </div>
+
+              <div class="row form-group">
+                <div class="col-md-12">
+              	<label class="text-black">Description 4</label>
+              	<input type="text" name="desc4" placeholder="description" class="form-control rounded-0" required>
+              </div>
+              </div>
+
+              <div class="row form-group">
+                <div class="col-md-12">
+              	<label class="text-black">Description 5</label>
+              	<input type="text" name="desc5" placeholder="description" class="form-control rounded-0" required>
+              </div>
+              </div>
+
               <div class="row form-group">
                 <div class="col-md-12">
               	<label class="text-black">Writers</label>
@@ -130,7 +159,7 @@
               <div class="row form-group">
                 <div class="col-md-12">
               	<label class="text-black">related tags</label>
-              	<input type="text" name="tags" placeholder="tags" class="form-control rounded-0" required>
+              	<input type="text" name="tags" placeholder="use semi-colon between 2 tags" class="form-control rounded-0" required>
               </div>
 
               <div class="row form-group col-md-12">
@@ -150,6 +179,10 @@
                 <div class="row form-group col-md-12">
                   <label class="text-black">image 3</label> 
                   <input class="form-control rounded-0" type="file" name="img3" required>
+                </div>
+                <div class="row form-group col-md-12">
+                  <label class="text-black">image 4</label> 
+                  <input class="form-control rounded-0" type="file" name="img4" required>
                 </div>
 
                 
