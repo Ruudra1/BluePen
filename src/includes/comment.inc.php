@@ -19,8 +19,14 @@ if (isset($_POST['submit']))
             $date=date("Y-m-d");
         $sql = "INSERT INTO `comments`(`comments`, user_id,blog_id, `date`) VALUES ('$comment',$id,$blog,'$date')";
                     mysqli_query($conn, $sql) or die(mysqli_error($conn));
-        
+                    header("Location: ../new_blog/single.php?id=".$blog);
+                    exit();
+                    
     }
+}
+else{
+    header("Location: ../new_blog/single.php?id=".$blog);
+                    exit();
 }
 ?>
 

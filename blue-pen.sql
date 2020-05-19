@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: May 16, 2020 at 07:16 AM
+-- Generation Time: May 19, 2020 at 10:58 AM
 -- Server version: 5.7.26
 -- PHP Version: 7.2.18
 
@@ -86,7 +86,7 @@ DROP TABLE IF EXISTS `blog`;
 CREATE TABLE IF NOT EXISTS `blog` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `title` varchar(256) COLLATE utf8mb4_unicode_520_ci NOT NULL,
-  `des` text COLLATE utf8mb4_unicode_520_ci NOT NULL,
+  `des1` text COLLATE utf8mb4_unicode_520_ci NOT NULL,
   `tags` varchar(1024) COLLATE utf8mb4_unicode_520_ci NOT NULL,
   `main` varchar(256) COLLATE utf8mb4_unicode_520_ci NOT NULL,
   `img1` varchar(256) COLLATE utf8mb4_unicode_520_ci NOT NULL,
@@ -94,6 +94,11 @@ CREATE TABLE IF NOT EXISTS `blog` (
   `img3` varchar(256) COLLATE utf8mb4_unicode_520_ci NOT NULL,
   `date` date NOT NULL,
   `w_id` int(11) NOT NULL,
+  `des2` varchar(2048) COLLATE utf8mb4_unicode_520_ci NOT NULL,
+  `des3` varchar(2048) COLLATE utf8mb4_unicode_520_ci NOT NULL,
+  `des4` varchar(2048) COLLATE utf8mb4_unicode_520_ci NOT NULL,
+  `des5` varchar(2048) COLLATE utf8mb4_unicode_520_ci NOT NULL,
+  `img4` varchar(256) COLLATE utf8mb4_unicode_520_ci NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
 
@@ -101,14 +106,14 @@ CREATE TABLE IF NOT EXISTS `blog` (
 -- Dumping data for table `blog`
 --
 
-INSERT INTO `blog` (`id`, `title`, `des`, `tags`, `main`, `img1`, `img2`, `img3`, `date`, `w_id`) VALUES
-(2, 'dsfsdv', 'gff', 'nature;adventure;', 'Capture.PNG', 'Capture1.PNG', 'Capture2.PNG', 'Capture4.PNG', '2012-05-20', 0),
-(3, 'dejyh', 'gff', 'nature;adventure;', 'Capture6.PNG', 'Capture7.PNG', 'Capture8.PNG', 'CaptureDATA.PNG', '2012-05-20', 0),
-(4, 'dejyh', 'gff', 'nature;adventure;', 'Capture6.PNG', 'Capture7.PNG', 'Capture8.PNG', 'CaptureDATA.PNG', '2012-05-20', 0),
-(5, 'dsfsdv', 'gff', 'nature;adventure;', 'KEVAL SHAH - TE3 - 68-1.jpg', 'KEVAL SHAH - TE3 - 68-1.png', 'WhatsApp Image 2020-05-05 at 20.01.42.jpeg', 'WhatsApp Image 2020-03-06 at 08.42.12.jpeg', '2020-05-12', 0),
-(6, 'dsfsdv', 'gff', 'nature;adventure;', 'WhatsApp Image 2020-05-13 at 15.44.29.jpeg', 'WhatsApp Image 2020-05-11 at 13.52.59 (1).jpeg', 'WhatsApp Image 2020-05-13 at 12.59.03.jpeg', 'WhatsApp Image 2020-03-01 at 19.32.58.jpeg', '2020-05-15', 0),
-(7, 'dsfsdv', 'hello', 'nature;adventure;', 'WhatsApp Image 2020-05-05 at 20.01.42.jpeg', 'WhatsApp Image 2020-05-05 at 19.27.01.jpeg', '2020-04-13.png', 'WhatsApp Image 2020-03-01 at 19.14.32.jpeg', '2020-05-15', 1),
-(8, 'aaaa', 'jay', 'nature;adventure;', 'WhatsApp Image 2020-03-01 at 19.29.12.jpeg', 'WhatsApp Image 2020-03-01 at 19.29.05.jpeg', 'WhatsApp Image 2020-03-01 at 19.29.19.jpeg', 'WhatsApp Image 2020-03-01 at 19.29.12.jpeg', '2020-05-15', 2);
+INSERT INTO `blog` (`id`, `title`, `des1`, `tags`, `main`, `img1`, `img2`, `img3`, `date`, `w_id`, `des2`, `des3`, `des4`, `des5`, `img4`) VALUES
+(2, 'dsfsdv', 'gff', 'nature;adventure;', 'Capture.PNG', 'Capture1.PNG', 'Capture2.PNG', 'Capture4.PNG', '2012-05-20', 0, '', '', '', '', ''),
+(3, 'dejyh', 'gff', 'nature;adventure;', 'Capture6.PNG', 'Capture7.PNG', 'Capture8.PNG', 'CaptureDATA.PNG', '2012-05-20', 0, '', '', '', '', ''),
+(4, 'dejyh', 'gff', 'nature;adventure;', 'Capture6.PNG', 'Capture7.PNG', 'Capture8.PNG', 'CaptureDATA.PNG', '2012-05-20', 0, '', '', '', '', ''),
+(5, 'dsfsdv', 'gff', 'nature;adventure;', 'KEVAL SHAH - TE3 - 68-1.jpg', 'KEVAL SHAH - TE3 - 68-1.png', 'WhatsApp Image 2020-05-05 at 20.01.42.jpeg', 'WhatsApp Image 2020-03-06 at 08.42.12.jpeg', '2020-05-12', 0, '', '', '', '', ''),
+(6, 'dsfsdv', 'gff', 'nature;adventure;', 'WhatsApp Image 2020-05-13 at 15.44.29.jpeg', 'WhatsApp Image 2020-05-11 at 13.52.59 (1).jpeg', 'WhatsApp Image 2020-05-13 at 12.59.03.jpeg', 'WhatsApp Image 2020-03-01 at 19.32.58.jpeg', '2020-05-15', 0, '', '', '', '', ''),
+(7, 'dsfsdv', 'hello', 'nature;adventure;', 'WhatsApp Image 2020-05-05 at 20.01.42.jpeg', 'WhatsApp Image 2020-05-05 at 19.27.01.jpeg', '2020-04-13.png', 'WhatsApp Image 2020-03-01 at 19.14.32.jpeg', '2020-05-15', 1, '', '', '', '', ''),
+(8, 'aaaa', 'jay', 'nature;adventure;', 'WhatsApp Image 2020-03-01 at 19.29.12.jpeg', 'WhatsApp Image 2020-03-01 at 19.29.05.jpeg', 'WhatsApp Image 2020-03-01 at 19.29.19.jpeg', 'WhatsApp Image 2020-03-01 at 19.29.12.jpeg', '2020-05-15', 2, '', '', '', '', '');
 
 -- --------------------------------------------------------
 
@@ -149,14 +154,17 @@ CREATE TABLE IF NOT EXISTS `comments` (
   `date` date NOT NULL,
   `reply_id` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
 
 --
 -- Dumping data for table `comments`
 --
 
 INSERT INTO `comments` (`id`, `comments`, `blog_id`, `user_id`, `date`, `reply_id`) VALUES
-(1, 'a', 7, 4, '2020-05-15', 0);
+(1, 'a', 7, 4, '2020-05-15', 0),
+(2, 'hello fellas', 7, 7, '2020-05-17', 0),
+(3, 'hey guys', 7, 7, '2020-05-17', 0),
+(4, 'hey guys', 7, 7, '2020-05-17', 0);
 
 -- --------------------------------------------------------
 
@@ -169,7 +177,7 @@ CREATE TABLE IF NOT EXISTS `newsletter` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `email` varchar(512) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `newsletter`
@@ -178,7 +186,8 @@ CREATE TABLE IF NOT EXISTS `newsletter` (
 INSERT INTO `newsletter` (`id`, `email`) VALUES
 (1, 'jay@test.com'),
 (2, 'karan2000apatil@gmail.com'),
-(3, 'jayvora1499@gmail.com');
+(3, 'jayvora1499@gmail.com'),
+(4, 'kalpeshrane71@gmail.com');
 
 -- --------------------------------------------------------
 

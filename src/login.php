@@ -158,7 +158,8 @@
         </div>
         
       </div>
-    </div>
+    </div>';
+      }?>
 
     <!--contact end-->
 
