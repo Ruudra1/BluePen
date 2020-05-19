@@ -14,6 +14,28 @@ if (strpos($url, "error=seccess") !== false) {
         </div>';
 } 
 ?>
+ <style>
+            .single-fact {
+                text-align: center;
+                margin: 45px 0;
+                padding: 8px 16px;
+                border-right: 1px solid #ddd;
+            }
+
+            .single-fact h2 {
+                font-size: 36px;
+                margin-top: 10px;
+                font-weight: 400;
+            }
+
+            .single-fact p {
+                font-size: 14px;
+            }
+
+            .fact-box {
+                box-shadow: 0px 20px 50px rgba(153, 153, 153, 0.2);
+            }
+        </style>
     <!--crousal --->
     <br><br><br><br>
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
@@ -24,7 +46,7 @@ if (strpos($url, "error=seccess") !== false) {
       </ol>
       <div class="carousel-inner">
         <div class="carousel-item active">
-          <img class="d-block w-100" src="images/1.jpg" alt="First slide">
+          <img class="d-block w-100" src="images/BLUEPEN1.png" alt="First slide">
           <div class="carousel-caption  d-md-block">
             <!-- <h1>Sample Title</h1>
             <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid voluptatum aperiam pariatur commodi  </p> -->
@@ -56,7 +78,7 @@ if (strpos($url, "error=seccess") !== false) {
     </div>
     <!--crousal end-->
 
-  <!--counters start-->
+  <!--counters start
   <br><br><br>
   <div class="container">
   <div class="row mb-5 justify-content-center text-center"  data-aos="fade-up">
@@ -96,7 +118,43 @@ if (strpos($url, "error=seccess") !== false) {
               </div>
          </div>
 
-</div>
+</div>-->
+  <!--counters start-->
+  <br><br><br>
+        <section class="fact-area">
+            <div class="container">
+                <div class="row mb-5 justify-content-center text-center" data-aos="fade-up">
+                    <div class="col-7 text-center  mb-5">
+                        <h2 class="section-title">Facts</h2>
+                        <p class="lead">Did you ever thought of these</p>
+                    </div>
+                </div>
+                <div class="fact-box">
+                    <div class="row">
+                        <div class="col-lg col-6 single-fact">
+                            <i class="fa fa-user fa-4x" aria-hidden="true"></i>
+                            <h2 class="count">20</h2>
+                            <p>Age</p>
+                        </div>
+                        <div class="col-lg col-6 single-fact">
+                            <i class="fa fa-battery-quarter fa-4x" aria-hidden="true"></i>
+                            <h2 class="count">100</h2>
+                            <p>Stress Level</p>
+                        </div>
+                        <div class="col-lg col-6 single-fact">
+                            <i class="fa fa-clock-o fa-4x" aria-hidden="true"></i>
+                            <h2 class="count">8750</h2>
+                            <p>Hours Per Day</p>
+                        </div>
+                        <div class="col-lg col-6 single-fact">
+                            <i class="fa fa-pencil fa-4x" aria-hidden="true"></i>
+                            <h2 class="count">100</h2>
+                            <p>Hours Spent In Assignment</p>
+                        </div>
+                    </div>
+                </div>
+        </section>
+        <!---counter ends--->
     <!--services start-->
     <br><br>
     <div class="site-section" id="features-section">
@@ -644,7 +702,7 @@ if (strpos($url, "error=seccess") !== false) {
         </div>
       </div>
     </div> -->
-
+ 
     <!-- Footer -->
 <?php
 include "footer.php";
