@@ -108,7 +108,7 @@
             <div class="author-box" data-aos="fade-left">
               <div class="d-flex mb-4">
                 <div class="mr-3">
-                  <img src="images/person_4.jpg" alt="Image" class="img-fluid rounded-circle">
+                  <img src="images/Vinit Savla.jpeg" alt="Image" class="img-fluid rounded-circle">
                 </div>
                 <div class="mr-auto text-black">
                   <strong class="font-weight-bold mb-0">Vinit Savla</strong> <br>
@@ -132,7 +132,7 @@
             <div class="author-box" data-aos="fade-right">
               <div class="d-flex mb-4">
                 <div class="mr-3">
-                  <img src="images/person_1.jpg" alt="Image" class="img-fluid rounded-circle">
+                  <img src="images/Kaushik Iyengar.jpeg" alt="Image" class="img-fluid rounded-circle">
                 </div>
                 <div class="mr-auto text-black">
                   <strong class="font-weight-bold mb-0">Kaushik Iyengar</strong> <br>
@@ -154,7 +154,7 @@
             <div class="author-box" data-aos="fade-left">
               <div class="d-flex mb-4">
                 <div class="mr-3">
-                  <img src="images/person_4.jpg" alt="Image" class="img-fluid rounded-circle">
+                  <img src="images/Bhavya Haria.jpeg" alt="Image" class="img-fluid rounded-circle">
                 </div>
                 <div class="mr-auto text-black">
                   <strong class="font-weight-bold mb-0"> Bhavya Haria</strong> <br>
@@ -178,7 +178,7 @@
             <div class="author-box" data-aos="fade-right">
               <div class="d-flex mb-4">
                 <div class="mr-3">
-                  <img src="images/person_1.jpg" alt="Image" class="img-fluid rounded-circle">
+                  <img src="images/Krutik Patel.jpeg" alt="Image" class="img-fluid rounded-circle">
                 </div>
                 <div class="mr-auto text-black">
                   <strong class="font-weight-bold mb-0">Krutik Patel</strong> <br>
@@ -200,7 +200,7 @@
             <div class="author-box" data-aos="fade-left">
               <div class="d-flex mb-4">
                 <div class="mr-3">
-                  <img src="images/person_4.jpg" alt="Image" class="img-fluid rounded-circle">
+                  <img src="images/Jay Vora.jpeg" alt="Image" class="img-fluid rounded-circle">
                 </div>
                 <div class="mr-auto text-black">
                   <strong class="font-weight-bold mb-0">Jay Vora</strong> <br>
@@ -229,10 +229,10 @@
             <div class="author-box" data-aos="fade-left">
               <div class="d-flex mb-4">
                 <div class="mr-3">
-                  <img src="images/person_4.jpg" alt="Image" class="img-fluid rounded-circle">
+                  <img src="images/Simran Jindal.jpeg" alt="Image" class="img-fluid rounded-circle">
                 </div>
                 <div class="mr-auto text-black">
-                  <strong class="font-weight-bold mb-0"></strong> <br>
+                  <strong class="font-weight-bold mb-0">Simran Jindal</strong> <br>
                   
                 </div>
               </div>
@@ -259,10 +259,10 @@
             <div class="author-box" data-aos="fade-right">
               <div class="d-flex mb-4">
                 <div class="mr-3">
-                  <img src="images/person_1.jpg" alt="Image" class="img-fluid rounded-circle">
+                  <img src="images/Kaushik gami.jpeg" alt="Image" class="img-fluid rounded-circle">
                 </div>
                 <div class="mr-auto text-black">
-                  <strong class="font-weight-bold mb-0">Simran Jindal</strong> <br>
+                  <strong class="font-weight-bold mb-0">Kaushik Gami</strong> <br>
                 
                 </div>
               </div>
@@ -283,10 +283,10 @@
             <div class="author-box" data-aos="fade-left">
               <div class="d-flex mb-4">
                 <div class="mr-3">
-                  <img src="images/person_4.jpg" alt="Image" class="img-fluid rounded-circle">
+                  <img src="images/Bhavik Maru.jpeg" alt="Image" class="img-fluid rounded-circle">
                 </div>
                 <div class="mr-auto text-black">
-                  <strong class="font-weight-bold mb-0">Kaushik Gami</strong> <br>
+                  <strong class="font-weight-bold mb-0">Bhavik Maru</strong> <br>
                 
                 </div>
               </div>
@@ -300,6 +300,7 @@
       </div>
     </div>
     <!--how it works (about)  end-->
+
 
      <!-- Footer -->
 <?php

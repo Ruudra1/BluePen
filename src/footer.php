@@ -12,7 +12,7 @@
 
       <!-- Content -->
       <h5 class="text-uppercase">Blue Pen</h5>
-      <p>Kalyug ke vishnu bankar aaye hai dost. Help kiye bina toh nai jayenge(in reference to this). Whichever work it is upload it here or write to us for suggestions & more. Stay bindaas !! If you have come this far kuch <a href="https://www.youtube.com/channel/UCHNpbQ8dQHzlER5fz68gaHg" style="color:black">COMEDY DEKH KAR JAO.</a></p>
+      <p>Kalyug ke vishnu bankar aaye hai dost. Help kiye bina toh nai jayenge(in reference to this). Whichever work it is upload it here or write to us for suggestions & more. Stay bindaas !! If you have come this far kuch <a href="https://www.youtube.com/channel/UCHNpbQ8dQHzlER5fz68gaHg" style="color:black"> COMEDY DEKH KAR JAO.</a></p>
 
     </div>
     <!-- Grid column -->
@@ -80,6 +80,7 @@
 </div> <!-- .site-wrap -->
 
 <script src="js/jquery-3.3.1.min.js"></script>
+<script src="js/counter.js""></script>
 <script src="js/jquery-ui.js"></script>
 <script src="js/popper.min.js"></script>
 <script src="js/bootstrap.min.js"></script>

@@ -28,8 +28,13 @@ if (isset($_POST['submit'])) {
 
     // Form Validation / Error Handlers
     // Check for empty fields
+
     if(empty($oldpass) || empty($newpass) || empty($cpass)) { // put empty variables test condition here
         header("Location: ../changepassword.php?changepassword=empty");
+        exit();
+        // $hashedPassCheck == false
+    }elseif($oldpass == $newpass || $oldpass == $cpass) { // put empty variables test condition here
+        header("Location: ../changepassword.php?changepassword=same");
         exit();
         // $hashedPassCheck == false
     }else if($hashedPassCheck == false){
@@ -37,7 +42,7 @@ if (isset($_POST['submit'])) {
         header("Location: ../changepassword.php?changepassword=wrongpassword");
         exit();
         
-    }else if((strlen($newpass) && strlen($cpass)) < 8){
+    }else if(strlen($newpass)  < 8 && strlen($cpass) < 8){
         //Check if password is valid
         header("Location: ../changepassword.php?changepassword=len");
         exit();
@@ -50,7 +55,7 @@ if (isset($_POST['submit'])) {
         
         // $result = mysqli_query($conn, $sql);
         // $resultCheck = mysqli_num_rows($result);
-        if(strcmp($pass,$repass) !== 0) {
+        if(strcmp($newpass,$cpass) !== 0) {
             //Check if both passwords match
             header("Location: ../changepassword.php?changepassword=pass");
             exit();

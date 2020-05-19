@@ -114,7 +114,7 @@ if(isset($_POST['submit'])) {
     // var_dump($today);
     // var_dump($et);
         var_dump($id);
-    $link = "localhost/blue-pen-website/forget_password1.php?et=".$et1."&item=".urlencode(base64_encode($id));
+    $link = "localhost/bluepen/src/forget_password1.php?et=".$et1."&item=".urlencode(base64_encode($id));
     var_dump($link);
     $to = $email;
 
@@ -559,8 +559,8 @@ if(isset($_POST['submit'])) {
               <table class="email-content" width="100%" cellpadding="0" cellspacing="0" role="presentation">
                 <tr>
                   <td class="email-masthead">
-                    <a href="http://localhost/blue-pen-website/" class="f-fallback email-masthead_name">
-                    <img src="../img/bluepen.png" alt="img" title="" style="width:145px; height:auto"/>
+                    <a href="http://localhost/bluepen/src/" class="f-fallback email-masthead_name">
+                    <img src="http://bluepen.co.in/img/bluepen.png" alt="img" title="" style="width:145px; height:auto"/>
                   </a>
                   </td>
                 </tr>
@@ -590,7 +590,7 @@ if(isset($_POST['submit'])) {
                                 </td>
                               </tr>
                             </table>
-                            <p>For security, this request was received from a '.$info.' device using '. $ua['name'] . " " . $ua['version'].'. If you did not request a password reset, please ignore this email or <a href="http://localhost/blue-pen-website/contactus.php">contact support</a> if you have questions.</p>
+                            <p>For security, this request was received from a '.$info.' device using '. $ua['name'] . " " . $ua['version'].'. If you did not request a password reset, please ignore this email or <a href="http://localhost/bluepen/src/contactus.php">contact support</a> if you have questions.</p>
                             <p>Thanks,
                               <br>The Blue Pen Team</p>
                             <!-- Sub copy -->
@@ -598,7 +598,7 @@ if(isset($_POST['submit'])) {
                               <tr>
                                 <td>
                                   <p class="f-fallback sub">If you’re having trouble with the button above, copy and paste the URL below into your web browser.</p>
-                                  <p class="f-fallback sub">http://localhost/blue-pen-website/contactus.php</p>
+                                  <p class="f-fallback sub">http://localhost/bluepen/src/contactus.php</p>
                                 </td>
                               </tr>
                             </table>

@@ -82,7 +82,8 @@ error_reporting(0);
         <div class="row align-items-center">
           
           <div class="col-6 col-md-3 col-xl-3  d-block">
-            <h1 class="mb-0 site-logo"><a href="index.php" class="text-black h2 mb-0" style="padding-left:15px;">Blue Pen<span class="text-primary"></span> </a></h1>
+            <!-- <h1 class="mb-0 site-logo"><a href="index.php" class="text-black h2 mb-0" style="padding-left:15px;">Blue Pen<span class="text-primary"></span> </a></h1> -->
+           <img src="images/logo.png" class="img-fluid" style="width:70%" style="height:70%">
           </div>
 
           <div class="col-12 col-md-9 col-xl-9 main-menu">
@@ -113,7 +114,7 @@ error_reporting(0);
                 if($_SESSION['first']==NULL){
                   echo '<li><a href="signup.php" class="nav-link">Sign Up</a></li>';
                   echo '<li><a href="login.php" class="nav-link">Login</a></li>';
-                  echo '<li><a href="registerwriter.php" class="nav-link">Register as Writer</a></li>';
+                  echo '<li><a href="writer.php" class="nav-link">Register as Writer</a></li>';
                 //  echo '<li><a class="nav-link" href="#" data-toggle="modal" target="_blank" data-target="#signupmodal"><span >Sign Up</span></a></li>';
                 //  echo '<li><a data-toggle="modal" href="#" style="" class="nav-link" data-target="#loginmodal">Login</a></li>';
                 //  echo '<li><a href="" data-toggle="modal" data-target="#writermodal" target="_blank" class="nav-link"><span class="">Register as Writer</span></a></li>';
@@ -121,18 +122,18 @@ error_reporting(0);
                 else{
                   if(strcmp($_SESSION['privilege'], "admin")!=0){
                     echo '<li class="has-children">
-                    <a href="#about-section" class="nav-link"><span>HI , '.$_SESSION['first'].'</span></a>';
+                    <a href="#about-section" class="nav-link"><span>Hi , '.$_SESSION['first'].'</span></a>';
                     
                    echo '<ul class="dropdown arrow-top">
                    
                    <li><a href="upload.php" target="_blank" class="nav-link"><span class="text-secondary">Submit Assignment </span></a></li>
                     <li><a href="changepassword.php" target="_blank" class="nav-link"><span class="text-secondary">Change Password  </span></a></li>
                     <li><a href="includes/logout.inc.php"  class="nav-link"><span class="text-secondary">Log Out </span></a></li></ul></li>
-                    <li><a href="" data-toggle="modal" data-target="#writermodal" target="_blank" class="nav-link"><span class="">Register as Writer</span></a></li>';
+                    <li><a href="writer.php" class="nav-link">Register as Writer</a></li>';
                   }
                  elseif(strcmp($_SESSION['privilege'],"admin")==0){
                   echo '<li class="has-children">
-                  <a href="#about-section" class="nav-link"><span>HI , '.$_SESSION['first'].'</span></a>';
+                  <a href="#about-section" class="nav-link"><span>Hi , '.$_SESSION['first'].'</span></a>';
                   
                  echo '<ul class="dropdown arrow-top">
                  <li><a href="viewwriters.php" target="_blank" class="nav-link"><span class="text-secondary">View Writers</span></a></li>
@@ -141,9 +142,9 @@ error_reporting(0);
                   <li><a href="add_blog.php" target="_blank" class="nav-link"><span class="text-secondary">Add Blog</span></a></li>
                   <li><a href="includes/logout.inc.php" class="nav-link"><span class="text-secondary">Log Out </span></a></li>';
                   }
-                  else{
+                  // else{
                     // echo '<li data-toggle="modal" data-target="#writermodal" style="color:black" class="nav-link"><a>Register as Writer</a></li>';
-                  }
+                  // }
             
           }
 
