@@ -28,8 +28,8 @@
 
       <ul class="list-unstyled">
         <li>
-          <a href="https://www.facebook.com/bluepen11/" style="color: white;"><i class="fab fa-facebook-f fa-lg white-text mr-md-5 mr-3 fa-2x"> </i></a>
-          <a href="http://www.instagram.com/bluepen11" style="color: white;"><i class="fab fa-instagram fa-lg white-text mr-md-5 mr-3 fa-2x"></i></a>
+          <a href="https://www.facebook.com/bluepen11/" style="color: white;"><i class="fab fa-facebook-f fa-lg white-text mr-md-5 mr-3 fa-3x"> </i></a>
+          <a href="http://www.instagram.com/bluepen11" style="color: white;"><i class="fab fa-instagram fa-lg white-text mr-md-5 mr-3 fa-3x"></i></a>
 
         </li>
       </ul>

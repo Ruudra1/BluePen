@@ -35,6 +35,103 @@ if (strpos($url, "error=seccess") !== false) {
             .fact-box {
                 box-shadow: 0px 20px 50px rgba(153, 153, 153, 0.2);
             }
+            body {
+                font-family: "Open Sans", sans-serif;
+            }
+
+            h2 {
+                color: #333;
+                text-align: center;
+                text-transform: uppercase;
+                font-family: "Roboto", sans-serif;
+                font-weight: bold;
+                position: relative;
+                margin: 30px 0 20px;
+            }
+
+            
+            .col-center {
+                margin: 0 auto;
+                float: none !important;
+            }
+
+            .carousel {
+                margin: 50px auto;
+                padding: 0 70px;
+            }
+
+            .carousel .item {
+                color: #999;
+                font-size: 14px;
+                text-align: center;
+                overflow: hidden;
+                min-height: 290px;
+            }
+
+            .carousel .item .img-box {
+                width: 135px;
+                height: 135px;
+                margin: 0 auto;
+                padding: 5px;
+                border: 1px solid #ddd;
+                border-radius: 50%;
+            }
+
+            .carousel .img-box img {
+                width: 100%;
+                height: 100%;
+                display: block;
+                border-radius: 50%;
+            }
+
+            .carousel .testimonial {
+                padding: 30px 0 10px;
+            }
+
+            .carousel .overview b {
+                text-transform: uppercase;
+                color: #7AA641;
+            }
+
+            .carousel .carousel-control {
+                width: 40px;
+                height: 40px;
+                margin-top: -20px;
+                top: 50%;
+                background: none;
+            }
+
+            .carousel-control i {
+                font-size: 68px;
+                line-height: 42px;
+                position: absolute;
+                display: inline-block;
+                color: rgba(0, 0, 0, 0.8);
+                text-shadow: 0 3px 3px #e6e6e6, 0 0 0 #000;
+            }
+
+            .carousel .carousel-indicators {
+                bottom: -40px;
+            }
+
+            .carousel-indicators li,
+            .carousel-indicators li.active {
+                width: 10px;
+                height: 10px;
+                margin: 1px 3px;
+                border-radius: 50%;
+            }
+
+            .carousel-indicators li {
+                background: #999;
+                border-color: transparent;
+                box-shadow: inset 0 2px 1px rgba(0, 0, 0, 0.2);
+            }
+
+            .carousel-indicators li.active {
+                background: #555;
+                box-shadow: inset 0 2px 1px rgba(0, 0, 0, 0.2);
+            }
         </style>
     <!--crousal --->
     <br><br><br><br>
@@ -455,7 +552,7 @@ if (strpos($url, "error=seccess") !== false) {
 
 
 
-    <!---testimonial start-->
+    <!---testimonial start
 
 
     <div class="site-section testimonial-wrap bg-light" id="testimonials-section">
@@ -532,7 +629,83 @@ if (strpos($url, "error=seccess") !== false) {
 
 
     <!--testimonial end-->
-
+ <!---testimonial starts-->
+ <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-center m-auto">
+                    <h2>Testimonials</h2>
+                    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                        <!-- Carousel indicators -->
+                        <ol class="carousel-indicators">
+                            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                            <li data-target="#myCarousel" data-slide-to="1"></li>
+                            <li data-target="#myCarousel" data-slide-to="2"></li>
+                            <li data-target="#myCarousel" data-slide-to="3"></li>
+                            <li data-target="#myCarousel" data-slide-to="4"></li>
+                            <li data-target="#myCarousel" data-slide-to="5"></li>
+                        </ol>   
+                        <!-- Wrapper for carousel items -->
+                        <div class="carousel-inner">
+                            <div class="item carousel-item active">
+                                <div class="img-box"><img src="images/Parth Gite.jpeg" alt=""></div>
+                                <p class="testimonial">I have been using bluepens service for the past few daysnow. I am proud to say they’ve always lived up to the mark and no room for complaints. The services are very prompt and they charge reasonably which is the best part. Writing material has always been very neat and tidy which has helped me score good grades whilst focusing on my other commitments. Way to go you guys!</p>
+                                <p class="overview"><b>Parth Gite</b>, Mumbai</p>
+                            </div>
+                            <div class="item carousel-item">
+                                <div class="img-box"><img src="images/Jash Shah.jpeg" alt=""></div>
+                                <p class="testimonial">Overall rating: 9/10 , Delivery: 9/10 , Rates :8/10 , Handwriting: 9/10 </p>
+                                    <p>I had recently used bluepen,it made my work very easy.I just had to share my content to be written and it was done. Bluepen had completed the work within the given dates.</p>
+                                <p class="overview"><b>Jash Shah</b>, Mumbai</p>
+                            </div>
+                            <div class="item carousel-item">
+                                <div class="img-box"><img src="images/Vinod Muleva.jpeg" alt=""></div>
+                                <p class="testimonial">@BluePen11  the 
+                                    Quality of work- was good and more then Average
+                                    Delivery speed- was much better then expected
+                                    Cost efficiency- starting rates were preferable 
+                                    In short the service provided was better and it was delivered in time and if some mistakes were also changed within  short time and finally the service was good then any where else. 
+                                    I have a problem of Typing as i didnt have Laptop so i gave them the work of  typing and i got in time so no further delay .......✌
+                                    ✌✌ A big hand for  BluePen and Whole Team.....
+                                    And many more things are coming soon stay updated .....</p>
+                                <p class="overview"><b>Vinod Muleva</b>, Mumbai</p>
+                            </div>
+                            <div class="item carousel-item ">
+                                <div class="img-box"><img src="images/Avdhut Zolekar.jpeg" alt=""></div>
+                                <p class="testimonial">Quality of work- Very good. The diagrams were neat, clean and dark. Couldn’t ask for more.
+                                    Delivery speed- 10/10. They delivered all the three assignments in a span of two days.
+                                    Cost efficiency- Very cost efficient, considering the time and work. Costing was pretty reasonable.
+                                    
+                                    I’d recommend bluepen to everyone who’s struggling with their assignments and work. Helped a lot for me.</p>
+                                <p class="overview"><b>Avdhut Zolekar</b>, Mumbai</p>
+                            </div>
+                            <div class="item carousel-item ">
+                                <div class="img-box"><img src="images/Jay Shukla.jpeg" alt=""></div>
+                                <p class="testimonial">Quality of work: There was not at all a single stroke on the paper
+                                    Neatness and cleanliness: The paper was completely clean without any sort of marks
+                                    Overall experience: To be precise I would rate 10/10 to Bluepen
+                                    Cost efficiency: Completely reasonable price and quite cheaper as compared to the other service providers
+                                    </p>
+                                <p class="overview"><b>Jay Shukla</b>, Mumbai</p>
+                            </div>
+                            <div class="item carousel-item ">
+                                <div class="img-box"><img src="" alt=""></div>
+                                <p class="testimonial">I have been using blue pen services since a few days of engineering. I didn't want to write assignments because it wasted a lot of time and energy. Their quality of work has been excellent and also the content is neat and tidy and can be easily read. I had no problem in the delivery of the assignments nor did they miss any deadlines. I'm very satisfied with the whole experience and would recommend it to everyone looking to save their time.</p>
+                                <p class="overview"><b>Naivedya Chauhan</b>, Mumbai</p>
+                            </div>
+                        </div>
+                        <!-- Carousel controls -->
+                        <a class="carousel-control left carousel-control-prev" href="#myCarousel" data-slide="prev">
+                            <i class="fa fa-angle-left"></i>
+                        </a>
+                        <a class="carousel-control right carousel-control-next" href="#myCarousel" data-slide="next">
+                            <i class="fa fa-angle-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--testimonial ends-->
+<br><br>
 
 
   <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous"> -->

@@ -55,7 +55,7 @@ include "navbar.php";
   <!--nav end-->
 
     <br><br>
-    <!--team start-->
+   <!--team start-->
 
    <div class="site-section" id="our-team-section">
     <div class="container">
@@ -75,14 +75,12 @@ include "navbar.php";
                 <img src="images/Vinit Savla.jpeg" alt="Image" class="img-fluid">
               </figure>
               <div class="social">
-                <a href="#"><span class="icon-facebook"></span></a>
-                <a href="#"><span class="icon-twitter"></span></a>
-                <a href="#"><span class="icon-instagram"></span></a>
+                <a href="http://www.instagram.com/vinitsavla611"><span class="icon-instagram fa-2x "></span></a>
               </div>
             </div>
-            <h2 class="text-black h1">Vinit Savla</h2>
-            <span class="sub-title d-block mb-1">Founder</span>
-            <a href="tel:98922 51891">+91 98922 51891</a>
+            <h2 class="text-black h1" style="text-align: center">Vinit Savla</h2>
+            <span class="sub-title d-block mb-1" style="text-align: center">Founder</span>
+            <a href="tel:98922 51891"><p style="text-align: center">+91 98922 51891</p></a>
           </div>
         </div>
 
@@ -90,17 +88,15 @@ include "navbar.php";
           <div class="person">
             <div class="bio-img">
               <figure>
-                <img src="images/person_2.jpg" alt="Image" class="img-fluid">
+                <img src="images/Kaushik Iyengar.jpeg" alt="Image" class="img-fluid">
               </figure>
               <div class="social">
-                <a href="#"><span class="icon-facebook"></span></a>
-                <a href="#"><span class="icon-twitter"></span></a>
-                <a href="#"><span class="icon-instagram"></span></a>
+                <a href="http://www.instagram.com/pocket_mate"><span class="icon-instagram fa-2x"></span></a>
               </div>
             </div>
-            <h2 class="text-black h1">Kaushik Iyengar</h2>
-            <span class="sub-title d-block mb-1">Co- Founder</span>
-            <a href="tel:90041 85304">+91 90041 85304</a>
+            <h2 class="text-black h1" style="text-align: center">Kaushik Iyengar</h2>
+            <span class="sub-title d-block mb-1" style="text-align: center">Co- Founder</span>
+            <a href="tel:90041 85304"><p style="text-align: center">+91 90041 85304</p></a>
             
           </div>
         </div>
@@ -112,14 +108,12 @@ include "navbar.php";
                 <img src="images/Bhavya Haria.jpeg" alt="Image" class="img-fluid">
               </figure>
               <div class="social">
-                <a href="#"><span class="icon-facebook"></span></a>
-                <a href="#"><span class="icon-twitter"></span></a>
-                <a href="#"><span class="icon-instagram"></span></a>
+                <a href="https://www.instagram.com/bhavyawritess/"><span class="icon-instagram fa-2x"></span></a>
               </div>
             </div>
-            <h2 class="text-black h1">Bhavya Haria</h2>
-            <span class="sub-title d-block mb-1">Chief Technology Officer</span>
-            <a href="tel:96193 05482">+91 96193 05482</a>
+            <h2 class="text-black h1" style="text-align: center">Bhavya Haria</h2>
+            <span class="sub-title d-block mb-1" style="text-align: center">Chief Technology Officer</span>
+            <a href="tel:96193 05482"><p style="text-align: center">+91 96193 05482</p></a>
           </div>
         </div>
     </div>
@@ -204,7 +198,7 @@ include "navbar.php";
     </div>
 
     <!--contact end-->
-
+    
      <!-- Footer -->
 <?php
 include "footer.php";
