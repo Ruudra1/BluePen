@@ -130,6 +130,8 @@ $error=0;
                 {
                     $sql = "INSERT INTO `blog`(w_id,`title`, `des1`, `des2`, `des3`, `des4`, `des5`, `tags`, `main`, `img1`, `img2`, `img3`,  `img4`,`date`) VALUES ($a,'$title','$des1','$des2','$des3','$des4','$des5','$tags','$mainfile','$imgfile1','$imgfile2','$imgfile3','$imgfile4','$date')";
                     mysqli_query($conn, $sql) or die(mysqli_error($conn));
+
+                    
                     // Now redirect the user
                     // $_SESSION['formFilled'] = FALSE;
                     // unset($_SESSION['firstname']);

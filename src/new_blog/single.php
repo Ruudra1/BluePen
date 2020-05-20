@@ -2,7 +2,7 @@
 function createNewElement() {
     // First create a DIV element.
 	var txtNewInputBox = document.createElement('div');
-  var txtNew = document.createElement("BUTTON");
+  
 
     // Then add the content (a new input box) of the element.
 	txtNewInputBox.innerHTML = "<input type='text' id='newInputBox'>";
@@ -10,7 +10,6 @@ function createNewElement() {
 
     // Finally put it where it is supposed to appear.
 	document.getElementById("newElementId").appendChild(txtNewInputBox);
-  document.getElementById("newElementId").appendChild(txtNew);
 }
 </script>
  <?php
@@ -39,25 +38,34 @@ function createNewElement() {
           <div class="col-md-12 col-lg-8 main-content">
             
             <div class="post-content-body">
-            <p>'.$row['des'].'<p>  
+            <p>'.$row['des1'].'<p>  
             <div class="row mb-5 mt-5">
               <div class="col-md-12 mb-4">
                 <img src="../blog/'.$row['img1'].'" alt="Image placeholder" class="img-fluid rounded">
               </div>
-              <p>'.$row['des'].'<p>
+              <p>'.$row['des2'].'<p>
               <div class="col-md-12 mb-4">
                 <img src="../blog/'.$row['img2'].'" alt="Image placeholder" class="img-fluid rounded">
               </div>
-              <p>'.$row['des'].'<p>
+              <p>'.$row['des3'].'<p>
               <div class="col-md-12 mb-4">
                 <img src="../blog/'.$row['img3'].'" alt="Image placeholder" class="img-fluid rounded">
               </div>
-              <p>'.$row['des'].'<p>
+              <p>'.$row['des4'].'<p>
               <div class="col-md-12 mb-4">
-                <img src="../blog/'.$row['img3'].'" alt="Image placeholder" class="img-fluid rounded">
+                <img src="../blog/'.$row['img4'].'" alt="Image placeholder" class="img-fluid rounded">
               </div>
-              <p>'.$row['des'].'<p>
+              <p>'.$row['des5'].'<p>
             </div>';
+            $sql4="SELECT * FROM likes WHERE blog_id=$id";
+ $result4 = mysqli_query($conn, $sql4);
+ $row4=mysqli_fetch_array($result4);
+            
+            ?>
+            
+            <p><button> <i class="fa fa-thumbs-up fa-3x" aria-hidden="true"><a <?php echo 'href="../includes/like.inc.php?id='.$id.'">Like'.$row4['likes'].'</a></i></button></p>
+            
+            ';
             // <p>Quibusdam autem, quas molestias recusandae aperiam molestiae modi qui ipsam vel. Placeat tenetur veritatis tempore quos impedit dicta, error autem, quae sint inventore ipsa quidem. Quo voluptate quisquam reiciendis, minus, animi minima eum officia doloremque repellat eos, odio doloribus cum.</p>
             // <p>Temporibus quo dolore veritatis doloribus delectus dolores perspiciatis recusandae ducimus, nisi quod, incidunt ut quaerat, magnam cupiditate. Aut, laboriosam magnam, nobis dolore fugiat impedit necessitatibus nisi cupiditate, quas repellat itaque molestias sit libero voluptas eveniet omnis illo ullam dolorem minima.</p>
             // <p>Porro amet accusantium libero fugit totam, deserunt ipsa, dolorem, vero expedita illo similique saepe nisi deleniti. Cumque, laboriosam, porro! Facilis voluptatem sequi nulla quidem, provident eius quos pariatur maxime sapiente illo nostrum quibusdam aliquid fugiat! Earum quod fuga id officia.</p>
@@ -88,13 +96,13 @@ function createNewElement() {
 echo '
                 <li class="comment">
                   <div class="vcard">
-                  <img src="images/person_1.jpg" alt="Image placeholder">
+                  
                   </div>
                   <div class="comment-body">
-                    <h3>'.$row4['fisrtname'].$row4['lastname'].'</h3>
+                    <h3>'.$row4['firstname'].' '.$row4['lastname'].'</h3>
                     <div class="meta">'.$row3['date'].'</div>
                     <p>'.$row3['comments'].'</p>
-                    <p><input type="button" value="REPLY" onclick="createNewElement();"/>
+                    
                     </p>
                   </div>
                   <div id="dynamicCheck">
@@ -110,7 +118,7 @@ echo '
                  echo ' <ul class="children">
                     <li class="comment">
                       <div class="vcard">
-                        <img src="images/person_1.jpg" alt="Image placeholder">
+                        
                       </div>
                       <div class="comment-body">
                         <h3>Jean Doe</h3>
@@ -215,23 +223,15 @@ $count=sizeof($tag);
         <div class="row align-items-stretch retro-layout">';
         ?>
           
-          <!-- <div class="col-md-5 order-md-2">
-            <a href="single.html" class="hentry img-1 h-100 gradient" >
-              <span class="post-category text-white bg-danger">Travel</span>
-              <div class="text">
-                <h2>The 20 Biggest Fintech Companies In America 2019</h2>
-                <span>February 12, 2019</span>
-              </div>
-            </a>
-          </div> -->
+          
 <?php
 $sql2="SELECT * FROM blog WHERE tags LIKE '%$tag[0]%' OR tags LIKE '%$tag[1]%' ORDER BY id desc";
-$result2 = mysqli_query($conn, $sql1);
-;
+// var_dump($sql2);
+$result2 = mysqli_query($conn, $sql2);
+
 // var_dump($sql1);
 $a=2;
 while($row2=mysqli_fetch_array($result2)){
-
 if($a==0)
 {
 break;
@@ -254,7 +254,7 @@ break;
             }
             ?>
             
-            </div>  
+             
             
           </div>
         </div>

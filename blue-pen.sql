@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: May 19, 2020 at 12:12 PM
+-- Generation Time: May 20, 2020 at 10:42 AM
 -- Server version: 5.7.26
 -- PHP Version: 7.2.18
 
@@ -231,6 +231,29 @@ INSERT INTO `contentwriting` (`user_id`, `content_id`, `content_title`, `content
 (7, 3, 'jwcdbsdb', 'kSCNADC;', '2020-05-16 15:22:01', '2020-05-19', 0, 0, 0, 0, 0),
 (7, 4, 'jwcdbsdb', 'FSDCVS', '2020-05-16 15:26:20', '2020-05-19', 0, 0, 0, 0, 0),
 (7, 5, 'jwcdbsdb', 'xffxc', '2020-05-18 03:05:42', '2020-05-21', 0, 0, 0, 0, 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `likes`
+--
+
+DROP TABLE IF EXISTS `likes`;
+CREATE TABLE IF NOT EXISTS `likes` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `blog_id` int(11) NOT NULL,
+  `user_id` varchar(11) COLLATE utf8mb4_unicode_520_ci NOT NULL,
+  `likes` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
+
+--
+-- Dumping data for table `likes`
+--
+
+INSERT INTO `likes` (`id`, `blog_id`, `user_id`, `likes`) VALUES
+(1, 9, '7,7,7,7', 3),
+(2, 7, '7', 1);
 
 -- --------------------------------------------------------
 
