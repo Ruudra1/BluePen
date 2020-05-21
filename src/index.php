@@ -687,12 +687,12 @@ if (strpos($url, "error=seccess") !== false) {
                                     </p>
                                 <p class="overview"><b>Jay Shukla</b>, Mumbai</p>
                             </div>
-                            <div class="item carousel-item ">
+                            <!--div class="item carousel-item ">
                                 <div class="img-box"><img src="" alt=""></div>
                                 <p class="testimonial">I have been using blue pen services since a few days of engineering. I didn't want to write assignments because it wasted a lot of time and energy. Their quality of work has been excellent and also the content is neat and tidy and can be easily read. I had no problem in the delivery of the assignments nor did they miss any deadlines. I'm very satisfied with the whole experience and would recommend it to everyone looking to save their time.</p>
                                 <p class="overview"><b>Naivedya Chauhan</b>, Mumbai</p>
                             </div>
-                        </div>
+                        </div-->
                         <!-- Carousel controls -->
                         <a class="carousel-control left carousel-control-prev" href="#myCarousel" data-slide="prev">
                             <i class="fa fa-angle-left"></i>
