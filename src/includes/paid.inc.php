@@ -15,10 +15,18 @@
         include_once 'connect.inc.php';
         // $assign_id =  mysqli_real_escape_string($conn, $_GET['assign_id']);
         $assign_id =  mysqli_real_escape_string($conn, $_GET['id']);
+        $u =  mysqli_real_escape_string($conn, $_GET['u']);
         // $assign_id=$_SESSION['assign_id'];
+        if($u=='h')
         $sql = "UPDATE `assignments` SET `soa_paid` = 1 WHERE `assign_id` =".$assign_id."";
+        elseif ($u=='c')
+        $sql = "UPDATE `contentwriting` SET `soa_paid` = 1 WHERE `content_id` =".$assign_id."";
         var_dump($sql);
         mysqli_query($conn, $sql) or die("We're Facing some issues");
+        if($u=='h'){
         header("Location: ../viewjobs.php?aid=".$assign_id);
-        exit();
+        exit();}
+        elseif ($u=='c'){
+        header("Location: ../viewcontentwriting.php?id=".$assign_id);
+        exit();}
 ?>
