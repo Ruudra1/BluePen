@@ -171,6 +171,7 @@
 				<th>SOA Paid</th>
 				<th>SOA Written</th>
 				<th>SOA Completed</th>
+        <th>Action</th>
 			</tr>
 			 <?php 	
 			 
@@ -198,10 +199,11 @@
 						// var_dump($check);
 						if($check['soa_assigned']==0)
 						{
-              echo '<td><a class="top" href="includes/assigned.inc.php?id='.$row['assign_id'].'&u=h">Assigned</a>
-              <br> or <br><a href="" class="top"  data-toggle="modal" data-target="#deletemodal'.$row['assign_id'].'" >Delete</a>              
-              </td>
-							<td>Not Assigned</td>';
+              echo '<td><a class="top" href="includes/assigned.inc.php?id='.$row['assign_id'].'&u=h">Not Assigned</a></td>
+              <td>Not Paid</td>
+              <td>Not Written</td>
+              <td>Not Completed</td>
+              <td><a href="" class="top"  data-toggle="modal" data-target="#deletemodal'.$row['assign_id'].'" >Delete</a></td>';
 						}	
 						else
 						{
@@ -209,10 +211,10 @@
 							<td>Done</td>';
 							if($check['soa_paid']==0)
 							{
-                echo'<td><a class="top" href="includes/paid.inc.php?id='.$row['assign_id'].'&u=h">Paid</a>
-                <br> or <br><a href="" data-toggle="modal" data-target="#deletemodal'.$row['assign_id'].'" class="top">Delete</a>
-                </td>
-								<td>Not Paid</td>';
+                echo'<td><a class="top" href="includes/paid.inc.php?id='.$row['assign_id'].'&u=h">Not Paid</a>
+                <td>Not Written</td>
+              <td>Not Completed</td>
+              <td><a href="" class="top"  data-toggle="modal" data-target="#deletemodal'.$row['assign_id'].'" >Delete</a></td>';
 							}
 							else
 							{
@@ -220,10 +222,9 @@
 								<td>Done</td>';
 								if($check['soa_written']==0)
 								{
-                  echo '<td><a class="top" href="includes/written.inc.php?id='.$row['assign_id'].'&u=h">Written</a>
-                  <br> or <br><a href="" data-toggle="modal" data-target="#deletemodal'.$row['assign_id'].'" class="top">Delete</a>
-                  </td>
-									<td>Not Written</td>';
+                  echo '<td><a class="top" href="includes/written.inc.php?id='.$row['assign_id'].'&u=h">Not Written</a>
+                  <td>Not Completed</td>
+              <td><a href="" class="top"  data-toggle="modal" data-target="#deletemodal'.$row['assign_id'].'" >Delete</a></td>';
 								}
 								else
 								{
@@ -231,17 +232,14 @@
 									<td>Done</td>';
 									if($check['soa_completed']==0)
 									{
-                    echo '<td><a class="top" href="includes/complete.inc.php?id='.$row['assign_id'].'&u=h">Completed</a>
-                    <br> or <br><a href="" data-toggle="modal" data-target="#deletemodal'.$row['assign_id'].'" class="top">Delete</a>
-                    </td>
-                    <td>Not Completed</td>
-                    ';
+                    echo '<td><a class="top" href="includes/complete.inc.php?id='.$row['assign_id'].'&u=h">Not Completed</a></td>
+                    <td><a href="" data-toggle="modal" data-target="#deletemodal'.$row['assign_id'].'" class="top">Delete</a></td>';
 									}
 									else
 									{
 										echo '
-                    <td>Completed
-                    <br> or <br><a href="" data-toggle="modal" data-target="#deletemodal'.$row['assign_id'].'" class="top">Delete</a></td>';
+                    <td>Completed</td>
+                    <td><a href="" data-toggle="modal" data-target="#deletemodal'.$row['assign_id'].'" class="top">Delete</a></td>';
 									}
 								}
 							}
