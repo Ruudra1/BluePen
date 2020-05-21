@@ -1,5 +1,17 @@
 <?php
     include_once'includes/connect.inc.php';
+    session_start();
+    if(isset($_SESSION['privilege'])) {
+      if(strcmp($_SESSION['privilege'], "admin") !== 0) {
+          // User is not an admin
+          header("Location: index.php");
+          exit();
+      }
+    } else {
+      //User is not signed in
+      header("Location: index.php");
+      exit();
+		}
     error_reporting(0);
 ?>
 <!DOCTYPE html>
@@ -158,6 +170,9 @@
 		<table class="table table-striped table-bordered">
 			<tr>
                 <th>User ID</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Mobile</th>
                 <th>Submission date</th>
 				<th>Delivery date</th>
 				<th>Amount</th>
@@ -168,9 +183,16 @@
 
 			while ($row = mysqli_fetch_array($result)){
 				echo '<tr>
-                        <td>'.$row["user_id"].'</td>
+                        <td>'.$row["user_id"].'</td>';
+                    $sql2='select * from users where id='.$row["user_id"].'';
+                    $result2=mysqli_query($conn,$sql2);
+                    $row2=mysqli_fetch_array($result2);
+
+                   echo '<td>'.$row2["firstname"].' '.$row2["lastname"].'</td>
+                        <td>'.$row2["email"].'</td>
+                        <td>'.$row2["mobile"].'</td>
                         <td>'.$row["submission_date"].'</td>
-						<td>'.$row["delivery_date"].'</td>
+						            <td>'.$row["delivery_date"].'</td>
                         <td>'.$row["amount"].'</td>
                         <td>'.$row["category"].'</td>
                         </tr>';

@@ -1,5 +1,16 @@
 <?php
 session_start();
+if(isset($_SESSION['privilege'])) {
+  if(strcmp($_SESSION['privilege'], "admin") !== 0) {
+      // User is not an admin
+      header("Location: index.php");
+      exit();
+  }
+} else {
+  //User is not signed in
+  header("Location: index.php");
+  exit();
+}
   $f =$_GET['f'];
   $u =$_GET['u'];
   if($u=='vw')

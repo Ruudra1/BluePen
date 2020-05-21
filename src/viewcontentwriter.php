@@ -1,5 +1,17 @@
 <?php
     include_once'includes/connect.inc.php';
+    session_start();
+    if(isset($_SESSION['privilege'])) {
+      if(strcmp($_SESSION['privilege'], "admin") !== 0) {
+          // User is not an admin
+          header("Location: index.php");
+          exit();
+      }
+    } else {
+      //User is not signed in
+      header("Location: index.php");
+      exit();
+		}
     error_reporting(0);
     $stat=$_GET['stat'];
     if($stat=='done')
