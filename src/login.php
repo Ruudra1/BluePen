@@ -159,9 +159,10 @@
         </div>
         
       </div>
-    </div>';  } ?>
-  
-    <!-- contact end-->
+    </div>';
+      }?>
+
+    <!--contact end-->
 
  <!-- Footer -->
 <?php

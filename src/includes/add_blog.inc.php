@@ -10,7 +10,11 @@ if (isset($_POST['submit']))
 
     #Treat user input as text and not as code
     $title = mysqli_real_escape_string($conn, $_POST['title']);
-    $des = mysqli_real_escape_string($conn, $_POST['desc']);
+    $des1 = mysqli_real_escape_string($conn, $_POST['desc1']);
+    $des2 = mysqli_real_escape_string($conn, $_POST['desc2']);
+    $des3 = mysqli_real_escape_string($conn, $_POST['desc3']);
+    $des4 = mysqli_real_escape_string($conn, $_POST['desc4']);
+    $des5 = mysqli_real_escape_string($conn, $_POST['desc5']);
     
     $tags = mysqli_real_escape_string($conn, $_POST['tags']);
     $writer = mysqli_real_escape_string($conn, $_POST['writer']);
@@ -18,6 +22,7 @@ if (isset($_POST['submit']))
     $img1=mysqli_real_escape_string($conn, $_FILES["img1"]["name"]);
     $img2=mysqli_real_escape_string($conn, $_FILES["img2"]["name"]);
     $img3=mysqli_real_escape_string($conn, $_FILES["img3"]["name"]);
+    $img4=mysqli_real_escape_string($conn, $_FILES["img4"]["name"]);
     
 
 
@@ -25,6 +30,7 @@ if (isset($_POST['submit']))
     $imgtype1 = strtolower(pathinfo($img1,PATHINFO_EXTENSION));
     $imgtype2 = strtolower(pathinfo($img2,PATHINFO_EXTENSION));
     $imgtype3 = strtolower(pathinfo($img3,PATHINFO_EXTENSION));
+    $imgtype4 = strtolower(pathinfo($img4,PATHINFO_EXTENSION));
    
     $sql = "SELECT * FROM blog_writer WHERE name='$writer'";
     var_dump($sql);
@@ -64,6 +70,14 @@ if (isset($_POST['submit']))
             exit();
         }
 
+        else if($imgtype4 != 'jpg' && $imgtype4 != 'jpeg' &&  $imgtype4 != 'png' )
+        {
+            //Check if file is valid
+            // var_dump($FileType);
+            header("Location: ../add_blog.php?error=img4invalid");
+            exit();
+        }
+
 
         
         else
@@ -82,6 +96,9 @@ if (isset($_POST['submit']))
             $imgfile3 = $_FILES['img3']['name'];
             $imgtarget3 = "../blog/".basename($imgfile3);
 
+            $imgfile4 = $_FILES['img4']['name'];
+            $imgtarget4 = "../blog/".basename($imgfile4);
+
             
 
 $error=0;
@@ -90,6 +107,9 @@ $error=0;
             if(!move_uploaded_file($_FILES["img2"]["tmp_name"], $imgtarget2))
                { $error=1; }
             if(!move_uploaded_file($_FILES["img3"]["tmp_name"], $imgtarget3))
+               { $error=1; }
+
+               if(!move_uploaded_file($_FILES["img4"]["tmp_name"], $imgtarget4))
                { $error=1; }
 
               
@@ -108,8 +128,10 @@ $error=0;
               // Insert the user in the db
                 if (move_uploaded_file($_FILES["main"]["tmp_name"], $maintarget) )                
                 {
-                    $sql = "INSERT INTO `blog`(w_id,`title`, `des`, `tags`, `main`, `img1`, `img2`, `img3`, `date`) VALUES ($a,'$title','$des','$tags','$mainfile','$imgfile1','$imgfile2','$imgfile3','$date')";
+                    $sql = "INSERT INTO `blog`(w_id,`title`, `des1`, `des2`, `des3`, `des4`, `des5`, `tags`, `main`, `img1`, `img2`, `img3`,  `img4`,`date`) VALUES ($a,'$title','$des1','$des2','$des3','$des4','$des5','$tags','$mainfile','$imgfile1','$imgfile2','$imgfile3','$imgfile4','$date')";
                     mysqli_query($conn, $sql) or die(mysqli_error($conn));
+
+                    
                     // Now redirect the user
                     // $_SESSION['formFilled'] = FALSE;
                     // unset($_SESSION['firstname']);
@@ -128,16 +150,9 @@ $error=0;
                 }
             
         }
-    // }
-    // else
-    // {
-    //     header("Location: ../registerwriter.php?signup=invalidfile");
-    //     exit();
-    // }
-}
-else 
-{
-  // If someone just loads the url without submitting data
-  header("Location: ../add_blog.php");
-  exit();
-}
+    }
+    else
+    {
+        header("Location: ../registerwriter.php");
+        exit();
+    }

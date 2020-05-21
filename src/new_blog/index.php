@@ -127,7 +127,7 @@ echo '
                 <span>&nbsp;-&nbsp; '.$row['date'].'</span>
               </div>
               
-                <p>'.$row['des'].'</p>
+                <p>'.$row['des1'].'</p>
                 <p><a href="single.php?id='.$row['id'].'">Read More</a></p>
               </div>
             </div>

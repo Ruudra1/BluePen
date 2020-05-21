@@ -1,12 +1,3 @@
- //  
-  // session_start();
-  // if(!isset($_SESSION['id'])) {
-    //User is logged in
-    // header("Location: index.php");
-    // exit();
-  // }
-  // 
-// ?>
 
 
 <?php
@@ -19,8 +10,6 @@
 $path = 'writingsample/bhavyaharia10@gmail.comMumbai University Exam Circular 18052020.pdf';
 $totoalPages = countPages($path);
 echo 'no of pages are:';
-
-  
 echo $totoalPages;
 
 $amount = $totoalPages*6;
@@ -30,7 +19,7 @@ echo $amount;
   
 function countPages($path)
 {
-  var_dump($path);
+  // var_dump($path);
   $pdftext = file_get_contents($path);
   // var_dump($pdftext);
   $num = preg_match_all("/\/Page\W/", $pdftext, $dummy);
