@@ -21,6 +21,9 @@ if (strpos($url, "error=seccess") !== false) {
                 padding: 8px 16px;
                 border-right: 1px solid #ddd;
             }
+            .single-fact i{
+                color: #000;
+            }
 
             .single-fact h2 {
                 font-size: 36px;
@@ -33,23 +36,23 @@ if (strpos($url, "error=seccess") !== false) {
             }
 
             .fact-box {
-                box-shadow: 0px 20px 50px rgba(153, 153, 153, 0.2);
+                box-shadow: 0px 20px 30px rgba(153, 153, 153, 0.2);
             }
+
             body {
                 font-family: "Open Sans", sans-serif;
             }
 
             h2 {
-                color: #333;
+                color: #000;
                 text-align: center;
                 text-transform: uppercase;
                 font-family: "Roboto", sans-serif;
                 font-weight: bold;
                 position: relative;
-                margin: 30px 0 20px;
+                margin: 20px 0 30px;
             }
 
-            
             .col-center {
                 margin: 0 auto;
                 float: none !important;
@@ -61,7 +64,7 @@ if (strpos($url, "error=seccess") !== false) {
             }
 
             .carousel .item {
-                color: #999;
+                color: #000;
                 font-size: 14px;
                 text-align: center;
                 overflow: hidden;
@@ -85,7 +88,7 @@ if (strpos($url, "error=seccess") !== false) {
             }
 
             .carousel .testimonial {
-                padding: 30px 0 10px;
+                padding: 30px 50px 10px;
             }
 
             .carousel .overview b {
@@ -103,9 +106,9 @@ if (strpos($url, "error=seccess") !== false) {
 
             .carousel-control i {
                 font-size: 68px;
-                line-height: 42px;
+                line-height: 40px;
                 position: absolute;
-                display: inline-block;
+                display: inline-flex;
                 color: rgba(0, 0, 0, 0.8);
                 text-shadow: 0 3px 3px #e6e6e6, 0 0 0 #000;
             }
@@ -116,20 +119,20 @@ if (strpos($url, "error=seccess") !== false) {
 
             .carousel-indicators li,
             .carousel-indicators li.active {
-                width: 10px;
-                height: 10px;
-                margin: 1px 3px;
+                width: 15px;
+                height: 1.5px;
+                margin: 1px 2px;
                 border-radius: 50%;
             }
 
             .carousel-indicators li {
-                background: #999;
+                background: #000;
                 border-color: transparent;
                 box-shadow: inset 0 2px 1px rgba(0, 0, 0, 0.2);
             }
 
             .carousel-indicators li.active {
-                background: #555;
+                background: #000;
                 box-shadow: inset 0 2px 1px rgba(0, 0, 0, 0.2);
             }
         </style>

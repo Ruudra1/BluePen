@@ -99,8 +99,8 @@
         integrity="sha256-JtQPj/3xub8oapVMaIijPNoM0DHoAtgh/gwFYuN5rik=" crossorigin="anonymous"></script>
     <script>
         $('.count').counterUp({
-            delay: 10,
-            time: 1000
+            delay: 20,
+            time: 265
         });
     </script>
 <script src="js/main.js"></script>
