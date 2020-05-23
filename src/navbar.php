@@ -140,7 +140,9 @@ error_reporting(0);
                   <li><a href="viewclients.php" target="_blank" class="nav-link"><span class="text-secondary">View Clients</span></a></li>
                   <li><a href="viewjobs.php" target="_blank" class="nav-link"><span class="text-secondary">View Jobs</span></a></li>
                   <li><a href="add_blog.php" target="_blank" class="nav-link"><span class="text-secondary">Add Blog</span></a></li>
-                  <li><a href="includes/logout.inc.php" class="nav-link"><span class="text-secondary">Log Out </span></a></li>';
+                  <li><a href="includes/logout.inc.php" class="nav-link"><span class="text-secondary">Log Out </span></a></li>
+                  <li><a href="add_blogwriter.php" class="nav-link"><span class="text-secondary">Add blog writers </span></a></li>
+                  <li><a href="add_blog.php" class="nav-link"><span class="text-secondary">Add blogs</span></a></li>';
                   }
                   // else{
                     // echo '<li data-toggle="modal" data-target="#writermodal" style="color:black" class="nav-link"><a>Register as Writer</a></li>';
