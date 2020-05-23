@@ -224,7 +224,7 @@ ob_start();
               <ul class="nav nav-tabs">
                 <li class="active"><a data-toggle="tab" href="#home">Hand-written</a></li>
                 <li><a data-toggle="tab" href="#menu1">Content Writing</a></li>
-                
+                <li><a data-toggle="tab" href="#menu2">Typing</a></li>
               </ul>
               
               <div class="tab-content">
@@ -343,6 +343,116 @@ ob_start();
                     <div class="row form-group">
                       <div class="col-md-12">
                         <input type="submit" name="submit2" formaction="includes/uploadassignment.inc.php"  value="Submit" class="btn btn-primary mr-2 mb-2" value="Submit">
+                      </div>
+                    </div>
+      
+
+
+                </div>
+                <div id="menu2" class="tab-pane fade">
+                  
+
+                  <br><br>
+                  <h3>Typing Assignments here</h3>
+                  
+                  <br><br>
+                  
+              
+                
+                    
+      
+                    <div class="row form-group">
+                      
+                      <div class="col-md-12">
+                        <label class="text-black" for="subject">Title</label> 
+                        <input type="subject" id="subject" class="form-control rounded-0" name="subject">
+                      </div>
+                    </div>
+      
+                    <div class="row form-group">
+                      <div class="col-md-12">
+                        <label class="text-black" for="message">Description</label> 
+                        <textarea name="message" id="message" cols="30" rows="7" class="form-control rounded-0" placeholder="Leave your message here..."></textarea>
+                      </div>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="exampleFormControlSelect1">Orientation</label>
+                      <select class="form-control" id="exampleFormControlSelect1">
+                        <option>Potrait</option>
+                        <option>Landscape</option>
+                        
+                      </select>
+                    </div>
+
+                    <div class="row form-group">
+                      
+                      <div class="col-md-12">
+                        <label class="text-black" for="subject">Font</label> 
+                        <input type="subject" id="subject" class="form-control rounded-0" name="subject" placeholder="Font"><br>
+                        <input type="subject" id="subject" class="form-control rounded-0" name="subject" placeholder="Font Size"><br>
+                        <input type="subject" id="subject" class="form-control rounded-0" name="subject" placeholder="Font Color">
+
+                      </div>
+                    </div>
+
+                    
+
+                    <div class="form-group">
+                      <label for="exampleFormControlSelect1">Page Size</label>
+                      <select class="form-control" id="exampleFormControlSelect1">
+                        <option>A4</option>
+                        <option>A3</option>
+                        <option>A5</option>
+                        <option>US Letter</option>
+                        <option>US Legal</option>
+                        <option>B5</option>
+                        <option>Jiss B5</option>
+                        <option>Envelope</option>
+                        <option>Envelope DL</option>
+                        <option>Tabaloid</option>
+                        <option>Tabaloid Oversize</option>
+                        <option>ROC 16k</option>
+                      </select>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="exampleFormControlSelect1">Margins</label>
+                      <select class="form-control" id="exampleFormControlSelect1">
+                        <option>Normal</option>
+                        <option>Narrow</option>
+                        <option>Moderate</option>
+                        <option>Wide</option>
+                        <option>Mirrored</option>
+                        
+                      </select>
+                    </div>
+
+                    
+                    <label for="example-date-input" class=" col-form-label">Delivery Date</label>
+                <div class="form-group row">
+                  
+                  <div class="col-12">
+                    <input class="form-control" type="date" value="2011-08-19" id="example-date-input">
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="exampleInputFile">Upload file</label>
+                  <input type="file" class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp">
+                  <small id="fileHelp" class="form-text text-muted">sample text
+
+                  </small>
+                </div>
+
+
+                    
+
+                    
+      
+                    <div class="row form-group">
+                      <div class="col-md-12">
+                        <input type="submit" value="Submit" class="btn btn-primary mr-2 mb-2" value="Submit">
                       </div>
                     </div>
       
