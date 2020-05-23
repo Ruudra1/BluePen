@@ -401,9 +401,7 @@ if (strpos($url, "error=seccess") !== false) {
   <!-- Section heading -->
   <h2 class="h1-responsive font-weight-bold my-5">Testimonialse</h2>
   <!-- Section description -->
-  <p class="dark-grey-text w-responsive mx-auto mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-    Fugit, error amet numquam iure provident voluptate esse quasi, veritatis totam voluptas nostrum quisquam
-    eum porro a pariatur veniam.</p>
+  <p class="dark-grey-text w-responsive mx-auto mb-5">Here's what our clients say about us :</p>
 
   <!--Grid row-->
   <div class="row text-center">
@@ -417,11 +415,10 @@ if (strpos($url, "error=seccess") !== false) {
           <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20(1).jpg" class="rounded-circle z-depth-1 img-fluid">
         </div>
         <!--Content-->
-        <h4 class="font-weight-bold dark-grey-text mt-4">Anna Deynah</h4>
-        <h6 class="font-weight-bold blue-text my-3">Web Designer</h6>
+        <h4 class="font-weight-bold dark-grey-text mt-4">Parth Gite</h4>
+        <h6 class="font-weight-bold blue-text my-3">Mumbai</h6>
         <p class="font-weight-normal dark-grey-text">
-          <i class="fas fa-quote-left pr-2"></i>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod
-          eos id officiis hic tenetur quae quaerat ad velit ab hic tenetur.</p>
+          <i class="fas fa-quote-left pr-2"></i>I have been using bluepens service for the past few daysnow. I am proud to say they’ve always lived up to the mark and no room for complaints. The services are very prompt and they charge reasonably which is the best part. Writing material has always been very neat and tidy which has helped me score good grades whilst focusing on my other commitments. Way to go you guys!</p>
         <!--Review-->
         <div class="orange-text">
           <i class="fas fa-star"> </i>
@@ -444,11 +441,11 @@ if (strpos($url, "error=seccess") !== false) {
           <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20(8).jpg" class="rounded-circle z-depth-1 img-fluid">
         </div>
         <!--Content-->
-        <h4 class="font-weight-bold dark-grey-text mt-4">John Doe</h4>
-        <h6 class="font-weight-bold blue-text my-3">Web Developer</h6>
+        <h4 class="font-weight-bold dark-grey-text mt-4">Jash Shah</h4>
+        <h6 class="font-weight-bold blue-text my-3">Mumbai</h6>
         <p class="font-weight-normal dark-grey-text">
-          <i class="fas fa-quote-left pr-2"></i>Ut enim ad minima veniam, quis nostrum exercitationem ullam
-          corporis suscipit laboriosam, nisi ut aliquid commodi.</p>
+          <i class="fas fa-quote-left pr-2"></i>Overall rating: 9/10 , Delivery: 9/10 , Rates :8/10 , Handwriting: 9/10 </p>
+                                    <p>I had recently used bluepen,it made my work very easy.I just had to share my content to be written and it was done. Bluepen had completed the work within the given dates.</p>
         <!--Review-->
         <div class="orange-text">
           <i class="fas fa-star"> </i>
@@ -471,11 +468,17 @@ if (strpos($url, "error=seccess") !== false) {
           <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20(10).jpg" class="rounded-circle z-depth-1 img-fluid">
         </div>
         <!--Content-->
-        <h4 class="font-weight-bold dark-grey-text mt-4">Maria Kate</h4>
-        <h6 class="font-weight-bold blue-text my-3">Photographer</h6>
+        <h4 class="font-weight-bold dark-grey-text mt-4">Vinod Muleva</h4>
+        <h6 class="font-weight-bold blue-text my-3">Mumbai</h6>
         <p class="font-weight-normal dark-grey-text">
-          <i class="fas fa-quote-left pr-2"></i>At vero eos et accusamus et iusto odio dignissimos ducimus qui
-          blanditiis praesentium voluptatum deleniti atque corrupti.</p>
+          <i class="fas fa-quote-left pr-2"></i>@BluePen11  the 
+                                    Quality of work- was good and more then Average
+                                    Delivery speed- was much better then expected
+                                    Cost efficiency- starting rates were preferable 
+                                    In short the service provided was better and it was delivered in time and if some mistakes were also changed within  short time and finally the service was good then any where else. 
+                                    I have a problem of Typing as i didnt have Laptop so i gave them the work of  typing and i got in time so no further delay .......✌
+                                    ✌✌ A big hand for  BluePen and Whole Team.....
+                                    And many more things are coming soon stay updated .....</p>
         <!--Review-->
         <div class="orange-text">
           <i class="fas fa-star"> </i>
@@ -502,11 +505,14 @@ if (strpos($url, "error=seccess") !== false) {
           <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20(1).jpg" class="rounded-circle z-depth-1 img-fluid">
         </div>
         <!--Content-->
-        <h4 class="font-weight-bold dark-grey-text mt-4">Anna Deynah</h4>
-        <h6 class="font-weight-bold blue-text my-3">Web Designer</h6>
+        <h4 class="font-weight-bold dark-grey-text mt-4">Jay Shukla</h4>
+        <h6 class="font-weight-bold blue-text my-3">Mumbai</h6>
         <p class="font-weight-normal dark-grey-text">
-          <i class="fas fa-quote-left pr-2"></i>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod
-          eos id officiis hic tenetur quae quaerat ad velit ab hic tenetur.</p>
+          <i class="fas fa-quote-left pr-2"></i>Quality of work: There was not at all a single stroke on the paper
+                                    Neatness and cleanliness: The paper was completely clean without any sort of marks
+                                    Overall experience: To be precise I would rate 10/10 to Bluepen
+                                    Cost efficiency: Completely reasonable price and quite cheaper as compared to the other service providers
+                                    </p>
         <!--Review-->
         <div class="orange-text">
           <i class="fas fa-star"> </i>
@@ -520,21 +526,20 @@ if (strpos($url, "error=seccess") !== false) {
     </div>
     <!--Grid column-->
 
-    <!--Grid column-->
+    <!--Grid column->
     <div class="col-md-6 mb-md-0 mb-5">
 
       <div class="testimonial">
-        <!--Avatar-->
+        <--Avatar->
         <div class="avatar mx-auto">
           <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20(8).jpg" class="rounded-circle z-depth-1 img-fluid">
         </div>
-        <!--Content-->
-        <h4 class="font-weight-bold dark-grey-text mt-4">John Doe</h4>
-        <h6 class="font-weight-bold blue-text my-3">Web Developer</h6>
+        <--Content->
+        <h4 class="font-weight-bold dark-grey-text mt-4">Naivedya Chauhan</h4>
+        <h6 class="font-weight-bold blue-text my-3">Mumbai</h6>
         <p class="font-weight-normal dark-grey-text">
-          <i class="fas fa-quote-left pr-2"></i>Ut enim ad minima veniam, quis nostrum exercitationem ullam
-          corporis suscipit laboriosam, nisi ut aliquid commodi.</p>
-        <!--Review-->
+          <i class="fas fa-quote-left pr-2"></i>I have been using blue pen services since a few days of engineering. I didn't want to write assignments because it wasted a lot of time and energy. Their quality of work has been excellent and also the content is neat and tidy and can be easily read. I had no problem in the delivery of the assignments nor did they miss any deadlines. I'm very satisfied with the whole experience and would recommend it to everyone looking to save their time.</p>
+        <---Review->
         <div class="orange-text">
           <i class="fas fa-star"> </i>
           <i class="fas fa-star"> </i>
@@ -545,7 +550,7 @@ if (strpos($url, "error=seccess") !== false) {
       </div>
 
     </div>
-    <!--Grid column-->
+    <--Grid column-->
     
     
 
@@ -553,7 +558,7 @@ if (strpos($url, "error=seccess") !== false) {
   <!--Grid row2 end->
 
 </section>
-<!-- Section: Testimonials v.3 -->
+<--Section: Testimonials v.3 -->
     
 <br><br>
 
