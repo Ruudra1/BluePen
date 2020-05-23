@@ -21,6 +21,8 @@
         $sql = "UPDATE `assignments` SET `soa_paid` = 1 WHERE `assign_id` =".$assign_id."";
         elseif ($u=='c')
         $sql = "UPDATE `contentwriting` SET `soa_paid` = 1 WHERE `content_id` =".$assign_id."";
+        elseif ($u=='t')
+        $sql = "UPDATE `typing` SET `soa_paid` = 1 WHERE `type_id` =".$assign_id."";
         var_dump($sql);
         mysqli_query($conn, $sql) or die("We're Facing some issues");
         if($u=='h'){
@@ -29,4 +31,7 @@
         elseif ($u=='c'){
         header("Location: ../viewcontentwriting.php?id=".$assign_id);
         exit();}
+        elseif ($u=='t'){
+          header("Location: ../viewtyping.php?id=".$assign_id);
+          exit();}
 ?>

@@ -17,4 +17,6 @@ if(isset($_SESSION['privilege'])) {
     echo '<embed src="http://localhost/bluepen/src/writingsample/'.$f.'" width="100%" height="100%">';
   if($u='vj')
     echo '<embed src="http://localhost/bluepen/src/assignments/'.$f.'" width="100%" height="100%">';
+  if($u=='vt')
+    echo '<embed src="http://localhost/bluepen/src/typing/'.$f.'" width="100%" height="100%">';
   ?>

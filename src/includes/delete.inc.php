@@ -20,6 +20,8 @@
         $sql = "select * from assignments where assign_id=".$id;
         elseif ($u=='c')
         $sql = "select * from contentwriting where content_id=".$id;
+        elseif ($u=='t')
+        $sql = "select * from typing where type_id=".$id;
         elseif ($u=='w')
         $sql = "select * from writer where id=".$id;
         elseif ($u=='cw')
@@ -41,6 +43,11 @@
             $sql1 ='INSERT INTO `dump_jobs`(`user_id`, `submission_date`, `delivery_date`, `amount`, `category`) VALUES ("'.$row["user_id"].'" ,"'.$row["submission_datetime"].'" ,"'.$row["delivery_date"].'" ,"'.$row["amount"].'","contentwriting")';
             $sql2 = 'DELETE FROM `contentwriting` WHERE content_id='.$id;
             $src='../viewcontentwriting.php?stat=done&content_id='.$id;
+          }
+          elseif ($u=='t'){
+            $sql1 ='INSERT INTO `dump_jobs`(`user_id`, `submission_date`, `delivery_date`, `amount`, `category`) VALUES ("'.$row["user_id"].'" ,"'.$row["submission_datetime"].'" ,"'.$row["delivery_date"].'" ,"'.$row["amount"].'","typing")';
+            $sql2 = 'DELETE FROM `typing` WHERE type_id='.$id;
+            $src='../viewtyping.php?stat=done&content_id='.$id;
           }
           elseif ($u=='w'){
           $sql1 ='INSERT INTO `dump_writer`(`id`, `name`, `mobile`, `email`, `address`, `category`) VALUES ("'.$row["id"].'","'.$row["firstname"].' '.$row["lastname"].'" ,"'.$row["mobile"].'" ,"'.$row["email"].'" ,"'.$row["address"].'" ,"writer")';
