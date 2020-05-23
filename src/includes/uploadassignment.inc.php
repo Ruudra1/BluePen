@@ -125,7 +125,7 @@ if (isset($_POST['submit2'])) {
         $date = DateTime::createFromFormat('Y-m-d', $deliverydate);
         $date_errors = DateTime::getLastErrors();
         
-    
+    var_dump($message);
         // Set up session variables so if error occurs user doesn't have to fill entire form
         $_SESSION['formFilled1'] = true;
         $_SESSION['title'] = $title;
@@ -192,6 +192,139 @@ if (isset($_POST['submit2'])) {
                 //     header("Location: ../add_event.php?signup=profileupload");
                 }
             
+        }
+if (isset($_POST['submit3'])) {
+
+            #Treat user input as text and not as code
+            $title = mysqli_real_escape_string($conn, $_POST['title1']);
+            $message = mysqli_real_escape_string($conn, $_POST['message1']);
+            $orientation = mysqli_real_escape_string($conn, $_POST['orientation']);
+            $font = mysqli_real_escape_string($conn, $_POST['font']);
+            $fontsize = mysqli_real_escape_string($conn, $_POST['fontsize']);
+            $fontcolor = mysqli_real_escape_string($conn, $_POST['fontcolor']);
+            $pagesize = mysqli_real_escape_string($conn, $_POST['pagesize']);
+            $margins = mysqli_real_escape_string($conn, $_POST['margins']);
+            $deliverydate = mysqli_real_escape_string($conn, $_POST['deliverydate2']);
+
+            $assignment=mysqli_real_escape_string($conn, $_FILES['assignment1']['name']);
+            
+    
+            $date = DateTime::createFromFormat('Y-m-d', $deliverydate);
+            $date_errors = DateTime::getLastErrors();
+            
+        var_dump($message);
+            // Set up session variables so if error occurs user doesn't have to fill entire form
+            $_SESSION['formFilled2'] = true;
+            $_SESSION['title1'] = $title;
+            $_SESSION['message1'] = $message;
+            $_SESSION['orientation'] = $orientation;
+            $_SESSION['font'] = $font;
+            $_SESSION['fontsize'] = $fontsize;
+            $_SESSION['fontcolor'] = $fontcolor;
+            $_SESSION['pagesize'] = $pagesize;
+            $_SESSION['margins'] = $margins;
+         
+            $_SESSION['deliverydate2'] = $deliverydate;
+        
+        
+            $mail = $_SESSION['email'];
+            // echo $mail;
+            $u_id = $_SESSION['id'];
+            // echo $u_id;
+        
+        
+        
+        
+            // Form Validation / Error Handlers
+            // Check for empty fields
+            if(empty($title) || empty($deliverydate) || empty($message) || empty($orientation) || empty($font) || empty($fontsize) || empty($fontcolor) || empty($pagesize) || empty($margins)) {
+                header("Location: ../upload.php?signup=empty");
+                exit();
+            } else if(!preg_match("/^[a-zA-Z]*$/", $title)){
+                // Check if input characters are Valid i.e if they only contain a-z and A-Z
+                header("Location: ../upload.php?signup=invalid");
+                exit();
+            }else if(!preg_match("/^[a-zA-Z]*$/", $font)){
+                // Check if input characters are Valid i.e if they only contain a-z and A-Z
+                header("Location: ../upload.php?signup=invalid");
+                exit();
+            }else if(!preg_match("/^[a-zA-Z]*$/", $fontcolor)){
+                // Check if input characters are Valid i.e if they only contain a-z and A-Z
+                header("Location: ../upload.php?signup=invalid");
+                exit();
+            } else if ($date_errors['warning_count'] + $date_errors['error_count'] > 0) {
+                //Check if DOB is valid
+                header("Location: ../upload.php?signup=deliverydate");
+                exit();
+            } else if(!file_exists($_FILES['assignment1']['tmp_name']) || !is_uploaded_file($_FILES['assignment1']['tmp_name'])) {
+                //Signature file problem
+                header("Location: ../upload.php?signup=signupload");
+                exit();
+            } else {
+    
+            // Get image name
+                $assignment = $_FILES['assignment1']['name'];
+                $ass = $mail.$assignment;
+            // image file directory
+                $signtarget = "../typing/".basename($ass);
+    
+                function countPages($path)
+                {
+                $pdftext = file_get_contents($path);
+                $num = preg_match_all("/\/Page\W/", $pdftext, $dummy);
+                return $num;
+                }
+                // var_dump($ass);
+    
+                
+                // echo $totalPages;
+            
+    
+            // Check if user doesn't already exist i.e. email is not in db
+            // $sql = "SELECT * FROM assignments WHERE email='$email';";
+        
+           
+                        // Hashing the password
+                
+                // Insert the user in the db
+                // $datetime = "SELECT SWITCHOFFSET(CAST(GETDATE() AS DATETIMEOFFSET))";
+                // date_default_timezone_set('Asia/Kolkata');
+                // $datetime =  date('d-m-Y H:i:s');
+                if (move_uploaded_file($_FILES['assignment1']['tmp_name'], $signtarget)){
+                    $path = $signtarget;
+                var_dump($path);
+                $totalPages = countPages($path);
+                var_dump($totalPages);
+                $amount = $totalPages*6;
+                
+                    $sql = "INSERT INTO `typing`(`user_id`, `file_name`, `title`, `desc`, `orientation`, `font`, `fontsize`, `fontcolor`, `pagesize`, `margins`, `submission_datetime`, `delivery_date`, `amount`, `soa_assigned`, `soa_written`, `soa_paid`, `soa_completed`)
+                                         VALUES ('$u_id' , '$ass' , '$title' , '$message' , '$orientation' , '$font' , '$fontsize' , '$fontcolor' , '$pagesize' , '$margins' , now() , '$deliverydate' , '0' , '0' , '0' , '0' , '0' )";
+                            // SELECT SWITCHOFFSET(CAST(GETDATE() AS DATETIMEOFFSET), '+05:30')
+                           
+                    mysqli_query($conn, $sql) or die(mysqli_error($conn));
+                    
+                    
+                    $_SESSION['formFilled2'] = false;
+                    unset($_SESSION['title1']);
+                    unset($_SESSION['message1']);
+                    unset($_SESSION['orientation']);
+                    unset($_SESSION['font']);
+                    unset($_SESSION['fontsize']);
+                    unset($_SESSION['fontcolor']);
+                    unset($_SESSION['pagesize']);
+                    unset($_SESSION['margins']);
+                    unset($_SESSION['deliverydate2']);
+
+                    // Now redirect the user
+                    header("Location: ../upload.php?signup=success");
+                    exit();
+                // }else if(move_uploaded_file($_FILES['assignment']['tmp_name'], $ass)){
+                //     header("Location: ../add_event.php?signup=profileupload");
+                }else{
+                    header("Location: ../upload.php?signup=uploadissue");
+                    exit();
+                }
+            }
         }
  else {
   // If someone just loads the url without submitting data

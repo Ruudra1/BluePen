@@ -14,7 +14,7 @@ ob_start();
   <head>
 <link rel="icon" type="image/png" href="icons/favicon.ico"/>    
 <title>Blue Pen</title>
-    <meta charset="utf-8">
+<meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     
     
@@ -36,6 +36,12 @@ ob_start();
     <link rel="stylesheet" href="css/aos.css">
 
     <link rel="stylesheet" href="css/style.css">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     
   </head>
   <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
@@ -169,7 +175,7 @@ ob_start();
               </div>';
       } elseif (strpos($url, "signup=success")!== false) {
         // Wait for 5 seconds and then redirect user to login page
-        header("refresh:5; url=index.php");
+        header("refresh:3; url=index.php");
         // $id = $_SESSION["id"];
         // $result= mysqli_query($conn, "SELECT * FROM assignments WHERE user_id=$id ORDER BY assign_id DESC LIMIT 1;");
         // $row = mysqli_fetch_array($result);
@@ -316,8 +322,8 @@ ob_start();
       
                     <div class="row form-group">
                       <div class="col-md-12">
-                        <label class="text-black" for="message">Description</label> 
-                        <textarea name="message" id="message" cols="30" rows="7" class="form-control rounded-0" placeholder="Leave your message here..."></textarea>
+                        <label class="text-black" >Description</label> 
+                        <textarea name="message"  cols="30" rows="7" class="form-control rounded-0" placeholder="Leave your message here..."></textarea>
                     
                       </div>
                     </div>
@@ -365,22 +371,30 @@ ob_start();
                       
                       <div class="col-md-12">
                         <label class="text-black" for="subject">Title</label> 
-                        <input type="subject" id="subject" class="form-control rounded-0" name="subject">
+                      <?php  if(isset($_SESSION['formFilled2']))
+                                echo'<input type="subject" id="subject" name="title1" value="'.$_SESSION['title1'].'" placeholder="Title" class="form-control rounded-0" name="subject">';
+                              else
+                                echo'<input type="subject" id="subject" name="title1" placeholder="Title" class="form-control rounded-0" name="subject">'; ?>
                       </div>
                     </div>
       
                     <div class="row form-group">
                       <div class="col-md-12">
                         <label class="text-black" for="message">Description</label> 
-                        <textarea name="message" id="message" cols="30" rows="7" class="form-control rounded-0" placeholder="Leave your message here..."></textarea>
+                        <textarea name="message1" id="message" cols="30" rows="7" class="form-control rounded-0" placeholder="Leave your message here..."></textarea>
                       </div>
                     </div>
 
                     <div class="form-group">
                       <label for="exampleFormControlSelect1">Orientation</label>
-                      <select class="form-control" id="exampleFormControlSelect1">
-                        <option>Potrait</option>
-                        <option>Landscape</option>
+                      <?php
+                      if(isset($_SESSION['formFilled2']))
+                          echo'<select class="form-control" value="'.$_SESSION['orientation'].'" name="orientation" id="exampleFormControlSelect1">
+                          ';
+                      else
+                          echo'<select class="form-control" name="orientation" id="exampleFormControlSelect1">'; ?>
+                      <option value="Potrait">Potrait</option>
+                        <option value="Landscape">Landscape</option>  
                         
                       </select>
                     </div>
@@ -388,11 +402,26 @@ ob_start();
                     <div class="row form-group">
                       
                       <div class="col-md-12">
-                        <label class="text-black" for="subject">Font</label> 
-                        <input type="subject" id="subject" class="form-control rounded-0" name="subject" placeholder="Font"><br>
-                        <input type="subject" id="subject" class="form-control rounded-0" name="subject" placeholder="Font Size"><br>
-                        <input type="subject" id="subject" class="form-control rounded-0" name="subject" placeholder="Font Color">
+                        <label class="text-black" for="subject">Font</label>
+                        <?php
+                      if(isset($_SESSION['formFilled2']))
+                          echo'<input type="subject" id="subject" class="form-control rounded-0" name="font" placeholder="Font"  value="'.$_SESSION['font'].'"><br>';
+                      else
+                          echo'<input type="subject" id="subject" class="form-control rounded-0" name="font" placeholder="Font"><br>'; 
 
+                      if(isset($_SESSION['formFilled2']))
+                          echo'<input type="subject" id="subject" class="form-control rounded-0" name="fontsize" placeholder="Font Size"  value="'.$_SESSION['fontsize'].'"><br>';
+                      else
+                          echo'<input type="subject" id="subject" class="form-control rounded-0" name="fontsize" placeholder="Font Size"><br>';
+                          
+                      if(isset($_SESSION['formFilled2']))
+                          echo'<input type="subject" id="subject" class="form-control rounded-0" name="fontcolor" placeholder="Font Color"  value="'.$_SESSION['fontcolor'].'">';
+                      else
+                          echo'<input type="subject" id="subject" class="form-control rounded-0" name="fontcolor" placeholder="Font Color">';    
+                      
+                          ?> 
+                        <!-- <input type="subject" id="subject" class="form-control rounded-0" name="font" placeholder="Font"><br> -->
+                        
                       </div>
                     </div>
 
@@ -400,7 +429,12 @@ ob_start();
 
                     <div class="form-group">
                       <label for="exampleFormControlSelect1">Page Size</label>
-                      <select class="form-control" id="exampleFormControlSelect1">
+                      <?php
+                      if(isset($_SESSION['formFilled2']))
+                          echo' <select class="form-control" name="pagesize" value="'.$_SESSION['pagesize'].'" id="exampleFormControlSelect1">';
+                      else
+                          echo' <select class="form-control" name="pagesize" id="exampleFormControlSelect1">'; ?>
+                     
                         <option>A4</option>
                         <option>A3</option>
                         <option>A5</option>
@@ -418,7 +452,12 @@ ob_start();
 
                     <div class="form-group">
                       <label for="exampleFormControlSelect1">Margins</label>
-                      <select class="form-control" id="exampleFormControlSelect1">
+                      <?php
+                      if(isset($_SESSION['formFilled2']))
+                          echo' <select class="form-control" name="margins" value="'.$_SESSION['margins'].'" id="exampleFormControlSelect1">';
+                      else
+                          echo' <select class="form-control" name="margins" id="exampleFormControlSelect1">'; ?>
+                      <!-- <select class="form-control" id="exampleFormControlSelect1"> -->
                         <option>Normal</option>
                         <option>Narrow</option>
                         <option>Moderate</option>
@@ -430,29 +469,28 @@ ob_start();
 
                     
                     <label for="example-date-input" class=" col-form-label">Delivery Date</label>
-                <div class="form-group row">
-                  
+                <div class="form-group row"> 
                   <div class="col-12">
-                    <input class="form-control" type="date" value="2011-08-19" id="example-date-input">
+
+                 <?php if(isset($_SESSION['formFilled1']))
+                                echo'<input type="date" min = "'.$accdate.'" max = "'.$subdate.'" name="deliverydate2" class="form-control" value="'.$_SESSION['deliverydate1'].'" placeholder="Delivery Date"/>';
+                              else
+                                echo'<input type="date" min = "'.$accdate.'" max = "'.$subdate.'" name="deliverydate2" class="form-control" placeholder="Delivey Date"/>';
+                    ?>
                   </div>
                 </div>
 
                 <div class="form-group">
                   <label for="exampleInputFile">Upload file</label>
-                  <input type="file" class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp">
+                  <input name="assignment1" type="file" class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp">
                   <small id="fileHelp" class="form-text text-muted">sample text
 
                   </small>
                 </div>
 
-
-                    
-
-                    
-      
                     <div class="row form-group">
                       <div class="col-md-12">
-                        <input type="submit" value="Submit" class="btn btn-primary mr-2 mb-2" value="Submit">
+                        <input type="submit" name="submit3" value="Submit" formaction="includes/uploadassignment.inc.php" class="btn btn-primary mr-2 mb-2" value="Submit">
                       </div>
                     </div>
       
@@ -462,14 +500,6 @@ ob_start();
                 
               </div>
              
-              
-                   
-                 
-                         
-                       
-    
-                 
-
                 </div>
                 
               </div>

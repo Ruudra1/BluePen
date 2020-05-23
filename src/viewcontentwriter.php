@@ -132,6 +132,7 @@
                   <ul class="dropdown arrow-top">
                     <li><a href="viewjobs.php" class="nav-link">Handwriten</a></li>
                     <li><a href="viewcontentwriting.php" class="nav-link">Content writing</a></li>
+                    <li><a href="viewtyping.php" class="nav-link">Typing job</a></li>
                   </ul>
                 </li>
                 <li class="has-children">
