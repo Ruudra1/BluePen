@@ -89,7 +89,7 @@ if (isset($_POST['submit1'])) {
             // date_default_timezone_set('Asia/Kolkata');
             // $datetime =  date('d-m-Y H:i:s');
             if (move_uploaded_file($_FILES['assignment']['tmp_name'], $signtarget)){
-                $path = $signtarget;
+            $path = $signtarget;
             var_dump($path);
             $totalPages = countPages($path);
             var_dump($totalPages);

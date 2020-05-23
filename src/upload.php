@@ -175,13 +175,13 @@ ob_start();
               </div>';
       } elseif (strpos($url, "signup=success")!== false) {
         // Wait for 5 seconds and then redirect user to login page
-        header("refresh:3; url=index.php");
-        // $id = $_SESSION["id"];
-        // $result= mysqli_query($conn, "SELECT * FROM assignments WHERE user_id=$id ORDER BY assign_id DESC LIMIT 1;");
-        // $row = mysqli_fetch_array($result);
-        // $amount = $row["amount"];
+        header("refresh:5; url=index.php");
+        $id = $_SESSION["id"];
+        $result= mysqli_query($conn, "SELECT * FROM assignments WHERE user_id=$id ORDER BY assign_id DESC LIMIT 1;");
+        $row = mysqli_fetch_array($result);
+        $amount = $row["amount"];
         // $amount = "SELECT amount FROM assignments WHERE user_id=6 ORDER BY assign_id DESC LIMIT 1";
-        echo '<div class="col-md-4 offset-md-4 col-sm-4 offset-sm-4  container text-center alert alert-success">Assignment Submitted, You will be contacted Soon..</div>';
+        echo '<div class="col-md-4 offset-md-4 col-sm-4 offset-sm-4  container text-center alert alert-success">Assignment Submitted,'.$amount.' You will be contacted Soon..</div>';
       } elseif (strpos($url, "signup=blocked")!== false) {
         echo '<div class="col-md-4 offset-md-4 col-sm-4 offset-sm-4 container text-center alert alert-danger lastname" role="alert">
                 User is Blocked, Please Contact Us
