@@ -1,8 +1,9 @@
 <!-- <!DOCTYPE html> -->
 <?php
+include_once "includes/connect.inc.php";
 ob_start();
   session_start();
-  error_reporting(0);
+  // error_reporting(0);
   if(!isset($_SESSION['id'])) {
     //User is logged in
     header("Location: index.php");
@@ -65,81 +66,6 @@ ob_start();
       <div class="site-mobile-menu-body"></div>
     </div>
    
-  <!--nav -->
-  <header class="site-navbar py-4 js-sticky-header site-navbar-target" role="banner">
-
-    <div class="container">
-      <div class="row align-items-center">
-        
-        <div class="col-6 col-md-3 col-xl-4  d-block">
-          <h1 class="mb-0 site-logo"><a href="index.html" class="text-black h2 mb-0">Blue Pen<span class="text-primary"></span> </a></h1>
-        </div>
-
-        <div class="col-12 col-md-9 col-xl-8 main-menu">
-          <nav class="site-navigation position-relative text-right" role="navigation">
-
-            <ul class="site-menu main-menu js-clone-nav mr-auto d-none d-lg-block ml-0 pl-0">
-              <li><a href="index.html" class="nav-link">Home</a></li>
-              <li><a href="#features-section" class="nav-link">Features</a></li>
-              <li class="has-children">
-                <a href="h_it_work.html" class="nav-link">How it works</a>
-                <ul class="dropdown arrow-top">
-                  <li><a href="#our-team-section" class="nav-link">Our Team</a></li>
-                  <li class="has-children">
-                    <a href="#">More Links</a>
-                    <ul class="dropdown">
-                      <li><a href="#">Menu One</a></li>
-                      <li><a href="#">Menu Two</a></li>
-                      <li><a href="#">Menu Three</a></li>
-                    </ul>
-                  </li>
-                </ul>
-              </li>
-              <!-- <li><a href="#testimonials-section" class="nav-link">Testimonials</a></li> -->
-              <li><a href="#blog-section" class="nav-link">Blog</a></li>
-              <li><a href="contactus.html" class="nav-link">Contact</a></li>
-              <!-- <li><a href="registeraswriter.html" class="nav-link">Register as Writer</a></li> -->
-              <li data-toggle="modal" data-target="#exampleModal">Register as Writer</li>
-
-                
-
-            </ul>
-          </nav>
-        </div>
-
-
-        <div class="col-6 col-md-9 d-inline-block d-lg-none ml-md-0" ><a href="#" class="site-menu-toggle js-menu-toggle text-black float-right"><span class="icon-menu h3"></span></a></div>
-
-      </div>
-    </div>
-    
-  </header>
-  
-  <!--nav end-->
-
-
-    <!-- <div class="site-blocks-cover" style="overflow: hidden;">
-      <div class="container">
-         <div class="row align-items-center justify-content-center">
-
-          <div class="col-md-12" style="position: relative;" data-aos="fade-up" data-aos-delay="200">
-            
-            <img src="images/undraw_investing_7u74.svg" alt="Image" class="img-fluid img-absolute">
-
-            <div class="row mb-4" data-aos="fade-up" data-aos-delay="200">
-              <div class="col-lg-6 mr-auto">
-                <h1>Make Your Business More Profitable</h1>
-                <p class="mb-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam assumenda ea quo cupiditate facere deleniti fuga officia.</p>
-                <div>
-                  <a href="#" class="btn btn-primary mr-2 mb-2">Get Started</a>
-                </div>
-              </div> 
-            </div>
-
-          </div>
-        </div> 
-      </div>
-    </div>   -->
 
 
     <!--contact start-->
@@ -180,8 +106,9 @@ ob_start();
         $result= mysqli_query($conn, "SELECT * FROM assignments WHERE user_id=$id ORDER BY assign_id DESC LIMIT 1;");
         $row = mysqli_fetch_array($result);
         $amount = $row["amount"];
+        // var_dump($amount);
         // $amount = "SELECT amount FROM assignments WHERE user_id=6 ORDER BY assign_id DESC LIMIT 1";
-        echo '<div class="col-md-4 offset-md-4 col-sm-4 offset-sm-4  container text-center alert alert-success">Assignment Submitted,'.$amount.' You will be contacted Soon..</div>';
+         echo'<div class="col-md-4 offset-md-4 col-sm-4 offset-sm-4  container text-center alert alert-success">Assignment Submitted, The amount is '.$amount.' You will be contacted Soon..</div>';
       } elseif (strpos($url, "signup=blocked")!== false) {
         echo '<div class="col-md-4 offset-md-4 col-sm-4 offset-sm-4 container text-center alert alert-danger lastname" role="alert">
                 User is Blocked, Please Contact Us

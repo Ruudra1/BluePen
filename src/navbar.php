@@ -126,8 +126,8 @@ error_reporting(0);
                     
                    echo '<ul class="dropdown arrow-top">
                    
-                   <li><a href="upload.php" target="_blank" class="nav-link"><span class="text-secondary">Submit Assignment </span></a></li>
-                    <li><a href="changepassword.php" target="_blank" class="nav-link"><span class="text-secondary">Change Password  </span></a></li>
+                   <li><a href="upload.php" class="nav-link"><span class="text-secondary">Submit Assignment </span></a></li>
+                    <li><a href="changepassword.php" class="nav-link"><span class="text-secondary">Change Password  </span></a></li>
                     <li><a href="includes/logout.inc.php"  class="nav-link"><span class="text-secondary">Log Out </span></a></li></ul></li>
                     <li><a href="writer.php" class="nav-link">Register as Writer</a></li>';
                   }

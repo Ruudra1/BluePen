@@ -1,7 +1,8 @@
 
 
 <?php
-
+include_once "includes/connect.inc.php";
+session_start();
 // $userid = $_SESSION['id'];
 // var_dump($userid);
 // $sql = "SELECT LAST from 'assign_name' FROM 'assignments' WHERE 'user_id' = $userid";
@@ -26,6 +27,13 @@ function countPages($path)
   // var_dump($dummy);
   return $num;
 }
+
+echo '<br>';
+$id = $_SESSION["id"];
+$result= mysqli_query($conn, "SELECT * FROM assignments WHERE user_id=$id ORDER BY assign_id DESC LIMIT 1;");
+$row = mysqli_fetch_array($result);
+$amount = $row["amount"];
+var_dump($amount);
 
 // $id=$_SESSION['id'];
 // var_dump($id);
