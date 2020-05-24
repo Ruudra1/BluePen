@@ -93,7 +93,7 @@ error_reporting(0);
                 <li><a href="index.php" class="nav-link">Home</a></li>
                 <!-- <li><a href="#features-section" class="nav-link">Features</a></li> -->
                 <!-- <li class="has-children"> -->
-                  <li><a href="works.html" class="nav-link">How it works</a></li>
+                  <li><a href="works.php" class="nav-link">How it works</a></li>
                   <!-- <ul class="dropdown arrow-top"> -->
                     <!-- <li><a href="#our-team-section" class="nav-link">Our Team</a></li> -->
                     <!-- <li class="has-children"> -->
