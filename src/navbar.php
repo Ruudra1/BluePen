@@ -50,6 +50,7 @@ error_reporting(0);
     <link rel="stylesheet" href="css/aos.css">
 
     <link rel="stylesheet" href="css/style.css">
+     <link rel="stylesheet" href="css/style1.css">
 
     <script src="https://apis.google.com/js/platform.js" async defer></script>
     
