@@ -1,10 +1,4 @@
-<?php
-// include_once "includes/connect.inc.php";
-include "navbar.php";
-?>
 
-
-<!DOCTYPE html>
 <html lang="en">
   <head>
     <title>How it Works &mdash; Blue Pen</title>
@@ -33,14 +27,13 @@ include "navbar.php";
     
   </head>
   <body data-spy="scroll" data-offset="300">
-  
 
-  <div id="overlayer"></div>
-  <div class="loader">
-    <div class="spinner-border text-primary" role="status">
-      <span class="sr-only">Loading...</span>
-    </div>
-  </div>
+  
+  <?php
+// include_once "includes/connect.inc.php";
+include "navbar.php";
+?>
+
 
   <div class="site-wrap"  id="home-section">
 

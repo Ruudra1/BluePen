@@ -108,7 +108,7 @@ error_reporting(0);
                 <!-- </li> -->
                 <!-- <li><a href="#testimonials-section" class="nav-link">Testimonials</a></li> -->
                 <li><a href="new_blog/index.php" class="nav-link">Blog</a></li>
-                <li><a href="contactus.html" class="nav-link">Contact</a></li>
+                <li><a href="contactus.php" class="nav-link">Contact</a></li>
                 <!-- <li><a href="#" class="nav-link">Upload Assignment</a></li> -->
                 <?php
                 if($_SESSION['first']==NULL){

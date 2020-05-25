@@ -3,7 +3,7 @@
 include_once "includes/connect.inc.php";
 ob_start();
   session_start();
-  // error_reporting(0);
+  error_reporting(0);
   if(!isset($_SESSION['id'])) {
     //User is logged in
     header("Location: index.php");
@@ -14,7 +14,14 @@ ob_start();
 <html lang="en">
   <head>
 <link rel="icon" type="image/png" href="icons/favicon.ico"/>    
-<title>Blue Pen</title>
+<title>Upload Assignment &mdash; Blue Pen</title>
+<!--nav -->
+ 
+<?php
+// include_once "includes/connect.inc.php";
+include "navbar.php";
+?>
+  <!--nav end-->
 <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     
@@ -46,14 +53,7 @@ ob_start();
     
   </head>
   <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
-  
 
-  <div id="overlayer"></div>
-  <div class="loader">
-    <div class="spinner-border text-primary" role="status">
-      <span class="sr-only">Loading...</span>
-    </div>
-  </div>
 
   <div class="site-wrap"  id="home-section">
 
