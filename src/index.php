@@ -163,7 +163,7 @@ if (strpos($url, "error=seccess") !== false) {
               </div>
               <div>
                 <h3>Register here and let go of all your worries</h3>
-                <p class="description"><a href = "signup.php">Sign Up</a> here and then whenever you want the help of Assignman just <a href = "login.php">login</a> and <a href = "uploadassignment.php">submit your assignment</a></p>
+                <p class="description"><a href = "signup.php">Sign Up</a> here and then whenever you want the help of Assignman just <a href = "login.php">login</a> and <a href = "upload.php">submit your assignment</a></p>
 
                
               </div>
@@ -220,7 +220,7 @@ if (strpos($url, "error=seccess") !== false) {
               <li>Labore quaerat esse</li>
             </ul> -->
             <p class="mb-4">Tumko lagta hai kabhi kabhi tum hi bhagwan hai? 
-              Toh dude we need you on our side.  The students need you here. <a href="#">Register as a writer</a>. 
+              Toh dude we need you on our side.  The students need you here. <a href="writer.php">Register as a writer</a>. 
               And trust us, ghar baitho lakho chapo vala scheme nai hai.</p>
             <p><a href="works.html" class="btn btn-primary">Learn More</a></p>
           </div>
