@@ -12,7 +12,14 @@ ob_start();
 <html lang="en">
   <head>
 <link rel="icon" type="image/png" href="icons/favicon.ico"/>
-    <title>BluePen</title>
+<title>Register as writer &mdash; Blue Pen</title>
+<!--nav -->
+ 
+<?php
+// include_once "includes/connect.inc.php";
+include "navbar.php";
+?>
+  <!--nav end-->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     
@@ -44,14 +51,6 @@ ob_start();
     
   </head>
   <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
-  
-
-  <div id="overlayer"></div>
-  <div class="loader">
-    <div class="spinner-border text-primary" role="status">
-      <span class="sr-only">Loading...</span>
-    </div>
-  </div>
 
   <div class="site-wrap"  id="home-section">
 
@@ -64,54 +63,6 @@ ob_start();
       <div class="site-mobile-menu-body"></div>
     </div>
    
-   <!--nav -->
-    <header class="site-navbar py-4 js-sticky-header site-navbar-target" role="banner">
-
-      <div class="container">
-        <div class="row align-items-center">
-          
-          <div class="col-6 col-md-3 col-xl-4  d-block">
-            <h1 class="mb-0 site-logo"><a href="index.html" class="text-black h2 mb-0">imagine<span class="text-primary">.</span> </a></h1>
-          </div>
-
-          <div class="col-12 col-md-9 col-xl-8 main-menu">
-            <nav class="site-navigation position-relative text-right" role="navigation">
-
-              <ul class="site-menu main-menu js-clone-nav mr-auto d-none d-lg-block ml-0 pl-0">
-                <li><a href="#home-section" class="nav-link">Home</a></li>
-                <li><a href="#features-section" class="nav-link">Features</a></li>
-                <li class="has-children">
-                  <a href="#about-section" class="nav-link">About Us</a>
-                  <ul class="dropdown arrow-top">
-                    <li><a href="#" target="_blank" class="nav-link"><span class="text-primary">More Free Templates</span></a></li>
-                    <li><a href="#our-team-section" class="nav-link">Our Team</a></li>
-                    <li class="has-children">
-                      <a href="#">More Links</a>
-                      <ul class="dropdown">
-                        <li><a href="#">Menu One</a></li>
-                        <li><a href="#">Menu Two</a></li>
-                        <li><a href="#">Menu Three</a></li>
-                      </ul>
-                    </li>
-                  </ul>
-                </li>
-                <li><a href="#testimonials-section" class="nav-link">Testimonials</a></li>
-                <li><a href="#blog-section" class="nav-link">Blog</a></li>
-                <li><a href="#contact-section" class="nav-link">Contact</a></li>
-              </ul>
-            </nav>
-          </div>
-
-
-          <div class="col-6 col-md-9 d-inline-block d-lg-none ml-md-0" ><a href="#" class="site-menu-toggle js-menu-toggle text-black float-right"><span class="icon-menu h3"></span></a></div>
-
-        </div>
-      </div>
-      
-    </header>
-    
-    <!--nav end-->
-
 
     <!-- <div class="site-blocks-cover" style="overflow: hidden;">
       <div class="container">
@@ -185,9 +136,16 @@ ob_start();
               </div>';
       } elseif (strpos($url, "signup=success")!== false) {
         // Wait for 5 seconds and then redirect user to index page
-        header("refresh:3;url=index.php");
+        echo '<script>alert("You are registered as a Writer, we will be contacting you soon if you get selected...")</script>';
+        header("refresh:0;url=index.php");
         // exit();
-        echo '<div class="col-md-4 offset-md-4 col-sm-4 offset-sm-4 container text-center alert alert-success">You are registered as a writer, we will be contacting you soon...</div>';
+        // echo '<div class="col-md-4 offset-md-4 col-sm-4 offset-sm-4 container text-center alert alert-success">You are registered as a writer, we will be contacting you soon...</div>';
+      } elseif (strpos($url, "signup=csuccess")!== false) {
+        // Wait for 5 seconds and then redirect user to index page
+        echo '<script>alert("You are registered as a Content writer, we will be contacting you soon if you get selected...")</script>';
+        header("refresh:0;url=index.php");
+        // exit();
+        // echo '<div class="col-md-4 offset-md-4 col-sm-4 offset-sm-4 container text-center alert alert-success">You are registered as a Content writer, we will be contacting you soon...</div>';
       }
       //Focus on ip tag and add div container
 

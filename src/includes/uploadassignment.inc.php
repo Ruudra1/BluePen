@@ -121,6 +121,7 @@ if (isset($_POST['submit2'])) {
         $message = mysqli_real_escape_string($conn, $_POST['message']);
         $deliverydate = mysqli_real_escape_string($conn, $_POST['deliverydate1']);
         $title = mysqli_real_escape_string($conn, $_POST['title']);
+        $words = mysqli_real_escape_string($conn, $_POST['words']);
 
         $date = DateTime::createFromFormat('Y-m-d', $deliverydate);
         $date_errors = DateTime::getLastErrors();
@@ -131,6 +132,7 @@ if (isset($_POST['submit2'])) {
         $_SESSION['title'] = $title;
        $_SESSION['message'] = $message;
         $_SESSION['deliverydate1'] = $deliverydate;
+        $_SESSION['words'] = $words;
     
     
         
@@ -145,7 +147,7 @@ if (isset($_POST['submit2'])) {
     
         // Form Validation / Error Handlers
         // Check for empty fields
-        if(empty($title) || empty($deliverydate) || empty($message)) {
+        if(empty($title) || empty($deliverydate) || empty($message) || empty($words)) {
             header("Location: ../upload.php?signup=empty");
             exit();
         } else if(!preg_match("/^[a-zA-Z]*$/", $title)){
@@ -177,14 +179,15 @@ if (isset($_POST['submit2'])) {
                 // $datetime =  date('d-m-Y H:i:s');
                 
                 
-                    $sql = "INSERT INTO `contentwriting`(`user_id`, `content_title`, `content_desc`, `submission_datetime`, `delivery_date`, `amount`, `soa_assigned`, `soa_written`, `soa_paid`, `soa_completed`) 
-                                VALUES ('$u_id', '$title','$message', now() ,'$deliverydate', '0', '0', '0', '0', '0')";
+                    $sql = "INSERT INTO `contentwriting`(`user_id`, `content_title`, `word_count`, `content_desc`, `submission_datetime`, `delivery_date`, `amount`, `soa_assigned`, `soa_written`, `soa_paid`, `soa_completed`) 
+                                VALUES ('$u_id', '$title','$words','$message', now() ,'$deliverydate', '0', '0', '0', '0', '0')";
                             // SELECT SWITCHOFFSET(CAST(GETDATE() AS DATETIMEOFFSET), '+05:30')
                            
                     mysqli_query($conn, $sql) or die(mysqli_error($conn));
                     // Now redirect the user
                     $_SESSION['formFilled1'] = false;
                     unset($_SESSION['title']);
+                    unset($_SESSION['words']);
                     unset($_SESSION['deliverydate1']);
                     header("Location: ../upload.php?signup=success");
                     exit();

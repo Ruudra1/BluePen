@@ -207,13 +207,13 @@ if (strpos($url, "error=seccess") !== false) {
     font: bold 15px/40px 'lucida sans', 'trebuchet MS', 'Tahoma';
     color: #fff;
     text-transform: uppercase;
-    background: #d83c3c;
+    background: #539e3f;
     border-radius: 0 3px 3px 0;     
     text-shadow: 0 -1px 0 rgba(0, 0 ,0, .3);
 }  
 
 .form-wrapper button:hover{    
-    background: #e54040;
+    background: #206b0c;
 }  
 
 .form-wrapper button:active,
@@ -227,13 +227,13 @@ if (strpos($url, "error=seccess") !== false) {
     position: absolute;
     border-width: 8px 8px 8px 0;
     border-style: solid solid solid none;
-    border-color: transparent #d83c3c transparent;
+    border-color: transparent #539e3f transparent;
     top: 12px;
     left: -6px;
 }
 
 .form-wrapper button:hover:before{
-    border-right-color: #e54040;
+    border-right-color: #206b0c;
 }
 
 .form-wrapper button:focus:before,

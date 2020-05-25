@@ -216,7 +216,7 @@ elseif (isset($_POST['submit2']))
                     unset($_SESSION['contact1']);
                     
 
-                    header("Location: ../writer.php?signup=success");
+                    header("Location: ../writer.php?signup=csuccess");
                     exit();
             }
         }
