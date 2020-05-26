@@ -222,7 +222,7 @@ if (strpos($url, "error=seccess") !== false) {
             <p class="mb-4">Tumko lagta hai kabhi kabhi tum hi bhagwan hai? 
               Toh dude we need you on our side.  The students need you here. <a href="writer.php">Register as a writer</a>. 
               And trust us, ghar baitho lakho chapo vala scheme nai hai.</p>
-            <p><a href="works.html" class="btn btn-primary">Learn More</a></p>
+            <p><a href="works.php" class="btn btn-primary">Learn More</a></p>
           </div>
         </div>
 
