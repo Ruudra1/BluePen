@@ -137,10 +137,10 @@ error_reporting(0);
                   <a href="#about-section" class="nav-link"><span>Hi , '.$_SESSION['first'].'</span></a>';
                   
                  echo '<ul class="dropdown arrow-top">
-                 <li><a href="viewwriters.php" target="_blank" class="nav-link"><span class="text-secondary">View Writers</span></a></li>
-                  <li><a href="viewclients.php" target="_blank" class="nav-link"><span class="text-secondary">View Clients</span></a></li>
-                  <li><a href="viewjobs.php" target="_blank" class="nav-link"><span class="text-secondary">View Jobs</span></a></li>
-                  <li><a href="add_blog.php" target="_blank" class="nav-link"><span class="text-secondary">Add Blog</span></a></li>
+                 <li><a href="viewwriters.php"  class="nav-link"><span class="text-secondary">View Writers</span></a></li>
+                  <li><a href="viewclients.php"  class="nav-link"><span class="text-secondary">View Clients</span></a></li>
+                  <li><a href="viewjobs.php"  class="nav-link"><span class="text-secondary">View Jobs</span></a></li>
+                  <li><a href="add_blog.php"  class="nav-link"><span class="text-secondary">Add Blog</span></a></li>
                   <li><a href="includes/logout.inc.php" class="nav-link"><span class="text-secondary">Log Out </span></a></li>
                   <li><a href="add_blogwriter.php" class="nav-link"><span class="text-secondary">Add blog writers </span></a></li>
                   <li><a href="add_blog.php" class="nav-link"><span class="text-secondary">Add blogs</span></a></li>';

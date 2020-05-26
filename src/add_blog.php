@@ -1,7 +1,13 @@
 <!-- <!DOCTYPE html> -->
 <link rel="icon" type="image/png" href="icons/favicon.ico"/>
 <?php
-  // session_start();
+  session_start();
+  error_reporting(0);
+  if(!strcmp("admin",$_SESSION['privilege'])==0)
+{
+  header("Location:index.php");
+  exit();
+}
   include "navbar.php";
   $sql = "SELECT * FROM blog_writer ;";
             $result = mysqli_query($conn, $sql);
@@ -51,7 +57,7 @@
     <div class="site-section bg-image2 overlay" id="contact-section" style="background-image: url('images/hero_1.jpg');">
       <div class="container">
       <?php
-      if (isset($_SESSION['id'])) {
+      if (0) {
         header("Location: index.php");
         exit();
       } else {

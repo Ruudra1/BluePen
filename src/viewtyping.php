@@ -1,5 +1,5 @@
 <?php
-    include_once'includes/connect.inc.php';
+    include_once 'includes/connect.inc.php';
     session_start();
     if(isset($_SESSION['privilege'])) {
       if(strcmp($_SESSION['privilege'], "admin") !== 0) {

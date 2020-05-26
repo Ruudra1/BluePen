@@ -2,6 +2,13 @@
 <link rel="icon" type="image/png" href="icons/favicon.ico"/>
 <?php
 //   session_start();
+session_start();
+  error_reporting(0);
+  if(!strcmp("admin",$_SESSION['privilege'])==0)
+{
+  header("Location:index.php");
+  exit();
+}
   include "navbar.php";
 
 
