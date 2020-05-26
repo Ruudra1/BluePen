@@ -219,7 +219,7 @@ if (isset($_POST['submit3'])) {
             // Set up session variables so if error occurs user doesn't have to fill entire form
             $_SESSION['formFilled2'] = true;
             $_SESSION['title1'] = $title;
-            $_SESSION['message1'] = $message;
+            // $_SESSION['message1'] = $message;
             $_SESSION['orientation'] = $orientation;
             $_SESSION['font'] = $font;
             $_SESSION['fontsize'] = $fontsize;
@@ -240,7 +240,7 @@ if (isset($_POST['submit3'])) {
         
             // Form Validation / Error Handlers
             // Check for empty fields
-            if(empty($title) || empty($deliverydate) || empty($message) || empty($orientation) || empty($font) || empty($fontsize) || empty($fontcolor) || empty($pagesize) || empty($margins)) {
+            if(empty($title) || empty($deliverydate) || empty($orientation) || empty($font) || empty($fontsize) || empty($fontcolor) || empty($pagesize) || empty($margins)) {
                 header("Location: ../upload.php?signup=empty");
                 exit();
             } else if(!preg_match("/^[a-zA-Z]*$/", $title)){
@@ -300,8 +300,8 @@ if (isset($_POST['submit3'])) {
                 var_dump($totalPages);
                 $amount = $totalPages*6;
                 
-                    $sql = "INSERT INTO `typing`(`user_id`, `file_name`, `title`, `desc`, `orientation`, `font`, `fontsize`, `fontcolor`, `pagesize`, `margins`, `submission_datetime`, `delivery_date`, `amount`, `soa_assigned`, `soa_written`, `soa_paid`, `soa_completed`)
-                                         VALUES ('$u_id' , '$ass' , '$title' , '$message' , '$orientation' , '$font' , '$fontsize' , '$fontcolor' , '$pagesize' , '$margins' , now() , '$deliverydate' , '0' , '0' , '0' , '0' , '0' )";
+                    $sql = "INSERT INTO `typing`(`user_id`, `file_name`, `title`, `orientation`, `font`, `fontsize`, `fontcolor`, `pagesize`, `margins`, `submission_datetime`, `delivery_date`, `amount`, `soa_assigned`, `soa_written`, `soa_paid`, `soa_completed`)
+                                         VALUES ('$u_id' , '$ass' , '$title' , '$orientation' , '$font' , '$fontsize' , '$fontcolor' , '$pagesize' , '$margins' , now() , '$deliverydate' , '0' , '0' , '0' , '0' , '0' )";
                             // SELECT SWITCHOFFSET(CAST(GETDATE() AS DATETIMEOFFSET), '+05:30')
                            
                     mysqli_query($conn, $sql) or die(mysqli_error($conn));

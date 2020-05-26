@@ -306,12 +306,12 @@ include "navbar.php";
                       </div>
                     </div>
       
-                    <div class="row form-group">
+                    <!-- <div class="row form-group">
                       <div class="col-md-12">
                         <label class="text-black" for="message">Description</label> 
                         <textarea name="message1" id="message" cols="30" rows="7" class="form-control rounded-0" placeholder="Leave your message here..."></textarea>
                       </div>
-                    </div>
+                    </div> -->
 
                     <div class="form-group">
                       <label for="exampleFormControlSelect1">Orientation</label>
