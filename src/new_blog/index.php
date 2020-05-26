@@ -1,5 +1,6 @@
 <?php
 include_once "../includes/connect.inc.php";
+include "navbar1.php";
 $sql="SELECT * FROM blog ORDER BY id desc";
  $result = mysqli_query($conn, $sql);
  
@@ -143,7 +144,7 @@ echo '
           
         </div>
         
-        <div class="row text-center pt-5 border-top">
+        <!-- <div class="row text-center pt-5 border-top">
           <div class="col-md-12">
             <div class="custom-pagination">
               <span>1</span>
@@ -154,7 +155,7 @@ echo '
               <a href="#">15</a>
             </div>
           </div>
-        </div>
+        </div> -->
       </div>
     </div>
 
@@ -238,3 +239,6 @@ echo '
 
   </body>
 </html>
+<?php
+include "footer1.php";
+?>
