@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 23, 2020 at 02:13 PM
+-- Generation Time: May 26, 2020 at 07:28 AM
 -- Server version: 10.4.6-MariaDB
 -- PHP Version: 7.3.8
 
@@ -188,7 +188,9 @@ INSERT INTO `contentwriter` (`id`, `firstname`, `lastname`, `mobile`, `email`, `
 (1, 'kaushik', 'gami', 9930284423, 'kaushikgami14@gmail.com', '502,XANADU-C,PRATHEMESH COMPEX,VEERA DESAI RD', 'wffeeu7', 'oiuytre', 'lkj', 'VEERA DESAI RD'),
 (2, 'kaushik', 'gami', 9930284423, 'kaushikgami1456@gmail.com', '502,XANADU-C,PRATHEMESH COMPLEX\r\nVEERA DESAI RD', 'wffeeu7', 'oiuytre', 'lkj', '502,XANADU-C,PRATHEMESH COMPLEX\r\nVEERA DESAI RD'),
 (3, 'jay', 'gami', 9930284423, 'kaushikgami14221@gmail.com', 'VEERA DESAI RD', 'wffeeu7', 'oiuytre', 'lkj', '502,XANADU-C,PRATHEMESH COMPLEX\r\nVEERA DESAI RD'),
-(4, 'kaushik', 'gami', 7977381017, 'kaushikgami148@gmail.com', 'Mahavir Education Trust Chowk\r\nW.T Patil Marg', 'wffeeu7', 'oiuytre', 'lkj', '502,XANADU-C,PRATHEMESH COMPLEX\r\nVEERA DESAI RD');
+(4, 'kaushik', 'gami', 7977381017, 'kaushikgami148@gmail.com', 'Mahavir Education Trust Chowk\r\nW.T Patil Marg', 'wffeeu7', 'oiuytre', 'lkj', '502,XANADU-C,PRATHEMESH COMPLEX\r\nVEERA DESAI RD'),
+(5, 'kaushik', 'gami', 7977381017, 'kaushikgami123448@gmail.com', 'Mahavir Education Trust Chowk\r\nW.T Patil Marg', 'wffeeu7', 'qedwq', 'qwerty', 'Ironman is back'),
+(6, 'kaushik', 'gami', 9930284423, 'kaushikgami214@gmail.com', '502,XANADU-C,PRATHEMESH COMPEX,VEERA DESAI RD', 'wffeeu7', 'oiuytre', 'qwerty', 'VEERA DESAI RD');
 
 -- --------------------------------------------------------
 
@@ -200,6 +202,7 @@ CREATE TABLE `contentwriting` (
   `user_id` int(11) NOT NULL,
   `content_id` int(11) NOT NULL,
   `content_title` varchar(128) NOT NULL,
+  `word_count` varchar(20) NOT NULL,
   `content_desc` varchar(8192) NOT NULL,
   `submission_datetime` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `delivery_date` date NOT NULL,
@@ -214,12 +217,13 @@ CREATE TABLE `contentwriting` (
 -- Dumping data for table `contentwriting`
 --
 
-INSERT INTO `contentwriting` (`user_id`, `content_id`, `content_title`, `content_desc`, `submission_datetime`, `delivery_date`, `amount`, `soa_assigned`, `soa_written`, `soa_paid`, `soa_completed`) VALUES
-(7, 1, 'jwcdbsdb', 'hsqoef', '2020-05-21 15:18:07', '2020-05-16', 0, 1, 1, 1, 1),
-(7, 2, 'jwcdbsdb', 'juguiusw', '2020-05-21 15:29:56', '2020-05-16', 0, 1, 0, 1, 0),
-(7, 3, 'jwcdbsdb', 'kSCNADC;', '2020-05-16 15:22:01', '2020-05-19', 0, 0, 0, 0, 0),
-(8, 6, 'jwcdbsdb', 'Ironman is back\r\n', '2020-05-23 10:28:49', '2020-06-01', 0, 0, 0, 0, 0),
-(7, 5, 'jwcdbsdb', 'xffxc', '2020-05-18 03:05:42', '2020-05-21', 0, 0, 0, 0, 0);
+INSERT INTO `contentwriting` (`user_id`, `content_id`, `content_title`, `word_count`, `content_desc`, `submission_datetime`, `delivery_date`, `amount`, `soa_assigned`, `soa_written`, `soa_paid`, `soa_completed`) VALUES
+(7, 1, 'jwcdbsdb', '', 'hsqoef', '2020-05-21 15:18:07', '2020-05-16', 0, 1, 1, 1, 1),
+(7, 2, 'jwcdbsdb', '', 'juguiusw', '2020-05-21 15:29:56', '2020-05-16', 0, 1, 0, 1, 0),
+(7, 3, 'jwcdbsdb', '', 'kSCNADC;', '2020-05-16 15:22:01', '2020-05-19', 0, 0, 0, 0, 0),
+(8, 6, 'jwcdbsdb', '', 'Ironman is back\r\n', '2020-05-23 10:28:49', '2020-06-01', 0, 0, 0, 0, 0),
+(7, 5, 'jwcdbsdb', '', 'xffxc', '2020-05-18 03:05:42', '2020-05-21', 0, 0, 0, 0, 0),
+(8, 7, 'saxsd', '400-600 words', 'dazxcdsv', '2020-05-25 14:52:21', '2020-06-01', 0, 0, 0, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -244,7 +248,8 @@ INSERT INTO `dump_jobs` (`user_id`, `submission_date`, `delivery_date`, `amount`
 (2, '2020-04-24 20:06:15', '2020-04-27', 0, 'assignments'),
 (8, '2020-05-21 12:11:33', '2020-06-02', 66, 'assignments'),
 (8, '2020-05-21 16:36:41', '2020-06-01', 36, 'assignments'),
-(7, '2020-05-16 20:56:20', '2020-05-19', 0, 'contentwriting');
+(7, '2020-05-16 20:56:20', '2020-05-19', 0, 'contentwriting'),
+(8, '2020-05-23 18:16:07', '2020-06-01', 0, 'typing');
 
 -- --------------------------------------------------------
 
@@ -272,7 +277,8 @@ INSERT INTO `dump_writer` (`id`, `name`, `mobile`, `email`, `address`, `category
 (19, 'kaushik gami', '2147483647', 'kaushikgami1438@gmail.com', 'Mahavir Education Trust Chowk\r\nW.T Patil Marg', 'writer'),
 (4, 'kaushik gami', '7977381017', 'kaushikgami148@gmail.com', 'Mahavir Education Trust Chowk\r\nW.T Patil Marg', 'contentwriter'),
 (16, 'karan patil', '8169157715', 'karan2000apatil@gmail.com', 'B/115,SURYAKUND CHS MAHAPURUSH MANDIR MARG\r\nMAZGAON', 'writer'),
-(20, 'kaushik gami', '9930284423', 'kaushikgami14@gmail.com', '502,XANADU-C,PRATHEMESH COMPLEX\r\nVEERA DESAI RD', 'writer');
+(20, 'kaushik gami', '9930284423', 'kaushikgami14@gmail.com', '502,XANADU-C,PRATHEMESH COMPLEX\r\nVEERA DESAI RD', 'writer'),
+(15, 'Bhavya Haria', '9619305482', 'bhavyaharia100@gmail.com', 'address', 'writer');
 
 -- --------------------------------------------------------
 
@@ -315,7 +321,9 @@ INSERT INTO `newsletter` (`id`, `email`) VALUES
 (2, 'karan2000apatil@gmail.com'),
 (3, 'jayvora1499@gmail.com'),
 (4, 'kalpeshrane71@gmail.com'),
-(5, 'kaushik@test123.com');
+(5, 'kaushik@test123.com'),
+(6, 'kaushikgami1486138@gmail.com'),
+(7, 'kaushikgami14668@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -385,7 +393,8 @@ CREATE TABLE `typing` (
 --
 
 INSERT INTO `typing` (`user_id`, `type_id`, `file_name`, `title`, `desc`, `orientation`, `font`, `fontsize`, `fontcolor`, `pagesize`, `margins`, `submission_datetime`, `delivery_date`, `amount`, `soa_assigned`, `soa_written`, `soa_paid`, `soa_completed`) VALUES
-(8, 1, 'kaushik@test123.comExternal_ Chrome, NSS, and OpenSSL.pdf', 'erdfb', 'spidey maybe back', 'Landscape', 'alcja', '12', 'green', 'A4', 'Normal', '2020-05-23 12:04:25', '2020-06-01', 0, 0, 0, 0, 0);
+(8, 2, 'kaushik@test123.comExternal_ Chrome, NSS, and OpenSSL.pdf', 'erdfb', 'lggjgf', 'Potrait', 'alcja', '12', 'green', 'A4', 'Normal', '2020-05-25 15:25:58', '2020-06-01', 0, 0, 0, 0, 0),
+(8, 3, 'kaushik@test123.comIMG-20200520-WA0009.jpg', 'erdfb', 'kqfennac', 'Potrait', 'aasdsfds', '12', 'dac', 'A4', 'Normal', '2020-05-26 02:25:14', '2020-06-01', 0, 0, 0, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -437,8 +446,9 @@ CREATE TABLE `writer` (
 --
 
 INSERT INTO `writer` (`id`, `firstname`, `lastname`, `mobile`, `email`, `file`, `address`) VALUES
-(15, 'Bhavya', 'Haria', 9619305482, 'bhavyaharia100@gmail.com', 'bhavyaharia100@gmail.comSpeech.pdf', 'address'),
-(16, 'karan', 'patil', 8169157715, 'karan2000apatil@gmail.com', 'karan2000apatil@gmail.comWhatsApp Image 2020-05-13 at 15.44.29.jpeg', 'B/115,SURYAKUND CHS MAHAPURUSH MANDIR MARG\r\nMAZGAON');
+(18, 'kaushik', 'gami', 7977381017, 'kaushikgami14668@gmail.com', 'kaushikgami14668@gmail.comExternal_ Chrome, NSS, and OpenSSL.pdf', 'Mahavir Education Trust Chowk\r\nW.T Patil Marg'),
+(16, 'karan', 'patil', 8169157715, 'karan2000apatil@gmail.com', 'karan2000apatil@gmail.comWhatsApp Image 2020-05-13 at 15.44.29.jpeg', 'B/115,SURYAKUND CHS MAHAPURUSH MANDIR MARG\r\nMAZGAON'),
+(17, 'kaushik', 'gami', 7977381017, 'kaushikgami1486138@gmail.com', 'kaushikgami1486138@gmail.comExternal_ Chrome, NSS, and OpenSSL.pdf', 'Mahavir Education Trust Chowk\r\nW.T Patil Marg');
 
 --
 -- Indexes for dumped tables
@@ -548,13 +558,13 @@ ALTER TABLE `comments`
 -- AUTO_INCREMENT for table `contentwriter`
 --
 ALTER TABLE `contentwriter`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `contentwriting`
 --
 ALTER TABLE `contentwriting`
-  MODIFY `content_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `content_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `likes`
@@ -566,7 +576,7 @@ ALTER TABLE `likes`
 -- AUTO_INCREMENT for table `newsletter`
 --
 ALTER TABLE `newsletter`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `reply`
@@ -578,7 +588,7 @@ ALTER TABLE `reply`
 -- AUTO_INCREMENT for table `typing`
 --
 ALTER TABLE `typing`
-  MODIFY `type_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `type_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `users`
@@ -590,7 +600,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `writer`
 --
 ALTER TABLE `writer`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
