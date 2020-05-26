@@ -3,20 +3,21 @@
 <?php
 include_once "includes/connect.inc.php";
 include "navbar.php";
+?>
+
+    <br><br><br>
+<?php
 $url = "http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
 if (strpos($url, "error=seccess") !== false) {
-  echo '<div class="col-md-4 offset-md-4 col-sm-4 offset-sm-4 text-center alert alert-danger" role="alert">
+  echo '<br><br><div class="col-md-4 offset-md-4 col-sm-4 offset-sm-4 text-center alert alert-success" role="alert">
           Added successfully
         </div>';
 } elseif (strpos($url, "error=error") !== false) {
-  echo '<div class="col-md-4 offset-md-4 col-sm-4 offset-sm-4 text-center alert alert-success" role="alert">
+  echo '<br><br><div class="col-md-4 offset-md-4 col-sm-4 offset-sm-4 text-center alert alert-danger" role="alert">
           Could not add please try later
         </div>';
-} 
-?>
-
-    <!--crousal --->
-    <br><br><br><br>
+} ?>
+ <!--crousal --->
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
       <ol class="carousel-indicators">
         <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -244,7 +245,7 @@ if (strpos($url, "error=seccess") !== false) {
        
         <form class="form-wrapper cf" action="includes/newsletter.inc.php" method="POST">
         <div class="input-group">
-  <input type="email" class="form-control" placeholder="Subscribe with email..." aria-label="Subscribe with email..." aria-describedby="basic-addon2" name="email">
+  <input type="email" class="form-control" placeholder="Subscribe with email..." aria-label="Subscribe with email..." aria-describedby="basic-addon2" name="email" required>
   <div class="input-group-append">
     <button class="btn btn-outline-secondary" name="submit" value="submit" type="submit">Submit</button>
   </div>
