@@ -242,7 +242,7 @@ if (strpos($url, "error=seccess") !== false) {
             <h1 style="color:white" class="center">Subscribe to our newsletter</h1>
         </div>
        
-        <form class="form-wrapper cf" action="includes/newsletter.inc.php">
+        <form class="form-wrapper cf" action="includes/newsletter.inc.php" method="POST">
         <div class="input-group">
   <input type="email" class="form-control" placeholder="Subscribe with email..." aria-label="Subscribe with email..." aria-describedby="basic-addon2" name="email">
   <div class="input-group-append">
