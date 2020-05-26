@@ -136,16 +136,16 @@ include "navbar.php";
               </div>';
       } elseif (strpos($url, "signup=success")!== false) {
         // Wait for 5 seconds and then redirect user to index page
-        echo '<script>alert("You are registered as a Writer, we will be contacting you soon if you get selected...")</script>';
-        header("refresh:0;url=index.php");
+        // echo '<script>alert("You are registered as a Writer, we will be contacting you soon if you get selected...")</script>';
+        header("refresh:5;url=index.php");
         // exit();
-        // echo '<div class="col-md-4 offset-md-4 col-sm-4 offset-sm-4 container text-center alert alert-success">You are registered as a writer, we will be contacting you soon...</div>';
+        echo '<div class="col-md-4 offset-md-4 col-sm-4 offset-sm-4 container text-center alert alert-success">You are registered as a writer, we will be contacting you soon if you get selected...</div>';
       } elseif (strpos($url, "signup=csuccess")!== false) {
         // Wait for 5 seconds and then redirect user to index page
-        echo '<script>alert("You are registered as a Content writer, we will be contacting you soon if you get selected...")</script>';
-        header("refresh:0;url=index.php");
+        // echo '<script>alert("You are registered as a Content writer, we will be contacting you soon if you get selected...")</script>';
+        header("refresh:5;url=index.php");
         // exit();
-        // echo '<div class="col-md-4 offset-md-4 col-sm-4 offset-sm-4 container text-center alert alert-success">You are registered as a Content writer, we will be contacting you soon...</div>';
+        echo '<div class="col-md-4 offset-md-4 col-sm-4 offset-sm-4 container text-center alert alert-success">You are registered as a Content writer, we will be contacting you soon if you get selected...</div>';
       }
       //Focus on ip tag and add div container
 
