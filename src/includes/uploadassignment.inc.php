@@ -104,7 +104,7 @@ if (isset($_POST['submit1'])) {
                 unset($_SESSION['ink']);
                 unset($_SESSION['deliverydate']);
                 // Now redirect the user
-                header("Location: ../upload.php?signup=success");
+                header("Location: ../upload.php?signup=asuccess");
                 exit();
             // }else if(move_uploaded_file($_FILES['assignment']['tmp_name'], $ass)){
             //     header("Location: ../add_event.php?signup=profileupload");
