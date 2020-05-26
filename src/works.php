@@ -30,9 +30,9 @@
 
   
   <?php
-// include_once "includes/connect.inc.php";
-include "navbar.php";
-?>
+  // include_once "includes/connect.inc.php";
+  include "navbar.php";
+  ?>
 
 
   <div class="site-wrap"  id="home-section">
