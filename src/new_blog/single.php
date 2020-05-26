@@ -13,7 +13,7 @@ function createNewElement() {
 }
 </script>
  <?php
- include "../navbar.php";
+ include "navbar1.php";
  include_once "../includes/connect.inc.php";
  $id=$_GET['id'];
  $sql="SELECT * FROM blog WHERE id=$id";
@@ -265,5 +265,5 @@ break;
 
 
 <?php  
-   include "../footer.php";
+   include "footer1.php";
    ?>
