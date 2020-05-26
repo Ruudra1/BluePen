@@ -155,15 +155,15 @@ include "navbar.php";
               </div> -->
 
               <ul class="nav nav-tabs">
-                <li class="active"><a data-toggle="tab" href="#home">Hand-written</a></li>
-                <li><a data-toggle="tab" href="#menu1">Content Writing</a></li>
+                <li class="active"><a data-toggle="tab" href="#home">Hand</a></li>
+                <li><a data-toggle="tab" href="#menu1">Content</a></li>
                 <li><a data-toggle="tab" href="#menu2">Typing</a></li>
               </ul>
               
               <div class="tab-content">
                 <div id="home" class="tab-pane fade in active">
                   <br><br>
-                  <h3>Upload Assignments Here</h3>
+                  <h3>Upload Assignments To Be Hand Written Here</h3>
                   
                   <br><br>
                   
@@ -218,7 +218,7 @@ include "navbar.php";
                   
 
                   <br><br>
-                  <h3>Content Writing</h3>
+                  <h3>Content Writing Assignments Here</h3>
                   
                   <br><br>
                   
