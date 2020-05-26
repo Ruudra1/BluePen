@@ -92,7 +92,7 @@ include "navbar.php";
                   Co-Founder
                 </div>
               </div>
-              <blockquote>&ldquo;You a student pilled up with assignment!!&rdquo;</blockquote>
+              <blockquote>&ldquo;Stressed and tired thinking about the load of work&rdquo;</blockquote>
             </div>
           </div>
         </div>
@@ -114,7 +114,7 @@ include "navbar.php";
                 Chief Technology Officer
                 </div>
               </div>
-              <blockquote>&ldquo;The company that does the work at minimal charges&rdquo;</blockquote>
+              <blockquote>&ldquo;Where you find the answer to your thoughts of getting off the load of work&rdquo;</blockquote>
             </div>
           </div>
         </div>
@@ -138,7 +138,7 @@ include "navbar.php";
                 
                 </div>
               </div>
-              <blockquote>&ldquo;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus vitae ipsa asperiores inventore aperiam iure?&rdquo;</blockquote>
+              <blockquote>&ldquo;When you find , it doesn’t even dent your pocket and boom your work is done!&rdquo;</blockquote>
             </div>
           </div>
         </div>
@@ -189,11 +189,7 @@ include "navbar.php";
                   
                 </div>
               </div>
-              <blockquote>&ldquo;Yeah ,you read 
-                it correct projects
-                for over 300+ various 
-                topics and 100+
-                subjects&rdquo;</blockquote>
+              <blockquote>&ldquo;100+ topics and subjects to choose from. Let’s make it!!&rdquo;</blockquote>
             </div>
           </div>
         </div>
@@ -243,7 +239,7 @@ include "navbar.php";
                 
                 </div>
               </div>
-              <blockquote>&ldquo;lorem ipsum&rdquo;</blockquote>
+              <blockquote>&ldquo;Printing , editing and content alterations&rdquo;</blockquote>
             </div>
           </div>
         </div>

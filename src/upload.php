@@ -169,7 +169,8 @@ include "navbar.php";
                   
               
                   <div class="form-group">
-                  <label for="exampleFormControlSelect1">Ink Color</label>
+                  
+                  <label for="exampleFormControlSelect1">Note: Assignment will be written on A4 or A3 page as per availability<br>Ink Color</label>
                     <select class="form-control" value="'.$_SESSION['ink'].'" name="ink" id="exampleFormControlSelect1">
                                             <option>Choose an ink color</option>    
                                             <option <?php if($_SESSION['ink']=='Blue') echo 'selected';  ?>>Blue</option>
