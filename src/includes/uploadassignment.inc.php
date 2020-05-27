@@ -95,8 +95,8 @@ if (isset($_POST['submit1'])) {
             var_dump($totalPages);
             $amount = $totalPages*6;
             
-                $sql = "INSERT INTO `assignments` (`user_id`, `assign_name`, `ink_color`, `submission_datetime`, `delivery_date`, `amount`, `soa_assigned`, `soa_written`, `soa_paid`, `soa_completed`) 
-                        VALUES ('$u_id', '$ass','$ink', now() ,'$deliverydate', '$amount', '0', '0', '0', '0')";
+                $sql = "INSERT INTO `assignments` (`user_id`, `assign_name`, `ink_color`, `delivery_date`, `amount`, `soa_assigned`, `soa_written`, `soa_paid`, `soa_completed`) 
+                        VALUES ('$u_id', '$ass','$ink' ,'$deliverydate', '$amount', '0', '0', '0', '0')";
                         // SELECT SWITCHOFFSET(CAST(GETDATE() AS DATETIMEOFFSET), '+05:30')
                        
                 mysqli_query($conn, $sql) or die(mysqli_error($conn));
@@ -179,8 +179,8 @@ if (isset($_POST['submit2'])) {
                 // $datetime =  date('d-m-Y H:i:s');
                 
                 
-                    $sql = "INSERT INTO `contentwriting`(`user_id`, `content_title`, `word_count`, `content_desc`, `submission_datetime`, `delivery_date`, `amount`, `soa_assigned`, `soa_written`, `soa_paid`, `soa_completed`) 
-                                VALUES ('$u_id', '$title','$words','$message', now() ,'$deliverydate', '0', '0', '0', '0', '0')";
+                    $sql = "INSERT INTO `contentwriting`(`user_id`, `content_title`, `word_count`, `content_desc`, `delivery_date`, `amount`, `soa_assigned`, `soa_written`, `soa_paid`, `soa_completed`) 
+                                VALUES ('$u_id', '$title','$words','$message','$deliverydate', '0', '0', '0', '0', '0')";
                             // SELECT SWITCHOFFSET(CAST(GETDATE() AS DATETIMEOFFSET), '+05:30')
                            
                     mysqli_query($conn, $sql) or die(mysqli_error($conn));
@@ -300,8 +300,8 @@ if (isset($_POST['submit3'])) {
                 var_dump($totalPages);
                 $amount = $totalPages*6;
                 
-                    $sql = "INSERT INTO `typing`(`user_id`, `file_name`, `title`, `orientation`, `font`, `fontsize`, `fontcolor`, `pagesize`, `margins`, `submission_datetime`, `delivery_date`, `amount`, `soa_assigned`, `soa_written`, `soa_paid`, `soa_completed`)
-                                         VALUES ('$u_id' , '$ass' , '$title' , '$orientation' , '$font' , '$fontsize' , '$fontcolor' , '$pagesize' , '$margins' , now() , '$deliverydate' , '0' , '0' , '0' , '0' , '0' )";
+                    $sql = "INSERT INTO `typing`(`user_id`, `file_name`, `title`, `orientation`, `font`, `fontsize`, `fontcolor`, `pagesize`, `margins`, `delivery_date`, `amount`, `soa_assigned`, `soa_written`, `soa_paid`, `soa_completed`)
+                                         VALUES ('$u_id' , '$ass' , '$title' , '$orientation' , '$font' , '$fontsize' , '$fontcolor' , '$pagesize' , '$margins' , '$deliverydate' , '0' , '0' , '0' , '0' , '0' )";
                             // SELECT SWITCHOFFSET(CAST(GETDATE() AS DATETIMEOFFSET), '+05:30')
                            
                     mysqli_query($conn, $sql) or die(mysqli_error($conn));
