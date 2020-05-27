@@ -6,6 +6,11 @@ if (isset($_POST['submit']))
 
     #Treat user input as text and not as code
     $email = mysqli_real_escape_string($conn, $_POST['email']);
+    if(empty($email))
+    {
+        header("Location: ../index.php?error=error");
+        exit();
+    }
     $sql = "INSERT INTO `newsletter`(`email`) VALUES ('$email')";
     mysqli_query($conn, $sql) or die(mysqli_error($conn));
     header("Location: ../index.php?error=seccess");
@@ -15,9 +20,3 @@ else{
     header("Location: ../index.php?error=error");
     exit();
 }
-
-
-
-
-
-
