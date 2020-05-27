@@ -626,14 +626,34 @@ if(isset($_POST['submit'])) {
         </table>
       </body>
     </html>';
-
+$subject = "Password Recovery - BluePen";
 $body = $output; 
-$subject = "Password Recovery - bluepen.co.in";
-$headers = "Content-Type: text/html; charset=UTF-8\r\n";
-mail($to,$subject,$body,$headers);
+require '../class/class.phpmailer.php';
+		$mail = new PHPMailer;
+		$mail->IsSMTP();								//Sets Mailer to send message using SMTP
+		$mail->Host = 'smtp.gmail.com';		//Sets the SMTP hosts of your Email hosting, this for Godaddy
+		$mail->Port = '465';								//Sets the default SMTP server port
+		$mail->SMTPAuth = true;							//Sets SMTP authentication. Utilizes the Username and Password variables
+		$mail->Username = 'kaushiknathagami14@gmail.com';					//Sets SMTP username
+		$mail->Password = '9i2o7u2y3yk@';					//Sets SMTP password
+		$mail->SMTPSecure = 'ssl';							//Sets connection prefix. Options are "", "ssl" or "tls"
+		$mail->From = 'kaushiknathagami14@gmail.com';					//Sets the From email address for the message
+		$mail->FromName = 'BluePen';				//Sets the From name of the message
+		$mail->AddAddress($to, '');		//Adds a "To" address
+		// $mail->AddCC($_POST["email"], $_POST["name"]);	//Adds a "Cc" address
+		$mail->WordWrap = 50;							//Sets word wrapping on the body of the message to a given number of characters
+		$mail->IsHTML(true);							//Sets message type to HTML				
+		$mail->Subject = $subject;				//Sets the Subject of the message
+		$mail->Body = $body;				//An HTML or plain text message body
+		if($mail->Send())								//Send an Email. Return true on success or false on error
+		{
+
+// $headers = "Content-Type: text/html; charset=UTF-8\r\n";
+// mail($to,$subject,$body,$headers);
 header("Location: ../login.php?forget=link");
 exit();
     }
+}
 }
 else{
     header("Location: ../forget_password.php?forget=error");
