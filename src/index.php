@@ -1,5 +1,5 @@
 
-<link rel="icon" type="image/png" href="icons/favicon.ico"/>
+<link rel="icon" href="icons/favicon.ico"/>
 <?php
 include_once "includes/connect.inc.php";
 include "navbar.php";
@@ -21,28 +21,32 @@ if (strpos($url, "error=seccess") !== false) {
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
       <ol class="carousel-indicators">
         <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        <!-- <li data-target="#carouselExampleIndicators" data-slide-to="1"></li> -->
+        <!-- <li data-target="#carouselExampleIndicators" data-slide-to="2"></li> -->
       </ol>
       <div class="carousel-inner">
+
         <div class="carousel-item active">
-          <img class="d-block w-100" src="images/1.jpg" alt="First slide">
+          <img class="d-block w-100" src="images/BLUEPEN1.png" alt="First slide">
           <div class="carousel-caption  d-md-block">
             <!-- <h1>Sample Title</h1> -->
           </div>
         </div>
-        <div class="carousel-item">
+        
+        <!-- <div class="carousel-item">
           <img class="d-block w-100" src="images/1.jpg" alt="Second slide">
           <div class="carousel-caption  d-md-block">
-            <!-- <h1>Sample Title</h1> -->
+       
           </div>
         </div>
+        
         <div class="carousel-item">
           <img class="d-block w-100" src="images/1.jpg" alt="Third slide">
           <div class="carousel-caption  d-md-block">
             <h1>Sample Title</h1>
           </div>
-        </div>
+        </div>-->
+      
       </div>
       <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
