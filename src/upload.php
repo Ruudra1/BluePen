@@ -108,7 +108,7 @@ include "navbar.php";
         $amount = $row["amount"];
         // var_dump($amount);
         // $amount = "SELECT amount FROM assignments WHERE user_id=6 ORDER BY assign_id DESC LIMIT 1";
-         echo'<div class="col-md-4 offset-md-4 col-sm-4 offset-sm-4  container text-center alert alert-success">Assignment Submitted, <h3><b> The amount is  '.$amount.'</b></h3> You will be contacted Soon..</div>';
+         echo'<div class="col-md-4 offset-md-4 col-sm-4 offset-sm-4  container text-center alert alert-success">Assignment Submitted, <h3><b> The estimated amount is  '.$amount.'</b></h3> You will be contacted Soon..</div>';
       }elseif (strpos($url, "signup=success")!== false) {
         // Wait for 5 seconds and then redirect user to login page
         header("refresh:6; url=index.php");
