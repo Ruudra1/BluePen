@@ -90,9 +90,9 @@ if (isset($_POST['submit1'])) {
             // $datetime =  date('d-m-Y H:i:s');
             if (move_uploaded_file($_FILES['assignment']['tmp_name'], $signtarget)){
             $path = $signtarget;
-            var_dump($path);
+            // var_dump($path);
             $totalPages = countPages($path);
-            var_dump($totalPages);
+            // var_dump($totalPages);
             $amount = $totalPages*6;
             
                 $sql = "INSERT INTO `assignments` (`user_id`, `assign_name`, `ink_color`, `submission_datetime`, `delivery_date`, `amount`, `soa_assigned`, `soa_written`, `soa_paid`, `soa_completed`) 
@@ -319,7 +319,7 @@ if (isset($_POST['submit3'])) {
                     unset($_SESSION['deliverydate2']);
 
                     // Now redirect the user
-                    header("Location: ../upload.php?signup=success");
+                    header("Location: ../upload.php?signup=tsuccess");
                     exit();
                 // }else if(move_uploaded_file($_FILES['assignment']['tmp_name'], $ass)){
                 //     header("Location: ../add_event.php?signup=profileupload");

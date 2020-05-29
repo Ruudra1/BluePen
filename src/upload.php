@@ -106,20 +106,25 @@ include "navbar.php";
         $result= mysqli_query($conn, "SELECT * FROM assignments WHERE user_id=$id ORDER BY assign_id DESC LIMIT 1;");
         $row = mysqli_fetch_array($result);
         $amount = $row["amount"];
-        // var_dump($amount);
-        // $amount = "SELECT amount FROM assignments WHERE user_id=6 ORDER BY assign_id DESC LIMIT 1";
+        if($amount<6){
+          echo'<div class="col-md-4 offset-md-4 col-sm-4 offset-sm-4  container text-center alert alert-success">Assignment Submitted, You will be contacted Soon..</div>';
+        }
+else{
+        
          echo'<div class="col-md-4 offset-md-4 col-sm-4 offset-sm-4  container text-center alert alert-success">Assignment Submitted, <h3><b> The estimated amount is  '.$amount.'</b></h3> You will be contacted Soon..</div>';
-      } elseif (strpos($url, "signup=tsuccess")!== false) {
+      } }elseif (strpos($url, "signup=tsuccess")!== false) {
         // Wait for 5 seconds and then redirect user to login page
         header("refresh:6; url=index.php");
         $id = $_SESSION["id"];
         $result= mysqli_query($conn, "SELECT * FROM assignments WHERE user_id=$id ORDER BY assign_id DESC LIMIT 1;");
         $row = mysqli_fetch_array($result);
         $amount = $row["amount"];
-        // var_dump($amount);
-        // $amount = "SELECT amount FROM assignments WHERE user_id=6 ORDER BY assign_id DESC LIMIT 1";
+        if($amount<10){
+          echo'<div class="col-md-4 offset-md-4 col-sm-4 offset-sm-4  container text-center alert alert-success">Assignment Submitted, You will be contacted Soon..</div>';
+        }
+        else{
          echo'<div class="col-md-4 offset-md-4 col-sm-4 offset-sm-4  container text-center alert alert-success">Assignment Submitted, <h3><b> The estimated amount is  '.$amount.'</b></h3> You will be contacted Soon..</div>';
-      } elseif (strpos($url, "signup=success")!== false) {
+      } }elseif (strpos($url, "signup=success")!== false) {
         // Wait for 5 seconds and then redirect user to login page
         header("refresh:6; url=index.php");
          echo'<div class="col-md-4 offset-md-4 col-sm-4 offset-sm-4  container text-center alert alert-success">Assignment Submitted, You will be contacted Soon..</div>';
