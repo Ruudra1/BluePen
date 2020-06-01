@@ -22,7 +22,7 @@ if (isset($_POST['submit'])) {
     $sql = "SELECT * FROM users WHERE email='$email';";
     $result = mysqli_query($conn, $sql);
     $resultCheck = mysqli_num_rows($result);
-    var_dump($resultCheck);
+    // var_dump($resultCheck);
     $row = mysqli_fetch_assoc($result);
     $hashedPassCheck = password_verify($oldpass, $row['password']);
     

@@ -14,7 +14,7 @@ if (isset($_POST['submit1'])) {
     $date = DateTime::createFromFormat('Y-m-d', $deliverydate);
     $date_errors = DateTime::getLastErrors();
     
-    var_dump($ink);
+    // var_dump($ink);
 
     // Set up session variables so if error occurs user doesn't have to fill entire form
     $_SESSION['formFilled'] = true;
@@ -50,7 +50,7 @@ if (isset($_POST['submit1'])) {
     else if($FileType != 'pdf')
     {
         //Check if file is valid
-        var_dump($FileType);
+        // var_dump($FileType);
         header("Location: ../upload.php?signup=fileinvalid");
         exit();
     }
@@ -126,7 +126,7 @@ if (isset($_POST['submit2'])) {
         $date = DateTime::createFromFormat('Y-m-d', $deliverydate);
         $date_errors = DateTime::getLastErrors();
         
-    var_dump($message);
+    // var_dump($message);
         // Set up session variables so if error occurs user doesn't have to fill entire form
         $_SESSION['formFilled1'] = true;
         $_SESSION['title'] = $title;
@@ -215,7 +215,7 @@ if (isset($_POST['submit3'])) {
             $date = DateTime::createFromFormat('Y-m-d', $deliverydate);
             $date_errors = DateTime::getLastErrors();
             
-        var_dump($message);
+        // var_dump($message);
             // Set up session variables so if error occurs user doesn't have to fill entire form
             $_SESSION['formFilled2'] = true;
             $_SESSION['title1'] = $title;
@@ -295,9 +295,9 @@ if (isset($_POST['submit3'])) {
                 // $datetime =  date('d-m-Y H:i:s');
                 if (move_uploaded_file($_FILES['assignment1']['tmp_name'], $signtarget)){
                     $path = $signtarget;
-                var_dump($path);
+                // var_dump($path);
                 $totalPages = countPages($path);
-                var_dump($totalPages);
+                // var_dump($totalPages);
                 $amount = $totalPages*10;
                 
                     $sql = "INSERT INTO `typing`(`user_id`, `file_name`, `title`, `orientation`, `font`, `fontsize`, `fontcolor`, `pagesize`, `margins`, `submission_datetime`, `delivery_date`, `amount`, `soa_assigned`, `soa_written`, `soa_paid`, `soa_completed`)

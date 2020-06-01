@@ -5,7 +5,7 @@ date_default_timezone_set('Asia/Kolkata');
 
 // OS info and Browser info Start -->
 $info=php_uname();
-var_dump($info);
+//var_dump($info);
 
 function getBrowser() { 
   $u_agent = $_SERVER['HTTP_USER_AGENT'];
@@ -85,7 +85,7 @@ function getBrowser() {
 // now try it
 $ua=getBrowser();
 $yourbrowser= "Your browser: " . $ua['name'] . " " . $ua['version'];
-print_r($yourbrowser);
+//print_r($yourbrowser);
 
 // OS info and Browser info End <--
 
@@ -113,9 +113,9 @@ if(isset($_POST['submit'])) {
     // var_dump($et1);
     // var_dump($today);
     // var_dump($et);
-        var_dump($id);
+    // var_dump($id);
     $link = "../forget_password1.php?et=".$et1."&item=".urlencode(base64_encode($id));
-    var_dump($link);
+    //var_dump($link);
     $to = $email;
 
     $output='<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">

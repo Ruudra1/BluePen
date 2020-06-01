@@ -33,7 +33,7 @@ if (isset($_POST['submit']))
     $imgtype4 = strtolower(pathinfo($img4,PATHINFO_EXTENSION));
    
     $sql = "SELECT * FROM blog_writer WHERE name='$writer'";
-    var_dump($sql);
+    // var_dump($sql);
             $result = mysqli_query($conn, $sql);
             $row=mysqli_fetch_array($result);
             $a=$row['id'];
@@ -121,8 +121,8 @@ $error=0;
             }
 
             $date=date("Y-m-d");
-            var_dump ($date);
-            var_dump($maintarget);
+            // var_dump ($date);
+            // var_dump($maintarget);
             // Check if user doesn't already exist i.e. email is not in db
             
               // Insert the user in the db

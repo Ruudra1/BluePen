@@ -22,7 +22,7 @@ if (isset($_POST['submit1']))
     $_SESSION['contact'] = $contact;
 
     $FileType = strtolower(pathinfo($sample,PATHINFO_EXTENSION));
-    var_dump($FileType);
+    // var_dump($FileType);
     // $allowedExts = array("pdf");
     // var_dump($allowedExts);
     // $temp = explode(".", $_FILES["sample"]["name"]);

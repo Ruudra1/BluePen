@@ -23,7 +23,7 @@
         $sql = "UPDATE `contentwriting` SET `soa_completed` = 1 WHERE `content_id` =".$assign_id."";
         elseif ($u=='t')
         $sql = "UPDATE `typing` SET `soa_completed` = 1 WHERE `type_id` =".$assign_id."";
-        var_dump($sql);
+        // var_dump($sql);
         mysqli_query($conn, $sql) or die("We're Facing some issues");
         if($u=='h'){
           header("Location: ../viewjobs.php?aid=".$assign_id);
