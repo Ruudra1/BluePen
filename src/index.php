@@ -78,7 +78,7 @@ if (strpos($url, "error=seccess") !== false) {
                             <p>Age</p>
                         </div>
                         <div class="col-lg col-6 single-fact">
-                            <i class="fa fa-battery-quarter fa-4x" aria-hidden="true"></i>
+                            <i class="fa fa-frown-o fa-4x" aria-hidden="true"></i>
                             <h2 class="count" data-target="100">100</h2>
                             <p>Stress Level</p>
                         </div>
