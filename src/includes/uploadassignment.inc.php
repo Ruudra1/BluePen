@@ -247,15 +247,7 @@ if (isset($_POST['submit3'])) {
                 // Check if input characters are Valid i.e if they only contain a-z and A-Z
                 header("Location: ../upload.php?signup=invalid");
                 exit();
-            }else if(!preg_match("/^[a-zA-Z]*$/", $font)){
-                // Check if input characters are Valid i.e if they only contain a-z and A-Z
-                header("Location: ../upload.php?signup=invalid");
-                exit();
-            }else if(!preg_match("/^[a-zA-Z]*$/", $fontcolor)){
-                // Check if input characters are Valid i.e if they only contain a-z and A-Z
-                header("Location: ../upload.php?signup=invalid");
-                exit();
-            } else if ($date_errors['warning_count'] + $date_errors['error_count'] > 0) {
+            }else if ($date_errors['warning_count'] + $date_errors['error_count'] > 0) {
                 //Check if DOB is valid
                 header("Location: ../upload.php?signup=deliverydate");
                 exit();
