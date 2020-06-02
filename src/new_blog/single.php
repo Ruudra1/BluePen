@@ -60,12 +60,15 @@ function createNewElement() {
             $sql4="SELECT * FROM likes WHERE blog_id=$id";
  $result4 = mysqli_query($conn, $sql4);
  $row4=mysqli_fetch_array($result4);
-            
+            if($_SESSION['id']){
             ?>
             
-            <p><button> <i class="fa fa-thumbs-up fa-3x" aria-hidden="true"><a <?php echo 'href="../includes/like.inc.php?id='.$id.'">Like'.$row4['likes'].'</a></i></button></p>
+            <p><button class="btn btn-primary"> <i class="fa fa-thumbs-up fa-3x" aria-hidden="true"><a <?php echo 'href="../includes/like.inc.php?id='.$id.'"><font color="white">Like '.$row4['likes'].'</font></a></i></button></p>
             
-            ';
+            ';}
+            else{
+             echo' <h3> Login to like</h3>';
+            }
             // <p>Quibusdam autem, quas molestias recusandae aperiam molestiae modi qui ipsam vel. Placeat tenetur veritatis tempore quos impedit dicta, error autem, quae sint inventore ipsa quidem. Quo voluptate quisquam reiciendis, minus, animi minima eum officia doloremque repellat eos, odio doloribus cum.</p>
             // <p>Temporibus quo dolore veritatis doloribus delectus dolores perspiciatis recusandae ducimus, nisi quod, incidunt ut quaerat, magnam cupiditate. Aut, laboriosam magnam, nobis dolore fugiat impedit necessitatibus nisi cupiditate, quas repellat itaque molestias sit libero voluptas eveniet omnis illo ullam dolorem minima.</p>
             // <p>Porro amet accusantium libero fugit totam, deserunt ipsa, dolorem, vero expedita illo similique saepe nisi deleniti. Cumque, laboriosam, porro! Facilis voluptatem sequi nulla quidem, provident eius quos pariatur maxime sapiente illo nostrum quibusdam aliquid fugiat! Earum quod fuga id officia.</p>
