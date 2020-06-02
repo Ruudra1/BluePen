@@ -101,7 +101,7 @@ include "navbar.php";
               </div>';
       } elseif (strpos($url, "signup=asuccess")!== false) {
         // Wait for 5 seconds and then redirect user to login page
-        header("refresh:6; url=index.php");
+        header("refresh:6; url=upload.php");
         $id = $_SESSION["id"];
         $result= mysqli_query($conn, "SELECT * FROM assignments WHERE user_id=$id ORDER BY assign_id DESC LIMIT 1;");
         $row = mysqli_fetch_array($result);
@@ -114,7 +114,7 @@ else{
          echo'<div class="col-md-4 offset-md-4 col-sm-4 offset-sm-4  container text-center alert alert-success">Assignment Submitted, <h3><b> The estimated amount is  '.$amount.'</b></h3> You will be contacted Soon..</div>';
       } }elseif (strpos($url, "signup=tsuccess")!== false) {
         // Wait for 5 seconds and then redirect user to login page
-        header("refresh:6; url=index.php");
+        header("refresh:6; url=upload.php");
         $id = $_SESSION["id"];
         $result= mysqli_query($conn, "SELECT * FROM assignments WHERE user_id=$id ORDER BY assign_id DESC LIMIT 1;");
         $row = mysqli_fetch_array($result);
@@ -126,7 +126,7 @@ else{
          echo'<div class="col-md-4 offset-md-4 col-sm-4 offset-sm-4  container text-center alert alert-success">Assignment Submitted, <h3><b> The estimated amount is  '.$amount.'</b></h3> You will be contacted Soon..</div>';
       } }elseif (strpos($url, "signup=success")!== false) {
         // Wait for 5 seconds and then redirect user to login page
-        header("refresh:6; url=index.php");
+        header("refresh:6; url=upload.php");
          echo'<div class="col-md-4 offset-md-4 col-sm-4 offset-sm-4  container text-center alert alert-success">Assignment Submitted, You will be contacted Soon..</div>';
       } elseif (strpos($url, "signup=blocked")!== false) {
         echo '<div class="col-md-4 offset-md-4 col-sm-4 offset-sm-4 container text-center alert alert-danger lastname" role="alert">
@@ -143,35 +143,6 @@ else{
             
 
             <form class="p-5 bg-white" method="POST" enctype="multipart/form-data">
-
-              <!-- <div class="container">
-                
-          
-                <ul class="nav nav-pills">
-                  <li class="active"><a data-toggle="pill" href="#home">Writer</a></li>
-                  
-                  <li><a data-toggle="pill" href="#menu2">Content Writer</a></li>
-                 
-                </ul>
-                
-                <div class="tab-content">
-                 
-                  <div id="home" class="tab-pane fade in active">
-                    <h3>Writer</h3>
-                    <p>put seperate forms for assignment writer, typewriter, content writer<br> Put writer form here</p>
-
-
-                  </div>
-                 
-                 
-                  <div id="menu2" class="tab-pane fade">
-                    <h3>Content Writer</h3>
-                    <p>put seperate forms for assignment writer, typewriter, content writer<br> Put Content Writer form here</p>
-                  </div>
-                 
-                  
-                </div>
-              </div> -->
 
               <ul class="nav nav-tabs">
                 <li class="active"><a data-toggle="tab" href="#home">Hand</a></li>

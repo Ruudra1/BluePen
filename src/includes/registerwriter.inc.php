@@ -120,7 +120,7 @@ if (isset($_POST['submit1']))
                     unset($_SESSION['contact']);
                     
                     $sql1 = "INSERT INTO `newsletter`(`email`) VALUES ('$email')";
-    mysqli_query($conn, $sql1) or die(mysqli_error($conn));
+                    mysqli_query($conn, $sql1) or die(mysqli_error($conn));
 
                     header("Location: ../writer.php?signup=success");
                     exit();
@@ -209,7 +209,7 @@ elseif (isset($_POST['submit2']))
                     $sql = "INSERT INTO contentwriter (`firstname`, `lastname`, `mobile`, `email`, `address`, `genere`, `lang1`, `lang2`, `samples`) VALUES ('$firstname', '$lastname', '$contact', '$email', '$address', '$genere', '$pref1', '$pref2', '$message');";
                     mysqli_query($conn, $sql) or die(mysqli_error($conn));
                     $sql1 = "INSERT INTO `newsletter`(`email`) VALUES ('$email')";
-    mysqli_query($conn, $sql1) or die(mysqli_error($conn));
+                    mysqli_query($conn, $sql1) or die(mysqli_error($conn));
                     // Now redirect the user
                     $_SESSION['formFilled1'] = FALSE;
                     unset($_SESSION['firstname1']);

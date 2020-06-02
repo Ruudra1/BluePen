@@ -9,6 +9,7 @@ include "navbar.php";
 <?php
 $url = "http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
 if (strpos($url, "error=seccess") !== false) {
+  header("refresh:2; url=index.php");
   echo '<br><br><div class="col-md-4 offset-md-4 col-sm-4 offset-sm-4 text-center alert alert-success" role="alert">
           Added successfully
         </div>';
