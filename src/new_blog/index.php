@@ -101,7 +101,6 @@ echo '
       <div class="container">
         <div class="row mb-5">
           <div class="col-12">
-            <h2>Recent Posts</h2>
           </div>
         </div>
         <div class="row">';

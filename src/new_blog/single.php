@@ -187,7 +187,7 @@ echo '
                 <div class="bio-body">
                   <h2>'.$row1['name'].'</h2>
                   <p class="mb-4">'.$row1['des'].'</p>
-                  <p><a href="'.$row1['link'].'" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm rounded px-4 py-2">Read my bio</a></p>
+                  <p><a href="'.$row1['link'].'" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm rounded px-4 py-2">Visit my Instagram</a></p>
                  
                 </div>
               </div>
