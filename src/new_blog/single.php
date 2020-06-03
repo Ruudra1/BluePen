@@ -175,8 +175,8 @@ echo '
             <div class="sidebar-box search-form-wrap">
               <form action="#" class="search-form">
                 <div class="form-group">
-                  <span class="icon fa fa-search"></span>
-                  <input type="text" class="form-control" id="s" placeholder="Type a keyword and hit enter">
+                  
+                  
                 </div>
               </form>
             </div>
@@ -245,7 +245,7 @@ break;
             
             <a href="single.html" class="hentry img-2 v-height mb30 gradient" >
             <div ><img src="../blog/'.$row2['main'].'" style="width:100%;"></div>
-              <span class="post-category text-white bg-success">Nature</span>
+              
               <div class="text text-sm">
                 <h2>'.$row2['title'].'</h2>
                 <span>'.$row2['date'].'</span>
