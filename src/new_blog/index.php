@@ -77,12 +77,12 @@ echo '
                 <span class="d-inline-block mt-1">By <a href="#">'.$row1['name'].'</a></span>
                 <span>&nbsp;-&nbsp; '.$row['date'].'</span>
               </div>';
-              $sql6="SELECT LEFT(`des1`,50) AS j FROM blog WHERE id=".$row['id'];
-$result6 = mysqli_query($conn, $sql6);
-$row6=mysqli_fetch_array($result6);
+              $sql6="SELECT LEFT(`des1`,300) AS j FROM blog WHERE id=".$row['id'];
+              $result6 = mysqli_query($conn, $sql6);
+              $row6=mysqli_fetch_array($result6);
 
-echo'
-                <p>'.$row6['j'].'</p>
+                echo'
+                <p>'.$row6['j'].'...</p>
                 <p><a href="single.php?id='.$row['id'].'">Read More</a></p>
               </div>
             </div>
