@@ -42,20 +42,20 @@ function createNewElement() {
             <div class="row mb-5 mt-5">
               <div class="col-md-12 mb-4">
                 <img src="../blog/'.$row['img1'].'" alt="Image placeholder" class="img-fluid rounded">
-              </div>
-              <p>'.$row['des2'].'<p>
+              
+              <p>'.$row['des2'].'<p></div>
               <div class="col-md-12 mb-4">
                 <img src="../blog/'.$row['img2'].'" alt="Image placeholder" class="img-fluid rounded">
-              </div>
-              <p>'.$row['des3'].'<p>
+              
+              <p>'.$row['des3'].'<p></div>
               <div class="col-md-12 mb-4">
                 <img src="../blog/'.$row['img3'].'" alt="Image placeholder" class="img-fluid rounded">
-              </div>
-              <p>'.$row['des4'].'<p>
+              
+              <p>'.$row['des4'].'<p></div>
               <div class="col-md-12 mb-4">
                 <img src="../blog/'.$row['img4'].'" alt="Image placeholder" class="img-fluid rounded">
-              </div>
-              <p>'.$row['des5'].'<p>
+              
+              <p>'.$row['des5'].'<p></div>
             </div>';
             $sql4="SELECT * FROM likes WHERE blog_id=$id";
  $result4 = mysqli_query($conn, $sql4);
