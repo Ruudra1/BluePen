@@ -24,7 +24,7 @@ function createNewElement() {
  $result1 = mysqli_query($conn, $sql1);
  $row1=mysqli_fetch_array($result1);
     // var_dump($row);
-    
+    echo'<br><br><br><br><br>';
     echo '<div class="site-cover site-cover-sm same-height overlay single-page" >
     <div ><img src="../blog/'.$row['main'].'" style="width:100%;"></div>   
     
