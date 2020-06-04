@@ -22,31 +22,40 @@ if (strpos($url, "error=seccess") !== false) {
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
       <ol class="carousel-indicators">
         <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-        <!-- <li data-target="#carouselExampleIndicators" data-slide-to="1"></li> -->
-        <!-- <li data-target="#carouselExampleIndicators" data-slide-to="2"></li> -->
+        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+         <li data-target="#carouselExampleIndicators" data-slide-to="2"></li> 
+         <li data-target="#carouselExampleIndicators" data-slide-to="3"></li> 
       </ol>
       <div class="carousel-inner">
 
         <div class="carousel-item active">
-          <img class="d-block w-100" src="images/BLUEPEN1.png" alt="First slide">
+          <img class="d-block w-100" src="images/0.png" alt="First slide">
           <div class="carousel-caption  d-md-block">
             <!-- <h1>Sample Title</h1> -->
           </div>
         </div>
         
-        <!-- <div class="carousel-item">
-          <img class="d-block w-100" src="images/1.jpg" alt="Second slide">
+        
+         <div class="carousel-item">
+          <img class="d-block w-100" src="images/1.png" alt="Second slide">
           <div class="carousel-caption  d-md-block">
        
           </div>
         </div>
         
         <div class="carousel-item">
-          <img class="d-block w-100" src="images/1.jpg" alt="Third slide">
+          <img class="d-block w-100" src="images/2.png" alt="Third slide">
           <div class="carousel-caption  d-md-block">
-            <h1>Sample Title</h1>
+            
           </div>
-        </div>-->
+        </div>
+
+        <div class="carousel-item">
+          <img class="d-block w-100" src="images/3.png" alt="Third slide">
+          <div class="carousel-caption  d-md-block">
+            
+          </div>
+        </div>
       
       </div>
       <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -62,7 +71,7 @@ if (strpos($url, "error=seccess") !== false) {
   
  
   <--counters start-->
-  <br><br><br>
+  
         <section class="fact-area">
             <div class="container">
                 <div class="row mb-5 justify-content-center text-center" data-aos="fade-up">
