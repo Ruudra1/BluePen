@@ -56,7 +56,7 @@ echo '
         </div>
         <div class="row">';
         while($row=mysqli_fetch_array($result)){
-
+// var_dump($row['des1']);
           $sql1="SELECT * FROM blog_writer WHERE id=".$row['w_id'];
           $result1 = mysqli_query($conn, $sql1);
           $row1=mysqli_fetch_array($result1);
@@ -76,9 +76,13 @@ echo '
                 <figure class="author-figure mb-0 mr-3 float-left"><img src="../blogwriter/'.$row1['img'].'" alt="Image" class="img-fluid"></figure>
                 <span class="d-inline-block mt-1">By <a href="#">'.$row1['name'].'</a></span>
                 <span>&nbsp;-&nbsp; '.$row['date'].'</span>
-              </div>
-              
-                <p>'.$row['des1'].'</p>
+              </div>';
+              $sql6="SELECT LEFT(`des1`,50) AS j FROM blog WHERE id=".$row['id'];
+$result6 = mysqli_query($conn, $sql6);
+$row6=mysqli_fetch_array($result6);
+
+echo'
+                <p>'.$row6['j'].'</p>
                 <p><a href="single.php?id='.$row['id'].'">Read More</a></p>
               </div>
             </div>
