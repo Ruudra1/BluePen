@@ -95,7 +95,7 @@ if (strpos($url, "error=seccess") !== false) {
                         <div class="col-lg col-6 single-fact">
                             <i class="fa fa-clock-o fa-4x" aria-hidden="true"></i>
                             <h2 class="count" data-target="8750">8750</h2>
-                            <p>Hours Per Day</p>
+                            <p>Hours Per Year</p>
                         </div>
                         <div class="col-lg col-6 single-fact">
                             <i class="fa fa-pencil fa-4x" aria-hidden="true"></i>
