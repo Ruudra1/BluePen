@@ -9,6 +9,19 @@ $result = mysqli_query($conn, $sql);
 <!DOCTYPE html>
 <html lang="en">
   <head>
+
+  <!-- Google Tag Manager -->
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-164646889-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-164646889-1');
+</script>
+<!-- End Google Tag Manager -->
+
     <title>BluePen-Blogs</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
