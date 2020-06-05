@@ -418,7 +418,7 @@ else{
                 <div class="form-group">
                   <label for="exampleInputFile">Upload file</label>
                   <input name="assignment1" type="file" class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp">
-                  <small id="fileHelp" class="form-text text-muted">sample text
+                  <small id="fileHelp" class="form-text text-muted">In PDF Format Only
 
                   </small>
                 </div>

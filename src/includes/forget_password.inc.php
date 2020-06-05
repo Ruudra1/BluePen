@@ -5,7 +5,7 @@ date_default_timezone_set('Asia/Kolkata');
 
 // OS info and Browser info Start -->
 $info=php_uname();
-//var_dump($info);
+var_dump($info);
 
 function getBrowser() { 
   $u_agent = $_SERVER['HTTP_USER_AGENT'];
@@ -85,7 +85,7 @@ function getBrowser() {
 // now try it
 $ua=getBrowser();
 $yourbrowser= "Your browser: " . $ua['name'] . " " . $ua['version'];
-//print_r($yourbrowser);
+print_r($yourbrowser);
 
 // OS info and Browser info End <--
 
@@ -113,9 +113,9 @@ if(isset($_POST['submit'])) {
     // var_dump($et1);
     // var_dump($today);
     // var_dump($et);
-    // var_dump($id);
-    $link = "../forget_password1.php?et=".$et1."&item=".urlencode(base64_encode($id));
-    //var_dump($link);
+        var_dump($id);
+    $link = "localhost/bluepen/src/forget_password1.php?et=".$et1."&item=".urlencode(base64_encode($id));
+    var_dump($link);
     $to = $email;
 
     $output='<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -559,7 +559,7 @@ if(isset($_POST['submit'])) {
               <table class="email-content" width="100%" cellpadding="0" cellspacing="0" role="presentation">
                 <tr>
                   <td class="email-masthead">
-                    <a href="../bluepen/src/" class="f-fallback email-masthead_name">
+                    <a href="http://localhost/bluepen/src/" class="f-fallback email-masthead_name">
                     <img src="http://bluepen.co.in/img/bluepen.png" alt="img" title="" style="width:145px; height:auto"/>
                   </a>
                   </td>
@@ -590,7 +590,7 @@ if(isset($_POST['submit'])) {
                                 </td>
                               </tr>
                             </table>
-                            <p>For security, this request was received from a '.$info.' device using '. $ua['name'] . " " . $ua['version'].'. If you did not request a password reset, please ignore this email or <a href="../contactus.php">contact support</a> if you have questions.</p>
+                            <p>For security, this request was received from a '.$info.' device using '. $ua['name'] . " " . $ua['version'].'. If you did not request a password reset, please ignore this email or <a href="http://localhost/bluepen/src/contactus.php">contact support</a> if you have questions.</p>
                             <p>Thanks,
                               <br>The Blue Pen Team</p>
                             <!-- Sub copy -->
@@ -598,7 +598,7 @@ if(isset($_POST['submit'])) {
                               <tr>
                                 <td>
                                   <p class="f-fallback sub">If you’re having trouble with the button above, copy and paste the URL below into your web browser.</p>
-                                  <p class="f-fallback sub">../contactus.php</p>
+                                  <p class="f-fallback sub">http://localhost/bluepen/src/contactus.php</p>
                                 </td>
                               </tr>
                             </table>
@@ -634,9 +634,10 @@ require '../class/class.phpmailer.php';
 		$mail->Host = 'smtp.gmail.com';		//Sets the SMTP hosts of your Email hosting, this for Godaddy
 		$mail->Port = '465';								//Sets the default SMTP server port
 		$mail->SMTPAuth = true;							//Sets SMTP authentication. Utilizes the Username and Password variables
-		$mail->Username = 'bluepenassign@gmail.com';					//Sets SMTP username
-		$mail->Password = 'marshmallow_111';					//Sets SMTP password
-		$mail->SMTPSecure = 'ssl';							//Sets connection prefix. Options are "", "ssl" or "tls"
+		$mail->Username = 'kaushiknathagami14@gmail.com';					//Sets SMTP username
+		$mail->Password = '9i2o7u2y3yk@';					//Sets SMTP password
+		$mail->SMTPSecure = 'ssl';
+        $mail->SMTPDebug = 1;							//Sets connection prefix. Options are "", "ssl" or "tls"
 		// $mail->From = 'kaushiknathagami14@gmail.com';					//Sets the From email address for the message
 		$mail->FromName = 'BluePen';				//Sets the From name of the message
 		$mail->AddAddress($to, '');		//Adds a "To" address
