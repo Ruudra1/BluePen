@@ -162,7 +162,7 @@
               </div>
               <blockquote>&ldquo;Hand Writen Assignments,   Typed Assignments,&rdquo;</blockquote>
               <blockquote>&ldquo;Content Writing,    PPT making,&rdquo;</blockquote>
-              <blockquote>&ldquo;Translation   & Blackbook&rdquo;</blockquote>
+              <blockquote>&ldquo;Translation   & Blackbook Solutions&rdquo;</blockquote>
             </div>
           </div>
         </div>
