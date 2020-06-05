@@ -82,7 +82,7 @@ function createNewElement() {
             
             ';}
             else{
-             echo' <h3> Login to like</h3>';
+             echo' <a href="../login.php"><h3> Login to like</h3></a>';
             }
             $sql3="SELECT * FROM comments WHERE blog_id=".$id;
            $result3 = mysqli_query($conn, $sql3);
@@ -153,7 +153,7 @@ echo '
                    echo' <input type="submit" value="submit" name="submit" class="btn btn-primary">
                   ';}
                   else{
-                    echo "Login to comment";
+                    echo "<a href='../login.php'>Login to comment</a>";
                   }
                   echo'
                   </div>
