@@ -122,7 +122,7 @@
               </div>
               <input type="submit" name="submit" value="Login" class="btn btn-primary mr-2 mb-2">
               <br><a class="mr-2 mb-2" href="signup.php">Not a member? SignUp</a>
-              <br><a class="mr-2 mb-2" href="forget_password.php">Forget password ?</a>
+              
             </form>
           </div>
         
