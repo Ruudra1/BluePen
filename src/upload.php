@@ -174,7 +174,7 @@ else{
                   <div class="col-12">
                     <?php
                               // error_reporting(0);
-                              $accdate = Date('Y-m-d', strtotime('+3 days'));
+                              $accdate = Date('Y-m-d', strtotime('+2 days'));
                               $subdate = Date('Y-m-d', strtotime('+12 days'));
                               // var_dump($accdate);
                               // var_dump($subdate);
@@ -252,7 +252,7 @@ else{
                   <div class="col-12">
                   <?php
                               // error_reporting(0);
-                              $accdate = Date('Y-m-d', strtotime('+3 days'));
+                              $accdate = Date('Y-m-d', strtotime('+2 days'));
                               $subdate = Date('Y-m-d', strtotime('+12 days'));
                               // var_dump($accdate);
                               // var_dump($subdate);
