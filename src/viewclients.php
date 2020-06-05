@@ -131,13 +131,23 @@ if(isset($_SESSION['privilege'])) {
                     <li><a href="viewtyping.php" class="nav-link">Typing job</a></li>
                   </ul>
                 </li>
+
                 <li class="has-children">
                   <a href="" class="nav-link">View Writers</a>
                   <ul class="dropdown arrow-top">
                     <li><a href="viewwriters.php" target="_blank" class="nav-link">Writer</a></li>
                     <li><a href="viewcontentwriter.php" class="nav-link">Content writer</a></li>
-                    <li><a href="#" class="nav-link">Type writer</a></li>
+                    <!-- <li><a href="#" class="nav-link">Type writer</a></li> -->
                   </ul>
+            
+                  <li class="has-children">
+                  <a href="" class="nav-link">Dump</a>
+                  <ul class="dropdown arrow-top">
+                    <li><a href="dump_jobs.php" class="nav-link">Dump Jobs</a></li>
+                    <li><a href="dump_writer.php" class="nav-link">Dump writer</a></li>
+                  </ul>
+                </li>
+                
             </nav>
           </div>
 
