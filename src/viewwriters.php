@@ -140,7 +140,7 @@
                   <ul class="dropdown arrow-top">
                     <li><a href="viewwriters.php" class="nav-link">Writer</a></li>
                     <li><a href="viewcontentwriter.php" class="nav-link">Content writer</a></li>
-                    <li><a href="#" class="nav-link">Type writer</a></li>
+                    <!-- <li><a href="#" class="nav-link">Type writer</a></li> -->
                   </ul>
                 </li>
                 <li class="has-children">

@@ -160,7 +160,9 @@
                 
                 </div>
               </div>
-              <blockquote>&ldquo;Hand Writen Assignments  & <br> Typed Assignments&rdquo;</blockquote>
+              <blockquote>&ldquo;Hand Writen Assignments,   Typed Assignments,&rdquo;</blockquote>
+              <blockquote>&ldquo;Content Writing,    PPT making,&rdquo;</blockquote>
+              <blockquote>&ldquo;Translation   & Blackbook&rdquo;</blockquote>
             </div>
           </div>
         </div>

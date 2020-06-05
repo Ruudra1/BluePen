@@ -8,13 +8,17 @@ include "navbar.php";
     <br><br><br>
 <?php
 $url = "http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
-if (strpos($url, "error=seccess") !== false) {
+if (strpos($url, "error=success") !== false) {
   header("refresh:2; url=index.php");
-  echo '<br><br><div class="col-md-4 offset-md-4 col-sm-4 offset-sm-4 text-center alert alert-success" role="alert">
+  echo '<script> setTimeout(function() { window.location = "index.php"; }, 5000); </script>
+  <br><br><div class="col-md-4 offset-md-4 col-sm-4 offset-sm-4 text-center alert alert-success" role="alert">
           Added successfully
-        </div>';
+        </div>
+        <div></div>';
+        
 } elseif (strpos($url, "error=error") !== false) {
-  echo '<br><br><div class="col-md-4 offset-md-4 col-sm-4 offset-sm-4 text-center alert alert-danger" role="alert">
+  echo '<script> setTimeout(function() { window.location = "index.php"; }, 5000); </script>
+  <br><br><div class="col-md-4 offset-md-4 col-sm-4 offset-sm-4 text-center alert alert-danger" role="alert">
           Could not add please try later
         </div>';
 } ?>
@@ -297,6 +301,15 @@ if (strpos($url, "error=seccess") !== false) {
                                     services are very prompt and they charge reasonably which is the best part. Writing
                                     material has always been very neat and tidy which has helped me score good grades
                                     whilst focusing on my other commitments. Way to go you guys!</p>
+                                    <div class="star-rating">
+                                          <ul class="list-inline">
+                                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                            <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+                                          </ul>
+                                  </div>
                                 <p class="overview"><b>Parth Gite</b>, Mumbai</p>
                             </div>
                             <div class="item carousel-item">
@@ -306,6 +319,15 @@ if (strpos($url, "error=seccess") !== false) {
                                 <p>I had recently used bluepen,it made my work very easy.I just had to share my content
                                     to be written and it was done. Bluepen had completed the work within the given
                                     dates.</p>
+                                    <div class="star-rating">
+                                          <ul class="list-inline">
+                                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                            <li class="list-inline-item"><i class="fa fa-star-half"></i></li>
+                                          </ul>
+                                  </div>
                                 <p class="overview"><b>Jash Shah</b>, Mumbai</p>
                             </div>
                             <div class="item carousel-item">
@@ -321,6 +343,15 @@ if (strpos($url, "error=seccess") !== false) {
                                     and i got in time so no further delay .......✌
                                     ✌✌ A big hand for BluePen and Whole Team.....
                                     And many more things are coming soon stay updated .....</p>
+                                    <div class="star-rating">
+                                          <ul class="list-inline">
+                                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                            <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+                                          </ul>
+                                  </div>
                                 <p class="overview"><b>Vinod Muleva</b>, Mumbai</p>
                             </div>
                             <div class="item carousel-item ">
@@ -334,7 +365,17 @@ if (strpos($url, "error=seccess") !== false) {
 
                                     I’d recommend bluepen to everyone who’s struggling with their assignments and work.
                                     Helped a lot for me.</p>
+                                    <div class="star-rating">
+                                          <ul class="list-inline">
+                                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                            <li class="list-inline-item"><i class="fa fa-star-half"></i></li>
+                                          </ul>
+                                  </div>
                                 <p class="overview"><b>Avdhut Zolekar</b>, Mumbai</p>
+
                             </div>
                             <div class="item carousel-item ">
                                 <div class="img-box"><img src="images/Jay Shukla.jpeg" alt=""></div>
@@ -345,6 +386,15 @@ if (strpos($url, "error=seccess") !== false) {
                                     Cost efficiency: Completely reasonable price and quite cheaper as compared to the
                                     other service providers
                                 </p>
+                                <div class="star-rating">
+                                          <ul class="list-inline">
+                                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                            <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+                                          </ul>
+                                  </div>
                                 <p class="overview"><b>Jay Shukla</b>, Mumbai</p>
                             </div>
                             <!--div class="item carousel-item ">
