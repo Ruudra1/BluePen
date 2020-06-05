@@ -107,7 +107,9 @@ include "navbar.php";
         $row = mysqli_fetch_array($result);
         $amount = $row["amount"];
         if($amount<6){
-          echo'<div class="col-md-4 offset-md-4 col-sm-4 offset-sm-4  container text-center alert alert-success">Assignment Submitted, You will be contacted Soon..</div>';
+          echo'
+          <script> setTimeout(function() { window.location = "upload.php"; }, 5000); </script>
+          <div class="col-md-4 offset-md-4 col-sm-4 offset-sm-4  container text-center alert alert-success">Assignment Submitted, You will be contacted Soon..</div>';
         }
 else{
         
@@ -120,7 +122,9 @@ else{
         $row = mysqli_fetch_array($result);
         $amount = $row["amount"];
         if($amount<10){
-          echo'<div class="col-md-4 offset-md-4 col-sm-4 offset-sm-4  container text-center alert alert-success">Assignment Submitted, You will be contacted Soon..</div>';
+          echo'
+          <script> setTimeout(function() { window.location = "upload.php"; }, 5000); </script>
+          <div class="col-md-4 offset-md-4 col-sm-4 offset-sm-4  container text-center alert alert-success">Assignment Submitted, You will be contacted Soon..</div>';
         }
         else{
          echo'<div class="col-md-4 offset-md-4 col-sm-4 offset-sm-4  container text-center alert alert-success">Assignment Submitted, <h3><b> The estimated amount is  '.$amount.'</b></h3> You will be contacted Soon..</div>';
@@ -131,7 +135,9 @@ else{
         $row = mysqli_fetch_array($result);
         $amount = $row["amount"];
         header("refresh:6; url=upload.php");
-        echo'<div class="col-md-4 offset-md-4 col-sm-4 offset-sm-4  container text-center alert alert-success">Assignment Submitted, <h3><b> The estimated amount is  '.$amount.'</b></h3> You will be contacted Soon..</div>';      } elseif (strpos($url, "signup=blocked")!== false) {
+        echo'
+        <script> setTimeout(function() { window.location = "upload.php"; }, 5000); </script>
+        <div class="col-md-4 offset-md-4 col-sm-4 offset-sm-4  container text-center alert alert-success">Assignment Submitted, <h3><b> The estimated amount is  '.$amount.'</b></h3> You will be contacted Soon..</div>';      } elseif (strpos($url, "signup=blocked")!== false) {
         echo '<div class="col-md-4 offset-md-4 col-sm-4 offset-sm-4 container text-center alert alert-danger lastname" role="alert">
                 User is Blocked, Please Contact Us
               </div>';
