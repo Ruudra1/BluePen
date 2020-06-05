@@ -8,13 +8,17 @@ include "navbar.php";
     <br><br><br>
 <?php
 $url = "http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
-if (strpos($url, "error=seccess") !== false) {
+if (strpos($url, "error=success") !== false) {
   header("refresh:2; url=index.php");
-  echo '<br><br><div class="col-md-4 offset-md-4 col-sm-4 offset-sm-4 text-center alert alert-success" role="alert">
+  echo '<script> setTimeout(function() { window.location = "index.php"; }, 5000); </script>
+  <br><br><div class="col-md-4 offset-md-4 col-sm-4 offset-sm-4 text-center alert alert-success" role="alert">
           Added successfully
-        </div>';
+        </div>
+        <div></div>';
+        
 } elseif (strpos($url, "error=error") !== false) {
-  echo '<br><br><div class="col-md-4 offset-md-4 col-sm-4 offset-sm-4 text-center alert alert-danger" role="alert">
+  echo '<script> setTimeout(function() { window.location = "index.php"; }, 5000); </script>
+  <br><br><div class="col-md-4 offset-md-4 col-sm-4 offset-sm-4 text-center alert alert-danger" role="alert">
           Could not add please try later
         </div>';
 } ?>

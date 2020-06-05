@@ -79,8 +79,9 @@ include "navbar.php";
                 </div>';
       } elseif (strpos($url, "changepassword=success")!== false) {
         // Wait for 5 seconds and then redirect user to login page
-        header("refresh:3; url=index.php");
-        echo '<div class="col-md-4 offset-md-4 col-sm-4 offset-sm-4 text-center alert alert-success">Password changed Succesfully</div>';
+        
+        echo '<script> setTimeout(function() { window.location = "upload.php"; }, 5000); </script>
+        <div class="col-md-4 offset-md-4 col-sm-4 offset-sm-4 text-center alert alert-success">Password changed Succesfully</div>';
       }
       //Focus on ip tag and add div container
        
