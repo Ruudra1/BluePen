@@ -116,7 +116,7 @@ else{
         // Wait for 5 seconds and then redirect user to login page
         header("refresh:6; url=upload.php");
         $id = $_SESSION["id"];
-        $result= mysqli_query($conn, "SELECT * FROM assignments WHERE user_id=$id ORDER BY assign_id DESC LIMIT 1;");
+        $result= mysqli_query($conn, "SELECT * FROM typing WHERE user_id=$id ORDER BY type_id DESC LIMIT 1;");
         $row = mysqli_fetch_array($result);
         $amount = $row["amount"];
         if($amount<10){
@@ -126,9 +126,12 @@ else{
          echo'<div class="col-md-4 offset-md-4 col-sm-4 offset-sm-4  container text-center alert alert-success">Assignment Submitted, <h3><b> The estimated amount is  '.$amount.'</b></h3> You will be contacted Soon..</div>';
       } }elseif (strpos($url, "signup=success")!== false) {
         // Wait for 5 seconds and then redirect user to login page
+        $id = $_SESSION["id"];
+        $result= mysqli_query($conn, "SELECT * FROM contentwriting WHERE user_id=$id ORDER BY content_id DESC LIMIT 1;");
+        $row = mysqli_fetch_array($result);
+        $amount = $row["amount"];
         header("refresh:6; url=upload.php");
-         echo'<div class="col-md-4 offset-md-4 col-sm-4 offset-sm-4  container text-center alert alert-success">Assignment Submitted, You will be contacted Soon..</div>';
-      } elseif (strpos($url, "signup=blocked")!== false) {
+        echo'<div class="col-md-4 offset-md-4 col-sm-4 offset-sm-4  container text-center alert alert-success">Assignment Submitted, <h3><b> The estimated amount is  '.$amount.'</b></h3> You will be contacted Soon..</div>';      } elseif (strpos($url, "signup=blocked")!== false) {
         echo '<div class="col-md-4 offset-md-4 col-sm-4 offset-sm-4 container text-center alert alert-danger lastname" role="alert">
                 User is Blocked, Please Contact Us
               </div>';
@@ -174,7 +177,7 @@ else{
                   <div class="col-12">
                     <?php
                               // error_reporting(0);
-                              $accdate = Date('Y-m-d', strtotime('+2 days'));
+                              $accdate = Date('Y-m-d', strtotime('+1 days'));
                               $subdate = Date('Y-m-d', strtotime('+12 days'));
                               // var_dump($accdate);
                               // var_dump($subdate);
@@ -196,6 +199,7 @@ else{
       
                     <div class="row form-group">
                       <div class="col-md-12">
+                      <?php $_SESSION['assignment']= 'hand'; ?>
                         <input type="submit" name="submit1" formaction="includes/uploadassignment.inc.php" value="Submit" class="btn btn-primary mr-2 mb-2" value="send">
                       </div>
                     </div>
@@ -252,7 +256,7 @@ else{
                   <div class="col-12">
                   <?php
                               // error_reporting(0);
-                              $accdate = Date('Y-m-d', strtotime('+2 days'));
+                              $accdate = Date('Y-m-d', strtotime('+3 days'));
                               $subdate = Date('Y-m-d', strtotime('+12 days'));
                               // var_dump($accdate);
                               // var_dump($subdate);
@@ -266,6 +270,7 @@ else{
 
                     <div class="row form-group">
                       <div class="col-md-12">
+                      <?php $_SESSION['assignment']= 'content'; ?>
                         <input type="submit" name="submit2" formaction="includes/uploadassignment.inc.php"  value="Submit" class="btn btn-primary mr-2 mb-2" value="Submit">
                       </div>
                     </div>
@@ -390,7 +395,10 @@ else{
                 <div class="form-group row"> 
                   <div class="col-12">
 
-                 <?php if(isset($_SESSION['formFilled1']))
+                 <?php
+                 $accdate = Date('Y-m-d', strtotime('+1 days'));
+                 $subdate = Date('Y-m-d', strtotime('+12 days'));
+                 if(isset($_SESSION['formFilled1']))
                                 echo'<input type="date" min = "'.$accdate.'" max = "'.$subdate.'" name="deliverydate2" class="form-control" value="'.$_SESSION['deliverydate1'].'" placeholder="Delivery Date"/>';
                               else
                                 echo'<input type="date" min = "'.$accdate.'" max = "'.$subdate.'" name="deliverydate2" class="form-control" placeholder="Delivey Date"/>';
@@ -408,6 +416,7 @@ else{
 
                     <div class="row form-group">
                       <div class="col-md-12">
+                      <?php $_SESSION['assignment']= 'typing'; ?>
                         <input type="submit" name="submit3" value="Submit" formaction="includes/uploadassignment.inc.php" class="btn btn-primary mr-2 mb-2" value="Submit">
                       </div>
                     </div>

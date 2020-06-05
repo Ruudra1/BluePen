@@ -3,6 +3,14 @@
 session_start();
 include_once 'connect.inc.php';
 // error_reporting(0);
+date_default_timezone_set('Asia/Kolkata');
+$today = date("n/j/Y");
+    $et= date("n/j/Y",strtotime('+24 hour',strtotime($today)));
+    $et1=strtotime($et);
+    $eta= date("n/j/Y",strtotime('+48 hour',strtotime($today)));
+    $eta1= strtotime($eta);
+    $etb= date("n/j/Y",strtotime('+72 hour',strtotime($today)));
+    $etb1= strtotime($etb);
 
 if (isset($_POST['submit1'])) {
 
@@ -13,7 +21,7 @@ if (isset($_POST['submit1'])) {
     $assignment=mysqli_real_escape_string($conn, $_FILES['assignment']['name']);
     $date = DateTime::createFromFormat('Y-m-d', $deliverydate);
     $date_errors = DateTime::getLastErrors();
-    
+    $dateofdelivery= strtotime($deliverydate);
     // var_dump($ink);
 
     // Set up session variables so if error occurs user doesn't have to fill entire form
@@ -93,6 +101,11 @@ if (isset($_POST['submit1'])) {
             // var_dump($path);
             $totalPages = countPages($path);
             // var_dump($totalPages);
+            if($dateofdelivery==$et1 )
+            $amount = $totalPages*8;
+            if($dateofdelivery==$eta1)
+            $amount = $totalPages*7;
+            if($dateofdelivery>=$etb1)
             $amount = $totalPages*6;
             
                 $sql = "INSERT INTO `assignments` (`user_id`, `assign_name`, `ink_color`, `submission_datetime`, `delivery_date`, `amount`, `soa_assigned`, `soa_written`, `soa_paid`, `soa_completed`) 
@@ -135,7 +148,14 @@ if (isset($_POST['submit2'])) {
         $_SESSION['words'] = $words;
     
     
-        
+        if($_SESSION['words']=='400 words')
+        $amt='300';
+        if($_SESSION['words']=='400-600 words')
+        $amt='400';
+        if($_SESSION['words']=='600-800 words')
+        $amt='500';
+        if($_SESSION['words']=='800-1200 words')
+        $amt='650';
     
         $mail = $_SESSION['email'];
         // echo $mail;
@@ -180,7 +200,7 @@ if (isset($_POST['submit2'])) {
                 
                 
                     $sql = "INSERT INTO `contentwriting`(`user_id`, `content_title`, `word_count`, `content_desc`, `submission_datetime`, `delivery_date`, `amount`, `soa_assigned`, `soa_written`, `soa_paid`, `soa_completed`) 
-                                VALUES ('$u_id', '$title','$words','$message', now() ,'$deliverydate', '0', '0', '0', '0', '0')";
+                                VALUES ('$u_id', '$title','$words','$message', now() ,'$deliverydate', $amt, '0', '0', '0', '0')";
                             // SELECT SWITCHOFFSET(CAST(GETDATE() AS DATETIMEOFFSET), '+05:30')
                            
                     mysqli_query($conn, $sql) or die(mysqli_error($conn));
@@ -208,7 +228,7 @@ if (isset($_POST['submit3'])) {
             $pagesize = mysqli_real_escape_string($conn, $_POST['pagesize']);
             $margins = mysqli_real_escape_string($conn, $_POST['margins']);
             $deliverydate = mysqli_real_escape_string($conn, $_POST['deliverydate2']);
-
+            $dateofdelivery= strtotime($deliverydate);
             $assignment=mysqli_real_escape_string($conn, $_FILES['assignment1']['name']);
             
     
@@ -286,7 +306,13 @@ if (isset($_POST['submit3'])) {
                 // var_dump($path);
                 $totalPages = countPages($path);
                 // var_dump($totalPages);
-                $amount = $totalPages*10;
+                if($dateofdelivery==$et1 )
+            $amount = $totalPages*12;
+            if($dateofdelivery==$eta1)
+            $amount = $totalPages*11;
+            if($dateofdelivery>=$etb1)
+            $amount = $totalPages*10;
+                
                 
                     $sql = "INSERT INTO `typing`(`user_id`, `file_name`, `title`, `orientation`, `font`, `fontsize`, `fontcolor`, `pagesize`, `margins`, `submission_datetime`, `delivery_date`, `amount`, `soa_assigned`, `soa_written`, `soa_paid`, `soa_completed`)
                                          VALUES ('$u_id' , '$ass' , '$title' , '$orientation' , '$font' , '$fontsize' , '$fontcolor' , '$pagesize' , '$margins' , now() , '$deliverydate' , '$amount' , '0' , '0' , '0' , '0' )";
