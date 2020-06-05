@@ -113,7 +113,8 @@ include "navbar.php";
         }
 else{
         
-         echo'<div class="col-md-4 offset-md-4 col-sm-4 offset-sm-4  container text-center alert alert-success">Assignment Submitted, <h3><b> The estimated amount is  '.$amount.'</b></h3> You will be contacted Soon..</div>';
+         echo'<script> setTimeout(function() { window.location = "upload.php"; }, 5000); </script>
+         <div class="col-md-4 offset-md-4 col-sm-4 offset-sm-4  container text-center alert alert-success">Assignment Submitted, <h3><b> The estimated amount is  '.$amount.'</b></h3> You will be contacted Soon..</div>';
       } }elseif (strpos($url, "signup=tsuccess")!== false) {
         // Wait for 5 seconds and then redirect user to login page
         header("refresh:6; url=upload.php");
@@ -127,7 +128,8 @@ else{
           <div class="col-md-4 offset-md-4 col-sm-4 offset-sm-4  container text-center alert alert-success">Assignment Submitted, You will be contacted Soon..</div>';
         }
         else{
-         echo'<div class="col-md-4 offset-md-4 col-sm-4 offset-sm-4  container text-center alert alert-success">Assignment Submitted, <h3><b> The estimated amount is  '.$amount.'</b></h3> You will be contacted Soon..</div>';
+         echo'<script> setTimeout(function() { window.location = "upload.php"; }, 5000); </script>
+         <div class="col-md-4 offset-md-4 col-sm-4 offset-sm-4  container text-center alert alert-success">Assignment Submitted, <h3><b> The estimated amount is  '.$amount.'</b></h3> You will be contacted Soon..</div>';
       } }elseif (strpos($url, "signup=success")!== false) {
         // Wait for 5 seconds and then redirect user to login page
         $id = $_SESSION["id"];
@@ -138,7 +140,8 @@ else{
         echo'
         <script> setTimeout(function() { window.location = "upload.php"; }, 5000); </script>
         <div class="col-md-4 offset-md-4 col-sm-4 offset-sm-4  container text-center alert alert-success">Assignment Submitted, <h3><b> The estimated amount is  '.$amount.'</b></h3> You will be contacted Soon..</div>';      } elseif (strpos($url, "signup=blocked")!== false) {
-        echo '<div class="col-md-4 offset-md-4 col-sm-4 offset-sm-4 container text-center alert alert-danger lastname" role="alert">
+        echo '<script> setTimeout(function() { window.location = "upload.php"; }, 5000); </script>
+        <div class="col-md-4 offset-md-4 col-sm-4 offset-sm-4 container text-center alert alert-danger lastname" role="alert">
                 User is Blocked, Please Contact Us
               </div>';
       }
