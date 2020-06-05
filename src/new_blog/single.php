@@ -176,15 +176,15 @@ echo '
             
             ';
             $tag=explode(";",$row['tags']);
-$count=sizeof($tag);
-$tag=array_reverse($tag);
+          $count=sizeof($tag);
+          $tag1=array_reverse($tag);
            echo ' <div class="sidebar-box">
               <h3 class="heading">Tags</h3>
               <ul class="tags">';
               while($count!=0){
                 $count--;
                 echo'
-                <li><a href="#">'.$tag[$count].'</a></li>';
+                <li><a href="#">'.$tag1[$count].'</a></li>';
               }
              echo' </ul>
             </div>
