@@ -46,13 +46,13 @@
 
       <ul class="list-unstyled">
         <li>
-          <i class="fas fa-phone mr-3"></i>Vinit <a href="tel:98922 51891" style="color:white;"> +91 98922 51891 </a>
+          <i class="fas fa-phone mr-3" style="transform: rotate(90deg)"></i>Vinit <a href="tel:98922 51891" style="color:white;"> +91 98922 51891 </a>
         </li>
         <li>
-          <i class="fas fa-phone mr-3"></i>Kaushik <a href="tel:+91 90041 85304" style="color:white;"> +91 90041 85304 </a>
+          <i class="fas fa-phone mr-3" style="transform: rotate(90deg)"></i>Kaushik <a href="tel:+91 90041 85304" style="color:white;"> +91 90041 85304 </a>
         </li>
         <li>
-          <i class="fas fa-phone mr-3"></i>Bhavya <a href="tel:+91 96193 05482 " style="color:white;"> +91 96193 05482  </a>
+          <i class="fas fa-phone mr-3" style="transform: rotate(90deg)"></i>Bhavya <a href="tel:+91 96193 05482 " style="color:white;"> +91 96193 05482  </a>
         </li>
         <li>
           <i class="fas fa-envelope mr-3"></i><a href="mailto:bluepenassign@gmail.com " style="color:white;"> bluepenassign@gmail.com  </a>
