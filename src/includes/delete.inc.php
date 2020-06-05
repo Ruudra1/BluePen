@@ -31,7 +31,7 @@
         $row=mysqli_fetch_array($result);
         $check= mysqli_num_rows($result);
         echo $check;
-        var_dump($sql);
+        // var_dump($sql);
         if($check==1)
         {
           if($u=='h'){
@@ -59,9 +59,9 @@
             $sql2 = 'DELETE FROM `contentwriter` WHERE id='.$id;
             $src='../viewcontentwriter.php?stat=done&id='.$id;
           }
-          var_dump($sql1);
-          var_dump($sql2);
-          var_dump($row['mobile']);
+          // kvar_dump($sql1);
+          // var_dump($sql2);
+          // var_dump($row['mobile']);
           mysqli_query($conn, $sql1) or die("We're Facing some issues");
           mysqli_query($conn, $sql2) or die("We're Facing some issues");
           if($u=='h')

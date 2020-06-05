@@ -1,5 +1,5 @@
 
-<link rel="icon" type="image/png" href="icons/favicon.ico"/>
+<link rel="icon" href="icons/favicon.ico"/>
 <?php
 include_once "includes/connect.inc.php";
 include "navbar.php";
@@ -9,6 +9,7 @@ include "navbar.php";
 <?php
 $url = "http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
 if (strpos($url, "error=seccess") !== false) {
+  header("refresh:2; url=index.php");
   echo '<br><br><div class="col-md-4 offset-md-4 col-sm-4 offset-sm-4 text-center alert alert-success" role="alert">
           Added successfully
         </div>';
@@ -22,27 +23,40 @@ if (strpos($url, "error=seccess") !== false) {
       <ol class="carousel-indicators">
         <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
         <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+         <li data-target="#carouselExampleIndicators" data-slide-to="2"></li> 
+         <li data-target="#carouselExampleIndicators" data-slide-to="3"></li> 
       </ol>
       <div class="carousel-inner">
+
         <div class="carousel-item active">
-          <img class="d-block w-100" src="images/1.jpg" alt="First slide">
+          <img class="d-block w-100" src="images/0.png" alt="First slide">
           <div class="carousel-caption  d-md-block">
             <!-- <h1>Sample Title</h1> -->
           </div>
         </div>
-        <div class="carousel-item">
-          <img class="d-block w-100" src="images/1.jpg" alt="Second slide">
+        
+        
+         <div class="carousel-item">
+          <img class="d-block w-100" src="images/1.png" alt="Second slide">
           <div class="carousel-caption  d-md-block">
-            <!-- <h1>Sample Title</h1> -->
+       
           </div>
         </div>
+        
         <div class="carousel-item">
-          <img class="d-block w-100" src="images/1.jpg" alt="Third slide">
+          <img class="d-block w-100" src="images/2.png" alt="Third slide">
           <div class="carousel-caption  d-md-block">
-            <h1>Sample Title</h1>
+            
           </div>
         </div>
+
+        <div class="carousel-item">
+          <img class="d-block w-100" src="images/3.png" alt="Third slide">
+          <div class="carousel-caption  d-md-block">
+            
+          </div>
+        </div>
+      
       </div>
       <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -57,7 +71,7 @@ if (strpos($url, "error=seccess") !== false) {
   
  
   <--counters start-->
-  <br><br><br>
+  
         <section class="fact-area">
             <div class="container">
                 <div class="row mb-5 justify-content-center text-center" data-aos="fade-up">
@@ -74,14 +88,14 @@ if (strpos($url, "error=seccess") !== false) {
                             <p>Age</p>
                         </div>
                         <div class="col-lg col-6 single-fact">
-                            <i class="fa fa-battery-quarter fa-4x" aria-hidden="true"></i>
+                            <i class="fa fa-frown-o fa-4x" aria-hidden="true"></i>
                             <h2 class="count" data-target="100">100</h2>
                             <p>Stress Level</p>
                         </div>
                         <div class="col-lg col-6 single-fact">
                             <i class="fa fa-clock-o fa-4x" aria-hidden="true"></i>
                             <h2 class="count" data-target="8750">8750</h2>
-                            <p>Hours Per Day</p>
+                            <p>Hours Per Year</p>
                         </div>
                         <div class="col-lg col-6 single-fact">
                             <i class="fa fa-pencil fa-4x" aria-hidden="true"></i>

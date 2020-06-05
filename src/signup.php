@@ -2,11 +2,12 @@
 <?php
   session_start();
   error_reporting(0);
-  if(isset($_SESSION['u_id'])) {
-    //User is logged in
-    header("Location: index.php");
-    exit();
-  }
+  include "navbar.php";
+  // if(isset($_SESSION['u_id'])) {
+  //   //User is logged in
+  //   header("Location: index.php");
+  //   exit();
+  // }
 ?>
 <html lang="en">
   <head>
@@ -36,10 +37,11 @@
     <link rel="stylesheet" href="css/style.css">
     
   </head>
+   
   <body data-spy="scroll" data-offset="300">
   <?php
   // include_once "includes/connect.inc.php";
-  include "navbar.php";
+  
   ?>
 
 
@@ -56,7 +58,7 @@
    
      
     <br><br><br>
-    <div class="site-section bg-image2 overlay" id="contact-section" style="background-image: url('images/hero_1.jpg');">
+    <div class="site-section bg-image2 overlay" id="contact-section" style="background-image: url('images/img_2.jpg');">
       <div class="container">
 
       <?php
@@ -98,8 +100,11 @@
               </div>';
       } elseif (strpos($url, "signup=success")!== false) {
         // Wait for 5 seconds and then redirect user to login page
-        header("refresh:2; url=index.php");
-        echo '<div class="col-md-4 offset-md-4 col-sm-4 offset-sm-4 text-center alert alert-success">Account created successfully...</div>';
+        // header("Refresh: 5; URL=index.php");
+        echo '<script> setTimeout(function() { window.location = "index.php"; }, 5000); </script>
+        <div class="col-md-4 offset-md-4 col-sm-4 offset-sm-4 text-center alert alert-success">Account created successfully...</div>
+       <div>setTimeout()</div>';
+        // header("refresh:5;url=index.php");
       }
       //Focus on ip tag and add div container
 

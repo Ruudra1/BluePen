@@ -10,6 +10,8 @@ $sql="SELECT * FROM likes WHERE blog_id=$blog";
 {
     $sql = "INSERT INTO `likes`(blog_id,likes,user_id) VALUES ($blog,1,$id)";
                     mysqli_query($conn, $sql) or die(mysqli_error($conn));
+                    header("Location: ../new_blog/single.php?id=".$blog);
+                    exit();
 }
 else{
 $row=mysqli_fetch_array($result);

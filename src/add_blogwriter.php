@@ -20,7 +20,7 @@ session_start();
     <div class="site-section bg-image2 overlay" id="contact-section" style="background-image: url('images/hero_1.jpg');">
       <div class="container">
       <?php
-      if (isset($_SESSION['id'])) {
+      if (0) {
         header("Location: index.php");
         exit();
       } else {
@@ -31,7 +31,7 @@ session_start();
                 </div>';
         } elseif (strpos($url, "error=success") !== false) {
           echo '<div class="col-md-4 offset-md-4 col-sm-4 offset-sm-4 text-center alert alert-success" role="alert">
-                  Blog added succesfully
+                  Writer added succesfully
                 </div>';
         }
     }

@@ -135,7 +135,7 @@
                 </div>
                 <div class="mr-auto text-black">
                   <strong class="font-weight-bold mb-0">Krutik Patel</strong> <br>
-                
+                  Front-End Developer & Designer
                 </div>
               </div>
               <blockquote>&ldquo;When you find , it doesn’t even dent your pocket and boom your work is done!&rdquo;</blockquote>

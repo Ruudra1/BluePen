@@ -26,6 +26,7 @@ error_reporting(0);
 </style> -->
 <html lang="en">
   <head>
+    <link rel="icon" href="icons/favicon.ico"/>
     <title>Bluepen &mdash; Write Assignments</title>
     <meta name="google-signin-client_id" content="103240549634-opo6tt4qgpnuq22fkicmdj7il8opogas.apps.googleusercontent.com">
     <meta charset="utf-8">
@@ -84,7 +85,9 @@ error_reporting(0);
           
           <div class="col-6 col-md-3 col-xl-3  d-block">
             <!-- <h1 class="mb-0 site-logo"><a href="index.php" class="text-black h2 mb-0" style="padding-left:15px;">Blue Pen<span class="text-primary"></span> </a></h1> -->
-           <img src="images/logo.png" class="img-fluid" style="width:70%" style="height:70%">
+           <a href="index.php">
+            <img src="images/logo.png" class="img-fluid" style="width:70%" style="height:70%">
+           </a>
           </div>
 
           <div class="col-12 col-md-9 col-xl-9 main-menu">
@@ -141,9 +144,9 @@ error_reporting(0);
                   <li><a href="viewclients.php"  class="nav-link"><span class="text-secondary">View Clients</span></a></li>
                   <li><a href="viewjobs.php"  class="nav-link"><span class="text-secondary">View Jobs</span></a></li>
                   <li><a href="add_blog.php"  class="nav-link"><span class="text-secondary">Add Blog</span></a></li>
-                  <li><a href="includes/logout.inc.php" class="nav-link"><span class="text-secondary">Log Out </span></a></li>
                   <li><a href="add_blogwriter.php" class="nav-link"><span class="text-secondary">Add blog writers </span></a></li>
-                  <li><a href="add_blog.php" class="nav-link"><span class="text-secondary">Add blogs</span></a></li>';
+                  <li><a href="includes/logout.inc.php" class="nav-link"><span class="text-secondary">Log Out </span></a></li>
+                  ';
                   }
                   // else{
                     // echo '<li data-toggle="modal" data-target="#writermodal" style="color:black" class="nav-link"><a>Register as Writer</a></li>';

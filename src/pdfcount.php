@@ -7,7 +7,8 @@ session_start();
 // var_dump($userid);
 // $sql = "SELECT LAST from 'assign_name' FROM 'assignments' WHERE 'user_id' = $userid";
 // var_dump($sql);
-  
+
+echo 'old method<br>';
 $path = 'writingsample/bhavyaharia10@gmail.comMumbai University Exam Circular 18052020.pdf';
 $totoalPages = countPages($path);
 echo 'no of pages are:';
@@ -27,6 +28,16 @@ function countPages($path)
   // var_dump($dummy);
   return $num;
 }
+
+echo '<br><br>New method';
+$document = new Imagick('writingsample/bhavyaharia10@gmail.comMumbai University Exam Circular 18052020.pdf');
+
+var_dump($document->getNumberImages()); //returns 2
+
+$document = new Imagick('1_pager.pdf');
+
+var_dump($document->getNumberImages()); //returns 1
+
 
 echo '<br>';
 $id = $_SESSION["id"];

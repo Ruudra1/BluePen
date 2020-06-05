@@ -76,7 +76,7 @@ if (isset($_POST['submit'])) {
                 mysqli_query($conn, $sql) or die(mysqli_error($conn));
 
                 $sql1 = "INSERT INTO `newsletter`(`email`) VALUES ('$email')";
-    mysqli_query($conn, $sql1) or die(mysqli_error($conn));
+                mysqli_query($conn, $sql1) or die(mysqli_error($conn));
                 // Now redirect the user
                 $_SESSION['formFilled'] = FALSE;
                 unset($_SESSION['firstname']);
