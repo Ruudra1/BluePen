@@ -13,6 +13,19 @@ ob_start();
 <!DOCTYPE html>
 <html lang="en">
   <head>
+
+  <!-- Google Tag Manager -->
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-164646889-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-164646889-1');
+</script>
+<!-- End Google Tag Manager -->
+
 <link rel="icon" type="image/png" href="icons/favicon.ico"/>    
 <title>Upload Assignment &mdash; Blue Pen</title>
 <!--nav -->
@@ -114,7 +127,7 @@ include "navbar.php";
 else{
         
          echo'<script> setTimeout(function() { window.location = "upload.php"; }, 5000); </script>
-         <div class="col-md-4 offset-md-4 col-sm-4 offset-sm-4  container text-center alert alert-success">Assignment Submitted, <h3><b> The estimated amount is  '.$amount.'</b></h3> You will be contacted Soon..</div>';
+         <div class="col-md-4 offset-md-4 col-sm-4 offset-sm-4  container text-center alert alert-success">Assignment Submitted, <h3><b> The estimated amount is  ₹'.$amount.'</b></h3> You will be contacted Soon..</div>';
       } }elseif (strpos($url, "signup=tsuccess")!== false) {
         // Wait for 5 seconds and then redirect user to login page
         header("refresh:6; url=upload.php");
@@ -129,7 +142,7 @@ else{
         }
         else{
          echo'<script> setTimeout(function() { window.location = "upload.php"; }, 5000); </script>
-         <div class="col-md-4 offset-md-4 col-sm-4 offset-sm-4  container text-center alert alert-success">Assignment Submitted, <h3><b> The estimated amount is  '.$amount.'</b></h3> You will be contacted Soon..</div>';
+         <div class="col-md-4 offset-md-4 col-sm-4 offset-sm-4  container text-center alert alert-success">Assignment Submitted, <h3><b> The estimated amount is  ₹'.$amount.'</b></h3> You will be contacted Soon..</div>';
       } }elseif (strpos($url, "signup=success")!== false) {
         // Wait for 5 seconds and then redirect user to login page
         $id = $_SESSION["id"];
@@ -139,7 +152,7 @@ else{
         header("refresh:6; url=upload.php");
         echo'
         <script> setTimeout(function() { window.location = "upload.php"; }, 5000); </script>
-        <div class="col-md-4 offset-md-4 col-sm-4 offset-sm-4  container text-center alert alert-success">Assignment Submitted, <h3><b> The estimated amount is  '.$amount.'</b></h3> You will be contacted Soon..</div>';      } elseif (strpos($url, "signup=blocked")!== false) {
+        <div class="col-md-4 offset-md-4 col-sm-4 offset-sm-4  container text-center alert alert-success">Assignment Submitted, <h3><b> The estimated amount is  ₹'.$amount.'</b></h3> You will be contacted Soon..</div>';      } elseif (strpos($url, "signup=blocked")!== false) {
         echo '<script> setTimeout(function() { window.location = "upload.php"; }, 5000); </script>
         <div class="col-md-4 offset-md-4 col-sm-4 offset-sm-4 container text-center alert alert-danger lastname" role="alert">
                 User is Blocked, Please Contact Us
@@ -418,7 +431,7 @@ else{
                 <div class="form-group">
                   <label for="exampleInputFile">Upload file</label>
                   <input name="assignment1" type="file" class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp">
-                  <small id="fileHelp" class="form-text text-muted">sample text
+                  <small id="fileHelp" class="form-text text-muted">In PDF Format Only
 
                   </small>
                 </div>

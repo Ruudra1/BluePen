@@ -1,5 +1,20 @@
 
 <link rel="icon" href="icons/favicon.ico"/>
+<head>
+
+<!-- Google Tag Manager -->
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-164646889-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-164646889-1');
+</script>
+<!-- End Google Tag Manager -->
+
+</head>
 <?php
 include_once "includes/connect.inc.php";
 include "navbar.php";

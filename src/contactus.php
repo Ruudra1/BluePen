@@ -1,6 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+
+  <!-- Google Tag Manager -->
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-164646889-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-164646889-1');
+</script>
+<!-- End Google Tag Manager -->
+
 <link rel="icon" type="image/png" href="icons/favicon.ico"/>
     <title>Contact Us &mdash; Blue Pen</title>
     <meta charset="utf-8">
@@ -125,7 +138,7 @@ include "navbar.php";
 
     <!--contact start-->
     <br><br><br>
-    <div class="site-section bg-image2 overlay" id="contact-section" style="background-image: url('images/hero_1.jpg');">
+    <div class="site-section bg-image2 overlay" id="contact-section" style="background-image: url('images/img_2.jpg');">
       <div class="container">
         <div class="row mb-5">
           <div class="col-12 text-center">

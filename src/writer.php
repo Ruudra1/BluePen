@@ -11,6 +11,19 @@ ob_start();
 ?>
 <html lang="en">
   <head>
+
+  <!-- Google Tag Manager -->
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-164646889-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-164646889-1');
+</script>
+<!-- End Google Tag Manager -->
+
 <link rel="icon" type="image/png" href="icons/favicon.ico"/>
 <title>Register as writer &mdash; Blue Pen</title>
 <!--nav -->

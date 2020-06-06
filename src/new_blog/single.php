@@ -1,3 +1,18 @@
+<head>
+
+<!-- Google Tag Manager -->
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-164646889-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-164646889-1');
+</script>
+<!-- End Google Tag Manager -->
+
+</head>
 <script type="text/JavaScript">
 function createNewElement() {
     // First create a DIV element.
@@ -67,7 +82,7 @@ function createNewElement() {
             
             ';}
             else{
-             echo' <h3> Login to like</h3>';
+             echo' <a href="../login.php"><h3> Login to like</h3></a>';
             }
             $sql3="SELECT * FROM comments WHERE blog_id=".$id;
            $result3 = mysqli_query($conn, $sql3);
@@ -138,7 +153,7 @@ echo '
                    echo' <input type="submit" value="submit" name="submit" class="btn btn-primary">
                   ';}
                   else{
-                    echo "Login to comment";
+                    echo "<a href='../login.php'>Login to comment</a>";
                   }
                   echo'
                   </div>
