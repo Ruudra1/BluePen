@@ -96,7 +96,7 @@ if (strpos($url, "error=success") !== false) {
                 <div class="row mb-5 justify-content-center text-center" data-aos="fade-up">
                     <div class="col-7 text-center  mb-5">
                         <h2 class="section-title">Facts</h2>
-                        <p class="lead">Did you ever thought of these</p>
+                        <p class="lead">Did you ever think of this</p>
                     </div>
                 </div>
                 <div class="fact-box">
