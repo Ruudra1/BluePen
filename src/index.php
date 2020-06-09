@@ -235,7 +235,7 @@ if (strpos($url, "error=success") !== false) {
       <div class="container">
         <div class="row mb-5">
           <div class="col-12 text-center">
-            <h2 class="section-title mb-3">About Us</h2>
+            <h2 class="section-title mb-3">How it Works</h2>
           </div>
         </div>
         <div class="row mb-5">
@@ -243,7 +243,7 @@ if (strpos($url, "error=success") !== false) {
             <img src="vectors/about.png" alt="Image" class="img-fluid">
           </div>
           <div class="col-lg-5 ml-auto pl-lg-5">
-            <h2 class="text-black mb-4 h3 font-weight-bold">Just Have a Look</h2>
+            <h2 class="text-black mb-4 h3 font-weight-bold">Assignments, PPT, Reports, Journals, Projects?</h2>
             <p class="mb-4">Damn! The only decent word which comes to our mind when we hear these.
               But seriously, is there a way out? Because tbh nobody wants to pile up on them.
               But somebody has to do the job.
