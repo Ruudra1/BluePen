@@ -11,6 +11,9 @@
 				  <table class="table table-striped table-bordered">
 			<tr>
                 <th>User ID</th>
+				<th>Name</th>
+				<th>Email</th>
+				<th>College</th>
                 <th>Type ID</th>
 				<th>File Name</th>
                 <th>Title</th>
@@ -35,8 +38,13 @@
 			$result= mysqli_query($conn, "SELECT * FROM typing");
 
 			while ($row = mysqli_fetch_array($result)){
+				$result1= mysqli_query($conn, 'SELECT * FROM users where id='.$row["user_id"]);
+				$row1 = mysqli_fetch_array($result1);
 				 echo '<tr>
 						 <td>'.$row["user_id"].'</td>
+						 <td>'.$row1["firstname"].' '.$row1["lastname"].'</td>
+						 <td>'.$row1["email"].'</td>
+						 <td>'.$row1["college"].'</td>
 						 <td>'.$row["type_id"].'</td>
 						 <td><a href="temp.php?u=vt&f='.$row["file_name"].'">'.$row["file_name"].'</a></td>
                          <td>'.$row["title"].'</td>

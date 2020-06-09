@@ -17,10 +17,16 @@
     if($stat=='done')
     echo '<script>alert("Deletion done")</script>';
 ?>
-<!DOCTYPE html>
+
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+
 <html lang="en">
-  <head>
-  <link rel="icon" href="icons/favicon.ico"/>
+<head>
+<link rel="icon" href="icons/favicon.ico"/>
     <title>Bluepen &mdash; Write Assignments</title>
     <meta name="google-signin-client_id" content="103240549634-opo6tt4qgpnuq22fkicmdj7il8opogas.apps.googleusercontent.com">
     <meta charset="utf-8">
@@ -48,7 +54,15 @@
      <link rel="stylesheet" href="css/style1.css">
 
     <script src="https://apis.google.com/js/platform.js" async defer></script>
-    
+  <title>Navbar</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Raleway:400,500,500i,700,800i" rel="stylesheet">
+  <link rel="stylesheet" href="css/nav.css">
+
+    <script src="js/nav.js"></script>
     <style>
   table {
     width: 100%;
@@ -87,76 +101,79 @@
     background: no-repeat 80%/150% 128% !important;
   }
 </style>
-  </head>
-  <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
-
-<div id="overlayer"></div>
+</head>
+  <body>
+  <div id="overlayer"></div>
   <div class="loader">
     <div class="spinner-border text-primary" role="status">
       <span class="sr-only">Loading...</span>
     </div>
   </div>
-
-  <div class="site-wrap"  id="home-section">
-
-    <div class="site-mobile-menu site-navbar-target">
-      <div class="site-mobile-menu-header">
-        <div class="site-mobile-menu-close mt-3">
-          <span class="icon-close2 js-menu-toggle"></span>
-        </div>
-      </div>
-      <div class="site-mobile-menu-body"></div>
-    </div>
-   
-   <!--nav -->
-    <header class="site-navbar py-4 js-sticky-header site-navbar-target" role="banner">
-
-      <div class="container">
-        <div class="row align-items-center">
-          
-        <div class="col-6 col-md-3 col-xl-3  d-block">
+    <nav class="navbar navbar-expand-sm   navbar-light bg-light">
+    <div class="col-6 col-md-3 col-xl-3  d-block">
            <img src="images/logo.png" class="img-fluid" style="width:70%" style="height:70%">
           </div>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-          <div class="col-12 col-md-9 col-xl-8 main-menu">
-            <nav class="site-navigation position-relative text-right" role="navigation">
-
-            <ul class="site-menu main-menu js-clone-nav mr-auto d-none d-lg-block ml-0 pl-0">
-                <li><a href="index.php" class="nav-link">Home</a></li>
-                <li><a href="viewclients.php" class="nav-link">View Clients</a></li>
-                <li class="has-children">
-                  <a href="" class="nav-link">View Jobs</a>
-                  <ul class="dropdown arrow-top">
-                    <li><a href="viewjobs.php" class="nav-link">Handwriten</a></li>
-                    <li><a href="viewcontentwriting.php" class="nav-link">Content writing</a></li>
-                    <li><a href="viewtyping.php" class="nav-link">Typing job</a></li>
-                  </ul>
-                </li>
-                <li class="has-children">
-                  <a href="" class="">View Writers</a>
-                  <ul class="dropdown arrow-top">
-                    <li><a href="viewwriters.php" class="">Writer</a></li>
-                    <li><a href="viewcontentwriter.php" class="nav-link">Content writer</a></li>
-                    <!-- <li><a href="#" class="nav-link">Type writer</a></li> -->
-                  </ul>
-                </li>
-                <li class="has-children">
-                  <a href="" class="nav-link">Dump</a>
-                  <ul class="dropdown arrow-top">
-                    <li><a href="dump_jobs.php" class="nav-link">Dump Jobs</a></li>
-                    <li><a href="dump_writer.php" class="nav-link">Dump writer</a></li>
-                  </ul>
-                </li>
-            </nav>
-          </div>
-
-
-          <div class="col-6 col-md-9 d-inline-block d-lg-none ml-md-0" ><a href="#" class="site-menu-toggle js-menu-toggle text-black float-right"><span class="icon-menu h3"></span></a></div>
-
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+          <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="viewclients.php">View Clients</a>
+            </li>
+            <li class="nav-item dropdown dmenu">
+            <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+            View Jobs
+            </a>
+            <div class="dropdown-menu sm-menu">
+              <a class="dropdown-item" href="viewjobs.php">Handwriten</a>
+              <a class="dropdown-item" href="viewcontentwriting.php">Content writing</a>
+              <a class="dropdown-item" href="viewtyping.php">Typing job</a>
+            </div>
+          </li>
+          <li class="nav-item dropdown dmenu">
+            <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+            View Writers
+            </a>
+            <div class="dropdown-menu sm-menu">
+              <a class="dropdown-item" href="viewwriters.php">Writer</a>
+              <a class="dropdown-item" href="viewcontentwriter.php">Content writer</a>
+              <!-- <a class="dropdown-item" href="viewtyping.php">Typing job</a> -->
+            </div>
+          </li>
+          <li class="nav-item dropdown dmenu">
+            <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+            Dump
+            </a>
+            <div class="dropdown-menu sm-menu">
+              <a class="dropdown-item" href="dump_jobs.php">Dump Jobs</a>
+              <a class="dropdown-item" href="dump_writer.php">Dump writer</a>
+              <!-- <a class="dropdown-item" href="viewtyping.php">Typing job</a> -->
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="newsletter.php">News Letter</a>
+          </li>
+           <!-- <li class="nav-item dropdown dmenu">
+            <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+              Dropdown link
+            </a>
+            <div class="dropdown-menu sm-menu">
+              <a class="dropdown-item" href="#">Link 1</a>
+              <a class="dropdown-item" href="#">Link 2</a>
+              <a class="dropdown-item" href="#">Link 3</a>
+              <a class="dropdown-item" href="#">Link 4</a>
+              <a class="dropdown-item" href="#">Link 5</a>
+              <a class="dropdown-item" href="#">Link 6</a>
+            </div>
+          </li> -->
+          </ul>
+          
         </div>
-      </div>
-      
-    </header>
-    
-    <!--nav end-->
-    <br>
+      </nav>
+</body>
+</html>

@@ -17,6 +17,7 @@
 				<th>Last name</th>
 				<th>Mobile no.</th>
 				<th>Email</th>
+        <th>College</th>
 				<th>Address</th>
 				<!-- <th>Handwriting Sample</th> -->
 			</tr>
@@ -30,6 +31,7 @@
 						<td>'.$row["lastname"].'</td>
 						<td>'.$row["mobile"].'</td>
                         <td>'.$row["email"].'</td>
+                        <td>'.$row["college"].'</td>
                         <td>'.$row["address"].'</td>
 						
 
@@ -48,7 +50,6 @@
     <!--contact end-->
 
     <!--footer-->
-
     <div class="footer py-5 text-center">
       <div class="container">
         <div class="row mb-5">
