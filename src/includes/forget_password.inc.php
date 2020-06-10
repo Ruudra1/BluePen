@@ -635,7 +635,7 @@ require '../class/class.phpmailer.php';
 		$mail->Port = '465';								//Sets the default SMTP server port
 		$mail->SMTPAuth = true;							//Sets SMTP authentication. Utilizes the Username and Password variables
 		$mail->Username = 'kaushiknathagami14@gmail.com';					//Sets SMTP username
-		$mail->Password = '9i2o7u2y3yk@';					//Sets SMTP password
+		$mail->Password = '';					//Sets SMTP password
 		$mail->SMTPSecure = 'ssl';
         $mail->SMTPDebug = 1;							//Sets connection prefix. Options are "", "ssl" or "tls"
 		// $mail->From = 'kaushiknathagami14@gmail.com';					//Sets the From email address for the message
