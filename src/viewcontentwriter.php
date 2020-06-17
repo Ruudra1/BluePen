@@ -24,7 +24,7 @@
 
 			</tr>
 			<?php 	
-			$result= mysqli_query($conn, "SELECT * FROM contentwriter");
+			$result= mysqli_query($conn, "SELECT * FROM contentwriter ORDER BY `assign_id` ASC");
 
 			while ($row = mysqli_fetch_array($result)){
 				echo '<tr>

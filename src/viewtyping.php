@@ -35,7 +35,7 @@
 			</tr>
 			 <?php 	
 			 
-			$result= mysqli_query($conn, "SELECT * FROM typing");
+			$result= mysqli_query($conn, "SELECT * FROM typing ORDER BY `assign_id` ASC");
 
 			while ($row = mysqli_fetch_array($result)){
 				$result1= mysqli_query($conn, 'SELECT * FROM users where id='.$row["user_id"]);
